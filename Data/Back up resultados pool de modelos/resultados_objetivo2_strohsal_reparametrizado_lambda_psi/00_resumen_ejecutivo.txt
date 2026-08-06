@@ -1,0 +1,58 @@
+======================================================================
+MODELO DE STROHSAL REPARAMETRIZADO EXACTAMENTE EN LAMBDA Y PSI
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2011-01 a 2026-07
+Observaciones: 187
+
+ECUACIÓN REPARAMETRIZADA
+y*_t = lambda_t (inflacion_(t-1) - meta_t)
+       + psi_t (exp12_(t-1) - inflacion_(t-1)) + u_t
+A_t = 1 - lambda_t
+theta1_t = lambda_t - psi_t
+theta2_t = psi_t
+
+VERIFICACIÓN ALGEBRAICA
+Error máximo identidad de regresores: 4.4409e-16
+Error máximo suma de pesos: 2.2204e-16
+Correlación x_lambda-x_psi: -0.9528
+VIF aproximado: 10.8480
+
+COMPARACIÓN CONSTANTE VS TVP
+Convergencia CP / TVP: 0 / 0
+LogLik CP / TVP: 47.74419 / 48.20365
+AIC CP / TVP: -85.48839 / -82.40730
+BIC CP / TVP: -69.33285 / -59.78954
+LR q1=q2=0: 0.91891
+p mezcla frontera referencial: 3.2679e-01
+
+HIPERPARÁMETROS TVP
+q1, innovación original theta1: 7.0438e-05
+q2, innovación original theta2: 1.0000e-12
+Q_lambda implícita q1+q2: 7.0438e-05
+Q_psi implícita q2: 1.0000e-12
+Cov(lambda,psi) implícita q2: 1.0000e-12
+Q_nu: 3.2871e-02
+alpha0: 0.03205
+phi_u: 0.87385
+
+RESULTADOS DE ANCLAJE
+Anclaje promedio: 0.8808 (88.08%)
+Anclaje inicial/final: 0.8226 / 0.8743
+Mínimo: 0.8181 en 2011-10
+Máximo: 0.9166 en 2023-03
+% meses A_t significativamente menor que 1: 29.95%
+% meses lambda significativamente positiva: 29.95%
+% meses A_t fuera de [0,1]: 0.00%
+% meses con algún peso fuera de [0,1]: 100.00%
+Ljung-Box TVP, lag 10, p: 5.1746e-04
+
+CRITERIOS DE INTERPRETACIÓN
+1. Esta es una reparametrización algebraica y dinámicamente exacta del núcleo estimado en theta1 y theta2.
+2. A_t se estima directamente como 1-lambda_t; no se obtiene restando dos estados estimados por separado.
+3. q1 y q2 próximos a cero y preferencia por el modelo constante implican poca evidencia de variación temporal.
+4. La reparametrización puede estabilizar lambda_t, pero no elimina por sí sola la colinealidad ni la autocorrelación residual.
+5. Los pesos no se restringen a [0,1]; valores fuera del rango deben reportarse y discutirse, no recortarse artificialmente.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_strohsal_reparametrizado_lambda_psi
+======================================================================

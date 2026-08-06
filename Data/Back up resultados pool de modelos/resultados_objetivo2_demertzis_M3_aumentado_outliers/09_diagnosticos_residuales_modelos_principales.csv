@@ -1,0 +1,69 @@
+codigo_modelo,ecuacion,muestra_diagnostico,diagnostico,rezago,estadistico,p_valor,asimetria,curtosis,conclusion_5pct
+M0A,inflacion,Completa,Ljung-Box,1,2.06391213057477,0.15082252395543871,NA,NA,No se rechaza la hipótesis nula
+M0A,inflacion,Completa,Ljung-Box,2,3.5622840104401803,0.16844567154916512,NA,NA,No se rechaza la hipótesis nula
+M0A,inflacion,Completa,Ljung-Box,5,5.873242585457294,0.3187490513019662,NA,NA,No se rechaza la hipótesis nula
+M0A,inflacion,Completa,Ljung-Box,12,54.99334568994438,1.8148992453337343e-7,NA,NA,Se rechaza la hipótesis nula
+M0A,inflacion,Completa,Ljung-Box,18,57.71335984492101,4.765353836977404e-6,NA,NA,Se rechaza la hipótesis nula
+M0A,inflacion,Completa,Ljung-Box,24,82.00771353010309,2.903722595704039e-8,NA,NA,Se rechaza la hipótesis nula
+M0A,inflacion,Completa,Jarque-Bera,NA,1.755782421735488,0.4156585242946754,-0.028021358937954117,3.4739582184212408,No se rechaza la hipótesis nula
+M0A,inflacion,Después de 12 innovaciones válidas,Jarque-Bera,NA,2.9142247357877,0.23290785682723342,-0.035615650682556746,3.6318319509055006,No se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,1,1.4824175423417794,0.22339665812814335,NA,NA,No se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,2,2.888586281408237,0.23591277477069517,NA,NA,No se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,5,13.942134124040404,0.01598119601075143,NA,NA,Se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,12,24.82934019175129,0.01565260468153773,NA,NA,Se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,18,34.58685689455855,0.010649682677632444,NA,NA,Se rechaza la hipótesis nula
+M0A,expectativa,Completa,Ljung-Box,24,43.56899465503978,0.008558896805338612,NA,NA,Se rechaza la hipótesis nula
+M0A,expectativa,Completa,Jarque-Bera,NA,0.270646854544261,0.873433373826788,-0.08875230669002379,3.060025457274629,No se rechaza la hipótesis nula
+M0A,expectativa,Después de 12 innovaciones válidas,Jarque-Bera,NA,0.6699698136845583,0.7153488831445997,-0.06970215072886952,3.2711277003862804,No se rechaza la hipótesis nula
+M0A,sistema,Completa,Correlación contemporánea Fisher,NA,0.21042478940864862,0.8333361465995365,NA,NA,No se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,1,24.52084019136086,7.351042935477281e-7,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,2,24.547050160376703,4.6738609116303564e-6,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,5,30.53245441012698,1.158402400724956e-5,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,12,110.88172645795429,0,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,18,119.38972626912422,0,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Ljung-Box,24,143.2913016424795,0,NA,NA,Se rechaza la hipótesis nula
+M3B,inflacion,Completa,Jarque-Bera,NA,6.118244011514921,0.04692888042397785,-0.028692246766191573,3.8749237725289944,Se rechaza la hipótesis nula
+M3B,inflacion,Después de 12 innovaciones válidas,Jarque-Bera,NA,6.089202872967921,0.047615285921894394,0.010134153211348265,3.903337495754764,Se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,1,2.2143067692363802e-4,0.9881274795069053,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,2,0.37040568361483744,0.830935718253689,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,5,1.8132079052175736,0.8743401087265712,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,12,17.031794122044573,0.1484052305061322,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,18,26.163952819950016,0.09606783583900225,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Ljung-Box,24,31.87665975593441,0.13008088019889275,NA,NA,No se rechaza la hipótesis nula
+M3B,expectativa,Completa,Jarque-Bera,NA,2.521727401860329,0.2834091400228,0.15912812593601428,3.464305102852849,No se rechaza la hipótesis nula
+M3B,expectativa,Después de 12 innovaciones válidas,Jarque-Bera,NA,3.99559992922208,0.13563335341134908,0.1338532964095432,3.68121661437413,No se rechaza la hipótesis nula
+M3B,sistema,Completa,Correlación contemporánea Fisher,NA,0.8039039990592559,0.4214524203252738,NA,NA,No se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,1,2.063912130574456,0.15082252395546936,NA,NA,No se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,2,3.5622840104399645,0.16844567154918333,NA,NA,No se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,5,5.87324258545931,0.3187490513017638,NA,NA,No se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,12,54.99334568993877,1.8148992453337343e-7,NA,NA,Se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,18,57.713359844914955,4.765353836977404e-6,NA,NA,Se rechaza la hipótesis nula
+M3A,inflacion,Completa,Ljung-Box,24,82.00771353009274,2.903722595704039e-8,NA,NA,Se rechaza la hipótesis nula
+M3A,inflacion,Completa,Jarque-Bera,NA,1.7557824217337183,0.41565852429504324,-0.028021358937895213,3.4739582184210125,No se rechaza la hipótesis nula
+M3A,inflacion,Después de 12 innovaciones válidas,Jarque-Bera,NA,2.9142247357852376,0.2329078568275202,-0.03561565068249992,3.631831950905243,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,1,0.9759097804601304,0.3232107060212629,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,2,1.3558529903602525,0.5076685549743993,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,5,4.211174321077302,0.5194299398145585,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,12,13.185729310193867,0.3556869199875683,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,18,23.937741263228908,0.15707808089230546,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Ljung-Box,24,28.40629769175206,0.2432765599619523,NA,NA,No se rechaza la hipótesis nula
+M3A,expectativa,Completa,Jarque-Bera,NA,2.467290670703736,0.2912290129172288,0.08478168320887113,3.5397492164368205,No se rechaza la hipótesis nula
+M3A,expectativa,Después de 12 innovaciones válidas,Jarque-Bera,NA,5.847548335056956,0.05373051617116502,0.16712860617052439,3.8363567984250433,No se rechaza la hipótesis nula
+M3A,sistema,Completa,Correlación contemporánea Fisher,NA,0.4177740145307452,0.6761123515429014,NA,NA,No se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,1,2.063912130574391,0.15082252395547513,NA,NA,No se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,2,3.5622840104396434,0.1684456715492103,NA,NA,No se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,5,5.873242585458591,0.31874905130183584,NA,NA,No se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,12,54.99334568993927,1.8148992453337343e-7,NA,NA,Se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,18,57.71335984491572,4.765353836977404e-6,NA,NA,Se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Ljung-Box,24,82.0077135300946,2.903722595704039e-8,NA,NA,Se rechaza la hipótesis nula
+M3AD,inflacion,Completa,Jarque-Bera,NA,1.7557824217342406,0.4156585242949347,-0.028021358937913913,3.4739582184210795,No se rechaza la hipótesis nula
+M3AD,inflacion,Después de 12 innovaciones válidas,Jarque-Bera,NA,2.9142247357858766,0.23290785682744575,-0.03561565068252364,3.631831950905308,No se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,1,0.504130908559932,0.4776906385800471,NA,NA,No se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,2,4.598689246097172,0.1003245725943962,NA,NA,No se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,5,9.149460371624182,0.10324914417179587,NA,NA,No se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,12,17.798345047127427,0.12195205648602603,NA,NA,No se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,18,33.64966487158376,0.013909981516849523,NA,NA,Se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Ljung-Box,24,36.632628498984914,0.047593085404174285,NA,NA,Se rechaza la hipótesis nula
+M3AD,expectativa,Completa,Jarque-Bera,NA,3.07826146677977,0.214567536779562,0.11595023746780203,3.587847087130167,No se rechaza la hipótesis nula
+M3AD,expectativa,Después de 12 innovaciones válidas,Jarque-Bera,NA,6.067441583220413,0.04813619973852637,0.10243739824555712,3.8942887216928654,Se rechaza la hipótesis nula
+M3AD,sistema,Completa,Correlación contemporánea Fisher,NA,0.9049541138600969,0.3654896970029952,NA,NA,No se rechaza la hipótesis nula

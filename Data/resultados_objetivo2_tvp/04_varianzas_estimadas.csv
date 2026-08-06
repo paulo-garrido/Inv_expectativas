@@ -1,0 +1,6 @@
+parametro,estimacion,interpretacion
+H,0.03240241241935953,Varianza del error de observación
+Q_alpha,9.999999999999996e-11,Varianza del cambio mensual del intercepto
+Q_beta,2.684175887377969e-5,Varianza del cambio mensual de la sensibilidad beta_t
+Q_alpha / H,3.0861899634439804e-9,Cambio del intercepto relativo al ruido de observación
+Q_beta / H,8.28387668374423e-4,Cambio de beta_t relativo al ruido de observación

@@ -1,0 +1,4 @@
+modelo_restringido,modelo_irrestricto,descripcion,tipo_restriccion,logLik_restringido,logLik_irrestricto,estadistico_LR,numero_restricciones,p_valor_chi_cuadrado_referencial,p_valor_mixto_una_varianza,advertencia
+M0A,M3A,Prueba central: Q_c0 = Q_c = 0 bajo la dinámica aumentada,frontera,-124.40318372451117,-101.15852463711784,46.48931817478666,2,8.034758442216953e-11,NA,Las varianzas Q son cero bajo H0 y están en la frontera. El p-valor chi-cuadrado es referencial.
+M3B,M3A,¿Los rezagos constantes adicionales en inflación mejoran al M3 base?,regular,-109.25043915109131,-101.15852463711784,16.183829027946956,6,0.012800565221508544,NA,Restricciones regulares sobre coeficientes constantes.
+M3A,M3AD,¿Es necesario permitir que d_t varíe?,frontera,-101.15852463711784,-99.00801283956339,4.301023595108887,1,0.03808944146767424,0.01904472073383712,Las varianzas Q son cero bajo H0 y están en la frontera. El p-valor chi-cuadrado es referencial.

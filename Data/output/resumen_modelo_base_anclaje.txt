@@ -1,0 +1,23 @@
+
+Call:
+lm(formula = exp_24 ~ exp_12 + infl + tc_yoy + wti_yoy, data = df_model)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.63198 -0.10382  0.01451  0.11432  0.50061 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  9.877e-01  1.368e-01   7.219 2.30e-11 ***
+exp_12       8.749e-01  3.770e-02  23.208  < 2e-16 ***
+infl        -1.132e-01  1.259e-02  -8.987 8.95e-16 ***
+tc_yoy      -3.965e-03  8.185e-03  -0.484    0.629    
+wti_yoy      7.883e-05  4.470e-04   0.176    0.860    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1887 on 153 degrees of freedom
+Multiple R-squared:  0.8215,	Adjusted R-squared:  0.8169 
+F-statistic: 176.1 on 4 and 153 DF,  p-value: < 2.2e-16
+

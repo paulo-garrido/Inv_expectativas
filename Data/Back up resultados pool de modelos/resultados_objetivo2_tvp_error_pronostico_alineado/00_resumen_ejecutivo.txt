@@ -1,0 +1,53 @@
+
+======================================================================
+MODELO TVP-KALMAN CON ERROR DE PRONÓSTICO DE INFLACIÓN ALINEADO
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2011-02 a 2026-07
+Observaciones: 186
+
+ECUACIÓN
+Delta e24_t = alpha + rho Delta e24_(t-1) + beta_t S_(t-1) + epsilon_t
+S_(t-1) = inflacion_(t-1) - expectativa12_(t-13)
+beta_t = beta_(t-1) + eta_beta,t
+
+ALINEACIÓN
+Error máximo de la identidad de alineación: 0.0000e+00
+La sorpresa utilizada ya era observable al formular la expectativa en t.
+
+COMPARACIÓN CONSTANTE VS TVP
+LogLik constante / TVP: 42.94182 / 43.09292
+AIC constante / TVP: -77.88364 / -76.18584
+BIC constante / TVP: -64.98065 / -60.05710
+LR Q_beta = 0: 0.30220
+p mezcla frontera referencial: 2.9125e-01
+
+HIPERPARÁMETROS TVP
+H: 3.3756e-02
+Q_beta: 2.0031e-06
+Q_beta / H: 5.9341e-05
+
+COEFICIENTES FIJOS TVP
+alpha: -0.00763
+rho: -0.26903
+|rho| < 1: TRUE
+
+TRAYECTORIA DE SENSIBILIDAD
+beta constante comparador: 0.01674
+beta inicial / final: 0.02504 / 0.01288
+beta promedio: 0.01938
+beta mínimo: 0.01277 en 2025-12
+beta máximo: 0.02511 en 2011-09
+% meses beta no distinto de cero: 36.56%
+% meses |beta| <= 0.05 (criterio descriptivo): 100.00%
+Ljung-Box TVP, lag 10, p: 2.8340e-01
+
+CRITERIOS DE INTERPRETACIÓN
+1. beta_t es sensibilidad, no porcentaje de anclaje; no se construye A_t = -beta_t.
+2. beta_t cercano a cero indica baja transmisión de errores de pronóstico hacia las expectativas a 24 meses.
+3. Q_beta próximo a cero y preferencia por el modelo constante implican poca evidencia de variación temporal.
+4. La prueba LR es referencial porque Q_beta está en la frontera; un bootstrap paramétrico es preferible.
+5. Si |rho| >= 1, la dinámica autorregresiva requiere reparametrización o una especificación alternativa.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_tvp_error_pronostico_alineado
+======================================================================

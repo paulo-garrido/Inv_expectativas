@@ -1,0 +1,11 @@
+criterio,cumple,interpretacion
+M3 mejora al constante según AIC,TRUE,La dinámica de credibilidad mejora el ajuste penalizado por complejidad.
+M3 mejora al constante según BIC,TRUE,La mejora se sostiene bajo una penalización más severa.
+LR referencial M3 vs M0 menor a 5%,TRUE,Evidencia referencial de variación temporal en c0_t y c_t.
+Q_c0 de M3 supera claramente el límite,TRUE,El intercepto de expectativas presenta variación temporal identificable.
+Q_c de M3 supera claramente el límite,TRUE,La sensibilidad a inflación presenta variación temporal identificable.
+d_t adicional no es necesario: M2 no mejora a M3,TRUE,La restricción d constante es compatible con los datos.
+Residuos de expectativas M3 sin autocorrelación a 12 meses,TRUE,La ecuación que genera lambda_t está bien especificada dinámicamente.
+Residuos de inflación M3 sin autocorrelación a 12 meses,FALSE,La ecuación de inflación no deja autocorrelación importante.
+M3 domina al TVP solo en inflación según BIC,TRUE,La mejora no proviene únicamente de flexibilizar la inflación.
+M3 domina al TVP irrestricto según BIC,FALSE,La versión parsimoniosa es preferible al sistema totalmente irrestricto.

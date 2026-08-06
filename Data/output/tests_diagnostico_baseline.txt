@@ -1,0 +1,33 @@
+========================================
+DIAGNÓSTICOS DEL MODELO BASELINE
+========================================
+
+Breusch-Pagan:
+
+	studentized Breusch-Pagan test
+
+data:  modelo_baseline
+BP = 9.3908, df = 9, p-value = 0.402
+
+
+
+Durbin-Watson:
+
+	Durbin-Watson test
+
+data:  modelo_baseline
+DW = 2.1158, p-value = 0.6195
+alternative hypothesis: true autocorrelation is greater than 0
+
+
+
+Jarque-Bera:
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"
+[1] "/Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data"

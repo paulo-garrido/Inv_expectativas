@@ -1,0 +1,25 @@
+modelo,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+Anclaje constante SSM,Ljung-Box,1,13.200404418130061,2.7988871426909423e-4,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,2,13.797245312033278,0.0010091744526077306,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,5,18.015432225151205,0.0029271257800681516,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,10,23.24081664924159,0.009891750346223582,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,12,25.11096119807937,0.01430572825365417,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,18,33.99877408664776,0.012599910521721158,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Ljung-Box,24,37.5352453120985,0.03866313899114682,Se rechaza ausencia de autocorrelación
+Anclaje constante SSM,Jarque-Bera aproximado,NA,8.489964880525065,0.014335985412941482,Se rechaza normalidad
+TVP base sin sorpresa,Ljung-Box,1,9.196238339149476,0.0024251297207067424,Se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,2,9.935042422021525,0.006960379982002496,Se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,5,15.85433214281713,0.007272505132969953,Se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,10,18.284285202862293,0.050353358266356896,No se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,12,22.20981371419288,0.03523448826731734,Se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,18,32.06643982922978,0.021592321987945917,Se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Ljung-Box,24,33.30800144742116,0.09773967799417882,No se rechaza ausencia de autocorrelación
+TVP base sin sorpresa,Jarque-Bera aproximado,NA,40.309766878717824,1.7654090105954728e-9,Se rechaza normalidad
+TVP con sorpresa en transición,Ljung-Box,1,10.252968015532758,0.001364648645690747,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,2,10.281839482857352,0.005852304630251548,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,5,17.41523657943232,0.003776037080964967,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,10,22.021172493687153,0.014997102769163106,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,12,26.313347305023438,0.009689448103631704,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,18,35.463621198757686,0.008259440706778975,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Ljung-Box,24,38.57731772242741,0.030230177525088386,Se rechaza ausencia de autocorrelación
+TVP con sorpresa en transición,Jarque-Bera aproximado,NA,23.63624719749982,7.369773398190365e-6,Se rechaza normalidad

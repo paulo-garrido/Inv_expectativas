@@ -1,0 +1,76 @@
+codigo_modelo,ecuacion,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+M0,inflacion,Ljung-Box,1,26.43950834886535,2.719213992863345e-7,Se rechaza la hipótesis nula
+M0,inflacion,Ljung-Box,2,26.97889106884356,1.3855054563638447e-6,Se rechaza la hipótesis nula
+M0,inflacion,Ljung-Box,5,36.490349334822646,7.577054067509081e-7,Se rechaza la hipótesis nula
+M0,inflacion,Ljung-Box,12,106.3903010634978,0,Se rechaza la hipótesis nula
+M0,inflacion,Ljung-Box,18,113.71581222890597,6.661338147750939e-16,Se rechaza la hipótesis nula
+M0,inflacion,Ljung-Box,24,134.09407046680852,0,Se rechaza la hipótesis nula
+M0,inflacion,Jarque-Bera,NA,5.543985037288655,0.06253727383500897,No se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,1,4.979845286239158,0.02564427642139122,Se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,2,16.266684008305745,2.935853958392354e-4,Se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,5,36.19137389999869,8.696589357537476e-7,Se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,12,84.24632753228954,6.352696146905146e-13,Se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,18,96.98791642806948,7.863709683419984e-13,Se rechaza la hipótesis nula
+M0,expectativa,Ljung-Box,24,112.6500873499182,1.936228954946273e-13,Se rechaza la hipótesis nula
+M0,expectativa,Jarque-Bera,NA,197.1457782773122,1.5500231403656402e-43,Se rechaza la hipótesis nula
+M0,sistema,Correlación contemporánea Fisher,NA,2.613812929966819,0.008953804647327885,Se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,1,0.4066799336692789,0.5236594682757849,No se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,2,4.706562970175474,0.09505672264517095,No se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,5,9.204063943852976,0.10119637249491475,No se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,12,81.07741545905276,2.5702773243097e-12,Se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,18,85.60612886650651,8.796763317775458e-11,Se rechaza la hipótesis nula
+M1,inflacion,Ljung-Box,24,103.38346717660775,7.91122722887394e-12,Se rechaza la hipótesis nula
+M1,inflacion,Jarque-Bera,NA,5.142791923888034,0.07642877925322873,No se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,1,4.979845286239203,0.025644276421390555,Se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,2,16.266684008305905,2.935853958392354e-4,Se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,5,36.1913738999991,8.696589357537476e-7,Se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,12,84.24632753228987,6.352696146905146e-13,Se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,18,96.98791642806916,7.863709683419984e-13,Se rechaza la hipótesis nula
+M1,expectativa,Ljung-Box,24,112.65008734991702,1.936228954946273e-13,Se rechaza la hipótesis nula
+M1,expectativa,Jarque-Bera,NA,197.14577827731188,1.5500231403658825e-43,Se rechaza la hipótesis nula
+M1,sistema,Correlación contemporánea Fisher,NA,1.6386577238896718,0.1012845632629945,No se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,1,26.43950834886503,2.719213992863345e-7,Se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,2,26.978891068843176,1.3855054563638447e-6,Se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,5,36.490349334821985,7.577054067509081e-7,Se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,12,106.39030106349801,0,Se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,18,113.71581222890619,6.661338147750939e-16,Se rechaza la hipótesis nula
+M2,inflacion,Ljung-Box,24,134.09407046680877,0,Se rechaza la hipótesis nula
+M2,inflacion,Jarque-Bera,NA,5.543985037288652,0.06253727383500905,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,1,2.5559649781817306,0.1098787062223403,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,2,3.246626662750205,0.19724408019837059,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,5,3.666541521155497,0.5983508693955992,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,12,15.81097101116836,0.20004815467400983,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,18,18.02788477239683,0.4538170443264783,No se rechaza la hipótesis nula
+M2,expectativa,Ljung-Box,24,21.795540503801835,0.5914688107267878,No se rechaza la hipótesis nula
+M2,expectativa,Jarque-Bera,NA,1251.362002828317,1.8629176359872145e-272,Se rechaza la hipótesis nula
+M2,sistema,Correlación contemporánea Fisher,NA,1.1364215254627532,0.25578019124715445,No se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,1,26.439508348866063,2.719213992863345e-7,Se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,2,26.978891068844373,1.3855054563638447e-6,Se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,5,36.49034933482371,7.577054067509081e-7,Se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,12,106.39030106349874,0,Se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,18,113.71581222890696,6.661338147750939e-16,Se rechaza la hipótesis nula
+M3,inflacion,Ljung-Box,24,134.09407046680934,0,Se rechaza la hipótesis nula
+M3,inflacion,Jarque-Bera,NA,5.543985037288585,0.06253727383501116,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,1,2.555925908891938,0.10988142236947118,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,2,3.2465715580975303,0.1972495148065041,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,5,3.6665044026818383,0.5983564103578208,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,12,15.811040114156285,0.2000448766145353,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,18,18.027948880256158,0.45381282762595543,No se rechaza la hipótesis nula
+M3,expectativa,Ljung-Box,24,21.795541496882482,0.5914687514790948,No se rechaza la hipótesis nula
+M3,expectativa,Jarque-Bera,NA,1251.3765834502651,1.8493857727804364e-272,Se rechaza la hipótesis nula
+M3,sistema,Correlación contemporánea Fisher,NA,1.1364465271747555,0.25576973278107157,No se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,1,0.4064691806535509,0.5237670719810641,No se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,2,4.708879396556466,0.0949466904278411,No se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,5,9.207595436607297,0.10106490419753267,No se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,12,81.08323360364994,2.5637270084644115e-12,Se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,18,85.6139264582401,8.768752390864165e-11,Se rechaza la hipótesis nula
+M4,inflacion,Ljung-Box,24,103.39138651733562,7.8864692554248e-12,Se rechaza la hipótesis nula
+M4,inflacion,Jarque-Bera,NA,5.1407801411062195,0.07650569698325278,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,1,2.555933081484029,0.10988092371613811,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,2,3.2466085859272726,0.19724586297958346,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,5,3.6665209931494904,0.5983539337678324,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,12,15.811330923781194,0.2000310818460289,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,18,18.028205347497142,0.45379595862095545,No se rechaza la hipótesis nula
+M4,expectativa,Ljung-Box,24,21.79565514617727,0.5914619711029103,No se rechaza la hipótesis nula
+M4,expectativa,Jarque-Bera,NA,1251.3970361002116,1.8305697263478395e-272,Se rechaza la hipótesis nula
+M4,sistema,Correlación contemporánea Fisher,NA,1.8977268790741253,0.057732069845887836,No se rechaza la hipótesis nula

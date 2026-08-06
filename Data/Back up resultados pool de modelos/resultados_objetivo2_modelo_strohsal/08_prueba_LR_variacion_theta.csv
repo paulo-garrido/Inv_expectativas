@@ -1,0 +1,3 @@
+especificacion,hipotesis_nula,estadistico_LR,p_valor_chi2_2_referencial,p_valor_mezcla_frontera_referencial,advertencia
+Núcleo Strohsal,Q_theta1 = Q_theta2 = 0,0.9189135102380277,0.6316266802833048,0.3267868754664821,Dos varianzas están en la frontera bajo H0. Los p-valores son referenciales; un bootstrap paramétrico es preferible para inferencia definitiva.
+Strohsal + tipo de cambio,Q_theta1 = Q_theta2 = 0,0.7782230679651292,0.6776586838270084,0.3582572410806092,Dos varianzas están en la frontera bajo H0. Los p-valores son referenciales; un bootstrap paramétrico es preferible para inferencia definitiva.

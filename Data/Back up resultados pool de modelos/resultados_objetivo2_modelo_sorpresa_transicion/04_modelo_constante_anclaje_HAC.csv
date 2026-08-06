@@ -1,0 +1,2 @@
+modelo,intercepto,parametro_anclaje,anclaje_porcentaje,se_anclaje,anclaje_li_95,anclaje_ls_95,p_valor_anclaje_igual_a_uno,observaciones,r_squared,adj_r_squared
+Anclaje constante HAC,0.28296262166635006,0.8414412642280118,84.14412642280118,0.04057073839625225,0.761924078145161,0.9209584503108625,9.298464866001522e-5,186,0.9422800187918847,0.9419663232418406

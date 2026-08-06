@@ -1,0 +1,4 @@
+definicion,expresion,uso,error_maximo_identidad
+Error de pronóstico a 24 meses emparejado,inflacion_t - expectativa24_t-24,Diagnóstico y posible robustez,NA
+Error de pronóstico de 24 meses utilizado,inflacion_t-1 - expectativa24_t-25,Regresor principal,0
+Identidad de verificación,"lag(error de pronóstico emparejado, 1)",Validación algebraica,0

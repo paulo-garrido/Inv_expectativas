@@ -1,0 +1,2 @@
+hipotesis_nula,estadistico_LR,grados_libertad_convencionales,p_valor_chi2_df2,p_valor_mezcla_frontera_referencial,advertencia
+q1 = q2 = 0; lambda y psi constantes,0.9189138413113511,2,0.6316265757259413,0.3267868058133092,La distribución es no estándar porque q1 y q2 están en la frontera; el bootstrap paramétrico es preferible para inferencia definitiva.

@@ -1,0 +1,53 @@
+
+======================================================================
+MODELO TVP-KALMAN CON ERROR DE PRONÓSTICO DE INFLACIÓN A 24 MESES ALINEADO
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2012-02 a 2026-07
+Observaciones: 174
+
+ECUACIÓN
+Delta e24_t = alpha + rho Delta e24_(t-1) + beta_t FE24_(t-1) + epsilon_t
+FE24_(t-1) = inflacion_(t-1) - expectativa24_(t-25)
+beta_t = beta_(t-1) + eta_beta,t
+
+ALINEACIÓN
+Error máximo de la identidad de alineación: 0.0000e+00
+El error de pronóstico utilizado ya era observable al formular la expectativa en t.
+
+COMPARACIÓN CONSTANTE VS TVP
+LogLik constante / TVP: 53.15717 / 53.15717
+AIC constante / TVP: -98.31434 / -96.31434
+BIC constante / TVP: -85.67812 / -80.51907
+LR Q_beta = 0: 0.00000
+p mezcla frontera referencial: 4.9913e-01
+
+HIPERPARÁMETROS TVP
+H: 2.9082e-02
+Q_beta: 7.2805e-09
+Q_beta / H: 2.5034e-07
+
+COEFICIENTES FIJOS TVP
+alpha: -0.00816
+rho: -0.28366
+|rho| < 1: TRUE
+
+TRAYECTORIA DE SENSIBILIDAD
+beta constante comparador: 0.01557
+beta inicial / final: 0.01561 / 0.01555
+beta promedio: 0.01559
+beta mínimo: 0.01555 en 2025-12
+beta máximo: 0.01561 en 2012-02
+% meses beta no distinto de cero: 0.00%
+% meses |beta| <= 0.05 (criterio descriptivo): 100.00%
+Ljung-Box TVP, lag 10, p: 2.7940e-01
+
+CRITERIOS DE INTERPRETACIÓN
+1. beta_t es sensibilidad, no porcentaje de anclaje; no se construye A_t = -beta_t.
+2. beta_t cercano a cero indica baja transmisión de errores de pronóstico hacia las revisiones de expectativas a 24 meses.
+3. Q_beta próximo a cero y preferencia por el modelo constante implican poca evidencia de variación temporal.
+4. La prueba LR es referencial porque Q_beta está en la frontera; un bootstrap paramétrico es preferible.
+5. Si |rho| >= 1, la dinámica autorregresiva requiere reparametrización o una especificación alternativa.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_tvp_error_pronostico_24m_alineado
+======================================================================

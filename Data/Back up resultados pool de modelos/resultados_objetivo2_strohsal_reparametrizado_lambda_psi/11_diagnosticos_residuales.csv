@@ -1,0 +1,17 @@
+modelo,diagnostico,rezago,estadistico,grados_libertad,p_valor,conclusion_5pct
+Constante SSM reparametrizado,Ljung-Box,1,14.766006866135225,1,1.2170989225068762e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,2,15.294495079300546,2,4.773562265318887e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,5,20.204286497962116,5,0.0011440729213163525,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,10,30.077889030139527,10,8.318673259115617e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,12,35.11269167860933,12,4.4934174898991763e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,18,48.55832852064207,18,1.243144209598368e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Ljung-Box,24,52.30318439460016,24,7.142062572382812e-4,Se rechaza ausencia de autocorrelación
+Constante SSM reparametrizado,Jarque-Bera aproximado,NA,23.924202733728936,2,6.3815383635184826e-06,Se rechaza normalidad
+TVP Strohsal reparametrizado,Ljung-Box,1,15.127724957165405,1,1.004767929686512e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,2,15.31671481012792,2,4.720822141318637e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,5,20.952419312813092,5,8.269987588115368e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,10,31.32985976182463,10,5.174598170702982e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,12,37.517775911894084,12,1.8406063538745077e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,18,50.64864285654306,18,6.018896036696919e-5,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Ljung-Box,24,54.99145575928839,24,3.1387039287733565e-4,Se rechaza ausencia de autocorrelación
+TVP Strohsal reparametrizado,Jarque-Bera aproximado,NA,28.674759858221694,2,5.934102065552212e-7,Se rechaza normalidad

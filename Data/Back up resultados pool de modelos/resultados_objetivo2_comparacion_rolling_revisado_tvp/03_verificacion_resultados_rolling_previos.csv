@@ -1,0 +1,3 @@
+ventana,archivo_previo_encontrado,archivo_previo,observaciones_comparadas,diferencia_absoluta_media,diferencia_absoluta_maxima,coincide_tolerancia_1e_8
+36,TRUE,output/rolling_modelo_principal_36m.csv,163,2.5329091244323936e-18,2.7755575615628914e-17,TRUE
+30,TRUE,output/rolling_robustez_30m.csv,169,2.6277468038465235e-18,2.7755575615628914e-17,TRUE

@@ -1,0 +1,100 @@
+========================================
+DIAGNÓSTICOS VARX
+========================================
+
+---- Serial correlation test ----
+
+	Portmanteau Test (asymptotic)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 257.48, df = 160, p-value =
+1.602e-06
+
+$serial
+
+	Portmanteau Test (asymptotic)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 257.48, df = 160, p-value =
+1.602e-06
+
+
+
+
+---- ARCH test ----
+
+	ARCH (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 643.95, df = 500, p-value =
+1.351e-05
+
+$arch.mul
+
+	ARCH (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 643.95, df = 500, p-value =
+1.351e-05
+
+
+
+
+---- Normality test ----
+$JB
+
+	JB-Test (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 139.01, df = 8, p-value <
+2.2e-16
+
+
+$Skewness
+
+	Skewness only (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 11.073, df = 4, p-value =
+0.02576
+
+
+$Kurtosis
+
+	Kurtosis only (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 127.94, df = 4, p-value <
+2.2e-16
+
+
+$jb.mul
+$jb.mul$JB
+
+	JB-Test (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 139.01, df = 8, p-value <
+2.2e-16
+
+
+$jb.mul$Skewness
+
+	Skewness only (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 11.073, df = 4, p-value =
+0.02576
+
+
+$jb.mul$Kurtosis
+
+	Kurtosis only (multivariate)
+
+data:  Residuals of VAR object modelo_varx
+Chi-squared = 127.94, df = 4, p-value <
+2.2e-16
+
+
+
+

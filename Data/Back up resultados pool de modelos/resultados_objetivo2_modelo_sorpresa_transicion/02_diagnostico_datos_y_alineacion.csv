@@ -1,0 +1,2 @@
+archivo,fecha_inicial,fecha_final,observaciones,horizonte_expectativa_meses,rezago_inflacion_modelo,rezago_pronostico_sorpresa,sorpresa_estandarizada,media_sorpresa_raw,sd_sorpresa_raw,correlacion_xanclaje_sorpresa,correlacion_exp12_exp24_contemporaneas
+bd_sample_modelo.csv,2011-02-01,2026-07-01,186,12,1,13,TRUE,-0.4643218835755133,1.918549113397476,-0.9316966054081566,0.926733498011677

@@ -1,0 +1,15 @@
+criterio,cumple,interpretacion
+M3A mejora a M0A según AIC,TRUE,El TVP relevante mejora el ajuste bajo la dinámica aumentada.
+M3A mejora a M0A según BIC,TRUE,La ganancia no desaparece al penalizar complejidad.
+LR referencial M3A vs M0A menor a 5%,TRUE,El contraste es referencial porque Q está en la frontera.
+Q_c0 de M3A supera claramente el límite,TRUE,Existe variación temporal del intercepto de expectativas.
+Q_c de M3A supera claramente el límite,TRUE,Existe variación temporal de la sensibilidad a inflación.
+d_t adicional no es necesario,FALSE,La persistencia de expectativas puede mantenerse constante.
+M3A mejora la dinámica frente a M3B según BIC,FALSE,Los rezagos adicionales corrigen el bloque de inflación sin TVP.
+Inflación M3A sin autocorrelación a 12 meses,FALSE,La ecuación inflacionaria queda dinámicamente bien especificada.
+Expectativas M3A sin autocorrelación a 12 meses,TRUE,La ecuación que genera lambda conserva residuos blancos.
+Sistema M3A estable en toda la muestra,TRUE,La dinámica estimada no es explosiva.
+No se detectaron valores extremos formales,FALSE,La no normalidad no se atribuye a observaciones extremas formales.
+"Con pulsos, correlación de lambda con M3A mayor a 0.98",TRUE,La trayectoria de credibilidad es robusta a pulsos.
+"Con pulsos, máxima diferencia de lambda menor a 0.03",FALSE,La influencia económica de los outliers sobre lambda es reducida.
+"Con pulsos, normalidad de expectativas deja de rechazarse",TRUE,Los pulsos explican la no normalidad gaussiana.

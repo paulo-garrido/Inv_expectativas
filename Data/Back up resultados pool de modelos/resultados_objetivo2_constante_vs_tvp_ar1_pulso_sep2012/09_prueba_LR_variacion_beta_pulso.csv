@@ -1,0 +1,2 @@
+hipotesis_nula,hipotesis_alternativa,estadistico_LR,grados_libertad_referencia,p_valor_convencional_chi2_1,p_valor_mezcla_frontera_50_50,conclusion_frontera_5pct,advertencia
+H0: Q_beta = 0; sensibilidad constante con pulso,H1: Q_beta > 0; sensibilidad variante con pulso,15.177862090475017,1,9.78438046841723e-5,4.892190234208615e-5,Se rechaza H0; evidencia a favor de sensibilidad variante,"Q_beta está en la frontera bajo H0. El p-valor de mezcla es una aproximación; debe evaluarse junto con AIC, BIC y predicción."

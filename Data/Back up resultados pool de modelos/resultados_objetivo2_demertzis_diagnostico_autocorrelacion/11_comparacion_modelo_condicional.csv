@@ -1,0 +1,2 @@
+codigo_modelo,descripcion,observaciones,log_verosimilitud,Q_c0,Q_c,p_LB_expectativas_12,lambda_promedio,lambda_inicial,lambda_final,correlacion_lambda_con_S0,max_diferencia_lambda_con_S0
+C0,Modelo condicional uniecuacional de expectativas,185,67.9135804738753,0.003409396413642568,3.602044186244104e-5,0.327350531470718,0.8363438722371417,0.7433775234928444,0.8867049007498774,-0.2354613663568727,0.18991048156014778

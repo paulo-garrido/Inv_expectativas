@@ -1,0 +1,2 @@
+codigo_modelo,fecha_omitida,Q_c0,Q_c,correlacion_lambda_con_M3A,RMSE_diferencia_lambda,max_abs_diferencia_lambda,diferencia_lambda_final,correlacion_pi_estrella_con_M3A,nota
+M3A_LOO_2012_09,2012-09-01,0.0021156011561987214,3.3954304494850904e-5,0.9992179953568359,0.02588273364849734,0.053235289941073294,-0.004040020274219569,0.9987797643190934,La log-verosimilitud y los criterios de información no se comparan con M3A porque existe una observación menos en la ecuación de expectativas.

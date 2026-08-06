@@ -1,0 +1,10 @@
+---
+title: "Prueba"
+format: pdf
+bibliography: "referencias.bib"
+csl: "apa-7th-edition.csl"
+---
+
+# Prueba
+
+Texto de prueba con cita @strohsal2015.

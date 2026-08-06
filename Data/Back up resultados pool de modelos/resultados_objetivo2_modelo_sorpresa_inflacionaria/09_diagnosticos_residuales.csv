@@ -1,0 +1,15 @@
+modelo,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+Constante SSM,Ljung-Box,1,12.676516661794038,3.702767414047736e-4,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,2,15.290342555725594,4.783483726452653e-4,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,5,18.349624656420808,0.002538685737504931,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,10,22.559889006403615,0.01249300890688021,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,12,23.547885735272622,0.023418717276596057,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,18,42.742773244174785,8.699867295410835e-4,Se rechaza ausencia de autocorrelación
+Constante SSM,Ljung-Box,24,47.369551562358744,0.0030186456802557826,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,1,12.236885143248994,4.685398135825247e-4,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,2,13.373377438219858,0.0012474064550151986,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,5,17.646917580229267,0.0034230740781168167,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,10,22.266452875457738,0.013803264465655496,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,12,24.12791218643669,0.01954121930889674,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,18,43.123411578864214,7.687114674548301e-4,Se rechaza ausencia de autocorrelación
+TVP anclaje con sorpresa,Ljung-Box,24,48.93098827608286,0.0019323851681521953,Se rechaza ausencia de autocorrelación

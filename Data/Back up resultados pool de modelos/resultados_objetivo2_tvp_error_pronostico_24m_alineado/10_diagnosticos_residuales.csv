@@ -1,0 +1,17 @@
+modelo,diagnostico,rezago,estadistico,grados_libertad,p_valor,conclusion_5pct
+Coeficiente beta constante,Ljung-Box,1,0.7555228337747255,1,0.38473328236012283,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,2,0.8358343538030859,2,0.658416758282627,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,5,10.029703814739857,5,0.07439796348976369,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,10,12.087061544792874,10,0.2792720637941901,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,12,12.602537227490538,12,0.39857909346588405,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,18,19.13115339067717,18,0.3837892130757731,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Ljung-Box,24,23.563883160993846,24,0.4867487507926491,No se rechaza ausencia de autocorrelación
+Coeficiente beta constante,Jarque-Bera aproximado,NA,55.32084548478407,2,9.710263962435108e-13,Se rechaza normalidad
+Coeficiente beta_t variante,Ljung-Box,1,0.7549707059700576,1,0.38490702463592286,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,2,0.8350558656905724,2,0.6586730929774702,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,5,10.028410835246085,5,0.07443422855763648,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,10,12.085148213372321,10,0.27939827853784394,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,12,12.600739167889888,12,0.3987156042397557,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,18,19.129687597744,18,0.3838785354459848,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Ljung-Box,24,23.562283656533317,24,0.4868417254452777,No se rechaza ausencia de autocorrelación
+Coeficiente beta_t variante,Jarque-Bera aproximado,NA,55.331447389652595,2,9.658926503974388e-13,Se rechaza normalidad

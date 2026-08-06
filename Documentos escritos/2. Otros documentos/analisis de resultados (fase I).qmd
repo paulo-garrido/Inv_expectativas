@@ -1,0 +1,301 @@
+---
+title: "revisión de literatura Tephita <3"
+format:
+  pdf:
+    pdf-engine: xelatex
+    toc: true
+    number-sections: false
+mainfont: "Times New Roman"
+fontsize: 12pt
+linestretch: 1.2
+geometry: margin=1in
+editor: visual
+---
+
+Parece que la literatura sobre informalidad laboral, sobre todo, obviamente en economías en desarrollo ha evolucionado desde 2 enfoques:
+
+-   enfoques que la conciben como una condición dicotómica (la tradicional, pedorra jaja), y
+
+-   hacia interpretaciones que subrayan su heterogeneidad interna.
+
+En este sentido, los dividi en algunos segmentos para que sea más facil abordarlos, se que te llevara tiempito leerlos :(. Primero, antecedentes generales sobre informalidad laboral en economías en desarrollo. Segundo, literatura que cuestiona la visión binaria formal/informal y propone entender la informalidad como un fenómeno heterogéneo (como tu idea). Tercero, los aportes sobre transiciones laborales y movilidad entre estados ocupacionales (tu leader). Finalmente (este tentativo, creo que mejor no, que hueva jaa; pero hay sustantiva literatura que aborda la relación entre informalidad, salarios y calidad del empleo).
+
+encontre 5 trabajitos, mas el que estamos usando serian 6, y los dividi en segmentos para que masomenos se tenga la idea de en que área abordar cada documentito.
+
+# Antecedentes: informalidad laboral en economías en desarrollo
+
+las preguntas que buscarian responder estos textos, serían:
+
+-   ¿Cómo ha sido entendida la informalidad en la literatura?
+-   ¿La informalidad responde a exclusión, elección o ambas?
+-   ¿Por qué la informalidad es un rasgo estructural en América Latina?
+
+## Textos que abordan esta temática
+
+### 1. Perry et al. (2007), *Informality: Exit and Exclusion*
+
+**Qué investiga:**\
+Examina la informalidad en América Latina y propone que no toda informalidad debe entenderse únicamente como exclusión del sector formal. Plantea la distinción entre **exit** y **exclusion**.
+
+### 2. Maloney (2004), *Informality Revisited*
+
+**Qué investiga:**\
+Este es de los textos más relevantes, porque pone en la palestra la critica entre la visión dualista tradicional del mercado laboral e insiste en que parte de la informalidad puede estar asociada a decisiones ocupacionales (es un antecedente directo al leader que entiendo que harás), no solo a segmentación rígida.
+
+### 3. La Porta y Shleifer (2014), *Informality and Development*
+
+**Qué investiga:**\
+Relaciona la informalidad con el desarrollo económico, el tamaño de firma y la productividad. Subraya que la informalidad suele concentrarse en unidades pequeñas y de baja productividad. este me llama la atención, no tanto, por su contenido, sino porque. conecta el fenómeno laboral con la estructura productiva de la economía, platicamos que tu querias hacerlo por sección CIIU, este seria un buen antecedente, para ese aspecto.
+
+# Informalidad como fenómeno heterogéneo: más allá de la dicotomía formal/informal
+
+-   ¿Por qué la distinción formal/informal puede resultar demasiado agregada?
+
+-   ¿Cómo se justifica pensar la informalidad como escalera o gradación?
+
+## Textos que abordan esta temática
+
+### 1. Ulyssea (2015), *Firms, Informality, and Development: Theory and Evidence from Brazil*
+
+**Qué investiga:**\
+Desarrolla un marco teórico y empírico para estudiar la informalidad en Brasil, integrando la dimensión de firmas, regulación y desarrollo; es importante porque muestra que la informalidad es un fenómeno heterogéneo y que no se reduce a una sola explicación. talvez no me parece tan relevante, pero te lo dejo jaja.
+
+### 2. Ulyssea (2020), *Informality: Causes and Consequences for Development*
+
+**Qué investiga:**\
+Resume la literatura reciente sobre causas y consecuencias de la informalidad, destacando sus implicaciones para el desarrollo económico. (este es el que te decia, que tiene una importante revisión de literatura)
+
+Este documento ayuda a ordenar el estado del arte y a justificar que una mirada más desagregada del fenómeno es metodológicamente necesaria.
+
+### 3. Opazo (2024), *Climbing the (in)formality job ladder: Determinants and Dynamics of Labour Informality in Peru*
+
+Este ya lo conocemos, es nuestra piedra angular jaja
+
+# Transiciones laborales y movilidad entre estados de informalidad
+
+Esta sección me parece importante por qué el estudio de acuerdo a la literatura disponible, no se queda en una fotografía estática del mercado laboral, sino que incorpora la dimensión dinámica: la movilidad.
+
+preguntas que podriamos pensar y que responden estos textos:
+
+-   ¿La informalidad es una etapa transitoria o una trampa persistente?
+-   ¿Qué factores explican subir, bajar o permanecer en ciertos estados laborales?
+
+## Textos que abordan esta temática
+
+### 1. Opazo (2024)
+
+### 2. Maloney (2004)
+
+**Qué investiga:**\
+Aunque no formula una escalera ocupacional como la que nos interesa, sí cuestiona la rigidez del mercado dual (que tanto se cuestiona) y abre la puerta a pensar en trayectorias ocupacionales y decisiones de movilidad. (es un buen antecedente para la movilidad que me platicabas)
+
+### 3. Perry et al. (2007)
+
+**Qué investiga:**\
+Examina mecanismos de entrada y permanencia en la informalidad en América Latina.
+
+### 4. Textos complementarios para ampliar después
+
+-   Vega (2018)
+-   Ponczek y Ulyssea (2022)
+-   Aleksynska, La y Manfredi (2023)
+
+# Informalidad, salarios y calidad del empleo
+
+-   ¿Qué relación existe entre informalidad y bajos ingresos?
+-   ¿Todos los empleos informales tienen la misma calidad?
+-   ¿Qué implicaciones tiene subir o bajar en la escalera de informalidad?
+
+## Textos que abordan esta temática:
+
+### 1. La Porta y Shleifer (2014)
+
+**Qué investiga:**\
+Relaciona informalidad con baja productividad, pequeña escala y menores capacidades de crecimiento, el documento conecta informalidad con calidad de empleo.
+
+### 2. Perry et al. (2007)
+
+**Qué investiga:**\
+Discute la vulnerabilidad y la limitada protección social asociadas a empleos informales en América Latina.
+
+### 3. Opazo (2024)
+
+**Qué investiga:**\
+Examina el vínculo entre transiciones laborales y cambios posteriores en ingreso laboral.
+
+*en realidad son los mismos de arriba, pero tambien tienen una sección que abordan esta relación*
+
+# En sintesis (jaja)
+
+segun la literatura:
+
+1.  La informalidad es un fenómeno estructural y persistente en economías en desarrollo.
+2.  No debe estudiarse únicamente como una condición binaria, sino como una realidad heterogénea. *aqui incluso podria estar la justificación*
+3.  El análisis de transiciones y resultados laborales permite identificar si ciertos segmentos funcionan como espacios de movilidad o como trampas de precariedad.
+
+
+
+
+## Definición de variables
+
+En esta sección se presentan las variables utilizadas en las distintas estrategias econométricas del estudio. Con el fin de ordenar su exposición y facilitar la comprensión de su función dentro de las estimaciones, las variables se clasifican en cuatro grupos: variable dependiente, variables explicativas de origen interno, variables explicativas de origen externo y variables construidas específicamente para el análisis del anclaje de las expectativas de inflación. Asimismo, se precisan, cuando corresponde, las principales transformaciones aplicadas a cada serie, así como su uso en las distintas especificaciones empíricas.
+
+### Variable dependiente
+
+La variable dependiente principal del estudio es la expectativa de inflación a 24 meses, la cual se utiliza como aproximación a las expectativas de mediano plazo de los agentes económicos. Esta variable resulta especialmente relevante para el análisis del anclaje, en la medida en que permite evaluar el grado en que dichas expectativas permanecen alineadas con el objetivo de inflación del banco central o reaccionan ante perturbaciones inflacionarias observadas. En términos operativos, esta variable se expresa en porcentaje y se identifica en la base de datos como `exp_inf_24m` o `exp_24`. En algunas especificaciones orientadas al análisis dinámico, también se emplea su variación mensual, denotada como `d_exp24`.
+
+### Variables explicativas de origen interno
+
+Dentro de las variables explicativas de origen interno se incorpora, en primer lugar, la inflación observada en Guatemala, medida a través de la variación interanual del índice de precios al consumidor. Esta variable constituye uno de los determinantes centrales del estudio, ya que una mayor sensibilidad de las expectativas frente a la inflación efectiva puede interpretarse como evidencia de un menor grado de anclaje.
+
+También se incluye el rezago de la expectativa de inflación a 24 meses, con el propósito de captar la persistencia en el proceso de formación de expectativas. De forma complementaria, se consideran la tasa de política monetaria, el índice mensual de actividad económica, el tipo de cambio nominal y, en algunas especificaciones, el déficit fiscal. En conjunto, estas variables buscan recoger el entorno macroeconómico doméstico dentro del cual los agentes forman sus expectativas de inflación.
+
+### Variables explicativas de origen externo
+
+El estudio también incorpora variables externas que recogen condiciones inflacionarias y financieras internacionales relevantes para una economía pequeña y abierta como la guatemalteca. Entre ellas se encuentran la inflación de Estados Unidos, la tasa de fondos federales y el precio internacional del petróleo. La inclusión de estas variables responde a la posibilidad de que las expectativas domésticas se vean afectadas por choques importados de precios, cambios en las condiciones financieras globales o variaciones en el costo de insumos estratégicos.
+
+### Variables construidas para el análisis del anclaje
+
+Además de las variables observadas directamente, el estudio emplea variables construidas con fines analíticos específicos. La más importante es la sorpresa inflacionaria, definida como la diferencia entre la inflación observada y la expectativa de inflación formada previamente por los agentes. Esta variable permite identificar innovaciones inflacionarias no anticipadas y constituye el insumo central en la estimación del modelo de parámetros variantes en el tiempo.
+
+Asimismo, se construyen variables asociadas a la brecha entre la inflación observada y la meta oficial, así como indicadores que distinguen episodios en los que la inflación se ubica por encima o por debajo del rango meta. Estas variables permiten evaluar posibles respuestas asimétricas de las expectativas y profundizar en la medición del anclaje.
+
+### Transformaciones y uso de las variables en las distintas especificaciones
+
+No todas las variables definidas en esta sección ingresan simultáneamente en todas las especificaciones econométricas. Algunas se emplean en las ecuaciones base de determinantes de expectativas, otras en las regresiones *rolling*, y otras exclusivamente en el modelo TVP estimado mediante filtro de Kalman. Asimismo, según los requerimientos de cada ejercicio, ciertas variables se incorporan en niveles, rezagos, primeras diferencias o tasas de variación interanual. La @tbl-variables resume de manera sistemática la definición conceptual y operativa de cada variable, así como su unidad de medida, frecuencia y fuente de información.
+
+```{r}
+#| label: tbl-variables
+#| tbl-cap: "Definición conceptual y operativa de las variables utilizadas en el estudio"
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tibble)
+library(knitr)
+
+tabla_variables <- tribble(
+  ~`Tipo de variable`, ~Variable, ~`Definición conceptual`, ~`Definición operativa`, ~Unidad, ~Frecuencia, ~Fuente,
+  
+  "Dependiente",
+  "Expectativa de inflación a 24 meses",
+  "Percepción de los agentes económicos sobre la inflación esperada en un horizonte de mediano plazo; se utiliza como indicador central del grado de anclaje de las expectativas.",
+  "Serie de expectativa interanual de inflación a 24 meses, denotada como `exp_inf_24m` o `exp_24`. En algunas especificaciones también se utiliza su variación mensual (`d_exp24`).",
+  "Porcentaje",
+  "Mensual",
+  "Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Inflación observada en Guatemala",
+  "Variación en el nivel general de precios de la economía; refleja la inflación efectiva que enfrentan los agentes.",
+  "Variación interanual del índice de precios al consumidor, usualmente denotada como `infl_gt`. En algunas especificaciones se utiliza contemporánea y en otras con un rezago (`infl_gt_lag1`).",
+  "Porcentaje",
+  "Mensual",
+  "INE / Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Rezago de la expectativa de inflación a 24 meses",
+  "Captura la persistencia en el proceso de formación de expectativas inflacionarias.",
+  "Primer rezago de la expectativa a 24 meses: `exp24_lag1 = lag(exp_24, 1)`.",
+  "Porcentaje",
+  "Mensual",
+  "Elaboración propia con datos del Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Tasa de política monetaria",
+  "Instrumento operativo de la política monetaria del banco central; su evolución puede influir sobre la formación de expectativas.",
+  "Tasa líder o tasa de política monetaria. Se utiliza en nivel o en variación mensual, por ejemplo: `d_tasa_pol = tasa_pol_t - tasa_pol_{t-1}`, con rezagos según la especificación.",
+  "Porcentaje / puntos porcentuales",
+  "Mensual",
+  "Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Índice Mensual de Actividad Económica (IMAE)",
+  "Indicador de la evolución de la actividad económica agregada; se usa como aproximación del ciclo económico.",
+  "Serie del IMAE, empleada en nivel, variación o con rezagos, según la especificación. En algunos modelos se incorpora como `imae_lag2`.",
+  "Índice / porcentaje",
+  "Mensual",
+  "Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Tipo de cambio nominal",
+  "Precio de la moneda extranjera en términos de moneda nacional; puede afectar expectativas por mecanismos de traspaso cambiario a precios.",
+  "Tipo de cambio de referencia promedio mensual (`fx`). En algunas especificaciones se transforma como depreciación interanual: `tc_yoy = 100[ln(fx_t)-ln(fx_{t-12})]`.",
+  "Quetzales por dólar / porcentaje",
+  "Mensual",
+  "Banco de Guatemala",
+  
+  "Explicativa interna",
+  "Déficit fiscal",
+  "Resultado de las finanzas públicas que puede influir sobre las expectativas si los agentes anticipan presiones macroeconómicas futuras.",
+  "Balance fiscal expresado como proporción del PIB (`deficit_pct_pib`) o serie mensual interpolada/benchmarkeada, según disponibilidad.",
+  "Porcentaje del PIB",
+  "Mensual / trimestral base",
+  "Ministerio de Finanzas Públicas / Banco de Guatemala / elaboración propia",
+  
+  "Explicativa externa",
+  "Inflación de Estados Unidos",
+  "Variación del nivel general de precios en la economía estadounidense; aproxima presiones inflacionarias externas relevantes para Guatemala.",
+  "Variación interanual del IPC de Estados Unidos (`inf_usa`) o cambio mensual de dicha inflación (`d_infl_us`).",
+  "Porcentaje",
+  "Mensual",
+  "U.S. Bureau of Labor Statistics / FRED",
+  
+  "Explicativa externa",
+  "Tasa de fondos federales",
+  "Principal tasa de referencia de la política monetaria de Estados Unidos; recoge condiciones financieras internacionales.",
+  "Effective Federal Funds Rate (`ff_rates` o `effr`), en nivel o en primera diferencia: `d_effr = effr_t - effr_{t-1}`.",
+  "Porcentaje / puntos porcentuales",
+  "Mensual",
+  "FRED / Reserva Federal",
+  
+  "Explicativa externa",
+  "Precio internacional del petróleo",
+  "Precio de un insumo estratégico con incidencia potencial sobre costos y precios internos.",
+  "Precio del barril WTI (`wti_usd_bbl`). En algunos modelos se utiliza como variación interanual: `oil_yoy = 100[ln(oil_t)-ln(oil_{t-12})]`.",
+  "USD por barril / porcentaje",
+  "Mensual",
+  "FRED / U.S. Energy Information Administration",
+  
+  "Construida",
+  "Expectativa de inflación a 12 meses",
+  "Previsión de los agentes sobre la inflación esperada a un horizonte de corto plazo; sirve como referencia para construir sorpresas inflacionarias.",
+  "Serie de expectativa interanual a 12 meses, denotada como `exp_inf_12m` o `exp_12`.",
+  "Porcentaje",
+  "Mensual",
+  "Banco de Guatemala",
+  
+  "Construida",
+  "Sorpresa inflacionaria",
+  "Innovación no anticipada en la inflación observada respecto de lo que esperaban previamente los agentes.",
+  "Diferencia entre inflación observada y expectativa previa de inflación, por ejemplo: `shock_inf_t = infl_gt_t - exp_inf_12m_{t-1}`.",
+  "Puntos porcentuales",
+  "Mensual",
+  "Elaboración propia con datos del Banco de Guatemala e INE",
+  
+  "Construida",
+  "Brecha respecto a la meta de inflación",
+  "Distancia entre la inflación observada y el objetivo oficial del banco central; permite evaluar desviaciones respecto del ancla nominal.",
+  "Diferencia entre inflación observada y meta central de inflación; puede construirse también respecto al rango meta.",
+  "Puntos porcentuales",
+  "Mensual",
+  "Elaboración propia con datos del Banco de Guatemala e INE",
+  
+  "Construida",
+  "Variables de asimetría respecto al rango meta",
+  "Permiten identificar si las expectativas reaccionan de forma distinta cuando la inflación se ubica por encima o por debajo del rango meta.",
+  "Variables construidas como `gap_meta_pos`, `gap_meta_neg`, `sobre_banda`, `bajo_banda`, `gap_sobre_banda` y `gap_bajo_banda`, según la especificación.",
+  "Puntos porcentuales / variable dicotómica",
+  "Mensual",
+  "Elaboración propia con datos del Banco de Guatemala e INE"
+)
+
+kable(
+  tabla_variables,
+  format = "latex",
+  booktabs = TRUE,
+  longtable = TRUE,
+  align = c("l", "l", "l", "l", "l", "l", "l")
+)
+
+```

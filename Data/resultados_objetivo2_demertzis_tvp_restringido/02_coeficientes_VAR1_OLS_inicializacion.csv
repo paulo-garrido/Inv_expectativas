@@ -1,0 +1,7 @@
+ecuacion,parametro,estimacion
+Inflación,(Intercept),0.2961636298995977
+Inflación,inflacion_lag1,0.9455722819098518
+Inflación,expectativa_lag1,-0.01613087685048106
+Expectativa 24m,(Intercept),0.30926817101596693
+Expectativa 24m,inflacion_lag1,0.019879977481071225
+Expectativa 24m,expectativa_lag1,0.9124607871862567

@@ -1,0 +1,14 @@
+FASE 1: MEDICION PRELIMINAR DEL ANCLAJE DE EXPECTATIVAS
+-------------------------------------------------------
+Observaciones utilizadas: 158
+Ventana rolling: 60 meses
+
+Interpretacion economica:
+- Menor coeficiente de exp_12 sobre exp_24 sugiere menor pass-through de expectativas de corto a mediano plazo.
+- Menor coeficiente de inflacion observada sugiere menor sensibilidad adaptativa.
+- Menor coeficiente del tipo de cambio sugiere menor contaminacion del horizonte de 24 meses por shocks cambiarios.
+- El indice_anclaje aumenta cuando cae la sensibilidad de exp_24 a esas variables.
+
+Proximo paso sugerido:
+- Definir periodos de anclaje debil / fuerte.
+- Estimar un VAR pequeno para comparar persistencia e impulso-respuesta.

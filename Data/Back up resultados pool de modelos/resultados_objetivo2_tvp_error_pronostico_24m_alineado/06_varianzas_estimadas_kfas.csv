@@ -1,0 +1,5 @@
+modelo,parametro,estimacion,interpretacion
+Coeficiente beta constante,H,0.029082820611459233,Varianza del error de observación
+Coeficiente beta_t variante,H,0.02908188366964952,Varianza del error de observación
+Coeficiente beta_t variante,Q_beta,7.280454187971796e-9,Varianza de la innovación mensual de beta_t
+Coeficiente beta_t variante,Q_beta / H,2.503432814281502e-7,Variación de beta_t relativa al ruido de observación

@@ -1,0 +1,174 @@
+---
+title: "Ideas generales de tesis"
+format:
+  pdf:
+    pdf-engine: xelatex
+    toc: true
+    number-sections: true
+mainfont: "Times New Roman"
+fontsize: 12pt
+linestretch: 1.2
+geometry: margin=1in
+editor: visual
+---
+
+# Título de la investigación
+
+**Evolución del anclaje de las expectativas de inflación en Guatemala bajo el Esquema de Metas Explícitas de Inflación: un análisis econométrico dinámico**
+
+# Ideas de abordaje metodológico
+
+## Medición del anclaje de expectativas
+
+### a. Rolling regressions {.unnumbered}
+
+**Idea central**\
+Si las expectativas están más ancladas, deberían ser menos sensibles a la inflación pasada, a desviaciones recientes y a shocks transitorios.
+
+**Referencias empíricas de apoyo**
+
+-   *Mariscal, R., Powell, A., & Tavella, P. (2014). On the Credibility of Inflation Targeting Regimes in Latin America.*
+
+    **Nota:** El paper usa datos mensuales de expectativas e inflación para varios países con metas de inflación, incluyendo Guatemala, y estima regresiones rolling para ver cómo cambia en el tiempo el efecto de la inflación corriente sobre las expectativas de mediano plazo.
+
+-   *Paloviita, M., et al. (2016). Anchoring of Inflation Expectations in the Euro Area: Recent Evidence Based on Survey Data.*
+
+    **Nota:** Este paper del BCE usa datos de encuestas y señala expresamente que las estimaciones rolling permiten observar con mayor detalle la evolución de la formación de expectativas de corto, mediano y largo plazo.
+
+### b. Modelos con parámetros variables en el tiempo {.unnumbered}
+
+**Idea central**\
+El anclaje no se mide como un rasgo fijo, sino como una relación que puede fortalecerse o debilitarse a lo largo del tiempo.
+
+**Referencia empírica de apoyo**
+
+-   *Strohsal, T. The Time-Varying Degree of Inflation Expectations Anchoring.*
+
+    **Nota:** El paper propone explícitamente un modelo de parámetros variantes en el tiempo para analizar cómo cambia el grado de anclaje de las expectativas de inflación.
+
+### c. VAR estructural con cambio temporal {.unnumbered}
+
+**Idea central**\
+Permitiría analizar si la respuesta de las expectativas a shocks macroeconómicos cambia a lo largo del tiempo.
+
+**Referencia empírica de apoyo**
+
+-   *Barnett, A., Groen, J. J., & Mumtaz, H. Time-varying inflation expectations and economic fluctuations in the United Kingdom: a structural VAR analysis.*
+
+# Análisis de los modelos provenientes de las fuentes de información
+
+## Modelos con parámetros variables en el tiempo (TPV)
+
+### Strohsal, T. *The Time-Varying Degree of Inflation Expectations Anchoring*
+
+#### Idea general {.unnumbered}
+
+El trabajo analiza si el grado de anclaje de las expectativas de inflación de largo plazo en Estados Unidos ha permanecido estable o si, por el contrario, se ha debilitado y recuperado a lo largo del tiempo, particularmente alrededor de la crisis financiera global. Su punto de partida es que el anclaje no debe tratarse como una condición fija, sino como un fenómeno dinámico que puede modificarse gradualmente.
+
+#### Hipótesis {.unnumbered}
+
+La hipótesis central del estudio es que, si las expectativas de inflación de largo plazo están bien ancladas, estas deberían depender principalmente de la meta de inflación del banco central y no reaccionar de forma importante ni a la inflación pasada ni a las expectativas de corto plazo. En consecuencia, una mayor sensibilidad de las expectativas de largo plazo frente a esas variables sería indicio de desanclaje, mientras que una reducción de dicha sensibilidad reflejaría un proceso de reanclaje.
+
+#### ¿Para qué usaron TVP? {.unnumbered}
+
+El modelo de parámetros variantes en el tiempo (TVP) se utiliza para capturar la posibilidad de que el grado de anclaje cambie de forma continua y no mediante rupturas discretas. En otras palabras, el enfoque TVP permite identificar si la sensibilidad de las expectativas de largo plazo frente a la inflación observada y a las expectativas de corto plazo se fortalece o se debilita gradualmente en distintos momentos del tiempo. Esto resulta especialmente útil en contextos de crisis o de cambios en la credibilidad de la política monetaria.
+
+La especificación base propuesta para medir el anclaje de expectativas es la siguiente:
+
+$$
+Exp^{24}_t = \beta_{0,t} + \beta_{1,t}\,\pi_t + \beta_{2,t}\,GapMeta_t + \beta_{3,t}\,TPM_t + \beta_{4,t}\,TC_t + \beta_{5,t}\,Z_t + \varepsilon_t
+$$
+
+donde:
+
+-   $Exp^{24}_t$: representa la expectativa de inflación a 24 meses.
+-   $\pi_t$: representa la inflación observada.
+-   $GapMeta_t$: representa la desviación de la inflación respecto de la meta.
+-   $TPM_t$: representa la tasa de política monetaria.
+-   $TC_t$: representa el tipo de cambio nominal.
+-   $Z_t$: representa un vector de variables de control, tales como inflación externa, tasa de fondos federales o precio del petróleo.
+-   $\varepsilon_t$: es el término de error.
+
+Los coeficientes evolucionan en el tiempo según un proceso estocástico:
+
+$$
+\beta_{j,t} = \beta_{j,t-1} + u_{j,t}, \qquad j = 0,1,\dots,5
+$$
+
+donde $u_{j,t}$ representa la innovación asociada a cada parámetro variante.
+
+### Barnett, A., Groen, J. J., & Mumtaz, H. *Time-varying inflation expectations and economic fluctuations in the United Kingdom: a structural VAR analysis*
+
+#### Idea general {.unnumbered}
+
+El trabajo examina cómo ha evolucionado, en el Reino Unido, la interacción entre las expectativas de inflación y las variables macroeconómicas nominales y reales a lo largo del tiempo. En particular, busca identificar si los efectos de distintos choques estructurales sobre la economía y sobre las expectativas de inflación han cambiado entre distintos períodos históricos, especialmente entre las décadas de alta inflación y los regímenes posteriores de mayor estabilidad monetaria.
+
+#### Hipótesis {.unnumbered}
+
+La hipótesis central del estudio es que la relación entre expectativas de inflación, inflación efectiva y actividad económica no ha sido estable en el tiempo. En consecuencia, los autores plantean que los choques de expectativas inflacionarias pudieron haber tenido efectos importantes sobre la inflación observada y la actividad real en ciertos períodos ---particularmente en los años setenta---, pero que dichos efectos se habrían reducido en etapas posteriores de mayor credibilidad y estabilidad monetaria.
+
+#### ¿Para qué usaron TVP? {.unnumbered}
+
+En rigor, el trabajo no utiliza una TVP regression uniecuacional, sino un **structural VAR con cambio en el tiempo mediante Markov-switching**. El objetivo de introducir variación temporal es permitir que la transmisión de los choques estructurales y la relación entre expectativas e inflación cambien entre regímenes, en lugar de asumir una dinámica fija para todo el período muestral. De esta manera, el modelo permite analizar si el papel macroeconómico de las expectativas de inflación fue más fuerte en algunos contextos históricos y más débil en otros.
+
+#### Modelo propuesto {.unnumbered}
+
+La lógica general del modelo puede resumirse en un sistema VAR estructural en el que las variables macroeconómicas y las expectativas de inflación responden a distintos choques estructurales, permitiendo que esos efectos cambien en el tiempo según el régimen vigente. En forma esquemática:
+
+$$
+Y_t = A_{s_t,1}Y_{t-1} + A_{s_t,2}Y_{t-2} + \cdots + A_{s_t,p}Y_{t-p} + u_t
+$$
+
+donde:
+
+-   $Y_t$: representa el vector de variables macroeconómicas, incluyendo expectativas de inflación.
+-   $A_{s_t,j}$: son matrices de coeficientes que dependen del régimen $s_t$.
+-   $s_t$: representa el estado o régimen macroeconómico vigente en cada momento.
+-   $u_t$: representa el vector de innovaciones estructurales.
+
+La variación temporal no se modela como una caminata aleatoria de coeficientes, sino como cambios entre regímenes, identificados mediante un esquema de **Markov-switching** y restricciones de signo.
+
+#### Conclusiones {.unnumbered}
+
+Los resultados sugieren que los choques de expectativas de inflación tuvieron efectos importantes sobre la inflación observada en el Reino Unido durante los años setenta, pero que ese impacto se redujo considerablemente hacia el final de la muestra. En otras palabras, el estudio encuentra evidencia de que la influencia macroeconómica de las expectativas de inflación no ha sido constante, sino que ha disminuido en períodos de mayor estabilidad nominal. Esto refuerza la idea de que la credibilidad del régimen monetario altera la manera en que las expectativas se transmiten hacia la inflación efectiva y la actividad económica.
+
+### World Bank / IMF. *Inflation Expectations: Review and Evidence* (Chapter 4)
+
+#### Idea general {.unnumbered}
+
+El capítulo examina la evolución y los determinantes del anclaje de las expectativas de inflación en economías avanzadas y en economías emergentes y en desarrollo. Su interés principal es comparar qué tan sensibles son las expectativas de largo plazo frente a shocks inflacionarios domésticos y globales, y establecer si dicha sensibilidad ha cambiado a lo largo del tiempo. A partir de ello, el estudio discute el papel del régimen de metas de inflación, la transparencia del banco central y otras condiciones macroeconómicas en el fortalecimiento del anclaje.
+
+#### Hipótesis {.unnumbered}
+
+La hipótesis central es que, si las expectativas de inflación están bien ancladas, deberían reaccionar poco ante noticias o shocks inflacionarios, ya que los agentes asumirían que perturbaciones transitorias no alteran la inflación de largo plazo. En consecuencia, una menor sensibilidad de las expectativas de largo plazo frente a shocks domésticos y globales es interpretada como evidencia de un mayor grado de anclaje.
+
+#### ¿Para qué usaron TVP? {.unnumbered}
+
+El enfoque de **parámetros variantes en el tiempo (TVP)** se utiliza para medir cómo cambia, a lo largo del tiempo, la sensibilidad de las expectativas de inflación de largo plazo frente a shocks inflacionarios. En lugar de asumir que el grado de anclaje es constante en toda la muestra, el modelo permite rastrear su evolución temporal y distinguir si las expectativas se han vuelto más o menos sensibles en distintos períodos y grupos de países.
+
+#### Modelo propuesto {.unnumbered}
+
+La lógica empírica del capítulo puede resumirse en una ecuación del tipo:
+
+$$
+\Delta Exp^{LT}_t = \beta_t Shock_t + \varepsilon_t
+$$
+
+donde:
+
+-   $\Delta Exp^{LT}_t$: representa el cambio en las expectativas de inflación de largo plazo.
+-   $Shock_t$: representa un shock inflacionario, que puede ser doméstico o global.
+-   $\beta_t$: representa la sensibilidad cambiante en el tiempo de las expectativas frente al shock.
+-   $\varepsilon_t$: es el término de error.
+
+La dinámica temporal del parámetro se modela como:
+
+$$
+\beta_t = \beta_{t-1} + u_t
+$$
+
+donde $u_t$ representa la innovación asociada a la evolución del parámetro. En este marco, valores más bajos de $\beta_t$ indican un mayor grado de anclaje.
+
+#### Conclusiones {.unnumbered}
+
+El capítulo encuentra que las expectativas de inflación de largo plazo están, en promedio, mejor ancladas en economías avanzadas que en economías emergentes y en desarrollo. Sin embargo, también muestra que el anclaje ha mejorado en ambos grupos durante las últimas décadas. Asimismo, documenta que las expectativas en economías emergentes son más sensibles tanto a shocks domésticos como globales, aunque dicha sensibilidad ha disminuido con el tiempo. Finalmente, encuentra que la presencia de metas de inflación, una mayor transparencia del banco central, una menor deuda pública y una mayor apertura comercial se asocian con un mejor anclaje de expectativas.

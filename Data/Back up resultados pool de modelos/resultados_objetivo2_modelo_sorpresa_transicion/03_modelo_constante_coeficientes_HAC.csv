@@ -1,0 +1,3 @@
+modelo,parametro,estimacion,error_estandar_hac,estadistico_t,p_valor,lag_newey_west
+Anclaje constante HAC,(Intercept),0.28296262166635006,0.055842974316463755,5.0671122935320865,9.781494932731786e-7,4
+Anclaje constante HAC,x_anclaje,0.8414412642280118,0.04057073839625225,20.740102287754777,4.865693524875652e-50,4

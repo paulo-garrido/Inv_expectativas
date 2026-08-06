@@ -1,0 +1,37 @@
+
+======================================================================
+COMPARACIÓN: SENSIBILIDAD CONSTANTE VS. VARIANTE EN EL TIEMPO
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra: 2011-01 a 2026-06
+Observaciones: 186
+
+MODELO CON SENSIBILIDAD CONSTANTE
+Convergencia: 0
+Log-verosimilitud: 49.85800
+alpha: -0.00259
+rho: -0.28166 | p = 4.7633e-05
+beta constante: 0.04014 | p = 2.7455e-05
+H: 3.1629e-02
+
+MODELO CON SENSIBILIDAD VARIANTE
+Convergencia: 0
+Log-verosimilitud: 55.49316
+alpha: 0.01599
+rho: -0.31517 | p = 2.3124e-06
+H: 2.8785e-02
+Q_beta: 4.3932e-05
+Q_beta/H: 1.5262e-03
+Beta inicial/final: 0.11959 / 0.01764
+
+COMPARACIÓN FORMAL
+LR: 11.27033
+p convencional chi2(1): 7.8756e-04
+p mezcla de frontera 50:50: 3.9378e-04
+Mejor AIC: Sensibilidad variante
+Mejor BIC: Sensibilidad variante
+RMSE constante/TVP: 0.26481 / 0.26028
+MAE constante/TVP: 0.15295 / 0.14760
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_constante_vs_tvp_ar1
+======================================================================

@@ -1,0 +1,6 @@
+parametro,estimacion,interpretacion
+H,0.03297000696211156,Varianza del error de observación
+Q_beta,3.572747131581455e-6,Varianza del cambio mensual de beta_t
+Q_beta / H,1.0836355405345171e-4,Cambio de beta_t relativo al ruido de observación
+sqrt(H),0.18157644935979875,Desviación estándar del error de observación
+sqrt(Q_beta),0.0018901711910780609,Desviación estándar de la innovación mensual de beta_t

@@ -1,0 +1,2 @@
+replicas_solicitadas,replicas_validas,LR_observado,p_valor_bootstrap,ejecutado,nota
+199,0,76.22748546181685,NA,FALSE,Bootstrap no ejecutado. Cambie ejecutar_bootstrap_LR a TRUE.

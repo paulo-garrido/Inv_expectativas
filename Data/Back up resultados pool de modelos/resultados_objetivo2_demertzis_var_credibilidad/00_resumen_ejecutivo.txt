@@ -1,0 +1,53 @@
+
+======================================================================
+DEMERTZIS: VAR Y A PROXY FOR CREDIBILITY - GUATEMALA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra: 2010-01 a 2026-06
+Observaciones: 198
+Expectativa utilizada: exp_inf_24m
+
+VAR(p) CONSTANTE
+Rezagos AIC/BIC/HQ: 3 / 2 / 3
+Rezagos seleccionados: 4
+Criterio: Mayor p-valor residual; ningún orden eliminó autocorrelación al 5%
+H1 p-valor: 1.4077e-11
+H2 p-valor: 0.0000e+00
+H3 p-valor: 1.3024e-01
+H5 correlación residual: 0.06962 | p = 3.3518e-01
+Persistencia inflación: 0.92311
+Persistencia expectativas: 0.94856
+
+PROXY CONSTANTE
+lambda: 0.68510 [0.34766, 1.02254]
+pi estrella: NA [NA, NA]
+Meta promedio de la muestra: 4.15152
+
+TVP-VAR(1)
+Convergencia: 0
+LogLik CP / TVP: -184.44649 / -132.77923
+AIC CP / TVP: 384.89298 / 293.55847
+BIC CP / TVP: 411.15861 / 339.52332
+LR referencial: 103.33451 | p chi2(6) = 5.0513e-20
+Q(a0,a,b,c0,c,d): 2.8273e-01
+
+PROXY DINÁMICA
+lambda promedio: 0.82874
+lambda inicial/final: 0.75341 / 0.88137
+lambda mínimo: 0.75247 en 2010-03
+% meses lambda fuera de [0,1]: 0.00%
+% meses lambda significativamente menor a 1: 100.00%
+pi estrella promedio: 4.56632
+pi estrella inicial/final: 6.39190 / 3.85141
+MAE pi estrella vs meta: 0.45508
+% meses ancla implícita dentro de banda meta: 85.28%
+
+NOTAS DE INTERPRETACIÓN
+1. lambda cercano a 1 implica menor dependencia dinámica de expectativas respecto de inflación pasada.
+2. lambda no está restringido al intervalo [0,1], conforme al artículo.
+3. pi estrella es un ancla implícita estimada; la meta explícita solo se usa como contraste.
+4. El TVP-VAR contiene seis varianzas en frontera bajo H0; el LR es referencial.
+5. La expectativa a 24 meses no equivale a una expectativa de 6-10 años; la interpretación corresponde al horizonte disponible.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_demertzis_var_credibilidad
+======================================================================

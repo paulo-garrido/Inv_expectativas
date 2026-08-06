@@ -1,0 +1,3 @@
+modelo,log_verosimilitud,parametros_contabilizados,AIC,AICc,BIC,nota
+Constante SSM reparametrizado,47.74419477656559,5,-85.48838955313119,-85.15689784042401,-69.33284646885825,lambda y psi constantes; q1=q2=0
+TVP Strohsal reparametrizado,48.20365169722127,7,-82.40730339444254,-81.78160507042018,-59.789543076460426,lambda y psi TVP con covarianza exacta inducida por eta2

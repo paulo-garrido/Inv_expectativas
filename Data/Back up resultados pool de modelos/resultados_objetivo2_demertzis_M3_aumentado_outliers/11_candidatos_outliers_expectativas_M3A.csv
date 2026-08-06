@@ -1,0 +1,2 @@
+indice_modelo,fecha,residuo_estandarizado,abs_residuo,z_robusto,abs_z_robusto,p_bilateral_normal,umbral_bonferroni,criterio_clasico,criterio_robusto,criterio_bonferroni,candidato_formal,JB_sin_observacion,reduccion_JB_al_excluir,ranking
+29,2012-09-01,3.1442658155781698,3.1442658155781698,4.4427366562126664,4.4427366562126664,0.001665041198824163,3.624950019619604,FALSE,TRUE,FALSE,TRUE,0.5800537565073381,5.267494578549618,1

@@ -1,0 +1,2 @@
+hipotesis_nula,estadistico_LR,p_valor_chi2_1_referencial,p_valor_mezcla_frontera_referencial,advertencia
+Q_beta = 0,4.789502426660874e-6,0.9982538364690722,0.4991269182345361,Q_beta se encuentra en la frontera bajo H0. La mezcla 0.5 chi2_0 + 0.5 chi2_1 es referencial; un bootstrap paramétrico es preferible para inferencia definitiva.

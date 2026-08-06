@@ -1,0 +1,5 @@
+definicion_sorpresa,pulso,hipotesis_nula,estadistico_LR,p_valor_chi2_1,p_valor_mezcla_frontera_50_50,conclusion_5pct
+Sorpresa exacta,FALSE,H0: Q_beta = 0,5.253920354135744e-4,0.9817129447875627,0.49085647239378133,No se rechaza H0; evidencia insuficiente de variación temporal
+Sorpresa exacta,TRUE,H0: Q_beta = 0,0.9797934943734816,0.32224979439103646,0.16112489719551823,No se rechaza H0; evidencia insuficiente de variación temporal
+Sorpresa disponible,FALSE,H0: Q_beta = 0,1.9591001513992268,0.1616095883510326,0.0808047941755163,No se rechaza H0; evidencia insuficiente de variación temporal
+Sorpresa disponible,TRUE,H0: Q_beta = 0,1.9942806061994531,0.15789402310076878,0.07894701155038439,No se rechaza H0; evidencia insuficiente de variación temporal

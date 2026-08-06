@@ -1,0 +1,2 @@
+hipotesis_nula,estadistico_LR,p_valor_chi2_1_referencial,p_valor_mezcla_frontera_referencial,advertencia
+Q_lambda = 0,5.775799125473242,0.016248330531092245,0.008124165265546122,Q_lambda está en la frontera bajo H0. Los p-valores son referenciales; un bootstrap paramétrico es preferible para inferencia definitiva.

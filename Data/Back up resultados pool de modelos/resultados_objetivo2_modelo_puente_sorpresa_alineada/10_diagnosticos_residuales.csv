@@ -1,0 +1,41 @@
+definicion_sorpresa,pulso,modelo,diagnostico,rezago,estadistico,grados_libertad,p_valor,conclusion_5pct
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta constante,Ljung-Box,6,6.847074059280901,6,0.3352216561953878,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta constante,Ljung-Box,12,9.955764287029119,12,0.6198415535105526,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta constante,Ljung-Box,18,18.059803022725415,18,0.4517195066542059,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta constante,Ljung-Box,24,19.85743055051765,24,0.7048542309760222,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta constante,Jarque-Bera aproximado,NA,7.449342055471711,2,0.024121034272995934,Se rechaza normalidad
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta TVP,Ljung-Box,6,6.790433577369234,6,0.3406634663147622,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta TVP,Ljung-Box,12,9.897169541474502,12,0.6249815508593779,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta TVP,Ljung-Box,18,18.023899711046063,18,0.45407919194671886,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta TVP,Ljung-Box,24,19.831456574050723,24,0.7063193890673587,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,FALSE,Sorpresa exacta sin pulso - beta TVP,Jarque-Bera aproximado,NA,7.509557941595249,2,0.023405623363788285,Se rechaza normalidad
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta constante,Ljung-Box,6,9.539363634270611,6,0.1454391144373699,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta constante,Ljung-Box,12,12.143755700210647,12,0.43420463405103105,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta constante,Ljung-Box,18,16.942400214453322,18,0.5270685546723166,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta constante,Ljung-Box,24,18.737416057226177,24,0.765844352111229,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta constante,Jarque-Bera aproximado,NA,3.886745536908387,2,0.1432200860679631,No se rechaza normalidad
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta TVP,Ljung-Box,6,6.693468280012586,6,0.35012738568031754,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta TVP,Ljung-Box,12,9.294396263950535,12,0.6776005998569232,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta TVP,Ljung-Box,18,14.370383010757298,18,0.7046469188808021,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta TVP,Ljung-Box,24,16.396383326484738,24,0.8732401997550787,No se rechaza ausencia de autocorrelación
+Sorpresa exacta,TRUE,Sorpresa exacta con pulso - beta TVP,Jarque-Bera aproximado,NA,5.473443551948117,2,0.06478237029594335,No se rechaza normalidad
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta constante,Ljung-Box,6,23.121106173972372,6,7.569151194488644e-4,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta constante,Ljung-Box,12,26.924772562532247,12,0.007922183801565397,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta constante,Ljung-Box,18,32.01467658890445,18,0.021899447155856677,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta constante,Ljung-Box,24,33.74154278631029,24,0.08936834836637253,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta constante,Jarque-Bera aproximado,NA,24.625067358163285,2,4.4950503935434e-6,Se rechaza normalidad
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta TVP,Ljung-Box,6,14.014130796745244,6,0.02947871274436109,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta TVP,Ljung-Box,12,17.689349112380537,12,0.12545366343258924,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta TVP,Ljung-Box,18,23.645435911242124,18,0.16699040728993264,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta TVP,Ljung-Box,24,27.007132146609756,24,0.3041208159858101,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,FALSE,Sorpresa disponible sin pulso - beta TVP,Jarque-Bera aproximado,NA,47.327900277249896,2,5.282956500630012e-11,Se rechaza normalidad
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta constante,Ljung-Box,6,20.72684238226504,6,0.002053817847514794,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta constante,Ljung-Box,12,23.89579772468525,12,0.02101501071228351,Se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta constante,Ljung-Box,18,27.79995915184943,18,0.0651653448475451,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta constante,Ljung-Box,24,29.573581804379746,24,0.19928886960597547,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta constante,Jarque-Bera aproximado,NA,1.620226248302297,2,0.44480774487815145,No se rechaza normalidad
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta TVP,Ljung-Box,6,10.874740112050254,6,0.09232574873687005,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta TVP,Ljung-Box,12,12.566390203821229,12,0.40132827118889614,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta TVP,Ljung-Box,18,15.775873744387145,18,0.6081857243622621,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta TVP,Ljung-Box,24,18.22481563158767,24,0.7919683744423052,No se rechaza ausencia de autocorrelación
+Sorpresa disponible,TRUE,Sorpresa disponible con pulso - beta TVP,Jarque-Bera aproximado,NA,5.322435899515282,2,0.06986308018453022,No se rechaza normalidad

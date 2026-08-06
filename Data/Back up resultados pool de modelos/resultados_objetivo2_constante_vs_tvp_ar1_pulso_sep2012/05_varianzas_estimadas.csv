@@ -1,0 +1,3 @@
+modelo,H,Q_beta,Q_beta_sobre_H,desviacion_estandar_observacion,desviacion_estandar_innovacion_beta,razon_Q_sobre_limite_inferior,Q_beta_en_limite_numerico
+Constante + pulso sep-2012,0.029972181104313055,0,0,0.17312475589676093,0,NA,FALSE
+TVP + pulso sep-2012,0.026560415489242425,5.014303911716721e-5,0.0018878860964157843,0.16297366501751878,0.0070811749813973115,50143039.11716721,FALSE

@@ -1,0 +1,29 @@
+especificacion,modelo,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+Núcleo Strohsal,Constante SSM,Ljung-Box,1,14.766006866139763,1.2170989225035456e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,2,15.294495079307941,4.7735622653022336e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,5,20.204286497964347,0.0011440729213152423,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,10,30.07788903014227,8.318673259106735e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,12,35.112691678609025,4.4934174898991763e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,18,48.55832852064472,1.2431442095972578e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,Constante SSM,Ljung-Box,24,52.3031843946006,7.142062572381702e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,1,15.127648332120891,1.0048087108049941e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,2,15.316603636019025,4.721084565210143e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,5,20.952420181339107,8.269984464462921e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,10,31.329873977491744,5.174570113389843e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,12,37.51786803404906,1.8405427769618843e-4,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,18,50.648702524869464,6.018770353155567e-5,Se rechaza ausencia de autocorrelación
+Núcleo Strohsal,TVP Strohsal,Ljung-Box,24,54.99156686666099,3.1385957294693956e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,1,13.749616730343735,2.0886343183890155e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,2,14.98541253251737,5.571331677568514e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,5,19.842382836194354,0.0013377569575481196,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,10,32.75712030122593,2.991985851911183e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,12,37.91369958031059,1.586293803238492e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,18,52.34904406050039,3.306541394232365e-5,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,Constante SSM,Ljung-Box,24,57.50295088036647,1.4258367751096568e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,1,13.776842828503545,2.0585810429207818e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,2,14.528795784869072,7.000226317063207e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,5,20.114117524881866,0.0011895787417371961,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,10,33.70298727696675,2.0735470144384038e-4,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,12,39.88593590451508,7.51115419471704e-5,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,18,54.00855030115014,1.8294847029642902e-5,Se rechaza ausencia de autocorrelación
+Strohsal + tipo de cambio,TVP Strohsal,Ljung-Box,24,59.712672581729485,7.012270005324339e-5,Se rechaza ausencia de autocorrelación

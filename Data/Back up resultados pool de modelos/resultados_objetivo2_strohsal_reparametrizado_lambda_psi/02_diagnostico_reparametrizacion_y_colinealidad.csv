@@ -1,0 +1,5 @@
+indicador,valor
+Error máximo identidad x_original = x_lambda + x_psi,4.440892098500626e-16
+Correlación entre x_lambda y x_psi,-0.9527943677839461
+VIF aproximado con dos regresores,10.847999780677549
+Número de condición de regresores estandarizados,6.431782470424303

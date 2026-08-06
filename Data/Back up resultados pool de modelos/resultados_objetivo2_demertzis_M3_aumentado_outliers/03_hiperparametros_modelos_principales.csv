@@ -1,0 +1,5 @@
+codigo_modelo,descripcion,p_inflacion,numero_pulsos,H_inflacion,H_expectativa,convergencia,log_verosimilitud,Q_a0,Q_a_pi1,Q_a_pi2,Q_a_pi3,Q_a_pi4,Q_b_e1,Q_b_e2,Q_b_e3,Q_b_e4,Q_c0,Q_c,Q_d
+M0A,Sistema aumentado con 4 rezagos en inflación; todos los coeficientes constantes,4,0,0.28599295811157044,0.03560908647851793,0,-124.40318372451117,0,0,0,0,0,0,0,0,0,0,0,0
+M3B,M3 original sobre la muestra común: inflación con un rezago; c0_t y c_t variantes,1,0,0.32644631518541006,0.019034513154298757,0,-109.25043915109131,0,0,NA,NA,NA,0,NA,NA,NA,0.0028262916464314803,2.766366205169253e-5,0
+M3A,Candidato M3 aumentado: inflación con 4 rezagos constantes; c0_t y c_t variantes; d constante,4,0,0.2859929538243087,0.0190345087352415,0,-101.15852463711784,0,0,0,0,0,0,0,0,0,0.0028262928807084343,2.7663681149048985e-5,0
+M3AD,M3 aumentado permitiendo además d_t variante,4,0,0.28599294213440063,2.5297335943899604e-8,0,-99.00801283956339,0,0,0,0,0,0,0,0,0,0.0027809306849748126,1.000000000000001e-12,0.0013289968034522948

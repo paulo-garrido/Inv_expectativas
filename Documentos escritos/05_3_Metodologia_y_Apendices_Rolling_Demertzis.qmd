@@ -1,0 +1,588 @@
+<!--
+===============================================================================
+MAPA EDITORIAL — NO SE IMPRIME EN EL PDF
+===============================================================================
+
+CUERPO PRINCIPAL DEL WORKING PAPER
+---------------------------------
+Conservar:
+1. Motivación económica de las rolling regressions.
+2. Ecuación principal.
+3. Definición del coeficiente de interés.
+4. Ventana principal, robustez e inferencia HAC.
+5. Sistema TVP–VAR restringido de Demertzis.
+6. Definición e interpretación de lambda_t y pi_t^*.
+7. Un párrafo breve sobre estimación y validación.
+
+TRASLADAR A LOS APÉNDICES
+-------------------------
+1. Construcción detallada de cada ventana móvil.
+2. Justificación completa de las ventanas de 36 y 30 meses.
+3. Fórmula y configuración de Newey–West.
+4. Tablas completas de coeficientes y diagnósticos por ventana.
+5. Representación matricial del TVP–VAR.
+6. Ecuaciones completas del filtro y suavizador de Kalman.
+7. Inicialización, múltiples valores iniciales y convergencia.
+8. Razón de verosimilitud y bootstrap paramétrico.
+9. Comparación M0–M4.
+10. M3 aumentado, pulso de septiembre de 2012 y leave-one-out.
+11. Pruebas con medidas alternativas de inflación.
+12. Diagnósticos residuales y estabilidad del sistema.
+
+IMPORTANTE
+----------
+- Evitar encabezados ####, porque la plantilla LaTeX con titlesec no define
+  el comando \paragraph.
+- Ajustar las claves bibliográficas a los nombres utilizados en referencias.bib.
+- Este archivo contiene tanto el texto del cuerpo como el de los apéndices.
+===============================================================================
+-->
+
+
+<!-- ======================================================================= -->
+<!-- PARTE I. TEXTO PARA EL CUERPO PRINCIPAL DEL WORKING PAPER              -->
+<!-- Ubicación: sección "Medición del anclaje de expectativas"              -->
+<!-- ======================================================================= -->
+
+### Medición dinámica del anclaje de las expectativas
+
+La medición econométrica del anclaje se desarrolla mediante dos estrategias complementarias. En primer lugar, se estiman regresiones móviles para obtener una representación transparente de los cambios que experimenta la sensibilidad de las expectativas a 24 meses frente a la inflación observada. En segundo lugar, se utiliza un VAR bivariado con parámetros variantes en el tiempo, adaptado de @demertzis_marcellino_viegi2012, con el propósito de construir una proxy dinámica de credibilidad y estimar el nivel del ancla inflacionaria implícita. La primera aproximación ofrece una lectura descriptiva de la evolución de los coeficientes; la segunda permite representar esa evolución de forma continua y relacionarla con una medida estructurada del grado de credibilidad.
+
+**Regresiones móviles**
+
+Siguiendo la lógica empírica de @ehrmann2015 y @lyziak_paloviita2017, se estiman regresiones móviles para evaluar si la transmisión de la inflación observada hacia las expectativas a 24 meses se ha modificado durante el período de estudio. Las variables se expresan como desviaciones respecto de la meta central vigente, de modo que:
+
+$$
+\widetilde e_t^{24}
+=
+e_t^{24}-\pi_t^{m},
+\qquad
+\widetilde\pi_t
+=
+\pi_t-\pi_t^{m},
+$$ {#eq-brechas-rolling}
+
+donde $e_t^{24}$ representa la expectativa de inflación a 24 meses, $\pi_t$ es la inflación observada y $\pi_t^{m}$ denota la meta central de inflación vigente en el período $t$. Esta transformación permite distinguir los cambios de sensibilidad de las modificaciones discretas que experimentó la meta al inicio de la muestra.
+
+Para cada ventana móvil $\mathcal W_t$, la especificación estimada es:
+
+$$
+\widetilde e_{\tau}^{24}
+=
+\alpha_t
++
+\rho_t\widetilde e_{\tau-1}^{24}
++
+\beta_t\widetilde\pi_{\tau-1}
++
+\gamma_t q_{\tau-1}
++
+u_{\tau},
+\qquad
+\tau\in\mathcal W_t,
+$$ {#eq-rolling-principal}
+
+donde $\alpha_t$ es el intercepto de la ventana que concluye en $t$; $\rho_t$ recoge la persistencia de la desviación de las expectativas respecto de la meta; $\beta_t$ mide la sensibilidad de las expectativas a la brecha inflacionaria del mes anterior; y $q_{t-1}$ representa la depreciación cambiaria rezagada. La inclusión del tipo de cambio responde a la condición de economía pequeña y abierta de Guatemala, en la cual los movimientos cambiarios pueden afectar simultáneamente la inflación observada y la formación de expectativas.
+
+El parámetro central es $\beta_t$. Un valor positivo indica que una inflación situada por encima de la meta tiende a trasladarse hacia expectativas a 24 meses también superiores al objetivo; por consiguiente, una reducción persistente de su magnitud se interpreta como evidencia compatible con un fortalecimiento del anclaje. La variable dependiente rezagada permite separar ese traspaso de la inercia propia de las expectativas.
+
+La estimación principal utiliza ventanas de 36 observaciones mensuales. Esta longitud representa un compromiso entre dos objetivos: disponer de suficientes grados de libertad y permitir que los coeficientes respondan a cambios relativamente recientes. Como prueba de robustez, el ejercicio se repite con ventanas de 30 meses. Los errores estándar se calculan mediante la matriz heterocedástica y autocorrelacionada consistente de @newey_west1987, empleando tres rezagos mensuales. Cada estimación se asigna al último mes de la ventana correspondiente; por ello, las trayectorias obtenidas deben interpretarse como una representación suavizada de la sensibilidad y no como una secuencia de coeficientes estadísticamente independientes.
+
+**Modelo TVP–VAR restringido y proxy de credibilidad**
+
+Las regresiones móviles mantienen constantes los coeficientes dentro de cada ventana y pueden reaccionar de manera discreta cuando una observación entra o sale de ella. Para superar esa limitación, se adapta el enfoque de @demertzis_marcellino_viegi2012, quienes modelan conjuntamente la inflación y las expectativas mediante un VAR con parámetros variantes en el tiempo. La aplicación para Guatemala utiliza el siguiente sistema bivariado:
+
+$$
+\pi_t
+=
+a_0
++
+a\pi_{t-1}
++
+b e_{t-1}^{24}
++
+\varepsilon_{\pi,t},
+$$ {#eq-m3-inflacion}
+
+$$
+e_t^{24}
+=
+c_{0t}
++
+c_t\pi_{t-1}
++
+d e_{t-1}^{24}
++
+\varepsilon_{e,t}.
+$$ {#eq-m3-expectativas}
+
+La primera ecuación describe la dinámica auxiliar de la inflación; la segunda constituye el núcleo de la medición de credibilidad. En ella, $c_t$ mide la sensibilidad de las expectativas a 24 meses frente a la inflación pasada, $d$ recoge su persistencia y $c_{0t}$ representa el componente de largo plazo no explicado por esas dos fuentes de información.
+
+A diferencia de la formulación completamente flexible, la especificación principal restringe los parámetros de la ecuación de inflación y el coeficiente $d$ a permanecer constantes; únicamente $c_{0t}$ y $c_t$ evolucionan en el tiempo:
+
+$$
+c_{0t}
+=
+c_{0,t-1}
++
+\eta_{0,t},
+\qquad
+c_t
+=
+c_{t-1}
++
+\eta_{c,t},
+$$ {#eq-transiciones-m3}
+
+con:
+
+$$
+\eta_{0,t}\sim\mathcal N(0,Q_{c_0}),
+\qquad
+\eta_{c,t}\sim\mathcal N(0,Q_c).
+$$ {#eq-varianzas-m3}
+
+Esta restricción concentra la variación temporal en los parámetros que determinan directamente la medición de credibilidad, preserva parsimonia y evita que la flexibilidad del modelo se traslade innecesariamente hacia la ecuación auxiliar de inflación.
+
+A partir de la relación de largo plazo implícita en la ecuación de expectativas se construyen dos indicadores. La proxy dinámica de credibilidad se define como:
+
+$$
+\lambda_t
+=
+1-
+\frac{c_t}{1-d},
+$$ {#eq-lambda-principal}
+
+mientras que el ancla inflacionaria implícita se obtiene mediante:
+
+$$
+\pi_t^{*}
+=
+\frac{c_{0t}}
+{1-d-c_t}.
+$$ {#eq-pi-estrella-principal}
+
+Un valor de $\lambda_t$ cercano a uno indica que las expectativas dependen poco de la inflación pasada y se encuentran asociadas en mayor medida con un valor relativamente estable; un aumento persistente de esta medida se interpreta, por tanto, como evidencia compatible con un fortalecimiento de la credibilidad. Por su parte, $\pi_t^{*}$ identifica el nivel hacia el cual parecen converger las expectativas. Esta última medida no se impone como equivalente a la meta oficial: se estima a partir de los datos y posteriormente se compara con el objetivo anunciado por el Banco de Guatemala.
+
+El sistema se representa en forma estado–espacio y se estima por máxima verosimilitud mediante el filtro de Kalman [@durbin_koopman2012]. Posteriormente, se emplea el suavizador de Kalman para reconstruir las trayectorias históricas de $c_{0t}$ y $c_t$ utilizando la información de toda la muestra. La implementación se realiza en `R` mediante el paquete `KFAS` [@helske2017]. La existencia de variación temporal se evalúa comparando el modelo restringido con una especificación de parámetros constantes; además, se consideran los criterios AIC y BIC, diagnósticos de las innovaciones y ejercicios de robustez frente a observaciones extremas y medidas alternativas de inflación. Los detalles técnicos de estimación e inferencia se presentan en los apéndices.
+
+
+<!-- ======================================================================= -->
+<!-- PARTE II. APÉNDICES METODOLÓGICOS                                      -->
+<!-- Ubicación: al final del working paper, antes de las referencias o según -->
+<!-- la estructura editorial seleccionada.                                  -->
+<!-- ======================================================================= -->
+
+\appendix
+
+# Apéndices metodológicos
+
+## Apéndice A. Detalles técnicos de las regresiones móviles
+
+**Construcción de las ventanas**
+
+Para una ventana de longitud $W$, el conjunto de observaciones utilizado en la estimación que concluye en el mes $t$ se define como:
+
+$$
+\mathcal W_t
+=
+\{t-W+1,\ldots,t\}.
+$$ {#eq-ventana-apendice}
+
+La estimación principal utiliza $W=36$ meses y la prueba de robustez emplea $W=30$. Las ventanas consecutivas comparten la mayor parte de sus observaciones; por esa razón, los coeficientes obtenidos en fechas adyacentes están correlacionados y no deben tratarse como estimaciones independientes.
+
+**Variables y secuencia temporal**
+
+La variable dependiente es la desviación contemporánea de la expectativa a 24 meses respecto de la meta:
+
+$$
+\widetilde e_t^{24}
+=
+e_t^{24}-\pi_t^{m}.
+$$
+
+Los regresores se incorporan con un rezago mensual:
+
+$$
+\widetilde e_{t-1}^{24},
+\qquad
+\widetilde\pi_{t-1},
+\qquad
+q_{t-1}.
+$$
+
+Esta estructura reduce problemas de simultaneidad contemporánea y mantiene una interpretación temporal clara: la expectativa reportada en $t$ se relaciona con la información observable hasta el mes anterior.
+
+**Inferencia HAC**
+
+En cada ventana, el modelo se estima mediante mínimos cuadrados ordinarios; no obstante, la matriz de varianzas y covarianzas se corrige mediante el estimador HAC de Newey–West:
+
+$$
+\widehat{\operatorname{Var}}_{\mathrm{HAC}}
+(\widehat{\boldsymbol\theta}_t)
+=
+(\mathbf X_t^{\prime}\mathbf X_t)^{-1}
+\widehat{\mathbf S}_t
+(\mathbf X_t^{\prime}\mathbf X_t)^{-1},
+$$ {#eq-hac-apendice}
+
+donde $\widehat{\mathbf S}_t$ incorpora las autocovarianzas de los residuos hasta tres rezagos. En la implementación se utiliza `prewhite = FALSE` y el ajuste por tamaño muestral disponible en el paquete `sandwich`.
+
+**Sensibilidad de largo plazo**
+
+Cuando se desea complementar la interpretación del efecto contemporáneo, la sensibilidad acumulada de la brecha de expectativas frente a la brecha inflacionaria puede aproximarse mediante:
+
+$$
+\beta_t^{LR}
+=
+\frac{\beta_t}{1-\rho_t},
+\qquad
+|\rho_t|<1.
+$$ {#eq-beta-largo-plazo-apendice}
+
+Esta medida solo debe reportarse cuando el denominador se encuentre suficientemente alejado de cero y la dinámica estimada sea estable. En caso contrario, la interpretación debe concentrarse en el coeficiente inmediato $\beta_t$.
+
+**Resultados que deben permanecer en el apéndice**
+
+El apéndice debe contener:
+
+1. la tabla completa de coeficientes por ventana;
+2. errores estándar HAC, valores $p$ e intervalos de confianza;
+3. comparación gráfica entre ventanas de 36 y 30 meses;
+4. trayectoria de $\rho_t$ y, cuando corresponda, de $\beta_t^{LR}$;
+5. distribución del número efectivo de observaciones;
+6. diagnóstico de ventanas con coeficientes inestables o denominadores próximos a cero.
+
+En el cuerpo principal basta con presentar la trayectoria de $\widehat\beta_t$, su intervalo de confianza y una síntesis de los principales episodios de fortalecimiento o debilitamiento.
+
+## Apéndice B. Representación estado–espacio del modelo M3 restringido
+
+**Vector de observación y vector de estado**
+
+El vector de observación se define como:
+
+$$
+\mathbf y_t
+=
+\begin{bmatrix}
+\pi_t\\
+e_t^{24}
+\end{bmatrix},
+$$
+
+y el vector de estado como:
+
+$$
+\boldsymbol\xi_t
+=
+\begin{bmatrix}
+a_0 &
+a &
+b &
+c_{0t} &
+c_t &
+d
+\end{bmatrix}^{\prime}.
+$$
+
+La ecuación de observación es:
+
+$$
+\mathbf y_t
+=
+\mathbf Z_t\boldsymbol\xi_t
++
+\boldsymbol\varepsilon_t,
+$$
+
+con:
+
+$$
+\mathbf Z_t
+=
+\begin{bmatrix}
+1 & \pi_{t-1} & e_{t-1}^{24} & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & \pi_{t-1} & e_{t-1}^{24}
+\end{bmatrix}.
+$$
+
+La transición de estados se expresa como:
+
+$$
+\boldsymbol\xi_t
+=
+\mathbf T\boldsymbol\xi_{t-1}
++
+\boldsymbol\eta_t,
+\qquad
+\mathbf T=\mathbf I_6,
+$$
+
+con matriz de covarianzas:
+
+$$
+\mathbf Q
+=
+\operatorname{diag}
+\left(
+0,\,
+0,\,
+0,\,
+Q_{c_0},\,
+Q_c,\,
+0
+\right).
+$$
+
+Los ceros de $\mathbf Q$ imponen constancia sobre $a_0$, $a$, $b$ y $d$; las únicas innovaciones de estado corresponden a $c_{0t}$ y $c_t$. Las perturbaciones de observación satisfacen:
+
+$$
+\boldsymbol\varepsilon_t
+\sim
+\mathcal N
+\left(
+\mathbf 0,\mathbf H
+\right),
+\qquad
+\mathbf H
+=
+\begin{bmatrix}
+H_{\pi} & 0\\
+0 & H_e
+\end{bmatrix}.
+$$
+
+**Estimación**
+
+Los hiperparámetros:
+
+$$
+H_{\pi},
+\quad
+H_e,
+\quad
+Q_{c_0},
+\quad
+Q_c
+$$
+
+se estiman por máxima verosimilitud. Para reducir la posibilidad de converger hacia máximos locales, la optimización se ejecuta desde múltiples valores iniciales; se selecciona el ajuste convergente con mayor log-verosimilitud. Los estados iniciales se tratan mediante inicialización difusa y, una vez estimados los hiperparámetros, se obtienen estados suavizados con la muestra completa.
+
+**Filtro y suavizador de Kalman**
+
+El filtro utiliza las ecuaciones estándar de predicción:
+
+$$
+\mathbf a_{t|t-1}
+=
+\mathbf T\mathbf a_{t-1|t-1},
+$$
+
+$$
+\mathbf P_{t|t-1}
+=
+\mathbf T
+\mathbf P_{t-1|t-1}
+\mathbf T^{\prime}
++
+\mathbf Q,
+$$
+
+y actualización:
+
+$$
+\mathbf v_t
+=
+\mathbf y_t
+-
+\mathbf Z_t\mathbf a_{t|t-1},
+$$
+
+$$
+\mathbf F_t
+=
+\mathbf Z_t
+\mathbf P_{t|t-1}
+\mathbf Z_t^{\prime}
++
+\mathbf H,
+$$
+
+$$
+\mathbf K_t
+=
+\mathbf P_{t|t-1}
+\mathbf Z_t^{\prime}
+\mathbf F_t^{-1},
+$$
+
+$$
+\mathbf a_{t|t}
+=
+\mathbf a_{t|t-1}
++
+\mathbf K_t\mathbf v_t.
+$$
+
+Estas expresiones se incluyen para documentar la implementación, pero no es necesario reproducirlas en el cuerpo principal del working paper.
+
+**Incertidumbre de las medidas derivadas**
+
+Dado que $\lambda_t$ y $\pi_t^{*}$ son funciones no lineales de los estados, sus errores estándar pueden aproximarse mediante el método delta. Sea:
+
+$$
+g_1(c_t,d)
+=
+1-\frac{c_t}{1-d},
+$$
+
+y:
+
+$$
+g_2(c_{0t},c_t,d)
+=
+\frac{c_{0t}}{1-d-c_t}.
+$$
+
+Entonces:
+
+$$
+\operatorname{Var}
+\left[
+g_j(\widehat{\boldsymbol\theta}_t)
+\right]
+\approx
+\nabla g_j^{\prime}
+\widehat{\mathbf V}_t
+\nabla g_j,
+$$
+
+donde $\widehat{\mathbf V}_t$ es la matriz de covarianzas suavizada de los estados relevantes.
+
+## Apéndice C. Selección, inferencia y robustez del TVP–VAR
+
+**Comparación de especificaciones**
+
+La selección del modelo restringido debe documentar, como mínimo, las siguientes alternativas:
+
+- M0: todos los parámetros constantes;
+- M1: variación temporal solo en la ecuación de inflación;
+- M2: $c_{0t}$, $c_t$ y $d_t$ variantes;
+- M3: $c_{0t}$ y $c_t$ variantes, con $d$ constante;
+- M4: los seis parámetros variantes.
+
+La elección de M3 debe justificarse mediante una combinación de parsimonia, comportamiento de las varianzas de transición, criterios AIC y BIC, estabilidad de las trayectorias y diagnósticos residuales. La especificación principal no debe seleccionarse únicamente por presentar la menor penalización de información si la flexibilidad adicional produce estados degenerados o innovaciones deficientemente especificadas.
+
+**Razón de verosimilitud y bootstrap**
+
+La hipótesis de parámetros constantes es:
+
+$$
+H_0:
+Q_{c_0}=Q_c=0.
+$$
+
+El estadístico de razón de verosimilitud se define como:
+
+$$
+LR
+=
+2
+\left(
+\ell_{\mathrm{M3}}
+-
+\ell_{\mathrm{M0}}
+\right).
+$$
+
+Debido a que las varianzas se encuentran en la frontera del espacio paramétrico bajo $H_0$, el valor $p$ convencional basado en una distribución $\chi^2$ se interpreta solo como referencia. La inferencia principal puede complementarse mediante un bootstrap paramétrico:
+
+1. estimar M0;
+2. simular $B$ muestras bajo M0;
+3. reestimar M0 y M3 en cada muestra;
+4. calcular $LR_b$;
+5. obtener:
+
+$$
+p_{\mathrm{boot}}
+=
+\frac{
+1+\sum_{b=1}^{B}
+\mathbb I(LR_b\ge LR_{\mathrm{obs}})
+}{
+B+1
+}.
+$$
+
+En el cuerpo principal solo debe reportarse el resultado del contraste; el algoritmo, número de réplicas válidas y distribución empírica deben permanecer en el apéndice.
+
+**Observación extrema de septiembre de 2012**
+
+La influencia de septiembre de 2012 se evalúa mediante dos ejercicios. En el primero se incorpora una variable de pulso en la ecuación de expectativas; en el segundo, se reestima el modelo tratando esa observación como faltante mediante un procedimiento *leave-one-out*. Estas pruebas no tienen como propósito eliminar automáticamente el dato, sino determinar si una sola observación genera artificialmente la trayectoria de credibilidad.
+
+La robustez debe evaluarse comparando:
+
+$$
+\operatorname{corr}
+\left(
+\lambda_t^{\mathrm{base}},
+\lambda_t^{\mathrm{alternativo}}
+\right),
+$$
+
+el error cuadrático medio, la diferencia máxima absoluta y el cambio en el valor final de $\lambda_t$.
+
+**Medidas alternativas de inflación**
+
+La inflación interanual se utiliza en la especificación principal porque se encuentra en una escala anual comparable con las expectativas a 24 meses. Como robustez se consideran:
+
+- inflación interanual reconstruida a partir del IPC;
+- inflación mensual desestacionalizada anualizada;
+- inflación acumulada de tres meses anualizada;
+- inflación subyacente interanual.
+
+Las medidas mensuales y trimestrales permiten examinar si la autocorrelación de la ecuación de inflación proviene de ventanas interanuales superpuestas; sin embargo, no deben sustituir automáticamente la variable principal cuando generan una proxy de credibilidad sin variación temporal o difícil de interpretar económicamente.
+
+**Diagnósticos**
+
+El apéndice debe reportar:
+
+1. Ljung–Box de las innovaciones de inflación y expectativas;
+2. normalidad mediante Jarque–Bera y gráficos cuantiles;
+3. estabilidad del sistema mediante el radio espectral;
+4. convergencia de los distintos valores iniciales;
+5. comportamiento de $Q_{c_0}$ y $Q_c$ frente al límite inferior;
+6. porcentaje de meses con $\lambda_t$ fuera de $[0,1]$;
+7. sensibilidad del ancla implícita cuando $1-d-c_t$ se aproxima a cero;
+8. comparación de las trayectorias entre M3, M3 aumentado y las especificaciones de robustez.
+
+## Apéndice D. Cuadro de distribución entre texto principal y apéndices
+
+| Elemento | Cuerpo principal | Apéndice |
+|---|:---:|:---:|
+| Motivación de las regresiones móviles | Sí | No |
+| Ecuación rolling principal | Sí | Sí, con detalle |
+| Ventana de 36 meses y robustez de 30 meses | Sí | Sí |
+| Configuración completa de Newey–West | No | Sí |
+| Tabla de todas las ventanas | No | Sí |
+| Sistema bivariado de Demertzis | Sí | Sí, en matrices |
+| Definición de $\lambda_t$ y $\pi_t^{*}$ | Sí | Sí |
+| Ecuaciones completas del filtro de Kalman | No | Sí |
+| Inicialización y múltiples inicios | No | Sí |
+| Comparación M0–M4 | Síntesis | Sí |
+| Bootstrap paramétrico | Resultado | Procedimiento completo |
+| Pulso y *leave-one-out* | Síntesis | Sí |
+| Medidas alternativas de inflación | Síntesis | Sí |
+| Diagnósticos residuales completos | No | Sí |
+| Gráficas centrales de $\beta_t$, $\lambda_t$ y $\pi_t^{*}$ | Sí | No |
+| Gráficas adicionales y tablas de robustez | No | Sí |
+
+<!--
+FIN DEL FRAGMENTO.
+
+Recomendación editorial:
+- El cuerpo principal de esta sección debería ocupar aproximadamente
+  2.0–2.5 páginas.
+- Los apéndices pueden desarrollarse con mayor extensión sin interrumpir
+  la narrativa económica.
+-->

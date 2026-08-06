@@ -1,0 +1,49 @@
+
+======================================================================
+DEMERTZIS: M3 AUMENTADO Y ANÁLISIS DE VALORES EXTREMOS - GUATEMALA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva común: 2010-05 a 2026-06
+Observaciones: 194
+
+MODELO M3 AUMENTADO
+Inflación: cuatro rezagos constantes de inflación y expectativas.
+Expectativas: c0_t y c_t variantes; d constante.
+lambda_t = 1 - c_t/(1-d)
+pi_estrella_t = c0_t/(1-d-c_t)
+
+COMPARACIÓN DE MODELOS
+AIC M0A/M3B/M3A/M3AD: 276.80637 / 238.50088 / 234.31705 / 232.01603
+BIC M0A/M3B/M3A/M3AD: 322.55638 / 271.17946 / 286.60278 / 287.56961
+LR M3A vs M0A: 46.48932 | p chi2(2) referencial = 8.0348e-11
+LR M3A vs M3B, rezagos adicionales: 16.18383
+Q_c0 / Q_c / Q_d adicional: 2.8263e-03 / 2.7664e-05 / 1.3290e-03
+
+PROXY M3A
+lambda promedio: 0.82838
+lambda inicial/final: 0.75271 / 0.88177
+pi estrella promedio: 4.53546
+MAE pi estrella vs meta: 0.44221
+
+DIAGNÓSTICOS M3A
+Ljung-Box inflación lag 12, p: 1.8149e-07
+Ljung-Box expectativas lag 12, p: 3.5569e-01
+Jarque-Bera expectativas post burn-in: 5.84755 | p = 5.3731e-02
+Radio espectral máximo: 0.86421 | % meses estables: 100.00%
+
+VALORES EXTREMOS
+Número de candidatos formales: 1
+Fechas: 2012-09
+Umbral clásico: |r| >= 3.50 | umbral Bonferroni: 3.625
+
+SENSIBILIDAD A PULSOS
+Correlación lambda M3A vs pulsos conjuntos: 0.99922
+Máxima diferencia absoluta de lambda: 0.05324
+
+CRITERIOS DE INTERPRETACIÓN
+1. M3A se selecciona por mejorar la dinámica de inflación mediante rezagos constantes, no mediante TVP en esa ecuación.
+2. Los pulsos y omisiones son ejercicios de sensibilidad; no sustituyen automáticamente al modelo principal sin justificación externa.
+3. Si los pulsos reducen Jarque-Bera pero lambda cambia poco, la no normalidad afecta las colas de la distribución, no la conclusión sobre credibilidad.
+4. Si lambda cambia materialmente al tratar una fecha, esa observación debe investigarse antes de cerrar el modelo.
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_demertzis_M3_aumentado_outliers
+======================================================================

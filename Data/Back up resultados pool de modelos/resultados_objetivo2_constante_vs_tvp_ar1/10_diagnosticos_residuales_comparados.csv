@@ -1,0 +1,11 @@
+modelo,diagnostico,rezago,estadistico,grados_libertad,p_valor,conclusion_5pct
+Sensibilidad constante,Ljung-Box,6,12.264392512489692,5,0.03133919956188336,Se rechaza ausencia de autocorrelación
+Sensibilidad constante,Ljung-Box,12,23.50313730055908,11,0.014998564346758947,Se rechaza ausencia de autocorrelación
+Sensibilidad constante,Ljung-Box,18,38.01470082782402,17,0.0024463589944161424,Se rechaza ausencia de autocorrelación
+Sensibilidad constante,Ljung-Box,24,40.11032828463965,23,0.014937192482259665,Se rechaza ausencia de autocorrelación
+Sensibilidad constante,Jarque-Bera aproximado,NA,17.504541995740183,2,1.5810186810146794e-4,Se rechaza normalidad
+Sensibilidad variante,Ljung-Box,6,13.163911844325773,5,0.021890211131786796,Se rechaza ausencia de autocorrelación
+Sensibilidad variante,Ljung-Box,12,26.125927815157123,11,0.006215611288268197,Se rechaza ausencia de autocorrelación
+Sensibilidad variante,Ljung-Box,18,43.58803915512369,17,3.9380038776271054e-4,Se rechaza ausencia de autocorrelación
+Sensibilidad variante,Ljung-Box,24,46.328630041192234,23,0.002721855368905457,Se rechaza ausencia de autocorrelación
+Sensibilidad variante,Jarque-Bera aproximado,NA,35.62880802957958,2,1.8335917151250183e-8,Se rechaza normalidad

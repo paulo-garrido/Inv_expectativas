@@ -1,0 +1,58 @@
+
+======================================================================
+DEMERTZIS TVP RESTRINGIDO: PRUEBA DE ESPECIFICACIONES - GUATEMALA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2010-02 a 2026-06
+Observaciones: 197
+
+MODELO CANDIDATO M3
+Inflación: pi_t = a0 + a pi_(t-1) + b e_(t-1) + eps_pi,t
+Expectativas: e_t = c0_t + c_t pi_(t-1) + d e_(t-1) + eps_e,t
+c0_t y c_t siguen paseos aleatorios; d, a0, a y b son constantes.
+lambda_t = 1 - c_t/(1-d)
+pi_estrella_t = c0_t/(1-d-c_t)
+
+COMPARACIÓN DE MODELOS
+AIC M0/M1/M2/M3/M4: 384.89298 / 363.78594 / 314.66549 / 312.66549 / 293.55846
+BIC M0/M1/M2/M3/M4: 411.15861 / 399.90118 / 350.78073 / 345.49753 / 339.52331
+Mejor modelo por AIC: M4
+Mejor modelo por BIC: M4
+
+PRUEBAS CENTRALES
+LR M3 vs M0: 76.22749 | p chi2(2) referencial = 2.8016e-17
+LR M2 vs M3 para Q_d=0: 0.00000 | p mezcla 0.5 chi1 = 5.0000e-01
+
+HIPERPARÁMETROS DE EXPECTATIVAS
+M3 Q(c0,c,d): 2.9241e-03, 2.5115e-05, 0.0000e+00
+M2 Q(c0,c,d): 2.9241e-03, 2.5112e-05, 1.7664e-11
+
+PROXY DEL CANDIDATO M3
+lambda promedio: 0.82876
+lambda inicial/final: 0.75349 / 0.88136
+lambda mínimo/máximo: 0.75254 / 0.88945
+% meses lambda fuera de [0,1]: 0.00%
+pi estrella promedio: 4.56630
+MAE pi estrella vs meta: 0.45506
+% meses ancla dentro de banda de meta: 85.28%
+
+DIAGNÓSTICOS DEL CANDIDATO M3
+Ljung-Box expectativas lag 12, p: 2.0004e-01
+Ljung-Box inflación lag 12, p: 0.0000e+00
+Radio espectral del VAR constante: 0.92904 | estable: TRUE
+
+BOOTSTRAP M3 VS M0
+Ejecutado: FALSE
+Réplicas válidas: 0
+p-valor bootstrap: NA
+
+CRITERIOS DE DECISIÓN
+1. M3 debe mejorar a M0 para demostrar TVP en la credibilidad, no solo en inflación.
+2. M2 no debe mejorar materialmente a M3 para justificar d constante.
+3. Si M1 domina a M3, la evidencia TVP previa provenía sobre todo de inflación.
+4. Si M4 mejora a M3 solo por la ecuación de inflación, M4 se conserva como benchmark.
+5. La ecuación de expectativas debe presentar residuos sin autocorrelación relevante.
+6. lambda_t y pi_estrella_t no deben depender de denominadores cercanos a cero.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_demertzis_tvp_restringido
+======================================================================

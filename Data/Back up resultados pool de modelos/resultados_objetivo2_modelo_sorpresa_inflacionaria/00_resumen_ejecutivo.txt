@@ -1,0 +1,54 @@
+
+======================================================================
+MODELO TVP DE ANCLAJE CON SORPRESA INFLACIONARIA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2011-02 a 2026-07
+Observaciones: 186
+Alineación de la sorpresa: inflacion t-1 menos expectativa 12m t-13
+
+ECUACIÓN TRANSFORMADA
+y*_t = lambda_t (inflacion_(t-1) - meta_t) + gamma sorpresa_(t-1) + u_t
+A_t = 1 - lambda_t
+
+DIAGNÓSTICO DE FUENTE COMÚN
+Correlación exp12-exp24 contemporáneas: 0.9202
+Correlación regresores Strohsal original: 0.7713
+Correlación x_inflacion-sorpresa: 0.9317
+VIF aproximado nueva especificación: 7.5791
+Número de condición nueva especificación: 5.3180
+
+COMPARACIÓN CONSTANTE VS TVP
+Convergencia CP / TVP: 0 / 0
+LogLik CP / TVP: 57.76932 / 60.65722
+AIC CP / TVP: -105.53864 / -109.31444
+BIC CP / TVP: -89.40990 / -89.95996
+LR Q_lambda = 0: 5.77580
+p mezcla frontera referencial: 8.1242e-03
+
+HIPERPARÁMETROS TVP
+Q_lambda: 1.6240e-04
+Q_nu: 2.7876e-02
+alpha0: 0.03539
+alpha1: 0.82441
+
+RESULTADOS DE ANCLAJE
+Anclaje promedio: 0.6886 (68.86%)
+Anclaje inicial/final: 0.5626 / 0.6759
+Mínimo: 0.5550 en 2011-10
+Máximo: 0.7613 en 2021-06
+Gamma sorpresa: -0.13920 (SE = 0.04682; p = 2.9483e-03)
+% meses A_t significativamente menor que 1: 100.00%
+% meses lambda significativamente positiva: 100.00%
+% meses A_t fuera de [0,1]: 0.00%
+Ljung-Box TVP, lag 10, p: 1.3803e-02
+
+CRITERIOS DE INTERPRETACIÓN
+1. Si gamma es positivo y significativo, una inflación mayor que la    prevista doce meses antes eleva la expectativa a 24 meses.
+2. Si Q_lambda es prácticamente cero y CP domina según AIC/BIC, no hay    evidencia suficiente de variación temporal en el anclaje.
+3. Si la nueva correlación y el VIF son claramente menores que en la    especificación original, la sustitución redujo la dependencia común.
+4. La sorpresa utiliza exp12 únicamente como pronóstico histórico ex ante;    no utiliza la expectativa corta levantada junto con exp24_t.
+5. La fecha de los mínimos debe contrastarse con episodios inflacionarios    y no emplearse como único criterio para aceptar el modelo.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_modelo_sorpresa_inflacionaria
+======================================================================

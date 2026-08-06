@@ -1,0 +1,3 @@
+diagnostico,estadistico,grados_libertad,p_valor,conclusion_5pct
+"Ljung-Box, rezago 12",16.877236919015285,12,0.15427389587896845,No se rechaza ausencia de autocorrelación
+Jarque-Bera aproximado,33.73558057333512,2,4.725108186440776e-8,Se rechaza normalidad

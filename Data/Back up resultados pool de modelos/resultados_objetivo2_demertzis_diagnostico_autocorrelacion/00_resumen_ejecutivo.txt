@@ -1,0 +1,37 @@
+
+======================================================================
+DEMERTZIS / M3: DIAGNÓSTICO DE AUTOCORRELACIÓN EN INFLACIÓN
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra común: 2011-02 a 2026-06
+Observaciones: 185
+
+VARIABLES DETECTADAS
+Tipo de cambio: tcdep_var
+Petróleo: oil_var
+Inflación externa: infl_us
+Brecha de actividad: NO
+Índice de precios para futura transformación: NO
+
+PERSISTENCIA DESCRIPTIVA DE infl_gt
+Corr(pi_t, pi_t-1): 0.94855
+Corr(pi_t, pi_t-4): 0.70651
+Corr(pi_t, pi_t-12): -0.03602
+
+COMPARACIÓN DE SISTEMAS
+Mejor BIC: S0 | M3 base AR(1)
+Mejor Ljung-Box inflación lag 12: S6 | p = 9.9740e-07
+Algún modelo logra p-LB(12) >= 0.05: NO
+
+MODELO CONDICIONAL
+Correlación lambda C0 vs S0: -0.23546
+Máxima diferencia lambda C0 vs S0: 0.18991
+
+LECTURA AUTOMÁTICA
+Ninguna especificación elimina totalmente la autocorrelación de inflación a doce rezagos.
+El rezago anual no aporta una mejora clara frente a S0.
+Los controles externos mejoran el diagnóstico respecto de S0; existe evidencia compatible con variables omitidas.
+La trayectoria condicional difiere del sistema y requiere revisión.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_demertzis_diagnostico_autocorrelacion
+======================================================================

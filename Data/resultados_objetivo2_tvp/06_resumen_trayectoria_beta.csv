@@ -1,0 +1,2 @@
+fecha_inicial,fecha_final,observaciones,beta_inicial,beta_final,cambio_beta,beta_promedio,beta_minimo,fecha_beta_minimo,beta_maximo,fecha_beta_maximo,proporcion_beta_significativo_positivo,proporcion_beta_no_distinto_cero
+2011-01-01,2026-06-01,186,0.09860653072587286,0.018150931547327637,-0.08045559917854522,0.05679532145400988,0.012467913433692971,2023-03-01,0.09904146001663622,2011-11-01,0.6827956989247311,0.3172043010752688

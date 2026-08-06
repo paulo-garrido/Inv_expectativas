@@ -1,0 +1,40 @@
+
+======================================================================
+COMPARACIÓN CON PULSO: SENSIBILIDAD CONSTANTE VS. VARIANTE
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra: 2011-01 a 2026-06
+Observaciones: 186
+Intervención: pulso en 2012-09
+
+MODELO CONSTANTE + PULSO
+Convergencia: 0
+Log-verosimilitud: 54.45741
+alpha: -0.00508
+rho: -0.25325 | p = 1.9398e-04
+gamma sep-2012: 0.58388 | p = 8.5632e-04
+beta constante: 0.04089 | p = 1.1436e-05
+H: 2.9972e-02
+
+MODELO TVP + PULSO
+Convergencia: 0
+Log-verosimilitud: 62.04634
+alpha: 0.01534
+rho: -0.28710 | p = 8.7925e-06
+gamma sep-2012: 0.65488 | p = 8.5216e-05
+H: 2.6560e-02
+Q_beta: 5.0143e-05
+Q_beta/H: 1.8879e-03
+Beta inicial/final: 0.13221 / 0.01681
+
+COMPARACIÓN FORMAL
+LR: 15.17786
+p convencional chi2(1): 9.7844e-05
+p mezcla de frontera 50:50: 4.8922e-05
+Mejor AIC: TVP + pulso sep-2012
+Mejor BIC: TVP + pulso sep-2012
+RMSE constante/TVP: 0.26123 / 0.25565
+MAE constante/TVP: 0.15205 / 0.14525
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_constante_vs_tvp_ar1_pulso_sep2012
+======================================================================

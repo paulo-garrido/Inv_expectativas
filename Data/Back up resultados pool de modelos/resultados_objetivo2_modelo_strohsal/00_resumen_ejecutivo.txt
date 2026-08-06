@@ -1,0 +1,71 @@
+
+======================================================================
+MODELO DE STROHSAL APLICADO A GUATEMALA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra base efectiva: 2011-01 a 2026-07
+Observaciones base: 187
+Variable cambiaria disponible: tcdep_var
+
+MODELO
+theta1_t y theta2_t evolucionan como paseos aleatorios;
+u_t sigue un AR(1) con intercepto; H = 0;
+A_t = 1 - theta1_t - theta2_t.
+
+----------------------------------------------------------------------
+Núcleo Strohsal
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik CP / TVP: 47.74419 / 48.20365
+AIC CP / TVP: -85.48839 / -82.40730
+BIC CP / TVP: -69.33285 / -59.78954
+LR variación theta: 0.91891
+p mezcla frontera referencial: 3.2679e-01
+Q_theta1: 7.0438e-05
+Q_theta2: 7.1966e-11
+Q_nu: 3.2872e-02
+alpha0: 0.03205
+alpha1: 0.87384
+Anclaje promedio: 0.8808 (88.08%)
+Anclaje inicial/final: 0.8226 / 0.8743
+Mínimo: 0.8181 en 2011-10
+% meses A_t significativamente menor que 1: 29.95%
+% meses theta1 significativamente positivo: 100.00%
+% meses theta2 significativamente positivo: 0.00%
+% meses A_t fuera de [0,1]: 0.00%
+Ljung-Box TVP, lag 10, p: 5.1746e-04
+
+----------------------------------------------------------------------
+Strohsal + tipo de cambio
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik CP / TVP: 45.10402 / 45.49313
+AIC CP / TVP: -78.20804 / -74.98626
+BIC CP / TVP: -58.82139 / -49.13739
+LR variación theta: 0.77822
+p mezcla frontera referencial: 3.5826e-01
+Q_theta1: 6.4515e-05
+Q_theta2: 6.4010e-11
+Q_nu: 3.3021e-02
+alpha0: 0.03125
+alpha1: 0.87487
+Anclaje promedio: 0.8798 (87.98%)
+Anclaje inicial/final: 0.8254 / 0.8741
+Mínimo: 0.8212 en 2011-10
+% meses A_t significativamente menor que 1: 29.95%
+% meses theta1 significativamente positivo: 100.00%
+% meses theta2 significativamente positivo: 0.00%
+% meses A_t fuera de [0,1]: 0.00%
+Ljung-Box TVP, lag 10, p: 2.0735e-04
+
+ADVERTENCIAS DE INTERPRETACIÓN
+1. La estructura econométrica replica el núcleo de Strohsal,
+   pero 24 meses no equivale a las expectativas forward de 10 años.
+2. La meta de Guatemala cambia al inicio de la muestra;
+   se usa la meta contemporánea en la ecuación estática.
+3. La prueba LR tiene dos varianzas en frontera;
+   el p-valor reportado es referencial y puede requerir bootstrap.
+4. Valores de A_t fuera de [0,1] no se recortan artificialmente.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_modelo_strohsal
+======================================================================

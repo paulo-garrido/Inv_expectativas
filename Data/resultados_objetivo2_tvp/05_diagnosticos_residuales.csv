@@ -1,0 +1,3 @@
+diagnostico,estadistico,grados_libertad,p_valor
+Ljung-Box,33.19358580109751,12,9.029083365166279e-4
+Jarque-Bera aproximado,30.89203158640734,2,1.9583060860416042e-7

@@ -1,0 +1,57 @@
+
+======================================================================
+MODELO TVP DE ANCLAJE CON SORPRESA EN LA TRANSICIÓN
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2011-02 a 2026-07
+Observaciones: 186
+Alineación: sorpresa t = inflación t-1 menos expectativa 12m t-13; afecta A_(t+1).
+Sorpresa centrada y estandarizada: TRUE
+Media / SD de sorpresa raw: -0.4643 / 1.9185
+
+ECUACIÓN DE OBSERVACIÓN
+y_t = A_t (meta_t - inflación_(t-1)) + u_t
+
+ECUACIÓN DE TRANSICIÓN
+A_(t+1) = mu_A + rho_A A_t + delta S_t + eta_t
+
+COMPARACIÓN DE MODELOS
+LogLik constante / TVP base / TVP sorpresa: 57.53155 / 64.02429 / 64.52533
+AIC constante / TVP base / TVP sorpresa: -107.06309 / -116.04858 / -115.05067
+BIC constante / TVP base / TVP sorpresa: -94.16010 / -96.69410 / -92.47044
+
+PRUEBA DE SORPRESA EN LA TRANSICIÓN
+delta por una desviación estándar: 0.004163
+delta equivalente por 1 punto porcentual: 0.002170
+SE delta (Hessiana): 0.002536
+p Wald bilateral: 1.0059e-01
+p Wald unilateral H1 delta<0: 9.4970e-01
+LR delta=0: 1.00209; p = 3.1681e-01
+
+HIPERPARÁMETROS DEL MODELO CANDIDATO
+rho_A: 0.950845
+mu_A: 0.042621
+media de largo plazo A, con sorpresa cero: 0.867085
+vida media de un choque a A: 13.75 meses
+Q_A: 1.8068e-11
+phi_u: 0.850607
+Q_nu: 2.8892e-02
+
+RESULTADOS DE ANCLAJE
+Anclaje promedio: 0.8360 (83.60%)
+Anclaje inicial/final: 0.5477 / 0.8311
+Mínimo: 0.5477 en 2011-02
+Máximo: 0.9721 en 2023-07
+% meses A_t significativamente menor que 1: 100.00%
+% meses A_t fuera de [0,1]: 0.00%
+Ljung-Box TVP sorpresa, lag 10, p: 1.4997e-02
+
+CRITERIOS DE DECISIÓN
+1. delta debe ser negativo para apoyar la hipótesis de que una sorpresa    positiva debilita el anclaje del mes siguiente.
+2. El TVP con sorpresa debe mejorar frente al TVP base según LR, AIC/AICc    y, preferiblemente, BIC.
+3. Si delta no es significativo y el TVP base domina, la sorpresa no añade    información a la transición del anclaje.
+4. Si Q_A converge prácticamente a cero, no existe evidencia suficiente    de variación estocástica adicional en A_t.
+5. La prueba LR base vs sorpresa es regular porque los modelos difieren    únicamente por delta; la comparación constante vs TVP involucra una    varianza en la frontera y debe interpretarse con cautela.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_modelo_sorpresa_transicion
+======================================================================

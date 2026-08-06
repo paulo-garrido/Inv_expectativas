@@ -1,0 +1,203 @@
+========================================
+RESUMEN VARX
+========================================
+
+
+VAR Estimation Results:
+========================= 
+Endogenous variables: exp_inf_12m, infl_gt, d_tasa_pol, tcdep_var 
+Deterministic variables: const 
+Sample size: 176 
+Log Likelihood: -94.773 
+Roots of the characteristic polynomial:
+0.9276 0.9058 0.6181 0.6181 0.4404 0.4404 0.2307 0.1364
+Call:
+VAR(y = Y_mat, p = p_opt, type = "const", exogen = X_mat)
+
+
+Estimation results for equation exp_inf_12m: 
+============================================ 
+exp_inf_12m = exp_inf_12m.l1 + infl_gt.l1 + d_tasa_pol.l1 + tcdep_var.l1 + exp_inf_12m.l2 + infl_gt.l2 + d_tasa_pol.l2 + tcdep_var.l2 + const + d_effr + d_infl_us + oil_var 
+
+                 Estimate Std. Error t value
+exp_inf_12m.l1  0.7990365  0.0709000  11.270
+infl_gt.l1      0.1859750  0.0259585   7.164
+d_tasa_pol.l1  -0.2598176  0.1108001  -2.345
+tcdep_var.l1   -0.0328075  0.0223865  -1.465
+exp_inf_12m.l2  0.0648071  0.0626954   1.034
+infl_gt.l2     -0.1193574  0.0266580  -4.477
+d_tasa_pol.l2   0.0164609  0.1122970   0.147
+tcdep_var.l2    0.0278103  0.0223216   1.246
+const           0.3087203  0.1094296   2.821
+d_effr          0.0740025  0.1189460   0.622
+d_infl_us       0.0288800  0.0441508   0.654
+oil_var         0.0003584  0.0005145   0.697
+               Pr(>|t|)    
+exp_inf_12m.l1  < 2e-16 ***
+infl_gt.l1     2.51e-11 ***
+d_tasa_pol.l1   0.02023 *  
+tcdep_var.l1    0.14470    
+exp_inf_12m.l2  0.30281    
+infl_gt.l2     1.41e-05 ***
+d_tasa_pol.l2   0.88364    
+tcdep_var.l2    0.21458    
+const           0.00538 ** 
+d_effr          0.53471    
+d_infl_us       0.51395    
+oil_var         0.48699    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1785 on 164 degrees of freedom
+Multiple R-Squared: 0.9478,	Adjusted R-squared: 0.9443 
+F-statistic: 270.7 on 11 and 164 DF,  p-value: < 2.2e-16 
+
+
+Estimation results for equation infl_gt: 
+======================================== 
+infl_gt = exp_inf_12m.l1 + infl_gt.l1 + d_tasa_pol.l1 + tcdep_var.l1 + exp_inf_12m.l2 + infl_gt.l2 + d_tasa_pol.l2 + tcdep_var.l2 + const + d_effr + d_infl_us + oil_var 
+
+                Estimate Std. Error t value
+exp_inf_12m.l1  0.266585   0.208614   1.278
+infl_gt.l1      1.173354   0.076380  15.362
+d_tasa_pol.l1   0.705434   0.326015   2.164
+tcdep_var.l1    0.009332   0.065869   0.142
+exp_inf_12m.l2 -0.080102   0.184473  -0.434
+infl_gt.l2     -0.386566   0.078438  -4.928
+d_tasa_pol.l2   0.416083   0.330419   1.259
+tcdep_var.l2   -0.013624   0.065678  -0.207
+const           0.024261   0.321982   0.075
+d_effr          0.967374   0.349983   2.764
+d_infl_us       0.218669   0.129908   1.683
+oil_var        -0.001284   0.001514  -0.848
+               Pr(>|t|)    
+exp_inf_12m.l1  0.20309    
+infl_gt.l1      < 2e-16 ***
+d_tasa_pol.l1   0.03193 *  
+tcdep_var.l1    0.88751    
+exp_inf_12m.l2  0.66470    
+infl_gt.l2     2.01e-06 ***
+d_tasa_pol.l2   0.20973    
+tcdep_var.l2    0.83592    
+const           0.94003    
+d_effr          0.00636 ** 
+d_infl_us       0.09423 .  
+oil_var         0.39754    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.5252 on 164 degrees of freedom
+Multiple R-Squared: 0.9209,	Adjusted R-squared: 0.9156 
+F-statistic: 173.5 on 11 and 164 DF,  p-value: < 2.2e-16 
+
+
+Estimation results for equation d_tasa_pol: 
+=========================================== 
+d_tasa_pol = exp_inf_12m.l1 + infl_gt.l1 + d_tasa_pol.l1 + tcdep_var.l1 + exp_inf_12m.l2 + infl_gt.l2 + d_tasa_pol.l2 + tcdep_var.l2 + const + d_effr + d_infl_us + oil_var 
+
+                 Estimate Std. Error t value
+exp_inf_12m.l1  0.1311229  0.0470576   2.786
+infl_gt.l1      0.0397942  0.0172291   2.310
+d_tasa_pol.l1  -0.1294118  0.0735400  -1.760
+tcdep_var.l1   -0.0003703  0.0148583  -0.025
+exp_inf_12m.l2 -0.1212120  0.0416120  -2.913
+infl_gt.l2     -0.0060172  0.0176934  -0.340
+d_tasa_pol.l2  -0.1165170  0.0745335  -1.563
+tcdep_var.l2    0.0079499  0.0148152   0.537
+const          -0.1912132  0.0726304  -2.633
+d_effr          0.2770223  0.0789466   3.509
+d_infl_us      -0.0065235  0.0293037  -0.223
+oil_var         0.0001083  0.0003415   0.317
+               Pr(>|t|)    
+exp_inf_12m.l1 0.005958 ** 
+infl_gt.l1     0.022151 *  
+d_tasa_pol.l1  0.080315 .  
+tcdep_var.l1   0.980149    
+exp_inf_12m.l2 0.004080 ** 
+infl_gt.l2     0.734228    
+d_tasa_pol.l2  0.119914    
+tcdep_var.l2   0.592271    
+const          0.009281 ** 
+d_effr         0.000581 ***
+d_infl_us      0.824110    
+oil_var        0.751537    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1185 on 164 degrees of freedom
+Multiple R-Squared: 0.4051,	Adjusted R-squared: 0.3652 
+F-statistic: 10.15 on 11 and 164 DF,  p-value: 5.394e-14 
+
+
+Estimation results for equation tcdep_var: 
+========================================== 
+tcdep_var = exp_inf_12m.l1 + infl_gt.l1 + d_tasa_pol.l1 + tcdep_var.l1 + exp_inf_12m.l2 + infl_gt.l2 + d_tasa_pol.l2 + tcdep_var.l2 + const + d_effr + d_infl_us + oil_var 
+
+                 Estimate Std. Error t value
+exp_inf_12m.l1 -0.1264196  0.2465870  -0.513
+infl_gt.l1     -0.0198449  0.0902825  -0.220
+d_tasa_pol.l1  -0.0735245  0.3853574  -0.191
+tcdep_var.l1    1.1387672  0.0778593  14.626
+exp_inf_12m.l2  0.1110557  0.2180515   0.509
+infl_gt.l2      0.0528051  0.0927151   0.570
+d_tasa_pol.l2   0.0654160  0.3905636   0.167
+tcdep_var.l2   -0.2158372  0.0776335  -2.780
+const          -0.0728874  0.3805909  -0.192
+d_effr         -0.1711875  0.4136886  -0.414
+d_infl_us      -0.1660799  0.1535544  -1.082
+oil_var        -0.0003499  0.0017894  -0.196
+               Pr(>|t|)    
+exp_inf_12m.l1  0.60887    
+infl_gt.l1      0.82629    
+d_tasa_pol.l1   0.84892    
+tcdep_var.l1    < 2e-16 ***
+exp_inf_12m.l2  0.61122    
+infl_gt.l2      0.56977    
+d_tasa_pol.l2   0.86719    
+tcdep_var.l2    0.00607 ** 
+const           0.84836    
+d_effr          0.67956    
+d_infl_us       0.28103    
+oil_var         0.84521    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.6208 on 164 degrees of freedom
+Multiple R-Squared: 0.9033,	Adjusted R-squared: 0.8968 
+F-statistic: 139.2 on 11 and 164 DF,  p-value: < 2.2e-16 
+
+
+
+Covariance matrix of residuals:
+            exp_inf_12m    infl_gt d_tasa_pol
+exp_inf_12m   0.0318622 -0.0001522  -0.001740
+infl_gt      -0.0001522  0.2758480   0.005432
+d_tasa_pol   -0.0017396  0.0054317   0.014036
+tcdep_var     0.0103268  0.0380154  -0.002331
+            tcdep_var
+exp_inf_12m  0.010327
+infl_gt      0.038015
+d_tasa_pol  -0.002331
+tcdep_var    0.385410
+
+Correlation matrix of residuals:
+            exp_inf_12m   infl_gt d_tasa_pol
+exp_inf_12m    1.000000 -0.001624   -0.08226
+infl_gt       -0.001624  1.000000    0.08729
+d_tasa_pol    -0.082261  0.087293    1.00000
+tcdep_var      0.093190  0.116590   -0.03169
+            tcdep_var
+exp_inf_12m   0.09319
+infl_gt       0.11659
+d_tasa_pol   -0.03169
+tcdep_var     1.00000
+
+

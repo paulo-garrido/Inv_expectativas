@@ -1,0 +1,6 @@
+tipo_comparacion,serie_1,serie_2,observaciones_nivel,correlacion_pearson_nivel,correlacion_spearman_nivel,observaciones_primeras_diferencias,correlacion_pearson_primeras_diferencias,correlacion_spearman_primeras_diferencias
+Comparación metodológica principal,Rolling 36m: beta corto plazo,TVP-AR(1) base,162,NA,NA,161,0.02153749581050913,0.07625948930296757
+Comparación complementaria,Rolling 36m: beta largo plazo,TVP-AR(1) base,162,NA,NA,161,0.15643961911841409,0.29559466298596737
+Robustez de ventana rolling,Rolling 36m,Rolling 30m,162,NA,NA,161,0.2229977691310033,0.2956953071083506
+Robustez TVP,Rolling 36m: beta corto plazo,TVP-AR(1) con pulso,162,NA,NA,161,0.002004940689816754,0.037232574189095924
+Robustez interna TVP,TVP-AR(1) base,TVP-AR(1) con pulso,162,NA,NA,161,0.9875996368428481,0.9653697952610996

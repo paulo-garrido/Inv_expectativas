@@ -1,0 +1,6 @@
+criterio,resultado,detalle
+Algún modelo elimina autocorrelación de inflación a lag 12,FALSE,Mejor p-LB(12): S6 = 9.9740e-07
+El rezago 12 mejora el p-valor frente a S0,FALSE,S0 = 1.1102e-16; S1 = 0.0000e+00
+Los controles externos mejoran el p-valor frente a S0,TRUE,Mejor especificación con controles: S6 | p = 9.9740e-07
+El modelo con menor BIC mantiene lambda robusta frente a S0,TRUE,"Menor BIC: S0 | corr(lambda,S0) = 1.00000"
+El modelo condicional reproduce lambda de S0,FALSE,"corr(C0,S0) = -0.23546; max diferencia = 0.18991"

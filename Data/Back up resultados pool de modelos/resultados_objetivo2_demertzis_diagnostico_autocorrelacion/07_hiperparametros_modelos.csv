@@ -1,0 +1,8 @@
+codigo_modelo,descripcion,H_inflacion,H_expectativa,Q_c0,Q_c,convergencia,log_verosimilitud
+S0,M3 base AR(1),0.3318195164745299,0.03298847679388685,0,0,0,-121.21678844400223
+S1,M3 AR(1) + inflación rezagada 12 meses,0.32510461843778016,0.032988476220009666,0,0,0,-121.62131863412677
+S2,M3 con cuatro rezagos de inflación y expectativas,0.29258933499787804,0.03298847233517948,0,0,0,-113.51555450972158
+S3,"M3 AR(1) + controles externos: z_tc_lag, z_petroleo_lag, z_infl_ext_lag",0.3294972768322051,0.032988477155768525,0,0,0,-125.26213839092667
+S5,"M3 rezago 12 + controles externos: z_tc_lag, z_petroleo_lag, z_infl_ext_lag",0.3157097435514866,0.0329884773368664,0,0,0,-123.64173295067538
+S6,"M3 cuatro rezagos + controles externos: z_tc_lag, z_petroleo_lag, z_infl_ext_lag",0.2866188490280734,0.03298847940466828,0,0,0,-116.56147972629556
+C0,Modelo condicional uniecuacional de expectativas,NA,NA,0.003409396413642568,3.602044186244104e-5,0,67.9135804738753

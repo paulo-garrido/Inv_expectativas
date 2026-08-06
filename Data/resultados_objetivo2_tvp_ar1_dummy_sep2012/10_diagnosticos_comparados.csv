@@ -1,0 +1,11 @@
+modelo,diagnostico,rezago,estadistico,grados_libertad,p_valor,conclusion_5pct
+TVP-AR(1) base,Ljung-Box,6,21.04319092605252,5,7.949795095281154e-4,Se rechaza ausencia de autocorrelación
+TVP-AR(1) base,Ljung-Box,12,29.662624225866885,11,0.0017897451402613118,Se rechaza ausencia de autocorrelación
+TVP-AR(1) base,Ljung-Box,18,36.030632311845046,17,0.004543526593777436,Se rechaza ausencia de autocorrelación
+TVP-AR(1) base,Ljung-Box,24,41.49530991423241,23,0.010388124338748916,Se rechaza ausencia de autocorrelación
+TVP-AR(1) base,Jarque-Bera aproximado,NA,69.6538552194954,2,7.496482257336366e-16,Se rechaza normalidad
+TVP-AR(1) + pulso septiembre 2012,Ljung-Box,6,6.4630983658387615,5,0.2637273156502761,No se rechaza ausencia de autocorrelación
+TVP-AR(1) + pulso septiembre 2012,Ljung-Box,12,8.397097753466715,11,0.6773524405774196,No se rechaza ausencia de autocorrelación
+TVP-AR(1) + pulso septiembre 2012,Ljung-Box,18,12.655482791618027,17,0.7589263889552482,No se rechaza ausencia de autocorrelación
+TVP-AR(1) + pulso septiembre 2012,Ljung-Box,24,15.903291136157609,23,0.8593773282517839,No se rechaza ausencia de autocorrelación
+TVP-AR(1) + pulso septiembre 2012,Jarque-Bera aproximado,NA,10.018910280610847,2,0.006674539002975627,Se rechaza normalidad

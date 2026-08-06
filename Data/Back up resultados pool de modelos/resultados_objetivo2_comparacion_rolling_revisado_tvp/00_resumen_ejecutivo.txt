@@ -1,0 +1,40 @@
+
+======================================================================
+COMPARACIÓN: ROLLING REVISADO VS. TVP-AR(1)
+======================================================================
+Base: bd_sample_modelo.csv
+Variable cambiaria utilizada: tcdep_var
+TVP base: resultados_objetivo2_constante_vs_tvp_ar1/04_trayectoria_beta_tvp.csv
+TVP con pulso disponible: TRUE
+Muestra común: 2013-01 a 2026-06
+Observaciones comunes: 162
+
+ESPECIFICACIÓN ROLLING
+Ventana principal/robustez: 36 / 30 meses
+Inferencia: Newey-West HAC, lag = 3
+Controles: brecha de expectativa rezagada y depreciación cambiaria rezagada.
+
+COMPARACIÓN PRINCIPAL: BETA ROLLING 36M VS. TVP BASE
+Pearson en niveles: NA
+Spearman en niveles: NA
+Pearson en primeras diferencias: 0.0215
+Spearman en primeras diferencias: 0.0763
+Coincidencia mensual de dirección: 51.55%
+
+COMPARACIÓN COMPLEMENTARIA: EFECTO ROLLING DE LARGO PLAZO
+Pearson en niveles: NA
+Spearman en niveles: NA
+
+TENDENCIAS EN LA MUESTRA COMÚN
+Rolling corto plazo: Descendente | reducción = 22.97%
+Rolling largo plazo: Descendente | reducción = -47.19%
+TVP base: Descendente | reducción = 84.24%
+
+ROBUSTEZ DE LA VENTANA ROLLING
+Correlación rolling 36m vs. 30m: NA
+
+NOTA METODOLÓGICA
+Los coeficientes rolling y TVP no son equivalentes en unidades. La evidencia comparada se basa en trayectoria, tendencia y comovimiento.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_comparacion_rolling_revisado_tvp
+======================================================================

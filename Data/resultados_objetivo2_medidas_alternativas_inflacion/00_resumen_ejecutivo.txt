@@ -1,0 +1,33 @@
+
+======================================================================
+PRUEBAS CON MEDIDAS ALTERNATIVAS DE INFLACIÓN
+======================================================================
+Archivo base: bd_sample_modelo.csv
+Archivo IPC/subyacente: inflacion.csv
+Muestra base: 2010-01 a 2026-06
+Observaciones de la base: 198
+
+MEDIDAS CONSTRUIDAS
+1. Inflación interanual original.
+2. Inflación interanual calculada desde el IPC.
+3. Inflación mensual desestacionalizada.
+4. Inflación mensual desestacionalizada anualizada.
+5. Inflación de tres meses desestacionalizada anualizada.
+6. Inflación subyacente interanual.
+
+DIAGNÓSTICO DE AUTOCORRELACIÓN
+Mejor p-Ljung-Box(12): Inflación mensual desestacionalizada anualizada | AR4 | p = 6.5232e-01
+Número de especificaciones con p-LB(12) >= 0.05: 4
+Especificaciones sin autocorrelación significativa: Inflación mensual desestacionalizada [AR1]; Inflación mensual desestacionalizada [AR4]; Inflación mensual desestacionalizada anualizada [AR1]; Inflación mensual desestacionalizada anualizada [AR4]
+
+MODELO TVP CONDICIONAL
+Medidas TVP estimadas: 5
+Mayor correlación de lambda con la inflación base: Inflación interanual de la base | corr = 1.00000
+
+NOTA DE INTERPRETACIÓN
+AIC y BIC deben compararse dentro de cada medida de inflación, no entre medidas con escalas diferentes.
+La inflación mensual no anualizada no se utiliza para lambda_t porque no está en la misma escala anual de la expectativa a 24 meses.
+El ajuste estacional mediante STL es diagnóstico y no sustituye una serie oficial desestacionalizada.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_medidas_alternativas_inflacion
+======================================================================

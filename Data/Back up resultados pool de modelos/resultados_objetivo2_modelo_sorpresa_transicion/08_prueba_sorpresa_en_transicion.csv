@@ -1,0 +1,2 @@
+hipotesis_nula,hipotesis_alternativa_economica,estadistico_LR,grados_libertad_LR,p_valor_LR_bilateral,delta_estimado_por_una_sd,delta_estimado_por_un_pp,se_delta_hessiana,z_delta,p_valor_Wald_bilateral,p_valor_Wald_unilateral_delta_menor_cero,nota
+delta = 0,delta < 0,1.0020878655977583,1,0.3168058323589329,0.004163441567675498,0.0021700990287929814,0.0025355936151493052,1.6419987583185087,0.1005902614106632,0.9497048692946684,La prueba LR compara el TVP base y el TVP con sorpresa. La inferencia de la Hessiana debe contrastarse con robustez y bootstrap.

@@ -1,0 +1,102 @@
+
+======================================================================
+MODELO PUENTE TVP CON SORPRESA INFLACIONARIA ALINEADA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra común: 2011-02 a 2026-06
+Observaciones: 185
+
+ECUACIÓN
+Delta e24_t = alpha + lambda(meta_t-e24_t-1) + gamma(e12_t-1-meta_t) + beta_t N_t + rho Delta e24_t-1 + pulso opcional + error.
+
+DEFINICIONES DE NOTICIA
+Exacta: inflacion_t - expectativa 12m formulada en t-12.
+Disponible: inflacion_t-1 - expectativa 12m formulada en t-13.
+
+----------------------------------------------------------------------
+Sorpresa exacta sin pulso
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik constante/TVP: 50.94623 / 50.94649
+AIC constante/TVP: -89.89246 / -87.89299
+BIC constante/TVP: -70.57033 / -65.35050
+LR: 0.00053
+p frontera: 4.9086e-01
+alpha: 0.03847 | p = 1.9994e-02
+lambda meta: 0.02686 | p = 7.0596e-01
+gamma expectativa corta: -0.08746 | p = 1.3743e-01
+rho revision: -0.27131 | p = 1.1153e-04
+Q_beta: 9.9869e-08
+Q_beta/H: 3.3456e-06
+Beta inicial/final: 0.03929 / 0.03874
+Reducción beta: 1.40%
+% meses beta significativamente positivo: 100.00%
+
+----------------------------------------------------------------------
+Sorpresa exacta con pulso
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik constante/TVP: 56.89666 / 57.38656
+AIC constante/TVP: -99.79332 / -98.77312
+BIC constante/TVP: -77.25083 / -73.01027
+LR: 0.97979
+p frontera: 1.6112e-01
+alpha: 0.04009 | p = 1.5604e-02
+lambda meta: 0.03108 | p = 6.5681e-01
+gamma expectativa corta: -0.08155 | p = 1.5616e-01
+rho revision: -0.25100 | p = 2.1945e-04
+Q_beta: 4.9312e-06
+Q_beta/H: 1.8020e-04
+Beta inicial/final: 0.05380 / 0.03782
+Reducción beta: 29.71%
+% meses beta significativamente positivo: 100.00%
+
+----------------------------------------------------------------------
+Sorpresa disponible sin pulso
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik constante/TVP: 50.36071 / 51.34026
+AIC constante/TVP: -88.72142 / -88.68052
+BIC constante/TVP: -69.39929 / -66.13803
+LR: 1.95910
+p frontera: 8.0805e-02
+alpha: 0.07393 | p = 3.0250e-04
+lambda meta: 0.12998 | p = 1.1163e-01
+gamma expectativa corta: -0.04809 | p = 4.7923e-01
+rho revision: -0.26305 | p = 1.2962e-04
+Q_beta: 9.7773e-05
+Q_beta/H: 3.5583e-03
+Beta inicial/final: 0.06847 / 0.06990
+Reducción beta: -2.09%
+% meses beta significativamente positivo: 67.57%
+
+----------------------------------------------------------------------
+Sorpresa disponible con pulso
+----------------------------------------------------------------------
+Convergencia TVP: 0
+LogLik constante/TVP: 56.58116 / 57.57830
+AIC constante/TVP: -99.16232 / -99.15660
+BIC constante/TVP: -76.61983 / -73.39375
+LR: 1.99428
+p frontera: 7.8947e-02
+alpha: 0.06524 | p = 6.9587e-04
+lambda meta: 0.09524 | p = 2.1882e-01
+gamma expectativa corta: -0.06379 | p = 3.2389e-01
+rho revision: -0.23904 | p = 3.5041e-04
+Q_beta: 5.5506e-05
+Q_beta/H: 2.1287e-03
+Beta inicial/final: 0.07268 / 0.06263
+Reducción beta: 13.83%
+% meses beta significativamente positivo: 84.86%
+
+COMPARACIÓN ENTRE DEFINICIONES
+Correlación Pearson beta exacta/disponible: 0.39055
+Correlación Spearman beta exacta/disponible: 0.43230
+
+CRITERIO DE INTERPRETACIÓN
+La definición exacta alinea correctamente pronóstico y realización.
+La definición disponible evita usar inflación no observable al momento de la encuesta, si la publicación ocurre después.
+La selección final debe considerar resultados econométricos y la cronología documental de la encuesta y del IPC.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Proyecto/Data/resultados_objetivo2_modelo_puente_sorpresa_alineada
+======================================================================

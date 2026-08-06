@@ -1,0 +1,3 @@
+modelo,convergencia,intento_seleccionado,log_verosimilitud,phi_u,alpha0,q1_innovacion_theta1,q2_innovacion_theta2,Q_lambda_implicita,Q_psi_implicita,cov_lambda_psi_implicita,correlacion_innovaciones_lambda_psi,Q_nu
+Constante SSM reparametrizado,0,5,47.74419477656559,0.8858419662077829,0.027286917834272322,0,0,0,0,0,NA,0.03366162864133795
+TVP Strohsal reparametrizado,0,8,48.20365169722127,0.8738458688858681,0.03205024429422632,7.043823609705103e-5,1.000000000000001e-12,7.043823709705102e-5,1.000000000000001e-12,1.000000000000001e-12,1.1915047032024127e-4,0.03287135543375441

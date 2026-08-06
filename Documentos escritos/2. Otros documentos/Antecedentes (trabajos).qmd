@@ -1,0 +1,51 @@
+---
+title: "Antecedentes"
+format:
+  pdf:
+    pdf-engine: xelatex
+    toc: true
+    number-sections: true
+mainfont: "Times New Roman"
+fontsize: 12pt
+linestretch: 1.2
+geometry: margin=1in
+editor: visual
+---
+
+### Gondo, R., & Yetman, J. *Anchoring of Inflation Expectations in Latin America*
+
+#### Idea general {.unnumbered}
+
+El trabajo analiza si las expectativas de inflación en América Latina cuentan con un ancla identificable y qué tan fuerte es dicho anclaje. Para ello, modela los pronósticos de inflación como una función que converge desde la inflación reciente hacia un nivel de inflación de largo plazo o "anchor", a medida que el horizonte de pronóstico se amplía. A partir de esta estrategia, los autores evalúan si ese ancla existe, cómo ha evolucionado en el tiempo y si, en los países con metas de inflación, dicho ancla es consistente con el objetivo anunciado por el banco central.
+
+#### Hipótesis {.unnumbered}
+
+La hipótesis central del estudio es que, si las expectativas de inflación están bien ancladas, los pronósticos de inflación de mayor horizonte deberían converger hacia un nivel relativamente estable de inflación de largo plazo, y no quedar dominados por la inflación reciente. En consecuencia, un mayor peso del "anchor" en horizontes largos y una mayor precisión en su estimación son interpretados como evidencia de un mejor anclaje de expectativas.
+
+#### ¿Para qué usaron rolling? {.unnumbered}
+
+El trabajo utiliza **muestras rolling de ocho años** para estimar, por máxima verosimilitud, una función de decaimiento que describe cómo los pronósticos se alejan de la inflación reciente y convergen hacia el ancla cuando el horizonte aumenta. El uso de rolling windows les permite analizar si la fortaleza del anclaje y el valor estimado del anchor cambian en el tiempo, en lugar de asumir que permanecen constantes durante toda la muestra.
+
+#### Modelo propuesto {.unnumbered}
+
+La especificación central del paper puede resumirse como:
+
+$$
+f_{t,t-h} = \alpha(h)\pi^{*} + \left[1-\alpha(h)\right]\pi_{t-h} + \varepsilon_{t,t-h}
+$$
+
+donde:
+
+-   $f_{t,t-h}$: representa el pronóstico de inflación para el período $t$ realizado con horizonte $h$.
+-   $\pi^{*}$: representa el ancla de inflación de largo plazo.
+-   $\pi_{t-h}$: representa la inflación observada al momento de realizar el pronóstico.
+-   $\alpha(h)$: representa el peso del ancla, el cual depende del horizonte y sigue una función de decaimiento.
+-   $\varepsilon_{t,t-h}$: es el término de error.
+
+La función $\alpha(h)$ se modela mediante una función tipo Weibull, de manera que el peso del anchor aumenta con el horizonte de pronóstico.
+
+#### Conclusiones {.unnumbered}
+
+Los autores encuentran que la mayoría de países de América Latina sí presentan un ancla de inflación identificable, y que el grado de anclaje ha tendido a fortalecerse con el tiempo. En los países con esquemas formales de metas de inflación, el ancla estimada suele ubicarse dentro del rango objetivo en los años más recientes, lo cual es consistente con una mayor credibilidad de la política monetaria. No obstante, el estudio también muestra heterogeneidad entre países y evidencia de debilitamiento del anclaje en algunos casos.
+
+### 

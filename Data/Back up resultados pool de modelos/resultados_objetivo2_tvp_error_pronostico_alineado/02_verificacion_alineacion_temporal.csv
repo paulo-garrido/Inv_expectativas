@@ -1,0 +1,4 @@
+definicion,expresion,uso,error_maximo_identidad
+Error contemporáneo emparejado,inflacion_t - expectativa12_t-12,Diagnóstico y posible robustez,NA
+Sorpresa utilizada en el modelo,inflacion_t-1 - expectativa12_t-13,Regresor principal,0
+Identidad de verificación,"lag(error contemporáneo, 1)",Validación algebraica,0
