@@ -90,18 +90,24 @@ glimpse(bd)
 # ---------------------------
 # 4. Definir meta de inflación
 # ---------------------------
-# Supuesto base: meta central = 4 y banda = +/- 1
+# Meta central histórica del Banco de Guatemala:
+# 2010-2011: 5.0%
+# 2012:      4.5%
+# Desde 2013: 4.0%
 # Si luego deseas una meta variable por año, esta sección se sustituye
-meta_central <- 4
-banda_inf    <- 3
-banda_sup    <- 5
 
 bd <- bd %>%
   mutate(
-    meta = meta_central,
-    meta_inf = banda_inf,
-    meta_sup = banda_sup
+    meta_central = case_when(
+      year(fecha) %in% c(2010,2011) ~ 5.0,
+      year(fecha) == 2012           ~ 4.5,
+      year(fecha) >= 2013           ~ 4.0,
+      TRUE                          ~NA_real_    
+    ),
+    banda_inf = meta_central -1,
+    banda_sup = meta_central +1
   )
+  
 
 # ---------------------------
 # 5. Construcción de variables estilizadas
