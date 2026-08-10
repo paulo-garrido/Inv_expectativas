@@ -69,9 +69,9 @@ window_size <- 36   # 36 meses = 3 años
 rolling_fun <- function(data_window) {
   
   modelo <- lm(
-    brecha_exp24 ~ brecha_exp24_lag1 +
+    brecha_exp24 ~  brecha_exp24_lag1 +
       brecha_infl_lag1 +
-      tcdep_var_lag1,
+      tcdep_var_lag1 + tcdep_var + ,
     data = data_window
   )
   

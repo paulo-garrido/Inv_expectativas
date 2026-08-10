@@ -60,16 +60,12 @@ df_model <- read_csv(
         brecha_infl_lag1 =
             infl_gt_lag1 - meta_inflacion_lag1,
 
-        # Variación interanual rezagada del tipo de cambio
-        tcdep_var_lag1 =
-            lag(tcdep_var, 1)
     ) |>
     filter(
         complete.cases(
             brecha_exp24,
             brecha_exp24_lag1,
-            brecha_infl_lag1,
-            tcdep_var_lag1
+            brecha_infl_lag1
         )
     )
 
@@ -94,7 +90,7 @@ cat(
 # ------------------------------------------------------------
 # 2) Definir ventana móvil
 # ------------------------------------------------------------
-window_size <- 36   # 36 meses = 3 años
+window_size <- 48   # 36 meses = 3 años
 
 # Prueba de robustez:
 # cambiar únicamente la línea anterior por:
@@ -114,8 +110,7 @@ rolling_fun <- function(data_window) {
     modelo <- lm(
         brecha_exp24 ~
             brecha_exp24_lag1 +
-            brecha_infl_lag1 +
-            tcdep_var_lag1,
+            brecha_infl_lag1,
         data = data_window
     )
 
@@ -138,9 +133,6 @@ rolling_fun <- function(data_window) {
     coef_rho <- resultados |>
         filter(term == "brecha_exp24_lag1")
 
-    coef_gamma <- resultados |>
-        filter(term == "tcdep_var_lag1")
-
     ajuste <- broom::glance(modelo)
 
     tibble(
@@ -153,11 +145,6 @@ rolling_fun <- function(data_window) {
         rho = coef_rho$estimate,
         se_rho = coef_rho$std.error,
         p_rho = coef_rho$p.value,
-
-        # Efecto de la depreciación cambiaria
-        gamma = coef_gamma$estimate,
-        se_gamma = coef_gamma$std.error,
-        p_gamma = coef_gamma$p.value,
 
         # Ajuste del modelo
         r2_ajustado = ajuste$adj.r.squared
@@ -189,10 +176,6 @@ rolling_results <- purrr::map_dfr(
             se_rho = res$se_rho,
             p_rho = res$p_rho,
 
-            gamma = res$gamma,
-            se_gamma = res$se_gamma,
-            p_gamma = res$p_gamma,
-
             r2_ajustado = res$r2_ajustado
         )
     }
@@ -210,10 +193,6 @@ rolling_results <- rolling_results |>
         # Intervalos de confianza de rho
         rho_ic_inf = rho - 1.96 * se_rho,
         rho_ic_sup = rho + 1.96 * se_rho,
-
-        # Intervalos de confianza de gamma
-        gamma_ic_inf = gamma - 1.96 * se_gamma,
-        gamma_ic_sup = gamma + 1.96 * se_gamma,
 
         # Velocidad mensual de ajuste hacia la meta
         velocidad_ajuste = 1 - rho,
@@ -255,104 +234,299 @@ write_csv(
 )
 
 # ------------------------------------------------------------
-# 7) Gráfico de beta
+# Estilo gráfico común del working paper
 # ------------------------------------------------------------
+
+library(ggplot2)
+library(scales)
+
+# Paleta coherente con las figuras anteriores
+col_serie  <- "#2F4A67"
+col_banda  <- "#AFC4D6"
+col_ref    <- "#4D4D4D"
+
+tema_wp <- theme_minimal(base_size = 10.5) +
+    theme(
+        # Fondo y cuadrícula
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_line(
+            colour = "grey92",
+            linewidth = 0.30
+        ),
+        panel.grid.major.y = element_line(
+            colour = "grey88",
+            linewidth = 0.35
+        ),
+        
+        # Ejes
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(
+            size = 10.5,
+            colour = "black",
+            margin = margin(r = 8)
+        ),
+        axis.text = element_text(
+            size = 9,
+            colour = "grey25"
+        ),
+        axis.ticks = element_blank(),
+        
+        # Sin títulos internos:
+        # el título y la nota se administran desde Quarto
+        plot.title = element_blank(),
+        plot.subtitle = element_blank(),
+        
+        # Márgenes compactos
+        plot.margin = margin(
+            t = 4,
+            r = 8,
+            b = 4,
+            l = 4
+        )
+    )
+
+
+# ------------------------------------------------------------
+# Figura: sensibilidad de las expectativas
+# ------------------------------------------------------------
+
 p_beta <- ggplot(
     rolling_results,
     aes(x = fecha_fin, y = beta)
 ) +
+    
     geom_ribbon(
         aes(
             ymin = beta_ic_inf,
             ymax = beta_ic_sup
         ),
-        alpha = 0.2
+        fill = "#AFC4D6",
+        alpha = 0.28,
+        linewidth = 0
     ) +
-    geom_line(linewidth = 1) +
+    
+    geom_line(
+        colour = "#2F4A67",
+        linewidth = 0.80,
+        lineend = "round"
+    ) +
+    
     geom_hline(
         yintercept = 0,
-        linetype = "dashed"
+        linetype = "dashed",
+        colour = "grey30",
+        linewidth = 0.45
     ) +
+    
+    scale_x_date(
+        date_breaks = "2 years",
+        date_labels = "%Y",
+        date_minor_breaks = "1 year",
+        expand = expansion(mult = c(0.01, 0.015))
+    ) +
+    
+    scale_y_continuous(
+        breaks = seq(0, 0.4, by = 0.1),
+        expand = expansion(mult = c(0.03, 0.05))
+    ) +
+    
+    coord_cartesian(
+        ylim = c(-0.015, NA),
+        clip = "off"
+    ) +
+    
     labs(
-        title = paste0(
-            "Rolling regression (ventana de ",
-            window_size,
-            " meses)"
-        ),
-        subtitle = paste0(
-            "Coeficiente de la brecha de inflación rezagada ",
-            "sobre la brecha de expectativas a 24 meses"
-        ),
-        x = "Fecha final de la ventana",
-        y = expression(beta[w])
+        x = NULL,
+        y = expression(hat(beta)[t])
     ) +
-    theme_minimal()
+    
+    theme_minimal(base_size = 10.5) +
+    
+    theme(
+        panel.grid.minor.x = element_line(
+            colour = "grey94",
+            linewidth = 0.25
+        ),
+        panel.grid.minor.y = element_blank(),
+        
+        panel.grid.major.x = element_line(
+            colour = "grey90",
+            linewidth = 0.30
+        ),
+        panel.grid.major.y = element_line(
+            colour = "grey87",
+            linewidth = 0.35
+        ),
+        
+        axis.title.y = element_text(
+            size = 10.5,
+            colour = "black",
+            margin = margin(r = 8)
+        ),
+        
+        axis.text = element_text(
+            size = 9,
+            colour = "grey25"
+        ),
+        
+        axis.ticks = element_blank(),
+        
+        plot.margin = margin(
+            t = 4,
+            r = 8,
+            b = 4,
+            l = 4
+        )
+    )
+
 
 ggsave(
     paste0(
-        "output/rolling_beta_tc_",
+        "output/rolling_beta_",
         window_size,
         "m.png"
     ),
     plot = p_beta,
-    width = 10,
-    height = 5,
-    dpi = 300
+    width = 8.5,
+    height = 4.3,
+    dpi = 300,
+    bg = "white"
 )
 
 print(p_beta)
 
+
 # ------------------------------------------------------------
-# 8) Gráfico de rho
+# Figura: persistencia de las expectativas
 # ------------------------------------------------------------
+
 p_rho <- ggplot(
     rolling_results,
     aes(x = fecha_fin, y = rho)
 ) +
+    
     geom_ribbon(
         aes(
             ymin = rho_ic_inf,
             ymax = rho_ic_sup
         ),
-        alpha = 0.2
+        fill = "#AFC4D6",
+        alpha = 0.28,
+        linewidth = 0
     ) +
-    geom_line(linewidth = 1) +
+    
+    geom_line(
+        colour = "#2F4A67",
+        linewidth = 0.80,
+        lineend = "round"
+    ) +
+    
     geom_hline(
         yintercept = 0,
-        linetype = "dashed"
+        linetype = "dashed",
+        colour = "grey30",
+        linewidth = 0.45
     ) +
+    
     geom_hline(
         yintercept = 1,
-        linetype = "dotted"
+        linetype = "dotted",
+        colour = "grey50",
+        linewidth = 0.45
     ) +
+    
+    scale_x_date(
+        date_breaks = "2 years",
+        date_labels = "%Y",
+        date_minor_breaks = "1 year",
+        expand = expansion(mult = c(0.01, 0.015))
+    ) +
+    
+    scale_y_continuous(
+        breaks = seq(0, 1, by = 0.2),
+        expand = expansion(mult = c(0.03, 0.05))
+    ) +
+    
+    coord_cartesian(
+        ylim = c(-0.02, 1.05),
+        clip = "off"
+    ) +
+    
     labs(
-        title = paste0(
-            "Persistencia de las expectativas (ventana de ",
-            window_size,
-            " meses)"
-        ),
-        subtitle = paste0(
-            "Coeficiente de la brecha de expectativas ",
-            "a 24 meses rezagada"
-        ),
-        x = "Fecha final de la ventana",
-        y = expression(rho[w])
+        x = NULL,
+        y = expression(hat(rho)[t])
     ) +
-    theme_minimal()
+    
+    theme_minimal(base_size = 10.5) +
+    
+    theme(
+        panel.grid.minor.x = element_line(
+            colour = "grey94",
+            linewidth = 0.25
+        ),
+        panel.grid.minor.y = element_blank(),
+        
+        panel.grid.major.x = element_line(
+            colour = "grey90",
+            linewidth = 0.30
+        ),
+        panel.grid.major.y = element_line(
+            colour = "grey87",
+            linewidth = 0.35
+        ),
+        
+        axis.title.y = element_text(
+            size = 10.5,
+            colour = "black",
+            margin = margin(r = 8)
+        ),
+        
+        axis.text = element_text(
+            size = 9,
+            colour = "grey25"
+        ),
+        
+        axis.ticks = element_blank(),
+        
+        plot.margin = margin(
+            t = 4,
+            r = 8,
+            b = 4,
+            l = 4
+        )
+    )
 
 ggsave(
     paste0(
-        "output/rolling_rho_tc_",
+        "output/rolling_rho_",
         window_size,
         "m.png"
     ),
     plot = p_rho,
-    width = 10,
-    height = 5,
-    dpi = 300
+    width = 8.5,
+    height = 4.3,
+    dpi = 300,
+    bg = "white"
 )
 
 print(p_rho)
+ggsave(
+    paste0(
+        "output/rolling_rho_",
+        window_size,
+        "m.png"
+    ),
+    plot = p_rho,
+    width = 8.5,
+    height = 4.3,
+    dpi = 300,
+    bg = "white"
+)
+
+print(p_rho)
+
+
+
 
 # ------------------------------------------------------------
 # 9) Resumen en consola
@@ -387,3 +561,4 @@ cat(
     "- Gráfico de beta\n",
     "- Gráfico de rho\n"
 )
+

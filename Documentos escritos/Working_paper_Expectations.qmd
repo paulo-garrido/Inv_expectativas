@@ -188,7 +188,7 @@ No obstante, esta evolución ha tenido una suerte de no uniformidad, es decir, a
 
 *Evolución histórica de la inflación en Guatemala, 1997--2026*
 
-::: text-center
+::: {#ev_inflacion .text-center}
 ![](images/fig_contexto_inflacion_historica_emei.png)
 :::
 
@@ -214,7 +214,7 @@ Analizar la evolución del anclaje de las expectativas de inflación a 24 meses 
 
 ## Objetivos específicos
 
-1.  Caracterizar la evolución de las expectativas de inflación a 12 y 24 meses durante 2010–2026, evaluando su proximidad y estabilidad respecto de la meta de inflación vigente.
+1.  Caracterizar la evolución de las expectativas de inflación a 12 y 24 meses durante 2010--2026, evaluando su proximidad y estabilidad respecto de la meta de inflación vigente.
 2.  Estimar mediante regresiones móviles la sensibilidad de las expectativas a 24 meses frente a la brecha de inflación, controlando su persistencia.
 3.  Estimar, mediante un modelo con parámetros variantes en el tiempo y filtro de Kalman, la evolución de la sensibilidad de las expectativas a 24 meses frente a sorpresas inflacionarias.
 4.  Identificar episodios de fortalecimiento, desanclaje transitorio y reanclaje de las expectativas.
@@ -387,25 +387,57 @@ La proximidad y la estabilidad se utilizan principalmente como indicadores descr
 
 ### Rolling regressions
 
-Como primera aproximación empírica, siguiendo la estrategia económetrica desarrollada por @lyziakPaloviita2017 se estiman regresiones móviles para evaluar si la sensibilidad de la expectativa a 24 meses frente a la inflación observada rezagada ha cambiado a lo largo del tiempo. Las variables se expresan como desviaciones respecto de la meta central vigente, de modo que:
+Como primera aproximación empírica al anclaje de las expectativas, se examina si la sensibilidad de las expectativas de inflación a 24 meses frente a la inflación observada ha permanecido estable a lo largo del período de estudio. Para tal fin, La estrategia se inscribe en la literatura que caracteriza la formación de expectativas como un proceso dinámico en el que intervienen tanto la información inflacionaria reciente como la propia persistencia de las expectativas; en esta linea, @rossini_vega_quispe_perez2016 modelan las expectativas a partir de su valor rezagado, la inflación observada y la meta de inflación, y utilizan regresiones móviles para evaluar si la importancia relativa de estos componentes se modifica en el tiempo; asimismo, el criterio de interpretación sigue a @lyziakPaloviita2017; para quienes unas expectativas firmemente ancladas deberían mostrar una sensibilidad reducida frente a las fluctuaciones de la inflación observada.
+
+Partiendo de esta idea, el interés no reside únicamente en determinar si la inflación y las expectativas se encuentran relacionadas, sino en establecer si las desviaciones de la inflación respecto del ancla nominal continúan trasladándose hacia las expectativas correspondientes al horizonte de política. Por ello, en lugar de trabajar directamente con los niveles de ambas variables, se expresan las expectativas a 24 meses y la inflación observada como desviaciones respecto de la meta central vigente:
 
 $$
-\widetilde e_t^{24}
+\widetilde{e}^{24}_t
 =
-e_t^{24}-\pi_t^{m},
+e^{24}_t-\pi^m_t,
 \qquad
-\widetilde\pi_t
+\widetilde{\pi}_t
 =
-\pi_t-\pi_t^{m},
+\pi_t-\pi^m_t,
 $$ {#eq-brechas-rolling}
 
-donde $e_t^{24}$ representa la expectativa de inflación a 24 meses, $\pi_t$ es la inflación observada y $\pi_t^{m}$ denota la meta central de inflación vigente en el período $t$. Esta transformación permite distinguir los cambios de sensibilidad de las modificaciones discretas que experimentó la meta al inicio de la muestra.
+donde $e^{24}_t$ representa la expectativa de inflación a 24 meses, $\pi_t$ corresponde a la inflación observada y $\pi^m_t$ denota la meta central de inflación vigente en el período $t$. Esta transformación permite expresar ambas variables con relación a una referencia nominal común y, al mismo tiempo, aislar las modificaciones discretas que experimentó la meta al inicio de la muestra; en este sentido, una brecha positiva de inflación indica que la inflación se encuentra por encima de la meta, mientras que una brecha positiva de expectativas señala que los agentes anticipan una inflación a 24 meses superior al objetivo de política.
 
-Con lo anterior, se estima un modelo autorregresivo sobre ventanas móviles de longitud fija. Para cada mes $t$, se define la ventana:$$\mathcal W_t=\{t-W+1,\ldots,t\},$$ {#eq-ventana-rolling} $W$ representa el número de observaciones incluidas en cada estimación. La especificación estimada dentro de la ventana $\mathcal W_t$ es:$$\widetilde e^{24}_\tau=\alpha_t+\rho_t\widetilde e^{24}_{\tau-1}+\beta_t\widetilde\pi_{\tau-1}+\gamma_t q_{\tau-1}+u_\tau,\qquad\tau\in\mathcal W_t.$$ {#eq-rolling-principal} en donde: $\alpha_t$ es el intercepto estimado en la ventana que concluye en $t$; $\rho_t$ mide la persistencia de la desviación de las expectativas respecto de la meta; $\beta_t$ representa la sensibilidad de corto plazo de dicha desviación frente a la brecha inflacionaria observada en el mes anterior; $\gamma_t$ controla por la depreciación cambiaria, cuya incorporación resulta pertinente para una economía pequeña y abierta en la que las variaciones del tipo de cambio pueden modificar simultáneamente la inflación observada y la formación de expectativas; finalmente, $u_\tau$ es un término de perturbación con media condicional igual a cero.
+Sobre esta transformación se introduce una estructura dinámica en donde la inclusión de la expectativa rezagada responde a que las expectativas a 24 meses presentan un grado importante de persistencia, por lo que una parte de su desviación contemporánea puede ser simplemente consecuencia de desviaciones acumuladas en períodos anteriores; en este marco, controlar por esta inercia permite que el coeficiente asociado con la inflación recoja de manera más precisa la sensibilidad de las expectativas frente a nueva información inflacionaria.
 
-El parámetro central de esta primera estrategia es $\beta_t$, un valor positivo implica que una inflación situada por encima de la meta tiende a trasladarse hacia una expectativa a 24 meses también superior al objetivo; por consiguiente, una disminución sostenida de $\beta_t$ se interpreta como evidencia compatible con un fortalecimiento del anclaje. Asimismo, la inclusión de la variable dependiente rezagada permite distinguir la respuesta inmediata de las expectativas de su efecto acumulado; siempre que $|\rho_t|<1$, la sensibilidad de largo plazo asociada con la brecha inflacionaria puede aproximarse mediante:$$\beta^{LR}_t=\frac{\beta_t}{1-\rho_t}.$$ {#eq-beta-largo-plazo} esta forma, $\beta_t$ mide el traspaso dentro del mes, mientras que $\beta^{LR}_t$ incorpora la persistencia de las expectativas y resume el ajuste acumulado que se deriva de una modificación permanente en la brecha inflacionaria.
+Así, para una ventana de longitud fija $W$, la información disponible para la estimación que concluye en el período $t$ se define como:
 
-La estimación principal utiliza ventanas de 36 observaciones mensuales, cuya longitud representa un compromiso entre dos objetivos: disponer de suficientes grados de libertad y permitir que los coeficientes respondan a cambios relativamente recientes, con errores estándar calculados mediante la matriz heterocedástica y autocorrelacionada consistente de @newey_west1987, empleando tres rezagos mensuales; en este contexto, cada estimación se asigna al último mes de la ventana correspondiente; por ello, las trayectorias obtenidas deben interpretarse como una representación suavizada de la sensibilidad.
+$$
+\mathcal{W}_t
+=
+\{t-W+1,\ldots,t\}.
+$$ {#eq-ventana-rolling}
+
+Dentro de cada ventana se estima la siguiente especificación:
+
+$$
+\widetilde{e}^{24}_{\tau}
+=
+\alpha_t
++
+\rho_t\widetilde{e}^{24}_{\tau-1}
++
+\beta_t\widetilde{\pi}_{\tau-1}
++
+u_{\tau},
+\qquad
+\tau\in\mathcal{W}_t.
+$$ {#eq-modelo-rolling}
+
+Los parámetros se consideran constantes dentro de cada ventana, pero pueden modificarse a medida que esta avanza en el tiempo. En particular, $\rho_t$ captura la persistencia de las desviaciones de las expectativas respecto de la meta, mientras que $\beta_t$ constituye el parámetro central del ejercicio y mide la sensibilidad de la expectativa a 24 meses frente a la brecha de inflación observada en el período anterior. El uso de la inflación rezagada permite, además, respetar el conjunto de información disponible al momento de formación de las expectativas y reduce problemas asociados con una relación puramente contemporánea entre ambas variables.
+
+El parámetro central de esta primera estrategia es $\beta_t$, un valor positivo implica que una inflación situada por encima de la meta tiende a trasladarse hacia una expectativa a 24 meses también superior al objetivo; por el contrario, cuanto menor sea este coeficiente, menor será la transmisión de las fluctuaciones inflacionarias de corto plazo hacia el horizonte de política; en este sentido, el anclaje no se identifica con un valor puntual determinado de $\beta_t$, sino con su evolución: una reducción persistente de la sensibilidad constituye evidencia compatible con un fortalecimiento del anclaje, mientras que aumentos sostenidos indicarían una mayor incorporación de las condiciones inflacionarias recientes en la formación de las expectativas de mayor horizonte. por otro lado, la inclusión de la variable dependiente rezagada permite distinguir la respuesta inmediata de las expectativas de su efecto acumulado.
+
+Esta interpretación debe distinguirse de la proporcionada por $\rho_t$, mientras que $\beta_t$ refleja la respuesta de las expectativas ante nuevas desviaciones de la inflación, $\rho_t$ informa sobre la velocidad con la que se disipan las desviaciones de las propias expectativas una vez que estas se han producido.
+
+La estimación utiliza ventanas móviles de 60 observaciones mensuales, esta longitud busca conciliar dos objetivos que resultan contrapuestos en este tipo de ejercicios: disponer de un número suficiente de observaciones para obtener estimaciones razonablemente precisas y, al mismo tiempo, conservar la capacidad de identificar cambios graduales en la relación entre inflación y expectativas.
+
+Dado el carácter mensual y dinámico de la especificación, la inferencia se realiza mediante errores estándar heterocedásticos y autocorrelacionados consistentes de @newey_west1987, empleando tres rezagos mensuales, en donde cada estimación se asigna al último mes de la ventana correspondiente, por ello, las trayectorias obtenidas deben interpretarse como una representación suavizada de la sensibilidad.
 
 ### Modelo TVP--VAR restringido y proxy de credibilidad
 
@@ -572,7 +604,7 @@ En este marco, la Figura 2 muestra que la trayectoria de las expectativas de inf
 
 *Evolución histórica de las expectativas inflacionarias en Guatemala, 2010--2026*
 
-::: text-center
+::: {#ev_expectativas .text-center}
 ![](images/3.fig_expectat_meta.png)
 :::
 
@@ -580,9 +612,9 @@ En este marco, la Figura 2 muestra que la trayectoria de las expectativas de inf
 
 *Nota.* La figura muestra la serie histórica de las expectativas inflacionarias en Guatemala desde 2010 hasta junio 2026, comparando con la meta inflacionaria establecida por el EMEI. Elaboración propia con datos del Banco de Guatemala. \normalsize
 
-Una característica más relevante para el análisis del anclaje surge al comparar ambos horizontes; si bien las expectativas a 12 y 24 meses comparten buena parte de sus movimientos, las correspondientes a 24 meses muestran, en general, fluctuaciones más contenidas. Esta diferencia se vuelve particularmente evidente durante el episodio inflacionario de 2022–2023, en donde las expectativas a 12 meses aumentaron rápidamente hasta superar el límite superior del rango meta, alcanzando valores superiores a 6%, mientras que las expectativas a 24 meses registraron un incremento considerablemente menor y permanecieron por debajo de 5%; posteriormente, ambas series retornaron hacia valores próximos a la meta durante 2024. Este comportamiento es consistente con la idea planteada en la literatura de que las perturbaciones con efectos predominantemente transitorios deberían reflejarse con mayor intensidad en las expectativas de horizontes más próximos, mientras que las expectativas de mayor plazo deberían mostrar una respuesta más limitada cuando el objetivo inflacionario conserva capacidad de actuar como referencia nominal, lo cual ilustra una buena señal en la credibilidad del banco central, tema que abordaremos en las siguientes secciones del estudio.
+Una característica más relevante para el análisis del anclaje surge al comparar ambos horizontes; si bien las expectativas a 12 y 24 meses comparten buena parte de sus movimientos, las correspondientes a 24 meses muestran, en general, fluctuaciones más contenidas. Esta diferencia se vuelve particularmente evidente durante el episodio inflacionario de 2022--2023, en donde las expectativas a 12 meses aumentaron rápidamente hasta superar el límite superior del rango meta, alcanzando valores superiores a 6%, mientras que las expectativas a 24 meses registraron un incremento considerablemente menor y permanecieron por debajo de 5%; posteriormente, ambas series retornaron hacia valores próximos a la meta durante 2024. Este comportamiento es consistente con la idea planteada en la literatura de que las perturbaciones con efectos predominantemente transitorios deberían reflejarse con mayor intensidad en las expectativas de horizontes más próximos, mientras que las expectativas de mayor plazo deberían mostrar una respuesta más limitada cuando el objetivo inflacionario conserva capacidad de actuar como referencia nominal, lo cual ilustra una buena señal en la credibilidad del banco central, tema que abordaremos en las siguientes secciones del estudio.
 
-Por otro lado, el comportamiento observado hacia el final de la muestra introduce, sin embargo, un elemento adicional. Durante 2025 y 2026 ambas expectativas se desplazan nuevamente por debajo de la meta central; por tanto, la evidencia descriptiva no apunta a una convergencia monotónica de las expectativas hacia el 4%, sino a una dinámica en la que se alternan períodos de mayor y menor proximidad respecto del objetivo. Esta característica es relevante porque, como enfatizan Strohsal et al. (2015), el grado de anclaje no necesariamente cambia mediante rupturas permanentes, sino que puede debilitarse y restablecerse gradualmente a través del tiempo. En el caso guatemalteco, la menor amplitud de las fluctuaciones a 24 meses —sobre todo frente al episodio de 2022–2023— constituye evidencia descriptiva compatible con un mayor grado de estabilidad de las expectativas de mayor horizonte. No obstante, la proximidad a la meta y la estabilidad relativa no son suficientes por sí mismas para establecer la existencia de anclaje; siguiendo el enfoque de Demertzis y la literatura posterior, es necesario determinar si las expectativas de mayor horizonte efectivamente se encuentran desacopladas de la dinámica inflacionaria de corto plazo, cuestión que se examina posteriormente mediante las estimaciones econométricas.
+Por otro lado, el comportamiento observado hacia el final de la muestra introduce, sin embargo, un elemento adicional. Durante 2025 y 2026 ambas expectativas se desplazan nuevamente por debajo de la meta central; por tanto, la evidencia descriptiva no apunta a una convergencia monotónica de las expectativas hacia el 4%, sino a una dinámica en la que se alternan períodos de mayor y menor proximidad respecto del objetivo. Esta característica es relevante porque, como enfatizan Strohsal et al. (2015), el grado de anclaje no necesariamente cambia mediante rupturas permanentes, sino que puede debilitarse y restablecerse gradualmente a través del tiempo. En el caso guatemalteco, la menor amplitud de las fluctuaciones a 24 meses ---sobre todo frente al episodio de 2022--2023--- constituye evidencia descriptiva compatible con un mayor grado de estabilidad de las expectativas de mayor horizonte. No obstante, la proximidad a la meta y la estabilidad relativa no son suficientes por sí mismas para establecer la existencia de anclaje; siguiendo el enfoque de Demertzis y la literatura posterior, es necesario determinar si las expectativas de mayor horizonte efectivamente se encuentran desacopladas de la dinámica inflacionaria de corto plazo, cuestión que se examina posteriormente mediante las estimaciones econométricas.
 
 De conformidad con lo anterior, una forma útil de evaluar la efectividad del banco central consiste en analizar en que medida las expectativas se alejan de la meta central; en esta dirección, la figura 3 ilustra la distancia de las expectativas con respecto a dicha meta central, que para Guatemala es del 4%. Bajo esta premisa, la figura refuerza la idea de que el comportamiento de las expectativas inflacionarias no solo ha tendido a moderarse en niveles, sino también a acercarse progresivamente a la meta establecida por la autoridad monetaria.
 
@@ -598,13 +630,53 @@ De conformidad con lo anterior, una forma útil de evaluar la efectividad del ba
 
 *Nota.* El panel A presenta la desviación de las expectativas de inflación a 12 y 24 meses respecto de la meta central vigente en cada período; valores positivos indican expectativas por encima de la meta y valores negativos, expectativas por debajo. El panel B muestra la distancia absoluta respecto de dicha meta, por lo que valores más cercanos a cero indican una mayor proximidad al objetivo inflacionario. Elaboración propia con datos del Banco de Guatemala.\normalsize
 
-En el panel A se observa que las desviaciones respecto de la meta presentan una dinámica común entre ambos horizontes, aunque con amplitudes distintas; particularmente, las expectativas a 24 meses tienden a mostrar desviaciones más acotadas que las de 12 meses, diferencia que se hace especialmente visible durante el episodio inflacionario de 2022–2023: mientras las expectativas de corto horizonte se alejaron más de dos puntos porcentuales de la meta, las de 24 meses reaccionaron de manera considerablemente menor. Asimismo, la figura permite identificar que los episodios de alejamiento no se producen únicamente por encima del objetivo; durante 2015–2016 y, nuevamente, hacia 2025–2026, ambas expectativas se ubican por debajo de la meta. En línea con la literatura sobre anclaje, esta menor amplitud relativa en el horizonte de 24 meses constituye evidencia descriptiva compatible con una menor respuesta de las expectativas de mayor plazo ante perturbaciones transitorias, aunque no permite por sí sola establecer su grado de anclaje.
+En el panel A se observa que las desviaciones respecto de la meta presentan una dinámica común entre ambos horizontes, aunque con amplitudes distintas; particularmente, las expectativas a 24 meses tienden a mostrar desviaciones más acotadas que las de 12 meses, diferencia que se hace especialmente visible durante el episodio inflacionario de 2022--2023: mientras las expectativas de corto horizonte se alejaron más de dos puntos porcentuales de la meta, las de 24 meses reaccionaron de manera considerablemente menor. Asimismo, la figura permite identificar que los episodios de alejamiento no se producen únicamente por encima del objetivo; durante 2015--2016 y, nuevamente, hacia 2025--2026, ambas expectativas se ubican por debajo de la meta. En línea con la literatura sobre anclaje, esta menor amplitud relativa en el horizonte de 24 meses constituye evidencia descriptiva compatible con una menor respuesta de las expectativas de mayor plazo ante perturbaciones transitorias, aunque no permite por sí sola establecer su grado de anclaje.
 
-por otro lado el panel B, al eliminar el signo de las desviaciones, permite concentrarse exclusivamente en *la magnitud del alejamiento respecto de la meta*, en donde la distancia de las expectativas a 24 meses es generalmente inferior a la correspondiente a 12 meses, siendo nuevamente el episodio de 2022–2023, -periodo caracterizado por el espiral inflacionario derivado principalmente de la ruptura de las cadenas de suministro mundiales y el encarecimiento de la energía y los alimentos agravado por la guerra en Ucrania- el contraste más marcado: la distancia del horizonte de 12 meses aumenta abruptamente, mientras que la de 24 meses permanece considerablemente más contenida; sin embargo, posteriormente, ambas series convergen hacia valores próximos a cero durante 2024, antes de registrar un nuevo incremento hacia el final de la muestra.
+por otro lado el panel B, al eliminar el signo de las desviaciones, permite concentrarse exclusivamente en *la magnitud del alejamiento respecto de la meta*, en donde la distancia de las expectativas a 24 meses es generalmente inferior a la correspondiente a 12 meses, siendo nuevamente el episodio de 2022--2023, -periodo caracterizado por el espiral inflacionario derivado principalmente de la ruptura de las cadenas de suministro mundiales y el encarecimiento de la energía y los alimentos agravado por la guerra en Ucrania- el contraste más marcado: la distancia del horizonte de 12 meses aumenta abruptamente, mientras que la de 24 meses permanece considerablemente más contenida; sin embargo, posteriormente, ambas series convergen hacia valores próximos a cero durante 2024, antes de registrar un nuevo incremento hacia el final de la muestra.
 
 En conjunto, los hechos estilizados muestran que las expectativas a 24 meses han presentado, en términos relativos, una mayor estabilidad y una menor amplitud en sus desviaciones respecto de la meta que las expectativas de menor horizonte; no obstante, la proximidad al objetivo inflacionario constituye únicamente una dimensión descriptiva del anclaje y no permite determinar si las expectativas de mayor plazo han reducido efectivamente su dependencia de la dinámica inflacionaria de corto plazo, es por esta razón, que el análisis se complementa mediante regresiones móviles (*rolling regressions*), con las cuales se examina si la sensibilidad de las expectativas a 24 meses frente a la inflación observada ha cambiado a lo largo del tiempo; en este contexto, este enfoque permite pasar de una caracterización basada en niveles y desviaciones a una evaluación dinámica del grado en que las expectativas de mayor horizonte responden a las condiciones inflacionarias contemporáneas.
 
 ## Sensibilidad temporal de las expectativas de inflación: evidencia de regresiones móviles
+
+Las regresiones móviles ofrecen una primera aproximación a la forma en que ha cambiado la relación entre las expectativas de mediano plazo y la inflación observada, el objetivo es, más que identificar un valor puntual del grado de anclaje, es examinar si la información contenida en las desviaciones recientes de la inflación respecto de la meta ha perdido o ganado importancia en la formación de expectativas; para la evaluación de este fenómeno, como se señalo en el capitulo 3, se utilizan regresiones moviles, con ventanas de 60 meses, usando la especificación de la @eq-modelo-rolling. Bajo esta interpretación, una reducción de $\widehat{\beta}_t$ indica que las fluctuaciones de corto plazo de la inflación tienen una menor capacidad para trasladarse hacia el horizonte de política y constituye, por tanto, evidencia compatible con un fortalecimiento del anclaje.
+
+### Sensibilidad frente a la inflación
+
+En aras de analizar la trayectoria de $\widehat{\beta}_t$, una cuidadosa lectura de la figura 4 revela que esta sensibilidad no ha permanecido constante durante el período analizado; se observa que en las primeras ventanas, el coeficiente se ubica en niveles comparativamente elevados y presenta -además- una mayor variabilidad, lo que sugiere que las desviaciones de la inflación respecto de la meta tenían entonces una mayor correspondencia con las expectativas a mediano plazo. Si bien, la estimación experimenta fluctuaciones durante esta primera parte de la muestra, el rasgo más relevante no es cada movimiento individual, sino el cambio en la dinámica visible posteriormente: *la sensibilidad pierde magnitud de manera progresiva y converge hacia valores considerablemente menores*.
+
+En este contexto, la magnitud del cambio es económicamente relevante: una misma desviación de la inflación respecto de la meta se encuentra asociada, en las ventanas más recientes, con una variación mucho menor de las expectativas a 24 meses que la observada al inicio del ejercicio; en este sentido, el resultado no apunta simplemente a que las expectativas hayan permanecido próximas a la meta, sino a que su respuesta frente a movimientos de la inflación observada parece haberse debilitado con el tiempo.
+
+**Figura 4**
+
+*Estimación del grado de respuesta de las expectativas a mediano plazo frente a la brecha de inflación, 2010--2026*
+
+![](images/rolling_beta_48m.png){fig-align="center"}
+
+\footnotesize
+
+*Nota.* La línea representa el coeficiente $\widehat{\beta}_t$ estimado mediante regresiones móviles de 60 meses. El área sombreada corresponde al intervalo de confianza al 95 % calculado con errores estándar Newey\--West HAC, en donde cada estimación se asigna al último mes de la ventana correspondiente. Elaboración propia.\normalsize
+
+Asimismo, las bandas de confianza aportan un matiz adicional, en este análisis, porque la incertidumbre alrededor de $\widehat{\beta}_t$ es mayor durante las primeras ventanas y disminuye sensiblemente en buena parte de la segunda mitad de la muestra, de manera que la reducción del coeficiente no parece responder únicamente a una mayor imprecisión de la estimación. En esta dirección, hacia el final del período, el intervalo vuelve a aproximarse al valor cero, lo que refuerza la lectura de una sensibilidad históricamente reducida.
+
+Por otro lado, el coeficiente de $\widehat{\rho}_t$ cuya trayectoria se ilustra en la figura 4, muestra que las expectativas conservan un componente inercial a lo largo de la muestra, aunque su magnitud varía entre períodos, como se observa en la figura 5, en donde se observa que el coeficiente ha tenido un leve incremento a inicios de 2015, manteniéndose estable oscilando entre 0.6 y un poco más de 0.7 entre 2016 hasta 2024, mostrando posteriormente a ese año un comportamiento más volátil; lo anterior, ilustra que las expectativas tienen un importante componente adaptativo, que juega un rol importante en la formación de expectativas.
+
+Es decir, las estimaciones sugieren que las expectativas a 24 meses se han vuelto menos sensibles a nuevas desviaciones de la inflación, pero que las discrepancias respecto de la meta, una vez incorporadas, pueden mostrar cierta persistencia antes de disiparse.
+
+**Figura 5**
+
+*Estimación de la respuesta de las expectativas a mediano plazo frente a la* persistencia de sus desviaciones respecto de la meta*, 2010--2026*
+
+![](images/rolling_rho_60m.png){fig-align="center"}
+
+\footnotesize
+
+*Nota.* La línea representa el coeficiente $\widehat{\rho}_t$ estimado mediante regresiones móviles de 60 meses. El área sombreada corresponde al intervalo de confianza al 95 % calculado con errores estándar Newey\--West HAC, en donde cada estimación se asigna al último mes de la ventana correspondiente. Elaboración propia.\normalsize
+
+Por ello, el análisis conjunto de ambos parámetros ofrece una caracterización más completa: la sensibilidad frente a la inflación constituye la dimensión central del anclaje examinada en esta sección, mientras que la persistencia permite evaluar la velocidad con la que las expectativas retornan hacia su referencia nominal.
+
+En conjunto, la evidencia mostrada de este primer análisis de la dinámica de la formación de expectativas, ilustra una menor dependencia en el tiempo de la expectativas a mediano plazo ante desviaciones de la inflación, lo cual, es consistente con un mayor anclaje, y, podría dar señales de una fortalecimiento en la credibilidad del banco de Guatemala; aunque las regresiones móviles presentan una limitación importante: los parámetros se suponen constantes dentro de cada ventana y su trayectoria depende, en cierta medida, de la longitud utilizada para definirla, y es, por esta razón, que el siguiente ejercicio abandona la segmentación discreta de la muestra y permite que la sensibilidad evolucione de manera continua mediante un modelo de parámetros variantes en el tiempo, con el propósito de examinar con mayor precisión cuándo y en qué magnitud se producen los cambios en el proceso de formación de expectativas.
+
+## Anclaje de Expectativas de inflación a mediano Plazo: evidencia de un modelo variante en el tiempo
 
 # Referencias {.unnumbered}
 
