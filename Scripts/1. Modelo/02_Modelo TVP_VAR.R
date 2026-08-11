@@ -1452,14 +1452,98 @@ readr::write_csv(
 )
 
 
-# 14. GRÁFICAS CENTRALES -------------------------------------------------------
+# ==============================================================================
+# 14. GRÁFICAS CENTRALES - LÍNEA GRÁFICA DEL WORKING PAPER
+# ==============================================================================
+#
+# Este bloque reemplaza por completo la sección 14 del script base.
+# Conserva los mismos nombres de archivo para no alterar el flujo del proyecto.
+#
+# Principios gráficos:
+# - sin títulos ni subtítulos internos: se administran desde Quarto;
+# - línea principal azul grisáceo;
+# - bandas de confianza azul claro;
+# - fondo blanco y cuadrícula tenue;
+# - eje temporal con marcas cada 2 años y menores cada 1 año;
+# - tamaño 8.5 x 4.3, 300 dpi, consistente con rolling regressions.
+# ==============================================================================
 
-# Las figuras siguen la lógica del paper:
-# - parámetros suavizados del TVP-VAR;
-# - proxy lambda_t con bandas;
-# - ancla implícita frente a inflación, expectativas y meta.
 
-# 14.1 c0_t
+# 14.0 Estilo común ------------------------------------------------------------
+
+col_serie <- "#2F4A67"
+col_banda <- "#AFC4D6"
+col_ref   <- "#4D4D4D"
+
+# Colores secundarios para figuras con varias series.
+col_expectativa <- "#6F7D8C"
+col_meta        <- "#3A3A3A"
+col_inflacion   <- "#A0A0A0"
+
+tema_wp <- ggplot2::theme_minimal(base_size = 10.5) +
+  ggplot2::theme(
+    panel.grid.minor.x = ggplot2::element_line(
+      colour = "grey94",
+      linewidth = 0.25
+    ),
+    panel.grid.minor.y = ggplot2::element_blank(),
+    
+    panel.grid.major.x = ggplot2::element_line(
+      colour = "grey90",
+      linewidth = 0.30
+    ),
+    panel.grid.major.y = ggplot2::element_line(
+      colour = "grey87",
+      linewidth = 0.35
+    ),
+    
+    axis.title.x = ggplot2::element_blank(),
+    axis.title.y = ggplot2::element_text(
+      size = 10.5,
+      colour = "black",
+      margin = ggplot2::margin(r = 8)
+    ),
+    
+    axis.text = ggplot2::element_text(
+      size = 9,
+      colour = "grey25"
+    ),
+    
+    axis.ticks = ggplot2::element_blank(),
+    
+    # Los títulos y notas se colocan desde Quarto.
+    plot.title = ggplot2::element_blank(),
+    plot.subtitle = ggplot2::element_blank(),
+    plot.caption = ggplot2::element_blank(),
+    
+    legend.position = "bottom",
+    legend.title = ggplot2::element_blank(),
+    legend.text = ggplot2::element_text(
+      size = 9,
+      colour = "grey25"
+    ),
+    
+    plot.margin = ggplot2::margin(
+      t = 4,
+      r = 8,
+      b = 4,
+      l = 4
+    )
+  )
+
+
+escala_x_wp <- ggplot2::scale_x_date(
+  date_breaks = "2 years",
+  date_labels = "%Y",
+  date_minor_breaks = "1 year",
+  expand = ggplot2::expansion(
+    mult = c(0.01, 0.015)
+  )
+)
+
+
+# 14.1 Intercepto variante c0_t -----------------------------------------------
+
 p_c0 <- ggplot2::ggplot(
   trayectoria_M3,
   ggplot2::aes(
@@ -1472,44 +1556,50 @@ p_c0 <- ggplot2::ggplot(
       ymin = c0_li_95,
       ymax = c0_ls_95
     ),
-    alpha = 0.18
+    fill = col_banda,
+    alpha = 0.28,
+    linewidth = 0
   ) +
   ggplot2::geom_line(
-    linewidth = 0.9
+    colour = col_serie,
+    linewidth = 0.80,
+    lineend = "round"
   ) +
   ggplot2::geom_hline(
     yintercept = 0,
-    linetype = "dashed"
+    linetype = "dashed",
+    colour = "grey30",
+    linewidth = 0.45
+  ) +
+  escala_x_wp +
+  ggplot2::scale_y_continuous(
+    expand = ggplot2::expansion(
+      mult = c(0.04, 0.06)
+    )
   ) +
   ggplot2::labs(
-    title = "Intercepto variante de la ecuación de expectativas",
-    subtitle = expression(c[0*t]),
     x = NULL,
-    y = "Coeficiente",
-    caption = "Estimación suavizada; bandas de confianza del 95%."
+    y = expression(hat(c)[0*t])
   ) +
-  ggplot2::theme_minimal(
-    base_size = 12
-  ) +
-  ggplot2::theme(
-    plot.title.position = "plot",
-    panel.grid.minor = ggplot2::element_blank()
-  )
+  tema_wp
 
-p_c0
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
     "figura_01_c0_t.png"
   ),
-  p_c0,
-  width = 9,
-  height = 5.5,
-  dpi = 300
+  plot = p_c0,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
 )
 
+print(p_c0)
 
-# 14.2 c_t
+
+# 14.2 Sensibilidad cambiante c_t ---------------------------------------------
+
 p_c <- ggplot2::ggplot(
   trayectoria_M3,
   ggplot2::aes(
@@ -1522,43 +1612,53 @@ p_c <- ggplot2::ggplot(
       ymin = c_li_95,
       ymax = c_ls_95
     ),
-    alpha = 0.18
+    fill = col_banda,
+    alpha = 0.28,
+    linewidth = 0
   ) +
   ggplot2::geom_line(
-    linewidth = 0.9
+    colour = col_serie,
+    linewidth = 0.80,
+    lineend = "round"
   ) +
   ggplot2::geom_hline(
     yintercept = 0,
-    linetype = "dashed"
+    linetype = "dashed",
+    colour = "grey30",
+    linewidth = 0.45
+  ) +
+  escala_x_wp +
+  ggplot2::scale_y_continuous(
+    expand = ggplot2::expansion(
+      mult = c(0.04, 0.06)
+    )
   ) +
   ggplot2::labs(
-    title = "Sensibilidad cambiante de las expectativas a la inflación",
-    subtitle = expression(c[t]),
     x = NULL,
-    y = "Coeficiente",
-    caption = "Estimación suavizada; bandas de confianza del 95%."
+    y = expression(hat(c)[t])
   ) +
-  ggplot2::theme_minimal(
-    base_size = 12
-  ) +
-  ggplot2::theme(
-    plot.title.position = "plot",
-    panel.grid.minor = ggplot2::element_blank()
-  )
-p_c
+  tema_wp
+
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
     "figura_02_c_t.png"
   ),
-  p_c,
-  width = 9,
-  height = 5.5,
-  dpi = 300
+  plot = p_c,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
 )
 
+print(p_c)
 
-# 14.3 Proxy lambda_t
+
+# 14.3 Proxy dinámica de credibilidad lambda_t --------------------------------
+#
+# Se omite la línea horizontal en cero porque no aporta información visual
+# en la región empírica estimada. La referencia relevante es lambda = 1.
+
 p_lambda <- ggplot2::ggplot(
   trayectoria_M3,
   ggplot2::aes(
@@ -1571,114 +1671,202 @@ p_lambda <- ggplot2::ggplot(
       ymin = lambda_li_95,
       ymax = lambda_ls_95
     ),
-    alpha = 0.18
+    fill = col_banda,
+    alpha = 0.28,
+    linewidth = 0
   ) +
   ggplot2::geom_line(
-    linewidth = 0.9
+    colour = col_serie,
+    linewidth = 0.80,
+    lineend = "round"
   ) +
   ggplot2::geom_hline(
     yintercept = 1,
-    linetype = "dashed"
+    linetype = "dotted",
+    colour = "grey45",
+    linewidth = 0.45
   ) +
-  ggplot2::geom_hline(
-    yintercept = 0,
-    linetype = "dotted"
+  escala_x_wp +
+  ggplot2::scale_y_continuous(
+    breaks = seq(
+      0.6,
+      1.0,
+      by = 0.1
+    ),
+    expand = ggplot2::expansion(
+      mult = c(0.03, 0.05)
+    )
+  ) +
+  ggplot2::coord_cartesian(
+    ylim = c(
+      min(
+        trayectoria_M3$lambda_li_95,
+        na.rm = TRUE
+      ) - 0.015,
+      1.015
+    ),
+    clip = "off"
   ) +
   ggplot2::labs(
-    title = "Proxy dinámica de credibilidad monetaria",
-    subtitle = expression(
-      lambda[t] == 1 - c[t] / (1 - d)
-    ),
     x = NULL,
-    y = expression(lambda[t]),
-    caption = "Estimación suavizada; bandas de confianza del 95%."
+    y = expression(hat(lambda)[t])
   ) +
-  ggplot2::theme_minimal(
-    base_size = 12
-  ) +
-  ggplot2::theme(
-    plot.title.position = "plot",
-    panel.grid.minor = ggplot2::element_blank()
-  )
+  tema_wp
 
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
     "figura_03_lambda_t.png"
   ),
-  p_lambda,
-  width = 10,
-  height = 6,
-  dpi = 300
+  plot = p_lambda,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
 )
 
-p_lambda
-# 14.4 Ancla implícita vs inflación, expectativas y meta.
-datos_ancla_largo <- trayectoria_M3 |>
-  dplyr::select(
-    fecha,
-    `Ancla implícita` = pi_estrella_t,
-    `Expectativa 24 meses` = expectativa,
-    Inflación = inflacion,
-    `Meta central` = meta_inflacion
-  ) |>
-  tidyr::pivot_longer(
-    cols = -fecha,
-    names_to = "serie",
-    values_to = "valor"
-  )
+print(p_lambda)
 
-p_ancla <- ggplot2::ggplot() +
+
+# 14.4 Ancla implícita, expectativas y meta -----------------------------------
+#
+# La inflación observada se excluye de la figura principal para que el objeto
+# central sea la convergencia del ancla implícita hacia la meta.
+#
+# La banda azul clara representa el rango meta vigente ±1 p.p.
+# La banda de confianza de pi*_t se muestra en un tono aún más tenue.
+
+p_ancla <- ggplot2::ggplot(
+  trayectoria_M3,
+  ggplot2::aes(
+    x = fecha
+  )
+) +
+  # Rango meta oficial
   ggplot2::geom_ribbon(
-    data = trayectoria_M3,
     ggplot2::aes(
-      x = fecha,
       ymin = banda_inferior,
       ymax = banda_superior
     ),
-    alpha = 0.10
+    fill = col_banda,
+    alpha = 0.18,
+    linewidth = 0
   ) +
-  ggplot2::geom_line(
-    data = datos_ancla_largo,
+  # IC 95% del ancla implícita
+  ggplot2::geom_ribbon(
     ggplot2::aes(
-      x = fecha,
-      y = valor,
-      linetype = serie
+      ymin = pi_estrella_li_95,
+      ymax = pi_estrella_ls_95
     ),
-    linewidth = 0.85
+    fill = col_serie,
+    alpha = 0.10,
+    linewidth = 0
+  ) +
+  # Expectativa a 24 meses
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = expectativa,
+      colour = "Expectativa a 24 meses",
+      linetype = "Expectativa a 24 meses"
+    ),
+    linewidth = 0.65,
+    alpha = 0.85
+  ) +
+  # Meta central
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = meta_inflacion,
+      colour = "Meta central",
+      linetype = "Meta central"
+    ),
+    linewidth = 0.60
+  ) +
+  # Ancla implícita como serie principal
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = pi_estrella_t,
+      colour = "Ancla implícita",
+      linetype = "Ancla implícita"
+    ),
+    linewidth = 0.85,
+    lineend = "round"
+  ) +
+  ggplot2::scale_colour_manual(
+    values = c(
+      "Ancla implícita" = col_serie,
+      "Expectativa a 24 meses" = col_expectativa,
+      "Meta central" = col_meta
+    ),
+    breaks = c(
+      "Ancla implícita",
+      "Expectativa a 24 meses",
+      "Meta central"
+    )
+  ) +
+  ggplot2::scale_linetype_manual(
+    values = c(
+      "Ancla implícita" = "solid",
+      "Expectativa a 24 meses" = "longdash",
+      "Meta central" = "dotted"
+    ),
+    breaks = c(
+      "Ancla implícita",
+      "Expectativa a 24 meses",
+      "Meta central"
+    )
+  ) +
+  escala_x_wp +
+  ggplot2::scale_y_continuous(
+    breaks = seq(
+      floor(
+        min(
+          trayectoria_M3$banda_inferior,
+          trayectoria_M3$pi_estrella_li_95,
+          na.rm = TRUE
+        )
+      ),
+      ceiling(
+        max(
+          trayectoria_M3$banda_superior,
+          trayectoria_M3$pi_estrella_ls_95,
+          na.rm = TRUE
+        )
+      ),
+      by = 1
+    ),
+    expand = ggplot2::expansion(
+      mult = c(0.03, 0.05)
+    )
   ) +
   ggplot2::labs(
-    title = "Ancla inflacionaria implícita, expectativas e inflación",
-    subtitle = expression(
-      pi[t]^"*" == c[0*t] / (1 - d - c[t])
-    ),
     x = NULL,
     y = "Porcentaje",
-    linetype = NULL,
-    caption = "El área sombreada representa el rango alrededor de la meta central (±1 p.p.)."
+    colour = NULL,
+    linetype = NULL
   ) +
-  ggplot2::theme_minimal(
-    base_size = 12
-  ) +
+  tema_wp +
   ggplot2::theme(
-    plot.title.position = "plot",
-    panel.grid.minor = ggplot2::element_blank(),
-    legend.position = "bottom"
+    legend.position = "bottom",
+    legend.box = "horizontal"
   )
-datos_ancla_largo
+
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
     "figura_04_ancla_implicita.png"
   ),
-  p_ancla,
-  width = 10,
-  height = 6,
-  dpi = 300
+  plot = p_ancla,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
 )
 
+print(p_ancla)
 
-# 14.5 Brecha del ancla implícita respecto de la meta.
+
+# 14.5 Brecha del ancla implícita respecto de la meta -------------------------
+
 p_brecha <- ggplot2::ggplot(
   trayectoria_M3,
   ggplot2::aes(
@@ -1687,75 +1875,218 @@ p_brecha <- ggplot2::ggplot(
   )
 ) +
   ggplot2::geom_line(
-    linewidth = 0.9
+    colour = col_serie,
+    linewidth = 0.80,
+    lineend = "round"
   ) +
   ggplot2::geom_hline(
     yintercept = 0,
-    linetype = "dashed"
+    linetype = "dashed",
+    colour = "grey30",
+    linewidth = 0.45
+  ) +
+  escala_x_wp +
+  ggplot2::scale_y_continuous(
+    expand = ggplot2::expansion(
+      mult = c(0.04, 0.06)
+    )
   ) +
   ggplot2::labs(
-    title = "Distancia del ancla implícita respecto de la meta",
     x = NULL,
-    y = "Puntos porcentuales",
-    caption = "Valores cercanos a cero indican mayor coincidencia entre el ancla implícita y la meta oficial."
+    y = "Puntos porcentuales"
   ) +
-  ggplot2::theme_minimal(
-    base_size = 12
-  ) +
-  ggplot2::theme(
-    plot.title.position = "plot",
-    panel.grid.minor = ggplot2::element_blank()
-  )
-p_brecha
+  tema_wp
+
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
     "figura_05_brecha_ancla_meta.png"
   ),
-  p_brecha,
-  width = 9,
-  height = 5.5,
-  dpi = 300
+  plot = p_brecha,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
 )
 
+print(p_brecha)
 
-# 14.6 ACF de los residuos.
-for (ecuacion in c("inflacion", "expectativa")) {
 
-  r <- residuos_M3[, ecuacion]
-  r <- r[is.finite(r)]
+# 14.6 ACF de residuos con la misma línea gráfica -----------------------------
+#
+# Sustituye stats::acf(..., plot = TRUE) por una versión ggplot2
+# consistente con el resto del working paper.
 
-  grDevices::png(
-    filename = file.path(
-      carpeta_salida,
-      paste0(
-        "figura_",
-        ifelse(
-          ecuacion == "inflacion",
-          "06",
-          "07"
-        ),
-        "_ACF_residuos_",
-        ecuacion,
-        ".png"
-      )
-    ),
-    width = 1800,
-    height = 1100,
-    res = 180
-  )
-
-  stats::acf(
+crear_grafica_acf_wp <- function(
+    residuos,
+    nombre_eje_y = "Autocorrelación",
+    lag_max = 24
+) {
+  
+  r <- residuos[
+    is.finite(residuos)
+  ]
+  
+  acf_obj <- stats::acf(
     r,
-    lag.max = 24,
-    main = paste(
-      "ACF de residuos estandarizados:",
-      ecuacion
-    )
+    lag.max = lag_max,
+    plot = FALSE
   )
-
-  grDevices::dev.off()
+  
+  datos_acf <- tibble::tibble(
+    rezago = as.numeric(
+      acf_obj$lag
+    ),
+    acf = as.numeric(
+      acf_obj$acf
+    )
+  ) |>
+    dplyr::filter(
+      rezago > 0
+    )
+  
+  limite_95 <- 1.96 / sqrt(
+    length(r)
+  )
+  
+  ggplot2::ggplot(
+    datos_acf,
+    ggplot2::aes(
+      x = rezago,
+      y = acf
+    )
+  ) +
+    ggplot2::geom_hline(
+      yintercept = 0,
+      colour = "grey35",
+      linewidth = 0.40
+    ) +
+    ggplot2::geom_hline(
+      yintercept = c(
+        -limite_95,
+        limite_95
+      ),
+      linetype = "dashed",
+      colour = "grey55",
+      linewidth = 0.40
+    ) +
+    ggplot2::geom_segment(
+      ggplot2::aes(
+        xend = rezago,
+        y = 0,
+        yend = acf
+      ),
+      colour = col_serie,
+      linewidth = 0.65
+    ) +
+    ggplot2::geom_point(
+      colour = col_serie,
+      size = 1.45
+    ) +
+    ggplot2::scale_x_continuous(
+      breaks = seq(
+        0,
+        lag_max,
+        by = 4
+      ),
+      minor_breaks = seq(
+        0,
+        lag_max,
+        by = 2
+      ),
+      expand = ggplot2::expansion(
+        mult = c(0.01, 0.02)
+      )
+    ) +
+    ggplot2::scale_y_continuous(
+      expand = ggplot2::expansion(
+        mult = c(0.05, 0.08)
+      )
+    ) +
+    ggplot2::labs(
+      x = "Rezago",
+      y = nombre_eje_y
+    ) +
+    ggplot2::theme_minimal(
+      base_size = 10.5
+    ) +
+    ggplot2::theme(
+      panel.grid.minor = ggplot2::element_blank(),
+      panel.grid.major.x = ggplot2::element_line(
+        colour = "grey92",
+        linewidth = 0.30
+      ),
+      panel.grid.major.y = ggplot2::element_line(
+        colour = "grey88",
+        linewidth = 0.35
+      ),
+      
+      axis.title.x = ggplot2::element_text(
+        size = 10,
+        colour = "black",
+        margin = ggplot2::margin(t = 7)
+      ),
+      axis.title.y = ggplot2::element_text(
+        size = 10.5,
+        colour = "black",
+        margin = ggplot2::margin(r = 8)
+      ),
+      axis.text = ggplot2::element_text(
+        size = 9,
+        colour = "grey25"
+      ),
+      axis.ticks = ggplot2::element_blank(),
+      
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      plot.caption = ggplot2::element_blank(),
+      
+      plot.margin = ggplot2::margin(
+        t = 4,
+        r = 8,
+        b = 4,
+        l = 4
+      )
+    )
 }
+
+
+p_acf_inflacion <- crear_grafica_acf_wp(
+  residuos = residuos_M3[, "inflacion"]
+)
+
+ggplot2::ggsave(
+  file.path(
+    carpeta_salida,
+    "figura_06_ACF_residuos_inflacion.png"
+  ),
+  plot = p_acf_inflacion,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
+)
+
+print(p_acf_inflacion)
+
+
+p_acf_expectativa <- crear_grafica_acf_wp(
+  residuos = residuos_M3[, "expectativa"]
+)
+
+ggplot2::ggsave(
+  file.path(
+    carpeta_salida,
+    "figura_07_ACF_residuos_expectativa.png"
+  ),
+  plot = p_acf_expectativa,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
+)
+
+print(p_acf_expectativa)
 
 
 # 15. GUARDAR OBJETOS ----------------------------------------------------------

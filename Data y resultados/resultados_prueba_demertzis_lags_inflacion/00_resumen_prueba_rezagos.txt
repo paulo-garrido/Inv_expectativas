@@ -1,0 +1,24 @@
+======================================================================
+PRUEBA DE ROBUSTEZ: REZAGOS ADICIONALES EN INFLACIÓN
+======================================================================
+p seleccionado: 2
+Criterio: Ningún p blanqueó residuos; se eligió el menor BIC
+
+Ljung-Box(12) inflación baseline p=1: 0.0000e+00
+Ljung-Box(12) inflación p=2: 2.2091e-09
+Ljung-Box(12) expectativas p=2: 4.9760e-02
+
+Correlación lambda baseline vs extendido: 1.00000
+MAE lambda: 0.00000
+Correlación pi* baseline vs extendido: 1.00000
+MAE pi*: 0.00000
+
+% períodos estables: 100.00%
+Radio espectral máximo: 0.89316
+
+AIC M0 / M3: 262.68729 / 220.11869
+BIC M0 / M3: 292.00475 / 255.95114
+
+Regla de decisión:
+Preferir la extensión solo si corrige la autocorrelación y conserva lambda_t y pi*_t.
+======================================================================

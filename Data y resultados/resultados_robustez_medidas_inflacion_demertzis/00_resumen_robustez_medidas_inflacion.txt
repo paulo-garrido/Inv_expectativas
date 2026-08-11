@@ -1,0 +1,58 @@
+
+======================================================================
+DEMERTZIS M3 - ROBUSTEZ A MEDIDAS ALTERNATIVAS DE INFLACIÓN
+======================================================================
+Muestra común: 2011-01 a 2026-06
+Observaciones antes del rezago: 186
+
+TABLA COMPARATIVA
+# A tibble: 6 × 20
+  codigo nombre     observaciones logLik    AIC   BIC
+  <chr>  <chr>              <int>  <dbl>  <dbl> <dbl>
+1 BASE   Interanua…           185  -97.7  215.   248.
+2 YOYIPC Interanua…           185  -90.2  200.   233.
+3 MSA    Mensual d…           185  -38.7   97.4  130.
+4 MSAA   Mensual S…           185 -496.  1012.  1044.
+5 M3AA   3 meses S…           185 -351.   722.   754.
+6 SUBY   Inflación…           185  146.  -272.  -240.
+# ℹ 14 more variables: H_inflacion <dbl>,
+#   H_expectativa <dbl>, Q_c0 <dbl>, Q_c <dbl>,
+#   lambda_promedio <dbl>, lambda_inicial <dbl>,
+#   lambda_final <dbl>,
+#   porcentaje_lambda_fuera_0_1 <dbl>,
+#   pi_estrella_promedio <dbl>,
+#   MAE_pi_estrella_meta <dbl>, …
+
+ROBUSTEZ FRENTE AL BASELINE
+# A tibble: 5 × 6
+  codigo nombre         correlacion_lambda MAE_lambda
+  <chr>  <chr>                       <dbl>      <dbl>
+1 YOYIPC Interanual ca…              1.000    0.00653
+2 MSA    Mensual deses…              0.990    2.01   
+3 MSAA   Mensual SA an…              0.983    0.0222 
+4 M3AA   3 meses SA an…              0.339    0.151  
+5 SUBY   Inflación sub…              0.572    0.0867 
+# ℹ 2 more variables: correlacion_pi_estrella <dbl>,
+#   MAE_pi_estrella <dbl>
+
+ESTABILIDAD
+# A tibble: 6 × 3
+  codigo porcentaje_estable radio_espectral_max
+  <chr>               <dbl>               <dbl>
+1 BASE                  100               0.955
+2 M3AA                  100               0.740
+3 MSA                   100               0.934
+4 MSAA                  100               0.934
+5 SUBY                  100               0.985
+6 YOYIPC                100               0.954
+
+LECTURA SUGERIDA
+1. BASE es la referencia principal por coherencia de escala con expectativas anuales.
+2. Revisar si MSA/MSAA/M3AA corrigen la autocorrelación de inflación.
+3. Una alternativa solo constituye robustez favorable si no deteriora la ecuación de expectativas.
+4. Comparar correlación y MAE de lambda_t respecto del baseline.
+5. Comparar también pi*_t, pero interpretar con cautela cuando cambia la escala temporal de inflación.
+6. No seleccionar el modelo únicamente por AIC/BIC: la interpretación económica es parte del criterio.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas/Data y resultados/resultados_robustez_medidas_inflacion_demertzis
+======================================================================

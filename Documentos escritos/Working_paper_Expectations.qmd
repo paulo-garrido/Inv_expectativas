@@ -375,7 +375,7 @@ tabla_variables_resumen |>
 
 ## Medición del anclaje de expectativas
 
-La medición empírica del anclaje se desarrolla en dos etapas complementarias, como ya se mencionó en la primera sección de este apartado; en primer lugar, siguiendo la estrategia empírica utilizada por @ehrmann2015 aplicada mediante regresiones móviles por @lyziakPaloviita2017, se estima la sensibilidad de las expectativas de inflación de mediano plazo frente a la inflación observada rezagada; en segundo lugar, se estima un modelo bivariado con parámetros variantes en el tiempo mediante filtro de Kalman, cuya especificación se construye a partir del marco desarrollado por @demertzis_marcellino_viegi2012, este enfoque permite seguir la evolución de la sensibilidad de las expectativas a 24 meses frente a la inflación observada y, -a partir de esa relación dinámica- construir una proxy de credibilidad. Adicionalmente, el modelo permite inferir el nivel de inflación de largo plazo hacia el cual parecen converger las expectativas, denominado ancla inflacionaria implícita. Esta secuencia metodológica responde a una lógica específica: las regresiones móviles ofrecen una primera descripción, relativamente transparente, de los cambios que experimenta la relación entre inflación y expectativas; por su parte, el modelo de estado--espacio permite superar el supuesto de que los coeficientes permanecen constantes dentro de cada ventana y ofrece una estimación continua de su evolución y vincula esa trayectoria con una medida estructurada del grado de credibilidad.
+La medición empírica del anclaje se desarrolla en dos etapas complementarias, como ya se mencionó en la primera sección de este apartado; en primer lugar, siguiendo la estrategia empírica utilizada por @ehrmann2015 aplicada mediante regresiones móviles por @lyziakPaloviita2017, se estima la sensibilidad de las expectativas de inflación de mediano plazo frente a la inflación observada rezagada; en segundo lugar, se estima un modelo bivariado con parámetros variantes en el tiempo mediante filtro de Kalman, cuya especificación se construye a partir del marco desarrollado por @demertzis_marcellino_viegi2012, este enfoque permite seguir la evolución de la sensibilidad de las expectativas a 24 meses frente a la inflación observada y, -a partir de esa relación dinámica- construir una proxy de credibilidad. Adicionalmente, el modelo permite inferir el nivel de inflación de largo plazo hacia el cual parecen converger las expectativas, que se denominará ancla inflacionaria implícita. Esta secuencia metodológica responde a una lógica específica: las regresiones móviles ofrecen una primera descripción, relativamente transparente, de los cambios que experimenta la relación entre inflación y expectativas; por su parte, el modelo de estado--espacio permite superar el supuesto de que los coeficientes permanecen constantes dentro de cada ventana y ofrece una estimación continua de su evolución y vincula esa trayectoria con una medida estructurada del grado de credibilidad.
 
 ### Definición operacional del anclaje de las expectativas
 
@@ -452,7 +452,7 @@ En este marco, la estrategia econométrica planteada busca modelar conjuntamente
 **Especificación empírica**
 
 De acuerdo a lo analizado previamente y siguiendo a @demertzis_marcellino_viegi2012, la tesis fundamental es que un régimen creíble esta caracterizado por un proceso de formación de expectativas que no depende en gran medida en la inflación observada; en este sentido, el modelo planteado busca manifestar empíricamente este corolario, para lo cual se utiliza un sistema bivariado compuesto por la inflación observada, $\pi_t$, y la expectativa de inflación a 24 meses, $e_t^{24}$. La especificación estimada es:\
-$$\pi_t=a_0+a\pi_{t-1}+b e_{t-1}^{24}+\varepsilon_{\pi,t},$$ {#eq-demertzis-inflacion}$$e_t^{24}=c_{0t}+c_t\pi_{t-1}+d e_{t-1}^{24}+\varepsilon_{e,t}.$$ {#eq-demertzis-expectativas}
+$$\pi_t=a_0+a\pi_{t-1}+b e_{t-1}^{24}+\varepsilon_{\pi,t},$$ {#eq--inflacion}$$e_t^{24}=c_{0t}+c_t\pi_{t-1}+d e_{t-1}^{24}+\varepsilon_{e,t}.$$ {#eq-expectativas}
 
 La primera ecuación describe la dinámica auxiliar de la inflación en donde $a$ recoge su persistencia y $b$ mide la asociación entre las expectativas rezagadas y la inflación observada. Por otro lado, la segunda ecuación constituye el núcleo de la medición del anclaje; en ella, $c_t$ mide la sensibilidad cambiante de las expectativas a 24 meses frente a la inflación del período anterior, mientras que $d$ recoge la persistencia propia de las expectativas. Finalmente, $c_{0t}$ representa el componente de largo plazo que no se explica por esas dos fuentes de información.
 
@@ -677,6 +677,34 @@ Por ello, el análisis conjunto de ambos parámetros ofrece una caracterización
 En conjunto, la evidencia mostrada de este primer análisis de la dinámica de la formación de expectativas, ilustra una menor dependencia en el tiempo de la expectativas a mediano plazo ante desviaciones de la inflación, lo cual, es consistente con un mayor anclaje; aunque las regresiones móviles presentan una limitación importante: los parámetros se suponen constantes dentro de cada ventana y su trayectoria depende, en cierta medida, de la longitud utilizada para definirla, y es, por esta razón, que el siguiente ejercicio abandona la segmentación discreta de la muestra y permite que la sensibilidad evolucione de manera continua mediante un modelo de parámetros variantes en el tiempo, con el propósito de examinar con mayor precisión cuándo y en qué magnitud se producen los cambios en el proceso de formación de expectativas.
 
 ## Anclaje de Expectativas de inflación a mediano Plazo: evidencia de un modelo variante en el tiempo
+
+Los resultados de las regresiones móviles presentadas anteriormente sugieren que la sensibilidad de las expectativas de inflación a mediano plazo frente a la inflación observada no ha permanecido constante durante el período de estudio; y es, sobre esa evidencia preliminar, en que este apartado profundiza el análisis mediante el TVP--VAR descrito en la sección 5. A diferencia de las estimaciones por ventanas abordada previamente, el modelo permite que la relación entre inflación y expectativas evolucione de forma continua y, a partir de ella, recuperar una medida dinámica del desacoplamiento de las expectativas respecto de la inflación observada, término que se denominara $\lambda_t$, así como el nivel del ancla inflacionaria implícita, $\pi_t^*$. Esta estrategia mantiene la lógica de @demertzis_marcellino_viegi2012, siguiendo la especificación de Var variante en el tiempo porpuesto por @Stock_Watson1996, asi como del enfoque de parámetros variantes utilizado por @strohsal2015, que permita ilustrar esta relación para la información disponible en Guatemala.
+
+En este sentido, el apartado inicia realizando un test empirico para validar la necesidad de un modelo variantes en el tiempo; posteriormente, se analizan la evolución temporal de los parámetros en la @eq-expectativas; seguidamente, se estiman los proxis de credibilidad y de ancla de inflación ímplicita, evaluando su trayectoria y consistencia a la luz de los datos; finalizando con la síntesis de los hallazgos encontrados.
+
+### Evidencia de una relación cambiante entre inflación y expectativas
+
+El incorporar una dinámica cambiante en el tiempo en la relación entre expectativas e inflación, constituye, de forma empírica una transformación metodológica natural, a la luz de los resultados observados en las regresiones móviles; sin embargo, es indispensable, tener evidencia sólida que justifique la reespecificación econométrica del modelo, en virtud del costo en términos de parsimonia y complejidad modélica; en este orden de ideas, esta sección presenta las pruebas formales sobre este aspecto.
+
+Para poder confirmar que tiene sentido introducir un modelo con parámetros variantes en el tiempo, se contrasta la misma especificación modélica con parámetros constantes, con respecto a parámetros constantes, evaluando los criterios de información de cada uno, así como el test de Razón de Verosimilitud.
+
+En la tabla xxx ilustra la comparativa entre los dos modelos, como se observa, en la prueba de log verosimilitud el modelo TVP-VAR muestra evidencia más favorable con una $\Delta$ de -38.12; por otro lado, los criterios de AIC y BIC, también favorecieron al modelo variante en el tiempo, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$; en consecuencia, la evidencia de los criterios de información favorece una representación en la que el vínculo entre inflación y expectativas puede modificarse gradualmente.
+
+Por otro lado, también se plante la prueba de hipótesis sobre la signficancia de $Q_{C0}$ y de $Qc_t$, siendo estas la varianzas de transición para el intercepto y para la sensibilidad de las expectativas frente a la inflación; lo que se testea es que estas sean positivas y estadisticamente distintas de 0; en este sentido, las pruebas confirma que existe suficiente evidencia de que ambas son estadisticamente \>0, por lo que confirma que ambas dimensiones contienen variación temporal.
+
+Asimismo, el sistema permanece localmente estable durante toda la muestra, pues el radio espectral se mantiene por debajo de la unidad; por lo que estos resultados permiten interpretar las trayectorias suavizadas sin evidencia de dinámica explosiva, lo que permite confirmar la hipótesis de una trayectoria gradual en la dinámica de las expectativas. Por último, los diagnósticos residuales son satisfactorios para la ecuación de expectativas y para la correlación contemporánea entre innovaciones; no obstante, la ecuación de inflación interanual conserva autocorrelación residual, aspecto que se examina posteriormente mediante ejercicios de robustez con medidas alternativas de inflación.
+
+## Evolución de los parámetros variantes de las expectativas
+
+**Figura 6**
+
+*Estimación de la respuesta de las expectativas a mediano plazo frente a la* persistencia de sus desviaciones respecto de la meta*, 2010--2026*
+
+![](images/figura_02_c_t.png)
+
+\footnotesize
+
+*Nota. Estimaciones suavizadas mediante filtro de Kalman. Las bandas corresponden a intervalos de confianza aproximados del 95 %. Elaboración propia.*\normalsize
 
 # Referencias {.unnumbered}
 

@@ -1,0 +1,582 @@
+---
+title: "Guía de redacción: resultados del TVP–VAR y proxy dinámica de credibilidad"
+lang: es
+format:
+  pdf:
+    keep-tex: true
+bibliography: referencias.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+<!--
+===============================================================================
+PROPÓSITO DE ESTE ARCHIVO
+===============================================================================
+
+Este .qmd NO pretende ser la redacción definitiva de la sección. Es una guía
+estructurada para escribir los resultados del TVP–VAR restringido M3.
+
+La secuencia propuesta sigue la lógica de los trabajos de referencia:
+
+1. Demertzis, Marcellino y Viegi:
+   - primero establecen si existe un desacoplamiento entre inflación y expectativas;
+   - después introducen la evidencia con parámetros variantes;
+   - finalmente interpretan lambda y el ancla implícita a la luz de episodios
+     monetarios concretos.
+
+2. Strohsal, Melnick y Nautz:
+   - presentan estimaciones suavizadas de los parámetros TVP;
+   - interpretan primero el parámetro de anclaje y luego las fuentes de desanclaje;
+   - centran la discusión en episodios económicamente relevantes, no en cada
+     observación individual.
+
+3. Banca Central No. 89:
+   - separa con claridad metodología y resultados;
+   - en resultados presenta primero evidencia de especificación/estabilidad,
+     después los resultados centrales y finalmente una discusión integrada.
+
+REGLA DE REDACCIÓN:
+- no repetir la metodología completa;
+- no describir mecánicamente cada figura;
+- cada figura debe responder una pregunta económica;
+- primero se presenta el hallazgo propio y luego se vincula con la literatura;
+- evitar lenguaje causal respecto del EMEI;
+- hablar de expectativas de MEDIANO PLAZO para el horizonte de 24 meses;
+- reservar diagnósticos muy técnicos y ACF para el apéndice, salvo que afecten
+  directamente la interpretación principal.
+
+EXTENSIÓN ORIENTATIVA:
+- 2.5 a 3.5 páginas de texto para este bloque, más figuras y un cuadro breve.
+===============================================================================
+-->
+rm(list = ls())
+cat("\014")
+if (!is.null(dev.list())) dev.off()
+
+```{r}
+#| label: setup-resultados-tvp
+
+library(dplyr)
+library(readr)
+
+# ------------------------------------------------------------------
+# AJUSTAR ÚNICAMENTE ESTAS RUTAS A LA ESTRUCTURA DE TU PROYECTO
+# ------------------------------------------------------------------
+setwd("/Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas")
+ruta_tvp <- file.path(
+  "Data y resultados",
+  "resultados_objetivo2_TVP_VAR"
+)
+
+ruta_robustez <- file.path(
+  "Data y resultados",
+  "resultados_robustez_medidas_inflacion_demertzis"
+)
+
+# Resultados principales
+comparacion_modelos <- readr::read_csv(
+  file.path(ruta_tvp, "05_comparacion_M0_M3.csv"),
+  show_col_types = FALSE
+)
+
+hiperparametros <- readr::read_csv(
+  file.path(ruta_tvp, "04_hiperparametros_M0_M3.csv"),
+  show_col_types = FALSE
+)
+
+resumen_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "07_resumen_M3.csv"),
+  show_col_types = FALSE
+)
+
+subperiodos_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "08_resumen_subperiodos_M3.csv"),
+  show_col_types = FALSE
+)
+
+diagnosticos_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "09_diagnosticos_residuales_M3.csv"),
+  show_col_types = FALSE
+)
+
+# Robustez con medidas alternativas de inflación
+robustez_medidas <- if (
+  file.exists(
+    file.path(
+      ruta_robustez,
+      "02_tabla_comparativa_medidas_inflacion.csv"
+    )
+  )
+) {
+  readr::read_csv(
+    file.path(
+      ruta_robustez,
+      "02_tabla_comparativa_medidas_inflacion.csv"
+    ),
+    show_col_types = FALSE
+  )
+} else {
+  NULL
+}
+
+robustez_trayectorias <- if (
+  file.exists(
+    file.path(
+      ruta_robustez,
+      "03_robustez_trayectorias_vs_baseline.csv"
+    )
+  )
+) {
+  readr::read_csv(
+    file.path(
+      ruta_robustez,
+      "03_robustez_trayectorias_vs_baseline.csv"
+    ),
+    show_col_types = FALSE
+  )
+} else {
+  NULL
+}
+
+# Funciones pequeñas para insertar resultados en el texto
+fmt <- function(x, d = 2) {
+  formatC(
+    as.numeric(x),
+    format = "f",
+    digits = d
+  )
+}
+
+fmt3 <- function(x) fmt(x, 3)
+```
+
+
+# Resultados del modelo TVP–VAR y evolución de la credibilidad monetaria
+
+<!--
+PÁRRAFO DE APERTURA: 1 párrafo.
+
+FUNCIÓN:
+- conectar esta sección con las rolling regressions;
+- explicar qué aporta el TVP–VAR que no aporta la ventana móvil;
+- recordar que este es el núcleo econométrico de la medición del anclaje.
+
+NO:
+- volver a derivar lambda;
+- volver a explicar Kalman paso por paso;
+- repetir todas las ecuaciones de metodología.
+
+IDEA CENTRAL:
+rolling = evidencia preliminar/transparente;
+TVP–VAR = estimación continua de la relación inflación-expectativas y recuperación
+de lambda_t y pi*_t.
+-->
+
+En el apartado anterior, se asumió que existian cambios discretos Las regresiones móviles presentadas anteriormente sugieren que la sensibilidad de las expectativas de inflación a 24 meses frente a la inflación observada no ha permanecido constante durante el período de estudio. Sobre esa evidencia preliminar, esta sección profundiza el análisis mediante el TVP–VAR restringido descrito en la metodología. A diferencia de las estimaciones por ventanas, el modelo permite que la relación entre inflación y expectativas evolucione de forma continua y, a partir de ella, recuperar una medida dinámica del desacoplamiento de las expectativas respecto de la inflación observada, $\lambda_t$, así como el nivel del ancla inflacionaria implícita, $\pi_t^*$. Esta estrategia mantiene la lógica de @demertzis_marcellino_viegi2012 y del enfoque de parámetros variantes utilizado por @strohsal_melnick_nautz2015, aunque adaptada al horizonte de expectativas disponible para Guatemala.
+
+<!--
+NOTA DE ESTILO:
+El último enunciado es suficiente para relacionar la sección con la literatura.
+No hacer una mini revisión de literatura aquí.
+-->
+
+
+## Evidencia a favor de una relación cambiante entre inflación y expectativas
+
+<!--
+OBJETIVO DE ESTA SUBSECCIÓN:
+antes de interpretar lambda_t, demostrar brevemente que tiene sentido utilizar
+un modelo con parámetros variantes.
+
+ORDEN RECOMENDADO:
+1. M0 constante vs M3.
+2. Q_c0 y Q_c.
+3. estabilidad local.
+4. una frase sobre diagnósticos.
+
+Debe ser BREVE: aproximadamente 2 párrafos + 1 cuadro.
+
+IMPORTANTE:
+- AIC/BIC favorecen M3 frente a M0.
+- El LR es solo referencial porque Q está en la frontera bajo H0.
+- No decir "el LR demuestra..." ni "se rechaza definitivamente M0".
+-->
+
+
+```{r}
+#| label: tbl-comparacion-m0-m3
+#| tbl-cap: "Comparación entre el VAR con parámetros constantes y el TVP–VAR restringido"
+
+tabla_modelos_wp <- comparacion_modelos |>
+  dplyr::transmute(
+    Modelo = modelo,
+    `Log-verosimilitud` = round(log_verosimilitud, 2),
+    AIC = round(AIC, 2),
+    BIC = round(BIC, 2)
+  )
+
+knitr::kable(
+  tabla_modelos_wp,
+  align = c("l", "c", "c", "c"),
+  booktabs = TRUE
+)
+```
+
+<!--
+PÁRRAFO 1 — QUÉ DEBE DECIR:
+
+- M3 mejora claramente el ajuste respecto a M0.
+- mencionar AIC y BIC, no solo logLik.
+- explicar que la mejora persiste aun con la penalización por complejidad del BIC.
+- esto respalda permitir variación en c0_t y c_t.
+
+BORRADOR DE REFERENCIA:
+-->
+
+La comparación con el VAR de parámetros constantes muestra que permitir variación temporal en la ecuación de expectativas mejora sustancialmente el ajuste del sistema. Tanto el AIC como el BIC disminuyen al pasar de M0 a M3, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$. En consecuencia, la evidencia de los criterios de información favorece una representación en la que el vínculo entre inflación y expectativas puede modificarse gradualmente a lo largo de la muestra. La razón de verosimilitudes conduce a la misma dirección, aunque su significancia se interpreta únicamente como evidencia complementaria debido a que las varianzas de transición se encuentran en la frontera del espacio paramétrico bajo la hipótesis de constancia.
+
+<!--
+PÁRRAFO 2 — QUÉ DEBE DECIR:
+
+- Q_c0 > 0 y Q_c > 0.
+- NO comparar sus magnitudes de manera ingenua porque los parámetros tienen escalas diferentes.
+- estabilidad: radio espectral < 1 durante toda la muestra.
+- correlación contemporánea residual no significativa respalda H diagonal.
+- mencionar problema de autocorrelación SOLO como anticipo; desarrollarlo en robustez.
+-->
+
+El modelo estima varianzas de transición positivas para el intercepto y para la sensibilidad de las expectativas frente a la inflación, lo que confirma que ambas dimensiones contienen variación temporal. Asimismo, el sistema permanece localmente estable durante toda la muestra, pues el radio espectral se mantiene por debajo de la unidad. Estos resultados permiten interpretar las trayectorias suavizadas sin evidencia de dinámica explosiva. Los diagnósticos residuales son satisfactorios para la ecuación de expectativas y para la correlación contemporánea entre innovaciones; no obstante, la ecuación de inflación interanual conserva autocorrelación residual, aspecto que se examina posteriormente mediante ejercicios de robustez con medidas alternativas de inflación.
+
+
+## Evolución de los parámetros variantes de la ecuación de expectativas
+
+<!--
+OBJETIVO:
+mostrar primero los "ingredientes" del indicador antes de presentar lambda_t.
+
+RECOMENDACIÓN:
+presentar c0_t y c_t como un panel conjunto.
+
+IMPORTANTE:
+- c0_t = intercepto variante. NO llamarlo "ancla".
+- c_t = sensibilidad dinámica de expectativas a inflación pasada.
+- el contenido económico central está principalmente en c_t.
+- no narrar cada oscilación.
+- identificar tendencia general y episodios relevantes.
+-->
+
+
+```{r}
+#| label: fig-parametros-tvp
+#| fig-cap: "Parámetros variantes de la ecuación de expectativas"
+#| fig-subcap:
+#|   - "Intercepto variante, $c_{0t}$"
+#|   - "Sensibilidad frente a la inflación, $c_t$"
+#| layout-ncol: 2
+#| out-width: "100%"
+
+knitr::include_graphics(
+  c(
+    file.path(ruta_tvp, "figura_01_c0_t.png"),
+    file.path(ruta_tvp, "figura_02_c_t.png")
+  )
+)
+```
+
+**Nota.** Estimaciones suavizadas mediante filtro de Kalman. Las bandas corresponden a intervalos de confianza aproximados del 95 %. Elaboración propia.
+
+<!--
+PÁRRAFO 1:
+Interpretar c_t.
+
+GUÍA:
+- si c_t cae a lo largo del tiempo: menor reacción directa de e_24 a pi_(t-1).
+- explicar en términos de desacoplamiento.
+- conectar con rolling regressions: misma dirección general = consistencia entre métodos.
+- no decir que c_t por sí solo "es la credibilidad"; lambda incorpora d.
+
+EJEMPLO DE ESTRUCTURA:
+"El resultado central del panel está en c_t..."
+-->
+
+El resultado de mayor interés económico en la @fig-parametros-tvp corresponde a la trayectoria de $c_t$, que recoge la sensibilidad cambiante de las expectativas a 24 meses frente a la inflación observada rezagada. Una reducción de este coeficiente implica que las variaciones de la inflación corriente tienen una incidencia progresivamente menor sobre la formación de expectativas de mediano plazo. La trayectoria estimada debe interpretarse, por tanto, como evidencia del grado de desacoplamiento entre ambas variables y no como una medida aislada de credibilidad. En términos generales, la evolución de $c_t$ debería contrastarse con la obtenida mediante las regresiones móviles: la coincidencia en la dirección del cambio constituye evidencia de consistencia entre dos aproximaciones econométricas distintas.
+
+<!--
+PÁRRAFO 2:
+Interpretar c0_t con cautela.
+
+NO:
+"c0_t representa la inflación de largo plazo."
+
+SÍ:
+"c0_t ajusta el nivel de la ecuación; combinado con c_t y d permite recuperar pi*."
+-->
+
+Por su parte, $c_{0t}$ muestra cambios en el componente autónomo de la ecuación de expectativas. Este parámetro no constituye por sí mismo el ancla de inflación de largo plazo; su interpretación económica surge al combinarlo con $c_t$ y con la persistencia de las expectativas, $d$, en la expresión de equilibrio utilizada para obtener $\pi_t^*$. En consecuencia, la lectura conjunta de ambos parámetros resulta más informativa que la interpretación aislada de sus niveles.
+
+
+## Proxy dinámica de credibilidad y grado de anclaje
+
+<!--
+ESTA ES LA SUBSECCIÓN CENTRAL.
+
+Debe tener:
+- 1 figura.
+- 2 o 3 párrafos máximo.
+- primero niveles/tendencia.
+- después episodios.
+- finalmente relación con rolling/literatura.
+
+EVITAR:
+- afirmar "credibilidad perfecta".
+- hablar de lambda como probabilidad.
+- interpretar 0.83 como "83% de credibilidad" sin matiz.
+- causalidad respecto del EMEI.
+
+USAR:
+"proxy de credibilidad"
+"grado de desacoplamiento"
+"evidencia compatible con fortalecimiento del anclaje"
+-->
+
+
+```{r}
+#| label: fig-lambda-tvp
+#| fig-cap: "Evolución de la proxy dinámica de credibilidad"
+#| out-width: "92%"
+#| fig-align: center
+
+knitr::include_graphics(
+  file.path(
+    ruta_tvp,
+    "figura_03_lambda_t.png"
+  )
+)
+```
+
+**Nota.** La línea representa la estimación suavizada de $\lambda_t=1-c_t/(1-d)$ y el área sombreada su intervalo de confianza aproximado del 95 %. Valores más próximos a uno indican un mayor desacoplamiento de las expectativas respecto de la inflación observada. Elaboración propia.
+
+<!--
+PÁRRAFO 1 — RESULTADO DE NIVEL Y TENDENCIA.
+
+Puedes insertar aquí los resultados exactos del CSV.
+-->
+
+La @fig-lambda-tvp muestra una trayectoria creciente de la proxy de credibilidad a lo largo de la muestra. El valor estimado pasa de aproximadamente `r fmt3(resumen_m3$lambda_inicial)` al inicio del período a `r fmt3(resumen_m3$lambda_final)` al final, mientras que su promedio se sitúa en `r fmt3(resumen_m3$lambda_promedio)`. Más que un cambio abrupto, la dinámica evidencia un proceso gradual de fortalecimiento: las expectativas a 24 meses se vuelven progresivamente menos dependientes de la inflación observada. Este patrón es consistente con la interpretación de @demertzis_marcellino_viegi2012, según la cual una mayor separación entre la dinámica de inflación y la de las expectativas constituye evidencia de mayor credibilidad del ancla nominal.
+
+<!--
+PÁRRAFO 2 — PERIODIZACIÓN ECONÓMICA.
+
+NO describir todos los años.
+Agrupar:
+1) primeros años;
+2) etapa intermedia;
+3) episodio inflacionario 2021-2023;
+4) final de muestra.
+
+Usar "coincide con", "es compatible con", "sugiere"; no "fue causado por".
+-->
+
+Desde una perspectiva temporal, el fortalecimiento es particularmente relevante porque la proxy no muestra un deterioro persistente durante el episodio inflacionario más reciente. Aun cuando la inflación observada se alejó temporalmente de la meta, $\lambda_t$ permaneció en niveles elevados y posteriormente mostró solo una corrección moderada. Esto sugiere que el aumento de la inflación no se trasladó en igual magnitud a la formación de expectativas de mediano plazo. En el lenguaje de @strohsal_melnick_nautz2015, este comportamiento es más consistente con un anclaje que puede experimentar fluctuaciones transitorias sin necesariamente transformarse en un proceso persistente de desanclaje.
+
+<!--
+PÁRRAFO 3 — CONEXIÓN CON ROLLING.
+
+Este párrafo es importante porque integra los dos métodos del objetivo.
+-->
+
+En conjunto, la trayectoria de $\lambda_t$ refuerza la evidencia obtenida mediante las regresiones móviles. Mientras estas últimas muestran cómo la sensibilidad estimada cambia entre ventanas sucesivas, el modelo TVP–VAR permite representar el mismo fenómeno mediante una evolución continua de los parámetros. La coincidencia cualitativa de ambas aproximaciones constituye evidencia favorable a la hipótesis de un fortalecimiento gradual del anclaje durante el período analizado.
+
+
+## Evolución del ancla inflacionaria implícita
+
+<!--
+SEGUNDO RESULTADO CENTRAL.
+
+PREGUNTA QUE RESPONDE:
+¿A qué nivel parecen converger las expectativas cuando se desacoplan de inflación?
+
+IMPORTANTE:
+- pi*_t NO es la meta oficial.
+- se estima sin imponer la meta.
+- después se contrasta con la meta.
+- esta distinción es uno de los aportes conceptuales más fuertes de Demertzis.
+
+ESTRUCTURA:
+P1: qué muestra y datos generales.
+P2: convergencia hacia meta.
+P3 opcional: episodio 2021-2023.
+-->
+
+
+```{r}
+#| label: fig-ancla-implicita
+#| fig-cap: "Ancla inflacionaria implícita y expectativas de inflación a 24 meses"
+#| out-width: "92%"
+#| fig-align: center
+
+knitr::include_graphics(
+  file.path(
+    ruta_tvp,
+    "figura_04_ancla_implicita.png"
+  )
+)
+```
+
+**Nota.** El ancla implícita $\pi_t^*$ se obtiene a partir de los parámetros estimados del TVP–VAR y no impone la meta oficial en su construcción. El área sombreada representa el rango de tolerancia alrededor de la meta central vigente. Elaboración propia.
+
+<!--
+PÁRRAFO 1:
+Explicar por qué pi* es distinto de lambda.
+
+lambda = intensidad del desacoplamiento.
+pi* = nivel hacia el que parecen converger expectativas.
+-->
+
+La proxy $\lambda_t$ indica cuánto se desacoplan las expectativas de la inflación pasada, pero no identifica por sí misma el nivel alrededor del cual se encuentran ancladas. Para ello, el modelo permite recuperar $\pi_t^*$, es decir, el valor de inflación implícito en la relación de equilibrio entre inflación y expectativas. Esta distinción es central: un régimen de mayor credibilidad no solo debería mostrar una elevada separación respecto de fluctuaciones transitorias de inflación, sino también un ancla implícita compatible con el objetivo anunciado por la autoridad monetaria.
+
+<!--
+PÁRRAFO 2:
+Usar los resultados exactos.
+
+Valores esperados en la corrida actual:
+promedio ~4.57
+inicial ~6.39
+final ~3.85
+MAE ~0.46
+85.28% dentro de banda
+
+No es necesario meter todos los números si el texto se satura.
+Elegir 3 o 4.
+-->
+
+Los resultados muestran que el ancla implícita se aproxima progresivamente al objetivo de política monetaria. En promedio, $\pi_t^*$ se ubica en `r fmt(resumen_m3$pi_estrella_promedio, 2)` %, pero la trayectoria es más informativa que ese promedio: parte de aproximadamente `r fmt(resumen_m3$pi_estrella_inicial, 2)` % y finaliza en `r fmt(resumen_m3$pi_estrella_final, 2)` %. Asimismo, el error absoluto medio respecto de la meta es de `r fmt(resumen_m3$MAE_pi_estrella_meta, 2)` puntos porcentuales y el ancla permanece dentro del rango meta en aproximadamente `r fmt(resumen_m3$porcentaje_ancla_dentro_banda_meta, 1)` % de los meses. En consecuencia, la evidencia no solo muestra un aumento de $\lambda_t$, sino también una convergencia del nivel implícito de largo plazo hacia valores compatibles con el objetivo anunciado.
+
+<!--
+PÁRRAFO 3:
+Episodio inflacionario reciente.
+
+Este es potencialmente uno de los hallazgos más interesantes.
+No usar causalidad.
+-->
+
+El comportamiento durante el episodio inflacionario de 2021–2023 resulta particularmente informativo. Aunque la inflación observada se alejó de la meta, el ancla implícita permaneció comparativamente estable y próxima al objetivo central. Esta divergencia sugiere que los agentes no incorporaron de manera permanente toda la perturbación inflacionaria reciente en su valoración del nivel de inflación de mediano plazo. Interpretado conjuntamente con la elevada trayectoria de $\lambda_t$, el resultado es compatible con expectativas que permanecieron relativamente ancladas pese a un choque inflacionario de magnitud considerable.
+
+
+## Robustez y limitaciones de la especificación
+
+<!--
+ESTA SUBSECCIÓN DEBE SER CORTA: 2 párrafos.
+
+NO convertirla en un catálogo de pruebas.
+
+Problema principal:
+- residuos de inflación interanual autocorrelacionados.
+
+Pruebas ya realizadas:
+A) rezagos adicionales: no eliminan autocorrelación y lambda/pi* casi no cambian.
+B) inflación interanual calculada desde IPC: reproduce baseline.
+C) mensual SA anualizada: elimina autocorrelación y lambda conserva trayectoria.
+D) otras medidas: se usan como contraste, no como modelos principales.
+
+Conclusión:
+la autocorrelación es una limitación del bloque auxiliar de inflación,
+pero la trayectoria de lambda no parece ser un artefacto del solapamiento interanual.
+-->
+
+El principal diagnóstico que requiere cautela es la autocorrelación de los residuos de la ecuación de inflación cuando se utiliza la variación interanual del IPC. La incorporación de rezagos adicionales no elimina completamente este patrón, lo que sugiere que parte de la persistencia residual puede estar asociada a la propia construcción solapada de la tasa interanual. Por esta razón, la inflación interanual se mantiene como especificación principal por su correspondencia de escala con las expectativas expresadas en términos anuales, pero se complementa con medidas alternativas de inflación como ejercicio de robustez.
+
+```{r}
+#| label: tbl-robustez-msaa
+#| tbl-cap: "Robustez de la proxy de credibilidad ante medidas alternativas de inflación"
+
+if (!is.null(robustez_trayectorias)) {
+
+  tabla_robustez_wp <- robustez_trayectorias |>
+    dplyr::filter(
+      codigo %in% c("YOYIPC", "MSAA")
+    ) |>
+    dplyr::transmute(
+      Especificación = codigo,
+      `Correlación de lambda` = round(correlacion_lambda, 3),
+      `MAE de lambda` = round(MAE_lambda, 3),
+      `Correlación de pi*` = round(correlacion_pi_estrella, 3),
+      `MAE de pi*` = round(MAE_pi_estrella, 3)
+    )
+
+  knitr::kable(
+    tabla_robustez_wp,
+    align = c("l", "c", "c", "c", "c"),
+    booktabs = TRUE
+  )
+}
+```
+
+<!--
+PÁRRAFO 2:
+MSAA es la robustez principal porque:
+- quita overlap interanual;
+- LB inflación deja de rechazar;
+- corr lambda ≈ .983;
+- MAE lambda ≈ .022.
+
+No decir que pi* es idéntica: es más sensible.
+-->
+
+La robustez con inflación mensual desestacionalizada anualizada es especialmente relevante. Bajo esta transformación desaparece la evidencia de autocorrelación residual en la ecuación de inflación, mientras que la trayectoria de $\lambda_t$ conserva una correlación cercana a 0.98 con la especificación base y una diferencia absoluta media reducida. La estabilidad de la proxy frente a una medida sin el solapamiento de doce meses indica que la conclusión sobre el fortalecimiento del anclaje no depende exclusivamente de la persistencia mecánica de la inflación interanual. El ancla implícita presenta una sensibilidad algo mayor a la medida de inflación empleada, por lo que sus niveles deben interpretarse con mayor cautela que la trayectoria de $\lambda_t$.
+
+<!--
+RECOMENDACIÓN:
+Las figuras ACF y la tabla completa con seis medidas de inflación pueden ir al
+apéndice. En el texto principal basta con reportar el hallazgo y un cuadro pequeño.
+-->
+
+
+## Síntesis de los resultados del TVP–VAR
+
+<!--
+CIERRE: 1 o 2 párrafos.
+
+OBJETIVO:
+responder directamente al objetivo específico, no introducir nueva metodología.
+
+ESTRUCTURA:
+1. qué aprendimos de lambda;
+2. qué aprendimos de pi*;
+3. cómo dialoga con rolling;
+4. limitación + robustez;
+5. transición al siguiente bloque del trabajo.
+
+NO:
+- afirmar que el EMEI "causó" el fortalecimiento.
+- afirmar "credibilidad perfecta".
+-->
+
+En síntesis, el TVP–VAR restringido aporta dos resultados complementarios sobre el anclaje de las expectativas de inflación en Guatemala. Primero, la proxy dinámica de credibilidad muestra un aumento gradual del desacoplamiento entre las expectativas a 24 meses y la inflación observada, reforzando la evidencia obtenida mediante las regresiones móviles. Segundo, el ancla inflacionaria implícita converge hacia valores próximos a la meta oficial y permanece relativamente estable incluso durante el episodio inflacionario reciente. Considerados conjuntamente, ambos resultados son compatibles con un proceso gradual de fortalecimiento del anclaje de las expectativas de mediano plazo durante el período de análisis.
+
+La persistencia de autocorrelación en la ecuación auxiliar de inflación interanual constituye una limitación de la especificación base; sin embargo, los ejercicios con medidas alternativas muestran que la trayectoria principal de $\lambda_t$ se mantiene cuando se elimina el componente de solapamiento de la inflación interanual. La evidencia obtenida en esta sección caracteriza el grado y la evolución del anclaje; el siguiente bloque del análisis amplía esta perspectiva al examinar cómo responden las expectativas ante choques macroeconómicos identificados dentro de un marco VAR.
+
+<!--
+===============================================================================
+CHECKLIST ANTES DE DAR POR TERMINADA ESTA SECCIÓN
+===============================================================================
+
+[ ] ¿El primer párrafo conecta explícitamente rolling regressions con TVP–VAR?
+[ ] ¿La comparación M0–M3 ocupa solo un cuadro y 1–2 párrafos?
+[ ] ¿Se evita presentar el LR como prueba convencional definitiva?
+[ ] ¿c0_t se interpreta como intercepto y NO como el ancla por sí solo?
+[ ] ¿c_t se interpreta como sensibilidad frente a inflación?
+[ ] ¿lambda_t es la figura principal?
+[ ] ¿Se habla de "proxy de credibilidad" y no de probabilidad de credibilidad?
+[ ] ¿Se utiliza "mediano plazo" para expectativas a 24 meses?
+[ ] ¿pi*_t se presenta como una magnitud estimada y luego contrastada con la meta?
+[ ] ¿Se destaca el episodio 2021–2023 sin hacer inferencias causales?
+[ ] ¿La robustez MSAA aparece en 1–2 párrafos y no domina la sección?
+[ ] ¿Las ACF y diagnósticos extensos están en apéndice?
+[ ] ¿El cierre responde directamente al objetivo específico?
+[ ] ¿La transición final abre naturalmente la sección de choques/VAR?
+===============================================================================
+-->
