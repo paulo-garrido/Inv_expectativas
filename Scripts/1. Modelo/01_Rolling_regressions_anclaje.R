@@ -1,6 +1,6 @@
-# ============================================================
 # 01. ROLLING REGRESSIONS
 # Sensibilidad de las expectativas a 24 meses frente a la inflación
+# ============================================================
 # Modelo ampliado: persistencia, brecha de inflación y tipo de cambio
 # ============================================================
 
@@ -90,11 +90,7 @@ cat(
 # ------------------------------------------------------------
 # 2) Definir ventana móvil
 # ------------------------------------------------------------
-window_size <- 48   # 36 meses = 3 años
-
-# Prueba de robustez:
-# cambiar únicamente la línea anterior por:
-# window_size <- 30
+window_size <- 60  # 60 meses = 5 años
 
 if (nrow(df_model) < window_size) {
     stop(
@@ -509,7 +505,6 @@ ggsave(
     bg = "white"
 )
 
-print(p_rho)
 ggsave(
     paste0(
         "output/rolling_rho_",

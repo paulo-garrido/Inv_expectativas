@@ -1,0 +1,2124 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10.5pt,
+  letterpaper,
+  twocolumn]{article}
+\usepackage{xcolor}
+\usepackage[top=2.2cm,bottom=2.2cm,left=2cm,right=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{2}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{pdflscape}
+
+% Color sobrio
+\definecolor{wpblue}{HTML}{1F3A5F}
+
+% Sangría y espaciado entre párrafos
+\setlength{\parindent}{0.6cm}
+\setlength{\parskip}{0.20em}
+
+% Separación entre columnas
+\setlength{\columnsep}{0.7cm}
+
+% Encabezados y pie de página
+\pagestyle{fancy}
+\fancyhead[L]{\footnotesize Paulo Garrido}
+\fancyhead[R]{\footnotesize Anclaje de expectativas en Guatemala}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Formato de secciones
+\titleformat{\section}
+  {\large\bfseries}
+  {\color{wpblue}\thesection.}{0.5em}{}
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {\color{wpblue}\thesubsection}{0.5em}{}
+
+% Espaciado de secciones
+\titlespacing*{\section}{0pt}{1.1em}{0.5em}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
+\usepackage{graphicx}
+\raggedbottom
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Anclaje dinámico de las expectativas de inflación en Guatemala bajo el EMEI: parámetros variantes en el tiempo y respuesta a choques macroeconómicos, 2010--2026},
+  pdfauthor={Paulo Garrido},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={black},
+  urlcolor={black},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Anclaje dinámico de las expectativas de inflación en Guatemala
+bajo el EMEI: parámetros variantes en el tiempo y respuesta a choques
+macroeconómicos, 2010--2026}
+\author{Paulo Garrido}
+\date{}
+\begin{document}
+\maketitle
+
+
+\setstretch{1.1}
+\section{Introducción}\label{introducciuxf3n}
+
+La inestabilidad macroeconómica que caracterizó la economía mundial
+durante la segunda mitad del siglo XX -particularmente en materia de
+inflación- reforzó el papel de la política monetaria como una
+herramienta transversal en la política económica en materia de
+estabilidad, debido a que, en última instancia, los bancos centrales son
+las instituciones encargadas de contribuir a un entorno predecible para
+las decisiones de consumo, ahorro, inversión y fijación de precios.
+
+Conforme se consolidó esta visión, se evidenció que la capacidad de la
+política monetaria para cumplir ese cometido no se circunscribe al uso
+de instrumentos de política, sino -fundamentalmente- de la credibilidad
+con que la autoridad monetaria logra influir sobre las expectativas de
+los agentes; en este sentido, Mishkin (2007) arguye que las expectativas
+son críticas para los resultados de la política monetaria y que una
+ancla nominal sólida constituye un elemento clave para obtener buenos
+resultados macroeconómicos, de esa cuenta, que la credibilidad del banco
+central no constituya un elemento secundario, sino un rasgo esencial de
+la eficacia de la política monetaria.
+
+En este marco, surgió el Esquema de Metas Explícitas de Inflación (EMEI)
+como una respuesta institucional a la necesidad de dotar a la política
+monetaria de mayor claridad, disciplina y credibilidad, el cual, como lo
+sostiene Mishkin (2007) descansa en el compromiso institucional con la
+estabilidad de precios como objetivo primordial de largo plazo y en una
+estrategia de política monetaria con mayor transparencia, comunicación y
+rendición de cuentas; por tanto, bajo esta lógica, el EMEI no debe
+entenderse solo como un arreglo operativo, sino como un marco
+institucional orientado a fortalecer la credibilidad del banco central y
+a guiar la formación de expectativas inflacionarias de manera
+consistente con la meta oficial.
+
+En la visión de Kose et al. (2019) la importancia de este enfoque es aún
+mayor en economías emergentes, subrayando que las expectativas
+inflacionarias cumplen un papel crítico en la implementación efectiva de
+la política monetaria porque influyen sobre la inflación actual a través
+de la fijación de salarios y precios; por esa razón, de acuerdo a
+Strohsal et al. (2015) ``anclar las expectativas de inflación a un nivel
+compatible con el objetivo de inflación del banco central es de
+particular importancia, en virtud de que los bancos centrales justifican
+y explican cada vez más sus decisiones de política monetaria basándose
+en la necesidad de mantener unas expectativas de inflación bien
+ancladas'' (p.2). En este sentido, trabajos previos han tendido a
+evaluar el anclaje de expectativas a partir de su sensibilidad frente a
+distintas fuentes de perturbación.
+
+No obstante, el problema que subyace de medir el anclaje como una
+condición estática resulta insuficiente, en virtud de que una parte
+relevante de la literatura ha insistido en que la relación entre
+expectativas, inflación y política monetaria cambia con el tiempo y
+depende del régimen macroeconómico y de la naturaleza de los choques que
+enfrenta la economía. En el caso de Guatemala, esta discusión adquiere
+especial importancia a la luz de la transición hacia el EMEI y del papel
+creciente de la encuesta de expectativas económicas como insumo para la
+conducción monetaria; en este marco, la tesis de Álvarez García (2014)
+destaca que, bajo este esquema, la efectividad de la política monetaria
+depende en buena medida de que la autoridad sea percibida como un
+guardián creíble de la estabilidad de precios y de que no exista
+incertidumbre significativa sobre su orientación futura.
+
+El fundamento de este trabajo se motiva en analizar la evolución del
+anclaje de las expectativas de inflación en Guatemala, bajo el EMEI
+mediante un enfoque econométrico dinámico; en un primer bloque, se mide
+el anclaje a partir de la sensibilidad de las expectativas de mediano
+plazo frente a la inflación y otros determinantes, siguiendo la lógica
+empírica de Strohsal et al. (2015), quienes conciben el anclaje como una
+propiedad dinámica y estimable a partir de la respuesta de las
+expectativas a distintas fuentes de desanclaje; adicionalmente, este
+bloque retoma la intuición de la literatura aplicada de autores como
+@mehrotra\_yetman2018, según la cual una menor transmisión de la
+inflación corriente hacia las expectativas de mediano plazo constituye
+una señal de mayor anclaje; para captar esa dimensión dinámica, se
+emplean tanto \emph{rolling regressions} como un modelo con parámetros
+variantes en el tiempo. En el segundo bloque, se analiza la respuesta de
+las expectativas ante distintos choques macroeconómicos mediante modelos
+VAR, siguiendo a Barnett et al. (2010), que examinan la interacción
+entre expectativas, inflación y política monetaria dentro de un sistema
+dinámico. De este modo, el estudio busca contribuir a la literatura
+sobre credibilidad y expectativas en economías emergentes y, en
+particular, aportar evidencia para Guatemala en un ámbito donde la
+discusión empírica sigue siendo limitada.
+
+El documento se estructura de la siguiente manera: en el apartado 2 se
+hace una revisión de la literatura orientada a los principales trabajos
+que han abordado empíricamente estas temáticas; en el apartado 3, se
+desarrolla un análisis de los hechos estilizados que muestran la
+evolución de variables clave para una mejor y más profunda comprensión
+del fenómeno. Seguidamente, el apartado 4 expone la estructura de la
+línea de investigación, incluyendo el planteamiento del problema, los
+objetivos, la hipótesis de trabajo y la justificación del estudio; a
+continuación, en el apartado 5 se hace una explicación detallada de la
+metodología empleada, con especial énfasis en los tres modelos
+econométricos utilizados para la consecución de los objetivos de la
+investigación. Seguidamente, el apartado 6 expone los resultados
+obtenidos a partir de la implementación metodológica señalada en el
+apartado anterior y desarrolla la discusión correspondiente a la luz de
+la evidencia encontrada. Por último, el apartado 7 presenta las
+conclusiones y recomendaciones finales derivadas de la implementación
+metodológica encontrada.
+
+\section{Literatura relacionada}\label{literatura-relacionada}
+
+A partir del reconocimiento de la política monetaria como elemento
+central para la estabilidad económica -particularmente a inicios del
+siglo XXI- ha surgido un importante cuerpo de literatura orientado a
+evaluar la credibilidad de los bancos centrales; en particular, una
+parte sustantiva de esa literatura ha centrado su análisis en el anclaje
+de expectativas, dentro del marco del establecimiento del ``inflation
+targeting'' en una parte importante de las economías del mundo.
+
+En este orden de ideas, la literatura sobre política monetaria converge,
+en primer término, en una idea general: la efectividad de la política
+monetaria no descansa únicamente en el manejo de un instrumento
+``operativo'', sino de la capacidad del banco central para dotar de
+credibilidad a un marco que discipline las expectativas del público,
+reconociendo en este sentido, a las expectativas como un aspecto central
+de la politica monetaria; en esa dirección, Mishkin (2007) subraya que
+las expectativas son fundamentales para los resultados de la política
+monetaria y que una ancla nominal sólida constituye un elemento central
+para alcanzar estabilidad de precios; por otro lado, Clarida et al.
+(1999) muestran que, dentro del enfoque neokeynesiano -enfoque
+ampliamente utilizado en la macroeconomía moderna- una política
+monetaria sistemática y creíble debe reaccionar de forma consistente
+ante desviaciones de la inflación esperada y de la actividad,
+precisamente porque la transmisión de sus decisiones opera, en buena
+medida, a través de las expectativas; en conjunto, esta literatura
+establece el punto de partida analítico de la discusión sobre la
+política: la credibilidad es una condición estructural para la eficacia
+de la política monetaria.
+
+\subsection{Expectativas como eje central en la política monetaria
+moderna}\label{expectativas-como-eje-central-en-la-poluxedtica-monetaria-moderna}
+
+En la actualidad, resulta casi axiomático sostener que las expectativas
+desempeñan un papel fundamental en la eficacia de la política monetaria,
+sin embargo, esta concepción no siempre fue la que predominó en el
+pensamiento económico; los bancos centrales en buena parte del siglo XX
+solían estar rodeados de un halo de misterio, en donde se tenía la idea
+de que los hacedores de política monetaria deberían hablar lo menos
+posible y actuar con discreción, como lo dice el economista Brunner
+(1981) en su famoso artículo ``The Art of Central Banking'' en donde
+señala que ``la banca central\ldots{} se nutre de la impresión
+generalizada de que es un arte esotérico. El acceso a este arte y su
+correcta ejecución están reservados a la élite iniciada'' (p.~5). Cuya
+reflexión pone de manifiesto que en los años 80 la política monetaria se
+concebía como un ámbito escasamente comunicado al público.
+
+Posteriormente, esta visión empezó a resquebrajarse, Blinder (1996)
+señalaba que una mayor comunicación mejoraría la eficacia de la política
+monetaria; esta idea que ya empezaba a permear en los círculos de la
+política económica empezó a encontrar un fundamento más sólido con
+Woodford (2001) quien enfatizó que la esencia de la política monetaria
+reside en el arte de gestionar las expectativas y que esto ya era un
+hecho aceptado. Para comienzos del siglo XXI, esta concepción había
+dejado de ser una propuesta marginal, tal como lo afirman Blinder et al.
+(2008) quienes indican que ``la idea de que la política monetaria se
+basa, al menos en parte, en la gestión de las expectativas, es ya un
+concepto común tanto en el ámbito académico como en los círculos de la
+banca central. No es exagerado calificarlo de revolución en el
+pensamiento'' (p.~7). De este modo, las expectativas pasaban así de
+ocupar un lugar secundario a constituirse en uno de los principales
+canales de efectividad de la política monetaria.
+
+\subsection{Medición empírica del anclaje de las expectativas de
+inflación}\label{mediciuxf3n-empuxedrica-del-anclaje-de-las-expectativas-de-inflaciuxf3n}
+
+En virtud del consenso de que las expectativas juegan un rol fundamental
+en la política monetaria, la literatura se desplaza hacia una pregunta
+más específica: ¿cómo evaluar si las expectativas de inflación están
+efectivamente ancladas?, en este sentido, surge un problema empírico
+menos evidente: el anclaje no constituye una variable directamente
+observable, por lo que su existencia debe inferirse a partir del
+comportamiento de las expectativas frente a la meta de inflación, la
+información reciente y los choques que afectan la trayectoria de los
+precios, y es por esa razón que la literatura no ha convergido en una
+medida única, sino en un conjunto de aproximaciones que capturan
+dimensiones complementarias del fenómeno.
+
+Una primera aproximación evalúa el anclaje a partir de la sensibilidad
+de las expectativas de largo plazo ante la inflación observada, donde la
+intuición es directa: si los agentes confían en que la autoridad
+monetaria devolverá la inflación hacia su objetivo, las fluctuaciones
+recientes de los precios deberían modificar poco sus previsiones para
+horizontes relativamente largos, por el contrario, una reacción elevada
+indicaría que los agentes interpretan esas fluctuaciones como señales de
+cambios más persistentes en la dinámica inflacionaria; bajo esta lógica,
+Levin et al. (2004) examinan si los pronósticos de largo plazo guardan
+una relación significativa con la inflación rezagada y encuentran que
+dicha relación es menor en economías con objetivos explícitos de
+inflación, en síntesis, el coeficiente asociado a la inflación observada
+se convierte así en una primera medida empírica del grado de anclaje.
+
+Esta estrategia fue ampliada posteriormente para considerar que la
+relación entre la inflación y las expectativas puede modificarse con el
+entorno macroeconómico, Ehrmann (2015) emplea esta lógica para evaluar
+el comportamiento de las expectativas bajo distintos entornos
+inflacionarios, sus resultados muestran que, durante episodios
+prolongados de inflación reducida, las expectativas pueden volverse más
+sensibles a los datos recientes, lo que revela que el desanclaje no
+ocurre únicamente cuando la inflación supera la meta, sino también
+cuando permanece persistentemente por debajo de ella.
+
+En esta misma línea, Łyziak \& Paloviita (2017) aplican regresiones
+móviles para analizar si dicha sensibilidad cambia a lo largo del
+tiempo, de modo que una reducción del coeficiente asociado a la
+inflación observada se interpreta como evidencia compatible con un
+fortalecimiento del anclaje. En este sentido, esta aproximación resulta
+especialmente útil para el presente estudio, porque permite evaluar si
+la relación entre las expectativas a 24 meses y la inflación reciente ha
+perdido intensidad durante la consolidación del Esquema de Metas
+Explícitas de Inflación en Guatemala.
+
+Las regresiones móviles permiten identificar cambios graduales, pero
+imponen que el coeficiente permanezca constante dentro de cada ventana,
+es decir, consideran un supuesto muy fuerte, el anclaje no cambia en el
+tiempo; para superar esta limitación Strohsal et al. (2015) proponen una
+especificación con parámetros variantes en el tiempo, en la que la
+intensidad del anclaje puede evolucionar período a período, este enfoque
+resulta especialmente útil cuando la credibilidad no cambia de manera
+abrupta, sino mediante un proceso acumulativo de aprendizaje,
+cumplimiento o incumplimiento de la meta, especialmente interesante para
+identificar la evolución de la eficacia de la política monetaria en la
+consolidación de nuevos arreglos institucionales (como el EMEI); En ese
+sentido, los modelos de estado-espacio y el filtro de Kalman ofrecen una
+forma más flexible de estimar la sensibilidad cambiante de las
+expectativas frente a los shocks inflacionarias.
+
+Una segunda familia de medidas se concentra en la proximidad y
+estabilidad de las expectativas respecto de la meta, Bems et al. (2021)
+construyen un índice compuesto que reúne tres dimensiones: la distancia
+entre las expectativas de largo plazo y el objetivo inflacionario, su
+variabilidad a través del tiempo y el desacuerdo entre pronosticadores,
+el aporte de esta metodología consiste en reconocer que unas
+expectativas pueden reaccionar poco a la inflación reciente y, sin
+embargo, permanecer alejadas de la meta; de igual forma, pueden situarse
+cerca del objetivo en promedio, pero exhibir elevada volatilidad o
+dispersión. en este sentido, el anclaje, desde esta perspectiva, no se
+agota en un único coeficiente, sino que combina nivel, estabilidad y
+consenso.
+
+Más recientemente, Mehrotra \& Yetman (2018) proponen una metodología
+alternativa basada en pronósticos de inflación a múltiples horizontes;
+en lugar de inferir el anclaje únicamente a partir de expectativas de
+muy largo plazo, modelan el proceso mediante una función de decaimiento
+en la que los pronósticos convergen hacia un ancla de largo plazo y se
+alejan de ella conforme el horizonte se acorta. El aporte central de
+esta literatura es metodológico y conceptual a la vez: el anclaje no se
+reduce a una fotografía puntual, sino que puede inferirse a partir de la
+estructura completa de los pronósticos.
+
+En conjunto, la literatura identifica varias manifestaciones observables
+del anclaje: cercanía respecto de la meta, estabilidad temporal, baja
+sensibilidad ante la inflación reciente y convergencia hacia un valor de
+largo plazo; en esta cacofonia de ideas, la presente investigación se
+concentra principalmente en la sensibilidad de las expectativas a 24
+meses frente a la inflación observada y a las sorpresas inflacionarias;
+para ello, combina regresiones móviles con un modelo de parámetros
+variantes en el tiempo. Esta estrategia permite evaluar no solo si las
+expectativas se encuentran ancladas, sino también cómo ha evolucionado
+la intensidad de ese anclaje en Guatemala.
+
+\subsection{Evidencia sobre anclaje de expectativas en América
+Latina}\label{evidencia-sobre-anclaje-de-expectativas-en-amuxe9rica-latina}
+
+En una extensión particularmente relevante para América Latina, Gondo \&
+Yetman (2018) aplican esa lógica de expectativas con decaimiento a un
+conjunto amplio de países de la región y concluyen que la mayoría exhibe
+un ancla inflacionaria identificable; además, encuentran que el grado de
+anclaje tiende a fortalecerse con el tiempo, congruente con mejoras en
+la credibilidad de la política monetaria. Para los países con metas de
+inflación, sus resultados sugieren que las anclas estimadas suelen
+ubicarse dentro del rango meta en las muestras más recientes, lo cual
+evidencia la importancia del régimen y de la credibilidad para el ancla
+de expectativas. En el caso de Guatemala, el estudio reporta que el
+ancla estimada para la muestra reciente se ubicaba por encima del
+promedio de la meta, aunque advierte que este resultado debe
+interpretarse con cautela porque la ventana de estimación aún
+incorporaba años previos a la adopción del régimen.
+
+\subsection{El anclaje de expectativas como fenómeno
+dinámico}\label{el-anclaje-de-expectativas-como-fenuxf3meno-dinuxe1mico}
+
+En una línea distinta de investigación, también existen investigaciones
+que estudian el anclaje a partir de su sensibilidad frente a distintas
+fuentes de perturbación y, sobre todo, reconoce que dicha sensibilidad
+puede cambiar en el tiempo; es decir, se reconoce que la sensibilidad de
+las expectativas no es constante, sino puede variar, fundamentalmente en
+el fortalecimiento o debilitamiento de la credibilidad de la autoridad
+monetaria. En este orden de ideas, Strohsal et al. (2015) sostienen que
+las expectativas de inflación bien ancladas no deberían responder ni a
+la inflación rezagada ni al traspaso desde expectativas de corto plazo
+hacia horizontes largos; por ello, desarrollan un modelo con parámetros
+variantes en el tiempo que permite medir el grado de anclaje como un
+parámetro dinámico; en este sentido, su principal aporte consiste en
+mostrar que los enfoques de parámetros constantes o con simples quiebres
+de régimen pueden subestimar episodios breves de desanclaje o exagerar
+problemas de credibilidad cuando el proceso real es gradual.
+
+En esta misma línea, Barnett et al. (2010) emplean un SVAR estructural
+con cambio de régimen de Markov, para estudiar cómo varía en el tiempo
+el efecto de distintos shocks ---incluidos los shocks a expectativas de
+inflación--- sobre la economía del Reino Unido; y D'Agostino \&
+Mendicino (2015) muestran que los efectos de los shocks de expectativas
+también cambian a lo largo del tiempo y se intensifican en ciertos
+episodios recesivos. En síntesis, esta literatura aporta dos ideas
+claras en los estudios sobre anclaje de expectativas: primero, que el
+anclaje debe medirse como un fenómeno dinámico que cambia en el tiempo;
+y, segundo, que resulta útil analizar las expectativas no solo como
+variable de nivel, sino también como una variable que responde a shocks
+macroeconómicos dentro de un sistema dinámico.
+
+\subsection{Evidencia empírica sobre expectativas y anclaje en
+Guatemala}\label{evidencia-empuxedrica-sobre-expectativas-y-anclaje-en-guatemala}
+
+Cuando la atención se desplaza a Guatemala, la evidencia disponible
+todavía es reducida y puede ordenarse en dos grupos: el primero es de
+carácter institucional y operativo, documentos del Banco de Guatemala
+subrayan que, en un régimen de metas explícitas de inflación, el canal
+de expectativas es fundamental porque la efectividad de la política
+monetaria depende en gran medida del anclaje de las expectativas
+inflacionarias; asimismo, la propia institución caracteriza al EMEI como
+un marco en el que el compromiso público con una meta de inflación, la
+transparencia y el uso de pronósticos son elementos centrales del diseño
+monetario.
+
+Por otro lado, el segundo grupo corresponde a estudios aplicados.
+Álvarez García (2014) trabaja con la Encuesta de Expectativas Económicas
+al Panel de Analistas Privados haciendo uso de las expectativas a
+diciembre del año corriente y evalúa la efectividad de la política
+monetaria mediante estadísticos de dispersión basados en cuantiles ---en
+particular, deciles y alcance interfractil--- para analizar credibilidad
+y ausencia de incertidumbre en torno a las expectativas de inflación.
+
+En esta misma línea de investigación, Avendaño Estrada \& Orellana
+Camargo (2020) evalúan la credibilidad del EMEI para 2005-2019 usando
+también la EEE del Panel de Analistas Privados, construyendo funciones e
+índices de credibilidad a partir de las desviaciones entre expectativas
+de inflación y meta, y después evalúan si las expectativas responden a
+la inflación observada, es decir, si incorporan nueva información
+proveniente del comportamiento efectivo de los precios, los autores
+encuentran que la meta de inflación del Banco de Guatemala es creíble y
+que su credibilidad ha aumentado desde la adopción del EMEI, aunque de
+manera imperfecta; además, señalan que las expectativas a horizontes más
+largos exhiben mayor anclaje que las de corto plazo.
+
+En ese mismo orden de ideas, Pérez Macal (2021) evalúa si las
+expectativas de inflación de los analistas privados están ancladas a la
+meta y encuentra resultados menos favorables para el largo plazo. En
+conjunto, estos trabajos ya ofrecen evidencia relevante sobre
+credibilidad y expectativas en Guatemala; sin embargo, tienden a
+centrarse en índices de credibilidad, ejercicios descriptivos o
+contrastes relativamente estáticos.
+
+\subsection{Marco conceptual}\label{marco-conceptual}
+
+\subsubsection{Política monetaria, credibilidad y
+expectativas}\label{poluxedtica-monetaria-credibilidad-y-expectativas}
+
+La discusión contemporánea sobre política monetaria parte del
+reconocimiento de que la estabilidad de precios constituye la
+contribución más importante que un banco central puede realizar al
+desempeño macroeconómico de largo plazo; en este marco, como ya se ha
+señalado con anterioridad, de acuerdo a Mishkin (2007) la credibilidad
+del banco central adquiere un lugar central, en la medida en que
+disciplina la formación de expectativas y reduce los incentivos a
+conductas inconsistentes con la estabilidad de precios. En un marco más
+general, Clarida et al. (1999) muestran que una política monetaria
+creíble y sistemática debe responder de manera consistente a las
+presiones inflacionarias esperadas; de ese modo, la credibilidad deja de
+ser un atributo accesorio y pasa a convertirse en una condición
+estructural de la eficacia monetaria.
+
+Esta visión se refuerza con el enfoque de Woodford (2003), para quien la
+implementación de la política monetaria es, en gran medida, un problema
+de gestión de expectativas. La razón es directa: muchas decisiones
+económicas relevantes ---fijación de precios, negociación salarial,
+consumo e inversión--- son inherentemente forward-looking; por
+consiguiente, la política monetaria influye sobre la economía no solo
+por la tasa de interés vigente, sino también por la trayectoria que los
+agentes atribuyen a la política futura. En ese sentido, el canal de
+expectativas no constituye un mecanismo periférico, sino uno de los
+núcleos analíticos de la macroeconomía monetaria contemporánea.
+
+\subsubsection{Anclaje de expectativas de
+inflación}\label{anclaje-de-expectativas-de-inflaciuxf3n}
+
+Sobre esa base, el concepto de anclaje de expectativas remite al grado
+en que las expectativas de inflación permanecen alineadas con el
+objetivo de la autoridad monetaria y, por tanto, dejan de reaccionar de
+manera persistente a desviaciones transitorias de la inflación
+observada. Strohsal et al. (2015) plantean que unas expectativas bien
+ancladas deberían estar guiadas, ante todo, por la meta de inflación del
+banco central; por consiguiente, no deberían responder de forma
+sistemática ni a la inflación rezagada ni al traslado de expectativas de
+corto plazo hacia horizontes más largos.
+
+En esta línea, el anclaje puede entenderse como una manifestación
+empírica de la credibilidad monetaria: cuanto mayor sea la confianza en
+la capacidad y disposición del banco central para reconducir la
+inflación hacia la meta, menor será la sensibilidad de las expectativas
+frente a perturbaciones de corto plazo; este punto aparece de forma
+clara en Bomfim \& Rudebusch (2000), quienes vinculan la respuesta de
+las expectativas de largo plazo a la inflación observada con problemas
+de credibilidad.
+
+\section{El esquema de metas de inflación en Guatemala: evolución y
+hechos
+estilizados}\label{el-esquema-de-metas-de-inflaciuxf3n-en-guatemala-evoluciuxf3n-y-hechos-estilizados}
+
+A partir del consenso alcanzado en la literatura moderna sobre política
+monetaria, es claro que la política monetaria -dominada en buena parte
+del siglo XX por una marcada falta de independencia y por regímenes cuyo
+vínculo entre ancla nominal y objetivo de política era poco claro-
+necesitaba un marco institucional orientado, precisamente, a fortalecer
+esa credibilidad; es en ese contexto, en donde nace el Esquema de Metas
+Explícitas de Inflación (EMEI). En este sentido, Bernanke \& Mishkin
+(1997) arguyen que el régimen de metas de inflación debe entenderse
+menos como una regla mecánica y más como un marco de ``discreción
+restringida'', capaz de hacer la política monetaria más coherente,
+transparente y disciplinada; en consecuencia, el centro del régimen no
+se agota en la existencia de una meta numérica, sino que descansa en la
+construcción de un marco institucional de comunicación, transparencia y
+rendición de cuentas que funcione como ancla nominal.
+
+En esa misma línea, Svensson (1997); Svensson (1998) desarrolla la idea
+de \emph{inflation forecast targeting} y muestra que, bajo este enfoque,
+el pronóstico de inflación se convierte en el objetivo intermedio
+relevante para la autoridad monetaria; por consiguiente, el régimen no
+descansa solo en la reacción ex post del banco central, sino en su
+capacidad para orientar las expectativas de inflación hacia la meta
+anunciada; así, la literatura sobre EMEI (inflation targeting) deja
+claro que el centro del régimen no se circunscribe únicamente a la meta
+numérica; antes bien, es la construcción de un marco institucional de
+transparencia, comunicación y rendición de cuentas que sirva como ancla
+nominal.
+
+\subsection{Antecedentes del esquema de metas de inflación en
+Guatemala}\label{antecedentes-del-esquema-de-metas-de-inflaciuxf3n-en-guatemala}
+
+La adopción del Esquema de Metas Explícitas de Inflación (EMEI) en
+Guatemala fue el resultado de un proceso gradual de transformación del
+marco monetario, y no de un cambio abrupto de régimen, de acuerdo con
+Castañeda Fuentes et al. (2019), durante la década de los noventa, la
+política monetaria operó bajo un esquema de metas monetarias, sustentado
+en la teoría cuantitativa del dinero, en el cual la emisión monetaria
+servía como agregado relevante para orientar la política y controlar la
+inflación. No obstante, la liberalización financiera, la mayor
+flexibilidad cambiaria, la apertura de la cuenta de capitales y las
+innovaciones en los medios de pago redujeron progresivamente la relación
+entre los agregados monetarios y la inflación; por consiguiente, el
+esquema previo fue perdiendo capacidad como marco de referencia para la
+conducción monetaria. En ese contexto, el Banco de Guatemala fue
+sentando las bases para una transición hacia un régimen monetario más
+explícito y con mayor contenido prospectivo.
+
+De acuerdo con Castañeda Fuentes et al. (2019), el período de transición
+hacia el EMEI puede situarse entre 2000 y 2004; en esos años se
+implementaron medidas macroeconómicas, operativas y legales que eran
+consideradas condiciones necesarias para la adopción del nuevo esquema.
+Entre ellas destaca la Ley de Libre Negociación de Divisas, vigente
+desde 2001, que profundizó la flexibilidad cambiaria y formalizó el
+mercado institucional de divisas; asimismo, en 2002 entraron en vigor
+reformas a la legislación financiera ---particularmente a la Ley
+Orgánica del Banco de Guatemala--- que definieron con claridad la
+estabilidad del nivel general de precios como objetivo fundamental del
+banco central, fortalecieron su autonomía operativa y ampliaron los
+mecanismos de transparencia y rendición de cuentas. Estos cambios no
+solo redefinieron el marco jurídico e institucional de la política
+monetaria, sino que también prepararon las condiciones para abandonar el
+esquema basado en agregados monetarios y avanzar hacia uno centrado en
+la inflación.
+
+En paralelo, el Banco de Guatemala fue incorporando nuevas herramientas
+de análisis consistentes con la lógica del nuevo régimen; en este orden
+de ideas, a partir de diciembre de 2003 se implementó la Encuesta de
+Expectativas Económicas al Panel de Analistas Privados, y desde 2004 las
+expectativas pasaron a formar parte de las variables indicativas
+utilizadas en la toma de decisiones de política monetaria; este elemento
+es importante porque muestra que la transición al EMEI no solo implicó
+reformas legales e instrumentales, sino también un cambio en la forma de
+concebir la política monetaria: las expectativas de inflación comenzaron
+a ser tratadas como una variable relevante para evaluar la credibilidad
+y la orientación futura de la política.
+
+La adopción formal del EMEI ocurrió a finales de 2004, cuando la Junta
+Monetaria aprobó la Política Monetaria, Cambiaria y Crediticia para
+2005; de esta manera, 2005 marca el inicio oficial del régimen de metas
+explícitas de inflación en Guatemala. Castañeda Fuentes et al. (2019)
+subrayan que, desde entonces, el EMEI pasó a constituir el marco de
+política monetaria del banco central; en una perspectiva histórica más
+amplia, Álvarez García (2014) señala que ya desde 1991 Guatemala había
+operado con un esquema de metas de inflación flexible o inflation
+targeting lite; sin embargo, fue la reforma institucional de inicios de
+los años 2000 y la decisión adoptada para 2005 la que permitió enmarcar
+la política monetaria dentro de un esquema plenamente desarrollado de
+metas explícitas de inflación.
+
+En paralelo con la consolidación del EMEI, la información disponible
+sobre expectativas también fue ampliándose, La Encuesta de Expectativas
+Económicas al Panel de Analistas Privados en sus origenes se concentraba
+inicialmente en pronósticos de inflación para diciembre del año
+corriente y del siguiente; posteriormente, desde 2010, incorporó
+expectativas a horizontes constantes de 12 y 24 meses, lo que permitió
+seguir con mayor precisión la formación de expectativas a distintos
+plazos. Más recientemente, a partir de 2025, comenzó a publicarse
+también un horizonte de 60 meses, esta evolución de la encuesta resulta
+relevante para el análisis del anclaje, dado que amplió progresivamente
+la información disponible sobre la dimensión prospectiva de la política
+monetaria.
+
+\subsubsection{Evolución de la inflación y la meta de
+inflación}\label{evoluciuxf3n-de-la-inflaciuxf3n-y-la-meta-de-inflaciuxf3n}
+
+Se discuten a continuación algunos aspectos históricos y a la luz de la
+información estadística disponible de variables que se constituyen como
+relevantes para una mejor comprensión del fenómeno; como se mencionó en
+el tercer apartado, el EMEI se adopta formalmente en el año 2005; sin
+embargo, como lo señaló Álvarez García (2014), el Banco de Guatemala
+anteriormente en el marco del Esquema de Agregados Monetarios ya había
+establecido una Meta de inflación, cuyo hecho no es menor, en virtud de
+que permite estudiar la dinámica inflacionaria en relación con la
+cercanía de la meta.
+
+En ese sentido, se describe la dinámica inflacionaria en Guatemala desde
+1997 hasta junio 2026, lo cual permite ilustrar la trayectoria de la
+inflación en diferentes regímenes monetarios; en este sentido, en la
+Figura 1 se observa la dinámica de la inflación en Guatemala a lo largo
+del período analizado. Una lectura cuidadosa de la figura revela que
+existen cambios en la trayectoria, en particular, durante los años
+previos al establecimiento del Esquema de Metas Explícitas de Inflación
+(EMEI), la serie exhibe niveles relativamente más elevados y una
+volatilidad considerable, con episodios en los que la inflación alcanza
+tasas de dos dígitos; en contraste, a partir de la adopción del esquema,
+se observa una moderación tanto en el nivel como en la variabilidad del
+ritmo inflacionario, de manera que la inflación tiende a ubicarse con
+mayor frecuencia dentro o en las cercanías del rango meta.
+
+No obstante, esta evolución ha tenido una suerte de no uniformidad, es
+decir, aun dentro del período de vigencia del EMEI se distinguen
+episodios de desviación importantes, tanto por encima como por debajo de
+la banda, lo que sugiere que la convergencia hacia un entorno de mayor
+estabilidad nominal ha coexistido con choques de magnitud no menor, en
+consecuencia, aunque la evidencia gráfica parece consistente con una
+reducción de la inflación y de su volatilidad en el marco del EMEI,
+también pone de manifiesto que dicha estabilidad no debe interpretarse
+como un proceso lineal ni exento de tensiones, lo cual justifica
+examinar posteriormente si este comportamiento ha estado acompañado por
+un mayor anclaje de las expectativas de inflación.
+
+\newpage
+
+\textbf{Figura 1}
+
+\emph{Evolución histórica de la inflación en Guatemala, 1997--2026}
+
+\phantomsection\label{ev_inflacion}
+\pandocbounded{\includegraphics[keepaspectratio]{images/fig_contexto_inflacion_historica_emei.png}}
+
+\footnotesize
+
+\emph{Nota.} La línea vertical identifica el inicio del Esquema de Metas
+Explícitas de Inflación (EMEI), mientras que el área sombreada
+representa el rango meta de inflación vigente bajo dicho esquema.
+Elaboración propia con datos del Banco de Guatemala. \normalsize
+
+\section{Planteamiento del problema}\label{planteamiento-del-problema}
+
+El Esquema de Metas Explícitas de Inflación (EMEI) descansa, en buena
+medida, en la capacidad del banco central para orientar las expectativas
+de inflación de los agentes de manera consistente con la meta anunciada;
+en ese sentido, la credibilidad de la autoridad monetaria no se refleja
+únicamente en el comportamiento de la inflación observada, sino también
+en el grado en que las expectativas permanecen alineadas con el objetivo
+de estabilidad de precios y muestran una respuesta acotada frente a
+perturbaciones transitorias; por ello, el anclaje de expectativas
+constituye una dimensión central para evaluar la efectividad del régimen
+monetario.
+
+En Guatemala, la transición hacia el EMEI supuso una transformación
+institucional relevante del marco de política monetaria; sin embargo, la
+evidencia empírica disponible sobre expectativas y credibilidad sigue
+siendo relativamente limitada y, en general, se ha concentrado en
+ejercicios descriptivos o contrastes de carácter estático. Aunque estos
+trabajos han documentado avances importantes en la credibilidad del
+régimen, todavía persiste la necesidad de evaluar el anclaje de
+expectativas como un fenómeno dinámico, es decir, como una relación que
+puede cambiar gradualmente a lo largo del tiempo y que puede verse
+afectada por la inflación observada, por otros determinantes
+macroeconómicos y por distintos choques que enfrenta la economía.
+
+En consecuencia, el problema de investigación radica en establecer cómo
+ha evolucionado el anclaje de dichas expectativas a mediano plazo bajo
+el EMEI y en qué medida ese anclaje ha sido suficientemente robusto
+frente a perturbaciones macroeconómicas, cuya cuestión es especialmente
+relevante porque una inflación relativamente contenida no implica,
+inherentemente, que las expectativas se encuentren firmemente ancladas;
+en efecto, es posible que las expectativas de mediano plazo sigan siendo
+sensibles a shocks transitorios, lo cual limitaría la fortaleza del
+régimen monetario y su capacidad de estabilización.
+
+\subsection{Pregunta de
+investigación}\label{pregunta-de-investigaciuxf3n}
+
+¿Cómo ha evolucionado la sensibilidad de las expectativas de inflación a
+24 meses frente a la meta, la inflación observada y las expectativas de
+menor horizonte en Guatemala durante 2010--2026, y cuál ha sido su
+respuesta promedio ante choques macroeconómicos internos y externos?
+
+\subsection{Objetivos de la
+investigación}\label{objetivos-de-la-investigaciuxf3n}
+
+Analizar la evolución del anclaje de las expectativas de inflación a 24
+meses en Guatemala durante el período 2010--2026, mediante la estimación
+de su de su grado de ajuste hacia la meta y de su sensibilidad cambiante
+frente a la meta, la inflación observada y las expectativas de corto
+plazo, así como examinar su respuesta dinámica ante choques
+macroeconómicos identificados bajo un modelo recursivo.
+
+\subsection{Objetivos específicos}\label{objetivos-especuxedficos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Caracterizar la evolución de las expectativas de inflación a 12 y 24
+  meses durante 2010--2026, evaluando su proximidad y estabilidad
+  respecto de la meta de inflación vigente.
+\item
+  Estimar mediante regresiones móviles la sensibilidad de las
+  expectativas a 24 meses frente a la brecha de inflación, controlando
+  su persistencia.
+\item
+  Estimar, mediante un modelo con parámetros variantes en el tiempo y
+  filtro de Kalman, la evolución de la sensibilidad de las expectativas
+  a 24 meses frente a sorpresas inflacionarias.
+\item
+  Identificar episodios de fortalecimiento, desanclaje transitorio y
+  reanclaje de las expectativas.
+\item
+  Estimar la respuesta promedio de las expectativas a 24 meses ante
+  choques inflacionarios, monetarios, cambiarios y de actividad.
+\item
+  Aportar evidencia empírica para Guatemala sobre credibilidad monetaria
+  y anclaje de expectativas, en diálogo con la literatura internacional
+  y latinoamericana sobre regímenes de metas de inflación.
+\end{enumerate}
+
+\subsection{Hipótesis de trabajo}\label{hipuxf3tesis-de-trabajo}
+
+El anclaje de las expectativas de inflación a 24 meses se fortaleció
+gradualmente en Guatemala durante 2010--2026, reflejándose en una menor
+sensibilidad frente a la inflación observada y a las expectativas de
+corto plazo, aunque con episodios transitorios de debilitamiento ante
+perturbaciones macroeconómicas relevantes.
+
+\subsection{Hipótesis nula}\label{hipuxf3tesis-nula}
+
+La sensibilidad de las expectativas de inflación a 24 meses frente a la
+inflación observada y a las expectativas de corto plazo no mostró una
+reducción sistemática durante 2010--2026.
+
+\subsection{Justificación y aporte del
+estudio}\label{justificaciuxf3n-y-aporte-del-estudio}
+
+La pertinencia de este estudio radica en que el anclaje de expectativas
+constituye una dimensión central para valorar la credibilidad y la
+efectividad de la política monetaria bajo un régimen de metas de
+inflación; en este sentido, en el caso de Guatemala, esta cuestión
+adquiere especial relevancia debido a que la transición al EMEI no solo
+redefinió el marco institucional de la política monetaria, sino que
+incorporó explícitamente a las expectativas como un elemento clave
+dentro del proceso de análisis y de transmisión monetaria. Bajo esta
+lógica, examinar cómo han evolucionado las expectativas de inflación
+bajo este esquema permite avanzar en la comprensión del desempeño del
+régimen.
+
+Por consiguiente, la principal brecha de la literatura para Guatemala no
+radica en la ausencia total de estudios sobre expectativas, sino en la
+falta de un enfoque que combine tres elementos de manera integrada: una
+medición del anclaje basada en sensibilidad de las expectativas a la
+inflación y a otros determinantes; una estimación explícitamente
+dinámica, capaz de captar cambios graduales en el tiempo; y un análisis
+adicional de la respuesta de las expectativas ante shocks
+macroeconómicos dentro de un marco VAR. Precisamente ahí se ubica el
+aporte del presente trabajo. En un primer bloque, se evalúa el anclaje
+mediante rolling regressions y un modelo con parámetros variantes en el
+tiempo, siguiendo la intuición de Strohsal et al. (2015) y de la
+literatura que trata el anclaje como una propiedad evolutiva; en un
+segundo bloque, se examina la respuesta de las expectativas ante
+perturbaciones macroeconómicas, en consonancia con la literatura VAR que
+estudia la interacción entre expectativas, inflación y política
+monetaria, especialmente Barnett et al. (2010). De este modo, el estudio
+busca no solo complementar la evidencia previa para Guatemala, sino
+también insertar el caso guatemalteco dentro de la discusión
+internacional y latinoamericana sobre credibilidad, expectativas y
+anclaje bajo regímenes de metas de inflación.
+
+\section{Metodología y datos}\label{metodologuxeda-y-datos}
+
+En este apartado se presenta la estrategia metodológica del estudio para
+estimar el anclaje de las expectativas de inflación en Guatemala y para
+analizar la sensibilidad de dichas expectativas ante sorpresas
+inflacionarias, así como la descripción de los datos y de las fuentes de
+información empleadas.
+
+La sección 5.1 desarrolla la estrategia empírica general, en donde, se
+aborda la lógica metodológica general que articula el estudio; la
+siguiente sección 5.2. está orientada a la descripción de los datos
+utilizados y las fuentes de información de las cuales fueron recabados;
+en la sección 5.3 se presenta la definición de las variables y las
+transformaciones aplicadas para su modelación; posteriormente, la
+sección 5.4. expone la definición operacional del anclaje y la
+metodología seleccionada para su estimación. Finalmente, la última
+sección de este apartado (5.5) está orientada a presentar la estrategia
+econométrica empleada para evaluar la sensibilidad de las expectativas
+ante sorpresas inflacionarias mediante un modelo VAR, así como las
+pruebas realizadas para su adecuada especificación.
+
+\subsection{Diseño empírico y lógica general del
+estudio}\label{diseuxf1o-empuxedrico-y-luxf3gica-general-del-estudio}
+
+El estudio busca evaluar un aspecto central de la política monetaria:
+las expectativas de inflación; bajo esta premisa, la estrategia empírica
+del estudio se organiza en tres bloques, orientados a examinar distintas
+dimensiones del anclaje de las expectativas de inflación en Guatemala;
+el primero, mide la evolución del anclaje de las expectativas bajo el
+Esquema de Metas Explícitas de Inflación (EMEI) y presenta evidencia
+descriptiva sobre la proximidad y estabilidad de dichas expectativas
+respecto de la meta de inflación; el segundo nivel constituye el núcleo
+de la medición econométrica del anclaje, en cuya etapa se estima la
+sensibilidad de las expectativas de inflación a 24 meses frente a
+señales inflacionarias mediante dos aproximaciones: en primer lugar,
+siguiendo se utilizan regresiones móviles para identificar cambios en
+dicha sensibilidad a lo largo del tiempo, posteriormente, se estima un
+modelo con parámetros variantes en el tiempo, que permite captar de
+manera más flexible procesos graduales de fortalecimiento,
+debilitamiento o recuperación del anclaje.
+
+El tercer nivel examina la respuesta dinámica de las expectativas ante
+distintos choques macroeconómicos mediante un modelo de vectores
+autorregresivos, este ejercicio no constituye una medida adicional del
+anclaje, sino una extensión complementaria que permite evaluar la
+robustez de las expectativas frente a perturbaciones internas y
+externas.
+
+En conjunto, la estrategia permite distinguir entre tres dimensiones del
+fenómeno: la cercanía de las expectativas respecto de la meta, su
+sensibilidad frente a información inflacionaria y su respuesta dinámica
+ante choques macroeconómicos, esta estructura vincula directamente los
+métodos seleccionados con los objetivos específicos de la investigación.
+
+\subsection{Datos, período muestral y construcción de
+variables}\label{datos-peruxedodo-muestral-y-construcciuxf3n-de-variables}
+
+La investigación utiliza información mensual correspondiente al período
+comprendido entre enero de 2010 y mayo de 2026, la fuente de información
+para las expectativas de inflación es la Encuesta de Expectativas
+Económicas al Panel de Analistas Privados (EEE) del Banco de Guatemala,
+la cual se publica mensualmente y contiene previsiones de inflación a
+distintos horizontes.
+
+La variable central del análisis es la expectativa de inflación a 24
+meses, utilizada como aproximación al anclaje de mediano plazo, la
+selección de este horizonte responde a que debería reflejar, en mayor
+medida que las expectativas de corto plazo, la confianza de los agentes
+en la capacidad de la autoridad monetaria para conducir la inflación
+hacia su objetivo; por otro lado, la expectativa a 12 meses representa
+una señal de horizonte más corto y se utiliza para examinar si las
+perturbaciones que afectan las previsiones próximas se transmiten hacia
+las expectativas de mediano plazo.
+
+Para caracterizar el entorno macroeconómico doméstico se incorporan la
+inflación observada, la tasa de interés de política monetaria, la
+actividad económica y el tipo de cambio nominal. La inflación se obtiene
+del índice de precios al consumidor publicado por el Instituto Nacional
+de Estadística y se expresa como variación interanual. La actividad
+económica se aproxima mediante el Índice Mensual de la Actividad
+Económica; la tasa de política monetaria corresponde a la tasa líder del
+Banco de Guatemala; y el tipo de cambio se mide como quetzales por dólar
+estadounidense.
+
+Asimismo, se incluyen variables externas relevantes para una economía
+pequeña y abierta, entre las que se encuentran la inflación de Estados
+Unidos, la tasa efectiva de fondos federales y el precio internacional
+del petróleo West Texas Intermediate. Estas series permiten controlar
+por presiones inflacionarias importadas, modificaciones en las
+condiciones financieras internacionales y perturbaciones en los precios
+de insumos energéticos.
+
+\subsubsection{Transformaciones y uso de las variables en las distintas
+especificaciones}\label{transformaciones-y-uso-de-las-variables-en-las-distintas-especificaciones}
+
+Las transformaciones responden a criterios de interpretación económica y
+de consistencia estadística; en particular, la inflación, la actividad
+económica, el tipo de cambio y el precio del petróleo se expresan,
+cuando corresponde, como variaciones interanuales logarítmicas. La tasa
+de política monetaria y la tasa de fondos federales se incorporan como
+primeras diferencias, dada su naturaleza de tasa de interés.
+
+La inflación observada se define como:
+
+\begin{equation}\phantomsection\label{eq-inflacion}{
+\pi_t = 100 \left[\ln(IPC_t)-\ln(IPC_{t-12})\right]
+}\end{equation}
+
+La actividad económica se aproxima mediante:
+
+\begin{equation}\phantomsection\label{eq-imae}{
+y_t = 100 \left[\ln(IMAE_t)-\ln(IMAE_{t-12})\right]
+}\end{equation}
+
+La depreciación cambiaria se construye como:
+
+\begin{equation}\phantomsection\label{eq-tc}{
+q_t = 100 \left[\ln(TC_t)-\ln(TC_{t-12})\right]
+}\end{equation}
+
+La variación de la tasa de política monetaria se define como:
+
+\begin{equation}\phantomsection\label{eq-delta-i}{
+\Delta i_t = i_t - i_{t-1}
+}\end{equation}
+
+La variación de la tasa de fondos federales se expresa como:
+
+\begin{equation}\phantomsection\label{eq-delta-ff}{
+\Delta ff_t = ff_t - ff_{t-1}
+}\end{equation}
+
+Finalmente, el shock asociado al precio internacional del petróleo se
+aproxima por:
+
+\begin{equation}\phantomsection\label{eq-oil}{
+oil_t = 100 \left[\ln(OIL_t)-\ln(OIL_{t-12})\right]
+}\end{equation}
+
+Además de las series observadas, se construyen indicadores específicos
+para el análisis del anclaje. En primer lugar, la distancia absoluta de
+las expectativas respecto de la meta de inflación se define como:
+
+\begin{equation}\phantomsection\label{eq-gap-exp24}{\widetilde e^{24}_t=e^{24}_t-\pi_t^*}\end{equation}
+
+donde \(\pi_t^{*}\) representa la meta central de inflación vigente en
+el período \(t\), mientras que \(e^{24}_t\) denota la expectativa de
+inflación correspondiente al horizonte \(h\). Un valor cercano a 0 de
+\(\widetilde e^{24}_t\) indica una mayor proximidad de las expectativas
+respecto del objetivo anunciado.
+
+y además la distancia entre la inflación observada y la meta se define
+como:
+
+\begin{equation}\phantomsection\label{eq-gap-inflacion}{\widetilde \pi_t=\pi_t-\pi_t^*.}\end{equation}
+Estas transformaciones permiten que la estimación se concentre en la
+distancia de las expectativas y de la inflación respecto del objetivo
+vigente; con ello, se evita atribuir a un cambio de sensibilidad lo que
+podría ser únicamente consecuencia de las modificaciones discretas de la
+meta ocurridas al inicio del período.
+
+Para reconocer los cambios que experimentó el objetivo cuantitativo al
+inicio de la muestra, se utiliza la secuencia histórica de la meta:
+5.0\% durante 2010--2011, 4.5\% en 2012 y 4.0\% a partir de 2013.
+Asimismo, \(q_t\) representa la depreciación interanual del tipo de
+cambio nominal, expresada de manera que un valor positivo indica una
+pérdida de valor del quetzal frente al dólar estadounidense.
+
+\clearpage
+\onecolumn
+\begin{landscape}
+\thispagestyle{empty}
+
+\begin{table}
+\centering
+\caption{\label{tab:unnamed-chunk-1}Variables, unidades de medida, frecuencia y fuentes de información}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{7.5cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{8.5cm}}
+\toprule
+Variable & Unidad & Frecuencia & Fuente\\
+\midrule
+Expectativa de inflación a 24 meses & Porcentaje & Mensual & Banco de Guatemala\\
+Expectativa de inflación a 12 meses & Porcentaje & Mensual & Banco de Guatemala\\
+Inflación observada en Guatemala & Porcentaje & Mensual & Instituto Nacional de Estadística / Banco de Guatemala\\
+Rezago de la expectativa de inflación a 24 meses & Porcentaje & Mensual & Elaboración propia con datos del Banco de Guatemala\\
+Tasa de política monetaria & Porcentaje / puntos porcentuales & Mensual & Banco de Guatemala\\
+Índice Mensual de Actividad Económica (IMAE) & Índice / porcentaje & Mensual & Banco de Guatemala\\
+Tipo de cambio nominal & Quetzales por dólar estadounidense / porcentaje & Mensual & Banco de Guatemala\\
+Déficit fiscal & Porcentaje del PIB & Mensual / base trimestral & Ministerio de Finanzas Públicas / Banco de Guatemala / elaboración propia\\
+Inflación de Estados Unidos & Porcentaje & Mensual & Bureau of Labor Statistics / Federal Reserve Economic Data\\
+Tasa de fondos federales & Porcentaje / puntos porcentuales & Mensual & Federal Reserve Economic Data / Federal Reserve\\
+Precio internacional del petróleo & Dólares por barril / porcentaje & Mensual & Federal Reserve Economic Data / U.S. Energy Information Administration\\
+Sorpresa inflacionaria & Puntos porcentuales & Mensual & Elaboración propia con datos del Banco de Guatemala e Instituto Nacional de Estadística\\
+Brecha respecto a la meta de inflación & Puntos porcentuales & Mensual & Elaboración propia con datos del Banco de Guatemala e Instituto Nacional de Estadística\\
+Variables de asimetría respecto al rango meta & Puntos porcentuales / variable dicotómica & Mensual & Elaboración propia con datos del Banco de Guatemala e Instituto Nacional de Estadística\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Nota. } 
+\item La tabla presenta las principales variables utilizadas en el estudio, así como su unidad de medida, frecuencia y fuente de información. Elaboración propia con base en información del Banco de Guatemala, Instituto Nacional de Estadística, Ministerio de Finanzas Públicas, Bureau of Labor Statistics, Federal Reserve Economic Data y U.S. Energy Information Administration.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\clearpage
+\twocolumn
+
+\subsection{Medición del anclaje de
+expectativas}\label{mediciuxf3n-del-anclaje-de-expectativas}
+
+La medición empírica del anclaje se desarrolla en dos etapas
+complementarias, como ya se mencionó en la primera sección de este
+apartado; en primer lugar, siguiendo la estrategia empírica utilizada
+por Ehrmann (2015) aplicada mediante regresiones móviles por Łyziak \&
+Paloviita (2017), se estima la sensibilidad de las expectativas de
+inflación de mediano plazo frente a la inflación observada rezagada; en
+segundo lugar, se estima un modelo bivariado con parámetros variantes en
+el tiempo mediante filtro de Kalman, cuya especificación se construye a
+partir del marco desarrollado por Maria Demertzis (2009), este enfoque
+permite seguir la evolución de la sensibilidad de las expectativas a 24
+meses frente a la inflación observada y, -a partir de esa relación
+dinámica- construir una proxy de credibilidad. Adicionalmente, el modelo
+permite inferir el nivel de inflación de largo plazo hacia el cual
+parecen converger las expectativas, denominado ancla inflacionaria
+implícita. Esta secuencia metodológica responde a una lógica específica:
+las regresiones móviles ofrecen una primera descripción, relativamente
+transparente, de los cambios que experimenta la relación entre inflación
+y expectativas; por su parte, el modelo de estado--espacio permite
+superar el supuesto de que los coeficientes permanecen constantes dentro
+de cada ventana y ofrece una estimación continua de su evolución y
+vincula esa trayectoria con una medida estructurada del grado de
+credibilidad.
+
+\subsubsection{Definición operacional del anclaje de las
+expectativas}\label{definiciuxf3n-operacional-del-anclaje-de-las-expectativas}
+
+El anclaje de las expectativas de inflación constituye una condición que
+no puede observarse directamente, sino que debe inferirse a partir del
+comportamiento de las expectativas frente a la meta de inflación y ante
+la información que reciben los agentes económicos; en términos
+generales, unas expectativas se consideran mejor ancladas cuando
+permanecen próximas al objetivo anunciado por la autoridad monetaria,
+exhiben una trayectoria relativamente estable y reaccionan de forma
+limitada ante perturbaciones transitorias de la inflación.
+
+En esta investigación, el anclaje se define operacionalmente a partir de
+dos elementos: la proximidad de las expectativas de inflación a 24 meses
+respecto de la meta central establecida por el Banco de Guatemala y su
+sensibilidad frente a la inflación observada, esta definición recoge la
+intuición postulada de Levin et al. (2004), Ehrmann (2015) y Łyziak \&
+Paloviita (2017), según la cual las expectativas correspondientes a
+horizontes relativamente largos no deberían responder de manera
+sustantiva a fluctuaciones transitorias de la inflación cuando los
+agentes confían en la capacidad de la autoridad monetaria para
+reconducirla hacia su objetivo. Asimismo, retoma el planteamiento
+dinámico de Strohsal et al. (2015) , quienes sostienen que el grado de
+anclaje puede fortalecerse o debilitarse gradualmente a lo largo del
+tiempo.
+
+A partir de esta definición, el análisis distingue tres dimensiones
+relacionadas, aunque no equivalentes. La primera corresponde a la
+proximidad respecto de la meta, medida mediante la distancia entre las
+expectativas y el objetivo central vigente. La segunda se refiere a su
+estabilidad temporal, entendida como la ausencia de variaciones
+persistentes ante cambios coyunturales. La tercera corresponde a la
+sensibilidad frente a la inflación observada, estimada mediante
+regresiones móviles y un modelo bivariado con parámetros variantes en el
+tiempo.
+
+La proximidad y la estabilidad se utilizan principalmente como
+indicadores descriptivos. La sensibilidad cambiante constituye, en
+cambio, la principal dimensión econométrica del anclaje. En particular,
+una menor transmisión de la inflación pasada hacia las expectativas a 24
+meses se interpreta como evidencia compatible con un fortalecimiento de
+la credibilidad. En el modelo basado en Maria Demertzis (2009), esta
+relación se resume mediante una proxy dinámica que aumenta conforme las
+expectativas se desacoplan de la inflación observada. Adicionalmente, el
+modelo permite estimar el nivel de inflación hacia el cual parecen
+converger las expectativas y compararlo con la meta oficial.
+
+\subsubsection{Rolling regressions}\label{rolling-regressions}
+
+Como primera aproximación empírica al anclaje de las expectativas, se
+examina si la sensibilidad de las expectativas de inflación a 24 meses
+frente a la inflación observada ha permanecido estable a lo largo del
+período de estudio. Para tal fin, La estrategia se inscribe en la
+literatura que caracteriza la formación de expectativas como un proceso
+dinámico en el que intervienen tanto la información inflacionaria
+reciente como la propia persistencia de las expectativas; en esta linea,
+Rossini et al. (2016) modelan las expectativas a partir de su valor
+rezagado, la inflación observada y la meta de inflación, y utilizan
+regresiones móviles para evaluar si la importancia relativa de estos
+componentes se modifica en el tiempo; asimismo, el criterio de
+interpretación sigue a Łyziak \& Paloviita (2017); para quienes unas
+expectativas firmemente ancladas deberían mostrar una sensibilidad
+reducida frente a las fluctuaciones de la inflación observada.
+
+Partiendo de esta idea, el interés no reside únicamente en determinar si
+la inflación y las expectativas se encuentran relacionadas, sino en
+establecer si las desviaciones de la inflación respecto del ancla
+nominal continúan trasladándose hacia las expectativas correspondientes
+al horizonte de política. Por ello, en lugar de trabajar directamente
+con los niveles de ambas variables, se expresan las expectativas a 24
+meses y la inflación observada como desviaciones respecto de la meta
+central vigente:
+
+\begin{equation}\phantomsection\label{eq-brechas-rolling}{
+\widetilde{e}^{24}_t
+=
+e^{24}_t-\pi^m_t,
+\qquad
+\widetilde{\pi}_t
+=
+\pi_t-\pi^m_t,
+}\end{equation}
+
+donde \(e^{24}_t\) representa la expectativa de inflación a 24 meses,
+\(\pi_t\) corresponde a la inflación observada y \(\pi^m_t\) denota la
+meta central de inflación vigente en el período \(t\). Esta
+transformación permite expresar ambas variables con relación a una
+referencia nominal común y, al mismo tiempo, aislar las modificaciones
+discretas que experimentó la meta al inicio de la muestra; en este
+sentido, una brecha positiva de inflación indica que la inflación se
+encuentra por encima de la meta, mientras que una brecha positiva de
+expectativas señala que los agentes anticipan una inflación a 24 meses
+superior al objetivo de política.
+
+Sobre esta transformación se introduce una estructura dinámica en donde
+la inclusión de la expectativa rezagada responde a que las expectativas
+a 24 meses presentan un grado importante de persistencia, por lo que una
+parte de su desviación contemporánea puede ser simplemente consecuencia
+de desviaciones acumuladas en períodos anteriores; en este marco,
+controlar por esta inercia permite que el coeficiente asociado con la
+inflación recoja de manera más precisa la sensibilidad de las
+expectativas frente a nueva información inflacionaria.
+
+Así, para una ventana de longitud fija \(W\), la información disponible
+para la estimación que concluye en el período \(t\) se define como:
+
+\begin{equation}\phantomsection\label{eq-ventana-rolling}{
+\mathcal{W}_t
+=
+\{t-W+1,\ldots,t\}.
+}\end{equation}
+
+Dentro de cada ventana se estima la siguiente especificación:
+
+\begin{equation}\phantomsection\label{eq-modelo-rolling}{
+\widetilde{e}^{24}_{\tau}
+=
+\alpha_t
++
+\rho_t\widetilde{e}^{24}_{\tau-1}
++
+\beta_t\widetilde{\pi}_{\tau-1}
++
+u_{\tau},
+\qquad
+\tau\in\mathcal{W}_t.
+}\end{equation}
+
+Los parámetros se consideran constantes dentro de cada ventana, pero
+pueden modificarse a medida que esta avanza en el tiempo. En particular,
+\(\rho_t\) captura la persistencia de las desviaciones de las
+expectativas respecto de la meta, mientras que \(\beta_t\) constituye el
+parámetro central del ejercicio y mide la sensibilidad de la expectativa
+a 24 meses frente a la brecha de inflación observada en el período
+anterior. El uso de la inflación rezagada permite, además, respetar el
+conjunto de información disponible al momento de formación de las
+expectativas y reduce problemas asociados con una relación puramente
+contemporánea entre ambas variables.
+
+El parámetro central de esta primera estrategia es \(\beta_t\), un valor
+positivo implica que una inflación situada por encima de la meta tiende
+a trasladarse hacia una expectativa a 24 meses también superior al
+objetivo; por el contrario, cuanto menor sea este coeficiente, menor
+será la transmisión de las fluctuaciones inflacionarias de corto plazo
+hacia el horizonte de política; en este sentido, el anclaje no se
+identifica con un valor puntual determinado de \(\beta_t\), sino con su
+evolución: una reducción persistente de la sensibilidad constituye
+evidencia compatible con un fortalecimiento del anclaje, mientras que
+aumentos sostenidos indicarían una mayor incorporación de las
+condiciones inflacionarias recientes en la formación de las expectativas
+de mayor horizonte. por otro lado, la inclusión de la variable
+dependiente rezagada permite distinguir la respuesta inmediata de las
+expectativas de su efecto acumulado.
+
+Esta interpretación debe distinguirse de la proporcionada por
+\(\rho_t\), mientras que \(\beta_t\) refleja la respuesta de las
+expectativas ante nuevas desviaciones de la inflación, \(\rho_t\)
+informa sobre la velocidad con la que se disipan las desviaciones de las
+propias expectativas una vez que estas se han producido.
+
+La estimación utiliza ventanas móviles de 60 observaciones mensuales,
+esta longitud busca conciliar dos objetivos que resultan contrapuestos
+en este tipo de ejercicios: disponer de un número suficiente de
+observaciones para obtener estimaciones razonablemente precisas y, al
+mismo tiempo, conservar la capacidad de identificar cambios graduales en
+la relación entre inflación y expectativas.
+
+Dado el carácter mensual y dinámico de la especificación, la inferencia
+se realiza mediante errores estándar heterocedásticos y
+autocorrelacionados consistentes de Newey \& West (1987), empleando tres
+rezagos mensuales, en donde cada estimación se asigna al último mes de
+la ventana correspondiente, por ello, las trayectorias obtenidas deben
+interpretarse como una representación suavizada de la sensibilidad.
+
+\subsubsection{Modelo TVP--VAR restringido y proxy de
+credibilidad}\label{modelo-tvpvar-restringido-y-proxy-de-credibilidad}
+
+Si bien las regresiones móviles permiten observar si la sensibilidad de
+las expectativas cambia entre ventanas sucesivas, mantienen los
+coeficientes constantes dentro de cada ventana y su trayectoria puede
+alterarse cuando una observación entra o sale de la muestra móvil. En
+este sentido, para complementar ese ejercicio, la segunda aproximación
+---y eje central del estudio--- toma como base la metodología propuesta
+por Maria Demertzis (2009). La idea básica es que la credibilidad
+monetaria se manifiesta en una separación progresiva entre la inflación
+observada y las expectativas de horizonte relativamente largo: cuando
+los agentes confían en que la autoridad monetaria reconducirá la
+inflación hacia un valor estable, las perturbaciones recientes en la
+inflación deberían ejercer una reducida influencia sobre las
+expectativas.
+
+La formulación original de Maria Demertzis (2009) permite que todos los
+coeficientes del sistema evolucionen en el tiempo; sin embargo, en esta
+investigación se adopta una versión restringida, seleccionada después de
+comparar especificaciones alternativas con distintos conjuntos de
+parámetros variantes. Los resultados de ese proceso favorecieron
+mantener constantes los coeficientes de la ecuación de inflación y la
+persistencia de las expectativas, \(d\), concentrando la variación
+temporal en \(c_{0t}\) y \(c_t\). Esta estructura preserva la parsimonia
+del modelo y mantiene el foco en los parámetros que determinan
+directamente la proxy de credibilidad y el ancla implícita.
+
+En este marco, la estrategia econométrica planteada busca modelar
+conjuntamente la inflación y las expectativas mediante un modelo de
+Vectores autorregresivos (VAR) con parámetros variantes en el tiempo;
+esta representación permite responder dos preguntas fundamentales:
+primero, en qué medida las expectativas de mediano plazo son influidas
+por la inflación pasada; segundo, alrededor de qué valor de largo plazo
+parecen formarse. en este sentido, la primera dimensión se resume
+mediante una proxy de credibilidad, denotada por \(\lambda_t\); la
+segunda se representa mediante un ancla inflacionaria implícita
+\(\pi_t^{*}\).
+
+\textbf{Especificación empírica}
+
+De acuerdo a lo analizado previamente y siguiendo a Maria Demertzis
+(2009), la tesis fundamental es que un régimen creíble esta
+caracterizado por un proceso de formación de expectativas que no depende
+en gran medida en la inflación observada; en este sentido, el modelo
+planteado busca manifestar empíricamente este corolario, para lo cual se
+utiliza un sistema bivariado compuesto por la inflación observada,
+\(\pi_t\), y la expectativa de inflación a 24 meses, \(e_t^{24}\). La
+especificación estimada es:\\
+\begin{equation}\phantomsection\label{eq-demertzis-inflacion}{\pi_t=a_0+a\pi_{t-1}+b e_{t-1}^{24}+\varepsilon_{\pi,t},}\end{equation}\begin{equation}\phantomsection\label{eq-demertzis-expectativas}{e_t^{24}=c_{0t}+c_t\pi_{t-1}+d e_{t-1}^{24}+\varepsilon_{e,t}.}\end{equation}
+
+La primera ecuación describe la dinámica auxiliar de la inflación en
+donde \(a\) recoge su persistencia y \(b\) mide la asociación entre las
+expectativas rezagadas y la inflación observada. Por otro lado, la
+segunda ecuación constituye el núcleo de la medición del anclaje; en
+ella, \(c_t\) mide la sensibilidad cambiante de las expectativas a 24
+meses frente a la inflación del período anterior, mientras que \(d\)
+recoge la persistencia propia de las expectativas. Finalmente,
+\(c_{0t}\) representa el componente de largo plazo que no se explica por
+esas dos fuentes de información.
+
+En términos de la dinámica de los coeficientes, la especificación
+principal restringe los parámetros de la ecuación de inflación y el
+coeficiente \(d\) a permanecer constante; en cambio, \(c_{0t}\) y
+\(c_t\) pueden modificarse gradualmente, es aquí en donde se introduce
+el modelo variante en el tiempo, en donde la restricción concentra la
+variación temporal en los parámetros que determinan directamente la
+proxy de credibilidad y el ancla implícita.
+
+en este sentido, los dos parámetros variantes siguen paseos aleatorios:
+
+\begin{equation}\phantomsection\label{eq-transicion-c0}{c_{0t}=c_{0,t-1}+\eta_{0,t},}\end{equation}\begin{equation}\phantomsection\label{eq-transicion-c}{c_t=c_{t-1}+\eta_{c,t},}\end{equation}
+
+con:
+
+\begin{equation}\phantomsection\label{eq-varianzas-estado}{\eta_{0,t}\sim\mathcal{N}(0,Q_{c_0}),\qquad\eta_{c,t}\sim\mathcal{N}(0,Q_c).}\end{equation}
+Las varianzas \(Q_{c_0}\) y \(Q_c\) determinan cuánto pueden cambiar los
+parámetros entre dos meses consecutivos, si \(Q_{c_0}=0\), el intercepto
+permanece constante; de forma análoga, si \(Q_c=0\), la sensibilidad de
+las expectativas frente a la inflación no varía, por consiguiente, la
+evidencia a favor de parámetros cambiantes requiere que el modelo estime
+varianzas de transición positivas y que su desempeño supere al de una
+especificación con coeficientes constantes.
+
+\textbf{Derivación de la proxy de credibilidad}
+
+A continuación se formaliza la manera en que el modelo representa la
+formación de las expectativas y permite construir una proxy dinámica de
+credibilidad, la idea básica es que, en el marco de un régimen creíble
+de política monetaria, las expectativas correspondientes a horizontes
+relativamente amplios deberían mostrar un desacoplamiento progresivo
+respecto de la inflación observada y permanecer vinculadas a un valor
+relativamente estable, que, en el marco de este trabajo se denomina
+``ancla inflacionaria implícita''.
+
+Asimismo, el punto de partida es la ecuación de expectativas del sistema
+bivariado:
+
+\[
+e_t^{24}
+=
+c_{0t}
++
+c_t\pi_{t-1}
++
+d e_{t-1}^{24}
++
+\varepsilon_{e,t}.
+\]
+
+Para derivar la relación de largo plazo, se considera, en cada período,
+el equilibrio asociado con los parámetros vigentes, esto implica que los
+coeficientes permanecen temporalmente fijos, las perturbaciones son
+iguales a cero y tanto la inflación como las expectativas dejan de
+cambiar, es decir se supone que:
+
+\[
+e_t^{24}
+=
+e_{t-1}^{24}
+=
+\bar e_t^{24},
+\] y \[
+\pi_t
+=
+\pi_{t-1}
+=
+\bar\pi_t.
+\] Bajo estas condiciones, la ecuación de expectativas se transforma en:
+
+\[
+\bar e_t^{24}
+=
+c_{0t}
++
+c_t\bar\pi_t
++
+d\bar e_t^{24}.
+\]
+
+Trasladando el término asociado con la persistencia de las expectativas
+al lado izquierdo, se obtiene:
+
+\[
+\bar e_t^{24}
+-
+d\bar e_t^{24}
+=
+c_{0t}
++
+c_t\bar\pi_t,
+\]
+
+y, al factorizar:
+
+\[
+(1-d)\bar e_t^{24}
+=
+c_{0t}
++
+c_t\bar\pi_t.
+\]
+
+Finalmente, dividiendo ambos lados entre \(1-d\), la relación de
+equilibrio de la ecuación de expectativas puede expresarse como:
+
+\begin{equation}\phantomsection\label{eq-equilibrio-expectativas}{
+\bar e_t^{24}
+=
+\frac{c_{0t}}{1-d}
++
+\frac{c_t}{1-d}\bar\pi_t.
+}\end{equation}
+
+En donde \(\bar e_t^{24}\) y \(\bar\pi_t\) representan los valores de
+largo plazo de las expectativas y de la inflación, respectivamente; a su
+vez, siguiendo la formulación de Bomfim \& Rudebusch (2000), las
+expectativas pueden representarse como un promedio ponderado entre un
+ancla inflacionaria implícita, \(\pi_t^{*}\), y la inflación observada
+en el período anterior, expresándose como:
+
+\[\bar e_t^{24}=\lambda_t\pi_t^{*}+(1-\lambda_t)\pi_{t-1}.\]
+
+Al imponer las mismas condiciones de equilibrio, esta expresión se
+convierte en:
+
+\begin{equation}\phantomsection\label{eq-formacion-anclada-eq}{
+\bar e_t^{24}
+=
+\lambda_t\pi_t^{*}
++
+(1-\lambda_t)\bar\pi_t.
+}\end{equation}
+
+al comparar los coeficientes de las ecuaciones
+ecuación~\ref{eq-equilibrio-expectativas} y
+ecuación~\ref{eq-formacion-anclada-eq}, se
+tiene:\[1 - \lambda_t=\frac{c_t}{1 - d},\]
+
+\[\lambda_t\pi_t^{*}=\frac{c_{0t}}{(1-d)}\]
+
+reordenando términos se obtiene:
+
+\begin{equation}\phantomsection\label{eq-lambda}{\lambda_t=1-\frac{c_t}{1-d},}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-ancla-implicita}{\pi_t^{*}=\frac{c_{0t}}{1-d-c_t}.}\end{equation}
+
+La interpretación de ambas medidas es complementaria en este marco
+analítico, en donde un valor de \(\lambda_t\) cercano a uno indica que
+las expectativas se encuentran débilmente vinculadas a la inflación
+pasada y, en consecuencia más ancladas; por el contrario, un valor
+próximo a cero señala que la experiencia inflacionaria reciente tiene un
+peso elevado en su formación; en este sentido, un aumento persistente de
+\(\lambda_t\) se interpreta como evidencia compatible con un
+fortalecimiento de la credibilidad y del anclaje de mediano plazo. Por
+otro lado, la segunda medida, \(\pi_t^{*}\), indica el nivel alrededor
+del cual parecen converger las expectativas en el largo plazo; en este
+sentido, es importante acotar que esta variable no se impone como
+equivalente a la meta establecida: se estima a partir del comportamiento
+conjunto de los datos y posteriormente se compara con el objetivo
+anunciado por el Banco de Guatemala.
+
+Esta distinción es importante, porque unas expectativas pueden mostrar
+una baja sensibilidad frente a la inflación ---un valor elevado de
+\(\lambda_t\)--- y, aun así, converger hacia un nivel diferente de la
+meta. Por ello, la evaluación combina el grado de anclaje con la
+ubicación del ancla implícita.
+
+\textbf{Estimación de los párametros variantes mediantes sistema forma
+estado-espacio}
+
+El sistema se representa en forma estado--espacio y se estima por máxima
+verosimilitud mediante el filtro de Kalman, el cual combina, de manera
+recursiva, la predicción del estado con la información aportada por cada
+nueva observación, siguiendo el trabajo de Durbin \& Koopman (2012).
+Posteriormente, se emplea el suavizador de Kalman para reconstruir las
+trayectorias históricas de \(c_{0t}\) y \(c_t\) utilizando la
+información de toda la muestra; en este marco, la existencia de
+variación temporal se evalúa comparando el modelo restringido con una
+especificación de parámetros constantes.
+
+En síntesis, el modelo produce dos resultados centrales. La trayectoria
+de \(\lambda_t\) permite evaluar si la formación de expectativas se ha
+desacoplado gradualmente de la inflación observada; la trayectoria de
+\(\pi_t^{*}\) permite identificar el nivel hacia el cual parecen
+converger. Consideradas conjuntamente, ambas medidas ofrecen una lectura
+más completa del anclaje: no basta con que las expectativas reaccionen
+poco a la inflación reciente; también es necesario establecer si el
+valor que las orienta resulta compatible con la meta anunciada por la
+autoridad monetaria.
+
+En un régimen de metas explícitas de inflación, una condición de
+credibilidad elevada requiere, por tanto, dos resultados simultáneos:
+que \(\lambda_t\) se aproxime a uno y que el ancla implícita,
+\(\pi_t^{*}\) , se ubique cerca de la meta oficial. El primero indica un
+desacoplamiento respecto de la inflación pasada; el segundo permite
+establecer si el valor que orienta las expectativas es congruente con el
+objetivo comunicado por la autoridad monetaria.
+
+\subsection{Consideraciones sobre identificación, alcances y
+limitaciones}\label{consideraciones-sobre-identificaciuxf3n-alcances-y-limitaciones}
+
+La principal limitación del estudio radica en la disponibilidad de
+información sobre expectativas, en el sentido de que la Encuesta de
+Expectativas Económicas del Banco de Guatemala no dispone de horizontes
+largos comparables a los utilizados en parte de la literatura
+internacional, (la expectativa a 60 meses se empezó a publicar a inicios
+del año 2025) por lo que el trabajo mide principalmente el \emph{anclaje
+de mediano plazo} y no el anclaje de largo plazo en sentido estricto.
+
+En segundo lugar, tanto en las regresiones móviles como en el modelo con
+parámetros variantes y en el VAR, los coeficientes estimados deben
+interpretarse como relaciones dinámicas consistentes con la teoría, pero
+no como parámetros estructurales profundos en un sentido estricto; en
+particular, en el VAR los resultados dependen de supuestos de
+identificación.
+
+No obstante, la estrategia metodológica propuesta ofrece tres aportes
+importantes. Primero, permite documentar la evolución temporal del
+anclaje de expectativas en Guatemala. Segundo, permite distinguir entre
+sensibilidad a inflación observada y sensibilidad a expectativas de
+corto plazo. Tercero, permite analizar si, en el marco del EMEI, las
+expectativas se han vuelto menos sensibles a choques macroeconómicos, lo
+cual constituye una dimensión central de la credibilidad de la política
+monetaria.
+
+\section{Discusión de resultados}\label{discusiuxf3n-de-resultados}
+
+En esta sección se abordan los resultados obtenidos de la implementación
+de las estrategias metodológicas planteadas en el capitulo anterior, las
+cuales estan orientadas a estimar y analizar el grado de anclaje de las
+expectativas de inflación a mediano plazo en Guatemala. Primero, a la
+luz de la información disponible se analizan los hechos estilizados de
+tres variables centrales del estudio: \emph{inflación, meta
+inflacionaria y las expectativas de inflación.} Posteriormente, en la
+siguiente sección se analizan los resultados obtenidos de la primera
+aproximación descriptiva mediante las regresiones móviles; seguidamente,
+en la tercera sección de este capitulo se discuten el grado de anclaje a
+partir de analizar la trayectoria de \(\lambda\) y además se discute el
+nivel de convergencia de largo plazo medida por \(\pi^{*}\); finalmente
+en la última sección se realizan algunas disquisiciones sobre la
+credibilidad del banco de Guatemala a la luz de los resultados obtenidos
+en el estudio.
+
+\subsection{Hechos estilizados}\label{hechos-estilizados}
+
+Antes de abordar los resultados derivados de las estimaciones
+econométricas, resulta conveniente examinar algunos hechos estilizados
+asociados a la evolución de las expectativas de inflación en Guatemala,
+este análisis permite realizar una primera aproximación a su
+comportamiento temporal, particularmente en términos de su trayectoria,
+su proximidad respecto de la meta de inflación vigente y las diferencias
+observadas entre los horizontes de 12 y 24 meses; en este sentido, las
+figuras que se presentan a continuación permiten proporcionan un marco
+descriptivo para la interpretación posterior de las medidas dinámicas de
+anclaje.
+
+\subsubsection{Evolución de las expectativas de
+inflación}\label{evoluciuxf3n-de-las-expectativas-de-inflaciuxf3n}
+
+Las expectativas de inflación como objeto de estudio fundamental de la
+política monetaria, adquirieron mucha relevancia, especialmente conforme
+se consolidó el esquema de Metas Explícitas de Inflación (EMEI), como ya
+se señalo en la sección 3, la disponibilidad de expectativas a
+horizontes constantes de 12 y 24 meses data desde 2010, lo que permite
+comparar cómo responden ambos horizontes a los distintos episodios
+inflacionarios de la muestra desde dicho periodo.
+
+En este marco, la Figura 2 muestra que la trayectoria de las
+expectativas de inflación en Guatemala no ha sido uniforme a lo largo de
+la muestra y que existen diferencias relevantes según el horizonte
+considerado, durante los primeros años, las expectativas a 12 y 24 meses
+se ubicaron persistentemente por encima de la meta central vigente y, en
+varios momentos, por encima del límite superior del rango de tolerancia;
+sin embargo, esta configuración comienza a modificarse entre 2012 y
+2013, coincidiendo con las reducciones de la meta central, primero a
+4.5\% y posteriormente a 4.0\%. A partir de entonces, ambas medidas
+convergen gradualmente hacia niveles más próximos al objetivo, aunque
+con episodios de desviación.
+
+\textbf{Figura 2}
+
+\emph{Evolución histórica de las expectativas inflacionarias en
+Guatemala, 2010--2026}
+
+\phantomsection\label{ev_expectativas}
+\pandocbounded{\includegraphics[keepaspectratio]{images/3.fig_expectat_meta.png}}
+
+\footnotesize
+
+\emph{Nota.} La figura muestra la serie histórica de las expectativas
+inflacionarias en Guatemala desde 2010 hasta junio 2026, comparando con
+la meta inflacionaria establecida por el EMEI. Elaboración propia con
+datos del Banco de Guatemala. \normalsize
+
+Una característica más relevante para el análisis del anclaje surge al
+comparar ambos horizontes; si bien las expectativas a 12 y 24 meses
+comparten buena parte de sus movimientos, las correspondientes a 24
+meses muestran, en general, fluctuaciones más contenidas. Esta
+diferencia se vuelve particularmente evidente durante el episodio
+inflacionario de 2022--2023, en donde las expectativas a 12 meses
+aumentaron rápidamente hasta superar el límite superior del rango meta,
+alcanzando valores superiores a 6\%, mientras que las expectativas a 24
+meses registraron un incremento considerablemente menor y permanecieron
+por debajo de 5\%; posteriormente, ambas series retornaron hacia valores
+próximos a la meta durante 2024. Este comportamiento es consistente con
+la idea planteada en la literatura de que las perturbaciones con efectos
+predominantemente transitorios deberían reflejarse con mayor intensidad
+en las expectativas de horizontes más próximos, mientras que las
+expectativas de mayor plazo deberían mostrar una respuesta más limitada
+cuando el objetivo inflacionario conserva capacidad de actuar como
+referencia nominal, lo cual ilustra una buena señal en la credibilidad
+del banco central, tema que abordaremos en las siguientes secciones del
+estudio.
+
+Por otro lado, el comportamiento observado hacia el final de la muestra
+introduce, sin embargo, un elemento adicional. Durante 2025 y 2026 ambas
+expectativas se desplazan nuevamente por debajo de la meta central; por
+tanto, la evidencia descriptiva no apunta a una convergencia monotónica
+de las expectativas hacia el 4\%, sino a una dinámica en la que se
+alternan períodos de mayor y menor proximidad respecto del objetivo.
+Esta característica es relevante porque, como enfatizan Strohsal et
+al.~(2015), el grado de anclaje no necesariamente cambia mediante
+rupturas permanentes, sino que puede debilitarse y restablecerse
+gradualmente a través del tiempo. En el caso guatemalteco, la menor
+amplitud de las fluctuaciones a 24 meses ---sobre todo frente al
+episodio de 2022--2023--- constituye evidencia descriptiva compatible
+con un mayor grado de estabilidad de las expectativas de mayor
+horizonte. No obstante, la proximidad a la meta y la estabilidad
+relativa no son suficientes por sí mismas para establecer la existencia
+de anclaje; siguiendo el enfoque de Demertzis y la literatura posterior,
+es necesario determinar si las expectativas de mayor horizonte
+efectivamente se encuentran desacopladas de la dinámica inflacionaria de
+corto plazo, cuestión que se examina posteriormente mediante las
+estimaciones econométricas.
+
+De conformidad con lo anterior, una forma útil de evaluar la efectividad
+del banco central consiste en analizar en que medida las expectativas se
+alejan de la meta central; en esta dirección, la figura 3 ilustra la
+distancia de las expectativas con respecto a dicha meta central en cada
+periodo. Bajo esta premisa, la figura refuerza la idea de que el
+comportamiento de las expectativas inflacionarias no solo ha tendido a
+moderarse en niveles, sino también a acercarse progresivamente a la meta
+establecida por la autoridad monetaria.
+
+\textbf{Figura 3}
+
+\emph{Desviación y distancia de la expectativas de inflación con
+respecto a la Meta central en Guatemala, 2010--2026}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/fig_obj1_desviacion_distancia_meta.png}}
+
+\footnotesize
+
+\emph{Nota.} El panel A presenta la desviación de las expectativas de
+inflación a 12 y 24 meses respecto de la meta central vigente en cada
+período; valores positivos indican expectativas por encima de la meta y
+valores negativos, expectativas por debajo. El panel B muestra la
+distancia absoluta respecto de dicha meta, por lo que valores más
+cercanos a cero indican una mayor proximidad al objetivo inflacionario.
+Elaboración propia con datos del Banco de Guatemala.\normalsize
+
+En el panel A se observa que las desviaciones respecto de la meta
+presentan una dinámica común entre ambos horizontes, aunque con
+amplitudes distintas; particularmente, las expectativas a 24 meses
+tienden a mostrar desviaciones más acotadas que las de 12 meses,
+diferencia que se hace especialmente visible durante el episodio
+inflacionario de 2022--2023: mientras las expectativas de corto
+horizonte se alejaron más de dos puntos porcentuales de la meta, las de
+24 meses reaccionaron de manera considerablemente menor. Asimismo, la
+figura permite identificar que los episodios de alejamiento no se
+producen únicamente por encima del objetivo; durante 2015--2016 y,
+nuevamente, hacia 2025--2026, ambas expectativas se ubican por debajo de
+la meta. En línea con la literatura sobre anclaje, esta menor amplitud
+relativa en el horizonte de 24 meses constituye evidencia descriptiva
+compatible con una menor respuesta de las expectativas de mayor plazo
+ante perturbaciones transitorias, aunque no permite por sí sola
+establecer su grado de anclaje.
+
+por otro lado el panel B, al eliminar el signo de las desviaciones,
+permite concentrarse exclusivamente en \emph{la magnitud del alejamiento
+respecto de la meta}, en donde la distancia de las expectativas a 24
+meses es generalmente inferior a la correspondiente a 12 meses, siendo
+nuevamente el episodio de 2022--2023, -periodo caracterizado por el
+espiral inflacionario derivado principalmente de la ruptura de las
+cadenas de suministro mundiales y el encarecimiento de la energía y los
+alimentos-, el contraste más marcado: la distancia del horizonte de 12
+meses aumenta abruptamente, mientras que la de 24 meses permanece
+considerablemente más contenida; sin embargo, posteriormente, ambas
+series convergen hacia valores próximos a cero durante 2024, antes de
+registrar un nuevo incremento hacia el final de la muestra.
+
+En conjunto, los hechos estilizados muestran que las expectativas a 24
+meses han presentado, en términos relativos, una mayor estabilidad y una
+menor amplitud en sus desviaciones respecto de la meta que las
+expectativas de menor horizonte; no obstante, la proximidad al objetivo
+inflacionario constituye únicamente una dimensión descriptiva del
+anclaje y no permite determinar si las expectativas de mayor plazo han
+reducido efectivamente su dependencia de la dinámica inflacionaria de
+corto plazo, es por esta razón, que el análisis se complementa mediante
+regresiones móviles (\emph{rolling regressions}), con las cuales se
+examina si la sensibilidad de las expectativas a 24 meses frente a la
+inflación observada ha cambiado a lo largo del tiempo; en este contexto,
+este enfoque permite pasar de una caracterización basada en niveles y
+desviaciones a una evaluación dinámica del grado en que las expectativas
+de mayor horizonte responden a las condiciones inflacionarias
+contemporáneas.
+
+\subsection{Sensibilidad temporal de las expectativas de inflación:
+evidencia de regresiones
+móviles}\label{sensibilidad-temporal-de-las-expectativas-de-inflaciuxf3n-evidencia-de-regresiones-muxf3viles}
+
+Las regresiones móviles ofrecen una primera aproximación a la forma en
+que ha cambiado la relación entre las expectativas de mediano plazo y la
+inflación observada, el objetivo es, más que identificar un valor
+puntual del grado de anclaje, es examinar si la información contenida en
+las desviaciones recientes de la inflación respecto de la meta ha
+perdido o ganado importancia en la formación de expectativas; para la
+evaluación de este fenómeno, como se señalo en el capitulo 3, se
+utilizan regresiones moviles, con ventanas de 60 meses, usando la
+especificación de la ecuación~\ref{eq-modelo-rolling}. Bajo esta
+interpretación, una reducción de \(\widehat{\beta}_t\) indica que las
+fluctuaciones de corto plazo de la inflación tienen una menor capacidad
+para trasladarse hacia el horizonte de política y constituye, por tanto,
+evidencia compatible con un fortalecimiento del anclaje.
+
+\subsubsection{Sensibilidad frente a la
+inflación}\label{sensibilidad-frente-a-la-inflaciuxf3n}
+
+En aras de analizar la trayectoria de \(\widehat{\beta}_t\), una
+cuidadosa lectura de la figura 4 revela que esta sensibilidad no ha
+permanecido constante durante el período analizado; se observa que en
+las primeras ventanas, el coeficiente se ubica en niveles
+comparativamente elevados y presenta -además- una mayor variabilidad, lo
+que sugiere que las desviaciones de la inflación respecto de la meta
+tenían entonces una mayor correspondencia con las expectativas a mediano
+plazo. Si bien, la estimación experimenta fluctuaciones durante esta
+primera parte de la muestra, el rasgo más relevante no es cada
+movimiento individual, sino el cambio en la dinámica visible
+posteriormente: \emph{la sensibilidad pierde magnitud de manera
+progresiva y converge hacia valores considerablemente menores}, pasando
+de valores promedio en 2015 de 0.16 a valores promedio de 0.05 en 2026.
+
+En este contexto, la magnitud del cambio es económicamente relevante:
+una misma desviación de la inflación respecto de la meta se encuentra
+asociada, en las ventanas más recientes, con una variación mucho menor
+de las expectativas a 24 meses que la observada al inicio del ejercicio;
+en este sentido, el resultado no apunta simplemente a que las
+expectativas hayan permanecido próximas a la meta, sino a que su
+respuesta frente a movimientos de la inflación observada parece haberse
+debilitado con el tiempo.
+
+\textbf{Figura 4}
+
+\emph{Estimación del grado de respuesta de las expectativas a mediano
+plazo frente a la brecha de inflación, 2010--2026}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{images/rolling_beta_60m.png}}
+\end{center}
+
+\footnotesize
+
+\emph{Nota.} La línea representa el coeficiente \(\widehat{\beta}_t\)
+estimado mediante regresiones móviles de 60 meses. El área sombreada
+corresponde al intervalo de confianza al 95 \% calculado con errores
+estándar Newey--West HAC, en donde cada estimación se asigna al último
+mes de la ventana correspondiente. Elaboración propia.\normalsize
+
+Asimismo, las bandas de confianza aportan un matiz adicional, en este
+análisis, porque la incertidumbre alrededor de \(\widehat{\beta}_t\) es
+mayor durante las primeras ventanas y disminuye sensiblemente en buena
+parte de la segunda mitad de la muestra, de manera que la reducción del
+coeficiente no parece responder únicamente a una mayor imprecisión de la
+estimación. En esta dirección, hacia el final del período, el intervalo
+vuelve a aproximarse al valor cero, lo que refuerza la lectura de una
+sensibilidad históricamente reducida.
+
+Por otro lado, el coeficiente de \(\widehat{\rho}_t\) cuya trayectoria
+se ilustra en la figura 4, muestra que las expectativas conservan un
+componente inercial a lo largo de la muestra, aunque su magnitud varía
+entre períodos, como se observa en la figura 5, en donde se observa que
+el coeficiente ha tenido un leve incremento a inicios de 2015,
+manteniéndose estable oscilando entre 0.6 y un poco más de 0.7 entre
+2016 hasta 2024, mostrando posteriormente a ese año un comportamiento
+más volátil; lo anterior, ilustra que las expectativas tienen un
+importante componente persistente que juega un rol importante en la
+formación de expectativas.
+
+Es decir, las estimaciones sugieren que las expectativas a 24 meses se
+han vuelto menos sensibles a nuevas desviaciones de la inflación, pero
+que las discrepancias respecto de la meta, una vez incorporadas, pueden
+mostrar cierta persistencia antes de disiparse.
+
+\textbf{Figura 5}
+
+\emph{Estimación de la respuesta de las expectativas a mediano plazo
+frente a la} persistencia de sus desviaciones respecto de la meta\emph{,
+2010--2026}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{images/rolling_rho_60m.png}}
+\end{center}
+
+\footnotesize
+
+\emph{Nota.} La línea representa el coeficiente \(\widehat{\rho}_t\)
+estimado mediante regresiones móviles de 60 meses. El área sombreada
+corresponde al intervalo de confianza al 95 \% calculado con errores
+estándar Newey--West HAC, en donde cada estimación se asigna al último
+mes de la ventana correspondiente. Elaboración propia.\normalsize
+
+Por ello, el análisis conjunto de ambos parámetros ofrece una
+caracterización más completa: la sensibilidad frente a la inflación
+constituye la dimensión central del anclaje examinada en esta sección,
+mientras que la persistencia permite evaluar la velocidad con la que las
+expectativas retornan hacia su referencia nominal.
+
+En conjunto, la evidencia mostrada de este primer análisis de la
+dinámica de la formación de expectativas, ilustra una menor dependencia
+en el tiempo de la expectativas a mediano plazo ante desviaciones de la
+inflación, lo cual, es consistente con un mayor anclaje; aunque las
+regresiones móviles presentan una limitación importante: los parámetros
+se suponen constantes dentro de cada ventana y su trayectoria depende,
+en cierta medida, de la longitud utilizada para definirla, y es, por
+esta razón, que el siguiente ejercicio abandona la segmentación discreta
+de la muestra y permite que la sensibilidad evolucione de manera
+continua mediante un modelo de parámetros variantes en el tiempo, con el
+propósito de examinar con mayor precisión cuándo y en qué magnitud se
+producen los cambios en el proceso de formación de expectativas.
+
+\subsection{Anclaje de Expectativas de inflación a mediano Plazo:
+evidencia de un modelo variante en el
+tiempo}\label{anclaje-de-expectativas-de-inflaciuxf3n-a-mediano-plazo-evidencia-de-un-modelo-variante-en-el-tiempo}
+
+\section*{Referencias}\label{referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-alvarezgarcia2014}
+Álvarez García, G. (2014). \emph{Política monetaria bajo el esquema de
+metas explícitas de inflación: El caso de {Guatemala}} {[}Tesis de
+licenciatura{]}. Universidad de San Carlos de Guatemala, Facultad de
+Ciencias Económicas, Escuela de Economía.
+
+\bibitem[\citeproctext]{ref-avendano_orellana2020}
+Avendaño Estrada, M. L., \& Orellana Camargo, J. S. (2020). ¿Es creíble
+la meta de inflación del {Banco de Guatemala}? Un análisis empírico.
+\emph{Banca Central}, (80), 5--30.
+
+\bibitem[\citeproctext]{ref-barnett_groen_mumtaz2010}
+Barnett, A., Groen, J. J. J., \& Mumtaz, H. (2010). \emph{Time-varying
+inflation expectations and economic fluctuations in the {United
+Kingdom}: A structural {VAR} analysis} (Working Paper 392). Bank of
+England.
+
+\bibitem[\citeproctext]{ref-bems_et_al2021}
+Bems, R., Caselli, F., Grigoli, F., \& Gruss, B. (2021). Expectations'
+anchoring and inflation persistence. \emph{Journal of International
+Economics}, \emph{132}, 103516.
+
+\bibitem[\citeproctext]{ref-bernanke_mishkin1997}
+Bernanke, B. S., \& Mishkin, F. S. (1997). Inflation targeting: A new
+framework for monetary policy? \emph{Journal of Economic Perspectives},
+\emph{11}(2), 97--116. \url{https://doi.org/10.1257/jep.11.2.97}
+
+\bibitem[\citeproctext]{ref-blinder1996}
+Blinder, A. S. (1996). \emph{Central bank communication and monetary
+policy}.
+
+\bibitem[\citeproctext]{ref-blinder_et_al2008}
+Blinder, A. S., Ehrmann, M., Fratzscher, M., de Haan, J., \& Jansen,
+D.-J. (2008). Central bank communication and monetary policy: A survey
+of theory and evidence. \emph{Journal of Economic Literature},
+\emph{46}(4), 910--945. \url{https://doi.org/10.1257/jel.46.4.910}
+
+\bibitem[\citeproctext]{ref-bomfim_rudebusch2000}
+Bomfim, A. N., \& Rudebusch, G. D. (2000). Opportunistic and deliberate
+disinflation under imperfect credibility. \emph{Journal of Money, Credit
+and Banking}, \emph{32}(4), 707--721.
+
+\bibitem[\citeproctext]{ref-brunner1981}
+Brunner, K. (1981). \emph{The art of central banking} (Working Paper GPB
+81-6). Center for Research in Government Policy; Business, University of
+Rochester.
+
+\bibitem[\citeproctext]{ref-castaneda_et_al2019}
+Castañeda Fuentes, J. C., Castillo-Maldonado, C. E., Galindo-González,
+D. N., Gutiérrez-Morales, M. J., \& Ortiz-Cardona, E. R. (2019).
+\emph{Evaluación del esquema de metas explícitas de inflación ({EMEI})
+en {Guatemala}} {[}Documento de trabajo, XIII Foro de Investigadores de
+Bancos Centrales del Consejo Monetario Centroamericano{]}. SECMCA.
+
+\bibitem[\citeproctext]{ref-clarida_gali_gertler1999}
+Clarida, R., Galí, J., \& Gertler, M. (1999). The science of monetary
+policy: A new {Keynesian} perspective. \emph{Journal of Economic
+Literature}, \emph{37}(4), 1661--1707.
+\url{https://doi.org/10.1257/jel.37.4.1661}
+
+\bibitem[\citeproctext]{ref-dagostino_mendicino2015}
+D'Agostino, A., \& Mendicino, C. (2015). \emph{Expectation-driven
+cycles: Time-varying effects} (Working Paper 1776). European Central
+Bank.
+
+\bibitem[\citeproctext]{ref-durbin_koopman2012}
+Durbin, J., \& Koopman, S. J. (2012). \emph{Time series analysis by
+state space methods} (2nd ed.). Oxford University Press.
+
+\bibitem[\citeproctext]{ref-ehrmann2015}
+Ehrmann, M. (2015). Targeting inflation from below: How do inflation
+expectations behave? \emph{International Journal of Central Banking},
+\emph{11}(S1), 213--249.
+
+\bibitem[\citeproctext]{ref-gondo_yetman2018}
+Gondo, R., \& Yetman, J. (2018). \emph{Anchoring of inflation
+expectations in {Latin America}} (Documento de Trabajo 2018-003). Banco
+Central de Reserva del Perú.
+
+\bibitem[\citeproctext]{ref-kose_et_al2019}
+Kose, M. A., Matsuoka, H., Panizza, U., \& Vorisek, D. (2019). Inflation
+expectations: Review and evidence. In J. Ha, M. A. Kose, \& F. Ohnsorge
+(Eds.), \emph{Inflation in emerging and developing economies: Evolution,
+drivers, and policies} (pp. 205--274). World Bank.
+\url{https://doi.org/10.1596/978-1-4648-1375-7}
+
+\bibitem[\citeproctext]{ref-levin_natalucci_piger2004}
+Levin, A. T., Natalucci, F. M., \& Piger, J. M. (2004). \emph{Explicit
+inflation objectives and macroeconomic outcomes} (Working Paper 383).
+European Central Bank.
+
+\bibitem[\citeproctext]{ref-lyziakPaloviita2017}
+Łyziak, T., \& Paloviita, M. (2017). Anchoring of inflation expectations
+in the euro area: Recent evidence based on survey data. \emph{European
+Journal of Political Economy}, \emph{46}, 52--73.
+
+\bibitem[\citeproctext]{ref-demertzis_marcellino_viegi2012}
+Maria Demertzis, N. V., Massimiliano Marcellino. (2009). A credibility
+proxy: Tracking US monetary developments. \emph{The BE Journal of
+Macroeconomics}, \emph{12}(1).
+
+\bibitem[\citeproctext]{ref-mehrotra_yetman2018}
+Mehrotra, A., \& Yetman, J. (2018). Decaying expectations: What
+inflation forecasts tell us about the anchoring of inflation
+expectations. \emph{International Journal of Central Banking},
+\emph{14}(5), 55--101.
+
+\bibitem[\citeproctext]{ref-mishkin2007}
+Mishkin, F. S. (2007). \emph{Monetary policy strategy}. The MIT Press.
+
+\bibitem[\citeproctext]{ref-newey_west1987}
+Newey, W. K., \& West, K. D. (1987). A simple, positive semi-definite,
+heteroskedasticity and autocorrelation consistent covariance matrix.
+\emph{Econometrica}, \emph{55}(3), 703--708.
+
+\bibitem[\citeproctext]{ref-perezmacal2021}
+Pérez Macal, F. (2021). La credibilidad del {Banco de Guatemala} de
+promover la estabilidad en el nivel general de precios según las
+expectativas de inflación de analistas privados. \emph{Banca Central},
+(82), 25--50.
+
+\bibitem[\citeproctext]{ref-rossini_vega_quispe_perez2016}
+Rossini, R. G., Vega, M., Quispe, Z., \& Perez, F. (2016). Inflation
+expectations and dollarisation in peru. In \emph{Inflation mechanisms,
+expectations and monetary policy} (pp. 275--289). Bank for International
+Settlements.
+
+\bibitem[\citeproctext]{ref-strohsal2015}
+Strohsal, T., Melnick, R., \& Nautz, D. (2015). \emph{The time-varying
+degree of inflation expectations anchoring} (Discussion Paper 2015-028).
+SFB 649, Humboldt-Universität zu Berlin.
+
+\bibitem[\citeproctext]{ref-svensson1997}
+Svensson, L. E. O. (1997). Inflation forecast targeting: Implementing
+and monitoring inflation targets. \emph{European Economic Review},
+\emph{41}(6), 1111--1146.
+
+\bibitem[\citeproctext]{ref-svensson1998}
+Svensson, L. E. O. (1998). \emph{Open-economy inflation targeting} (NBER
+Working Paper 6545). National Bureau of Economic Research.
+
+\bibitem[\citeproctext]{ref-woodford2001}
+Woodford, M. (2001). Monetary policy in the information economy. In
+\emph{Economic policy for the information economy} (pp. 297--370).
+Federal Reserve Bank of Kansas City.
+
+\bibitem[\citeproctext]{ref-woodford2003}
+Woodford, M. (2003). \emph{Interest and prices: Foundations of a theory
+of monetary policy}. Princeton University Press.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
