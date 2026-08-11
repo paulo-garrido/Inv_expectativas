@@ -1,0 +1,61 @@
+
+======================================================================
+DEMERTZIS TVP-VAR RESTRINGIDO M3 - GUATEMALA
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra efectiva: 2010-02 a 2026-06
+Observaciones: 197
+
+ESPECIFICACIÓN PRINCIPAL
+pi_t = a0 + a*pi_(t-1) + b*e_(t-1) + eps_pi,t
+e_t  = c0_t + c_t*pi_(t-1) + d*e_(t-1) + eps_e,t
+c0_t y c_t siguen paseos aleatorios.
+a0, a, b y d permanecen constantes.
+
+lambda_t = 1 - c_t/(1-d)
+pi_estrella_t = c0_t/(1-d-c_t)
+
+HIPERPARÁMETROS M3
+H inflación: 3.3543e-01
+H expectativas: 2.8712e-02
+Q_c0: 2.9241e-03
+Q_c: 2.5115e-05
+
+COMPARACIÓN CON PARÁMETROS CONSTANTES
+logLik M0 / M3: -184.44649 / -146.33275
+AIC M0 / M3: 384.89298 / 312.66549
+BIC M0 / M3: 411.15861 / 345.49753
+LR M3 vs M0: 76.22749 | p chi2(2) SOLO REFERENCIAL: 2.8016e-17
+Nota: las Q están en la frontera bajo H0; no interpretar el p chi2 como prueba definitiva.
+
+PROXY DE CREDIBILIDAD
+lambda promedio: 0.82876
+lambda inicial / final: 0.75349 / 0.88136
+lambda mínimo: 0.75254 en 2010-03
+lambda máximo: 0.88945 en 2023-04
+% meses lambda fuera de [0,1]: 0.00%
+
+ANCLA IMPLÍCITA
+pi estrella promedio: 4.56630
+pi estrella inicial / final: 6.39160 / 3.85143
+MAE pi estrella vs meta: 0.45506
+% meses ancla dentro de banda meta: 85.28%
+
+ESTABILIDAD LOCAL
+% meses con radio espectral < 1: 100.00%
+Radio espectral máximo: 0.94364
+
+DIAGNÓSTICOS RESIDUALES M3
+Ljung-Box inflación, lag 12, p: 0.0000e+00
+Ljung-Box expectativas, lag 12, p: 2.0004e-01
+Correlación contemporánea de residuos: 0.08205 | p Fisher: 2.5577e-01
+
+INTERPRETACIÓN
+1. lambda_t resume el desacoplamiento de expectativas respecto de la inflación.
+2. pi_estrella_t estima el nivel del ancla implícita.
+3. Para un régimen creíble bajo metas de inflación interesa tanto un lambda_t elevado
+   como un ancla implícita próxima a la meta oficial.
+4. La expectativa a 24 meses se interpreta como anclaje de mediano plazo.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas/Data y resultados/resultados_objetivo2_TVP_VAR
+======================================================================

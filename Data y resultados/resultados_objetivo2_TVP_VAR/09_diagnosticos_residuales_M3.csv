@@ -1,0 +1,10 @@
+ecuacion,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+Inflación,Ljung-Box,6,37.021009981362084,1.7443605399014572e-6,Se rechaza H0
+Inflación,Ljung-Box,12,106.39030106349827,0,Se rechaza H0
+Inflación,Ljung-Box,24,134.094070466809,0,Se rechaza H0
+Inflación,Jarque-Bera,NA,5.5439850372887,0.06253727383500755,No se rechaza H0
+Expectativa 24m,Ljung-Box,6,3.9406333372027738,0.6847102260038224,No se rechaza H0
+Expectativa 24m,Ljung-Box,12,15.811042223353125,0.2000447765605774,No se rechaza H0
+Expectativa 24m,Ljung-Box,24,21.795542398402848,0.5914686976939341,No se rechaza H0
+Expectativa 24m,Jarque-Bera,NA,1251.3767034396913,1.849274822739885e-272,Se rechaza H0
+Sistema,Correlación contemporánea Fisher,NA,1.1364470604003036,0.2557695097307302,No se rechaza H0
