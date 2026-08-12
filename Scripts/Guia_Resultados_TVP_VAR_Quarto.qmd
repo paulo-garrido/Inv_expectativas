@@ -65,7 +65,6 @@ library(readr)
 # ------------------------------------------------------------------
 # AJUSTAR ÚNICAMENTE ESTAS RUTAS A LA ESTRUCTURA DE TU PROYECTO
 # ------------------------------------------------------------------
-setwd("/Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas")
 ruta_tvp <- file.path(
   "Data y resultados",
   "resultados_objetivo2_TVP_VAR"
@@ -151,6 +150,7 @@ fmt <- function(x, d = 2) {
 }
 
 fmt3 <- function(x) fmt(x, 3)
+
 ```
 
 
@@ -235,6 +235,7 @@ PÁRRAFO 1 — QUÉ DEBE DECIR:
 
 BORRADOR DE REFERENCIA:
 -->
+
 
 La comparación con el VAR de parámetros constantes muestra que permitir variación temporal en la ecuación de expectativas mejora sustancialmente el ajuste del sistema. Tanto el AIC como el BIC disminuyen al pasar de M0 a M3, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$. En consecuencia, la evidencia de los criterios de información favorece una representación en la que el vínculo entre inflación y expectativas puede modificarse gradualmente a lo largo de la muestra. La razón de verosimilitudes conduce a la misma dirección, aunque su significancia se interpreta únicamente como evidencia complementaria debido a que las varianzas de transición se encuentran en la frontera del espacio paramétrico bajo la hipótesis de constancia.
 

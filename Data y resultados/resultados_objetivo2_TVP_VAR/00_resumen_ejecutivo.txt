@@ -57,5 +57,5 @@ INTERPRETACIÓN
    como un ancla implícita próxima a la meta oficial.
 4. La expectativa a 24 meses se interpreta como anclaje de mediano plazo.
 
-Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas/Data y resultados/resultados_objetivo2_TVP_VAR
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/Seminario/Inv_expectativas/Data y resultados/resultados_objetivo2_TVP_VAR
 ======================================================================

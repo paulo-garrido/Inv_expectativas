@@ -70,7 +70,7 @@
 #   kfs_M3.rds
 # ==============================================================================
 
-
+setwd("/Users/paulogarridogrijalva/Documents/PES/Seminario/Inv_expectativas/Data y resultados")
 # 0. LIMPIEZA Y PAQUETES -------------------------------------------------------
 
 rm(list = ls())
@@ -96,7 +96,7 @@ if (length(faltantes) > 0) {
 }
 
 invisible(lapply(paquetes, library, character.only = TRUE))
-
+getwd()
 
 # 1. CONFIGURACIÓN -------------------------------------------------------------
 
@@ -820,7 +820,7 @@ p_LR_chi2_referencial <- stats::pchisq(
 )
 
 tabla_comparacion <- tibble::tibble(
-  modelo = c("M0", "M3"),
+  modelo = c("VAR", "TVP-VAR"),
   descripcion = c(
     "VAR(1) constante",
     "TVP-VAR restringido: c0_t y c_t variantes"
@@ -1653,6 +1653,65 @@ ggplot2::ggsave(
 
 print(p_c)
 
+if (!requireNamespace("patchwork", quietly = TRUE)) {
+  install.packages("patchwork")
+}
+
+library(patchwork)
+
+p_c0_panel <- p_c0 +
+  ggplot2::theme(
+    plot.margin = ggplot2::margin(
+      t = 4,
+      r = 6,
+      b = 4,
+      l = 4
+    )
+  )
+
+p_c_panel <- p_c +
+  ggplot2::theme(
+    plot.margin = ggplot2::margin(
+      t = 4,
+      r = 4,
+      b = 4,
+      l = 6
+    )
+  )
+
+panel_parametros_tvp <- (
+  p_c0_panel +
+    p_c_panel
+) +
+  patchwork::plot_layout(
+    ncol = 2,
+    widths = c(1, 1)
+  ) +
+  patchwork::plot_annotation(
+    tag_levels = "a"
+  ) &
+  ggplot2::theme(
+    plot.tag = ggplot2::element_text(
+      size = 10,
+      face = "bold",
+      colour = "grey25"
+    ),
+    plot.tag.position = c(0.02, 0.98)
+  )
+
+ggplot2::ggsave(
+  file.path(
+    carpeta_salida,
+    "figura_02_panel_parametros_tvp.png"
+  ),
+  plot = panel_parametros_tvp,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
+)
+
+print(panel_parametros_tvp)
 
 # 14.3 Proxy dinámica de credibilidad lambda_t --------------------------------
 #
@@ -1729,49 +1788,48 @@ print(p_lambda)
 
 
 # 14.4 Ancla implícita, expectativas y meta -----------------------------------
-#
-# La inflación observada se excluye de la figura principal para que el objeto
-# central sea la convergencia del ancla implícita hacia la meta.
-#
-# La banda azul clara representa el rango meta vigente ±1 p.p.
-# La banda de confianza de pi*_t se muestra en un tono aún más tenue.
 
 p_ancla <- ggplot2::ggplot(
   trayectoria_M3,
-  ggplot2::aes(
-    x = fecha
-  )
+  ggplot2::aes(x = fecha)
 ) +
-  # Rango meta oficial
+  
+  # Rango meta oficial: referencia institucional de fondo
   ggplot2::geom_ribbon(
     ggplot2::aes(
       ymin = banda_inferior,
       ymax = banda_superior
     ),
     fill = col_banda,
-    alpha = 0.18,
+    alpha = 0.10,
     linewidth = 0
   ) +
-  # IC 95% del ancla implícita
+  
+  # IC 95% del ancla implícita:
+  # visible, pero deliberadamente tenue
   ggplot2::geom_ribbon(
     ggplot2::aes(
       ymin = pi_estrella_li_95,
       ymax = pi_estrella_ls_95
     ),
     fill = col_serie,
-    alpha = 0.10,
+    alpha = 0.07,
     linewidth = 0
   ) +
-  # Expectativa a 24 meses
+  
+  # Expectativa a 24 meses:
+  # serie secundaria frente al ancla implícita
   ggplot2::geom_line(
     ggplot2::aes(
       y = expectativa,
       colour = "Expectativa a 24 meses",
       linetype = "Expectativa a 24 meses"
     ),
-    linewidth = 0.65,
-    alpha = 0.85
+    linewidth = 0.55,
+    alpha = 0.65,
+    lineend = "round"
   ) +
+  
   # Meta central
   ggplot2::geom_line(
     ggplot2::aes(
@@ -1779,76 +1837,73 @@ p_ancla <- ggplot2::ggplot(
       colour = "Meta central",
       linetype = "Meta central"
     ),
-    linewidth = 0.60
+    linewidth = 0.55,
+    alpha = 0.90
   ) +
-  # Ancla implícita como serie principal
+  
+  # Ancla implícita: objeto principal de la figura
   ggplot2::geom_line(
     ggplot2::aes(
       y = pi_estrella_t,
-      colour = "Ancla implícita",
-      linetype = "Ancla implícita"
+      colour = "Ancla inflacionaria implícita",
+      linetype = "Ancla inflacionaria implícita"
     ),
-    linewidth = 0.85,
+    linewidth = 0.95,
     lineend = "round"
   ) +
+  
   ggplot2::scale_colour_manual(
     values = c(
-      "Ancla implícita" = col_serie,
+      "Ancla inflacionaria implícita" = col_serie,
       "Expectativa a 24 meses" = col_expectativa,
       "Meta central" = col_meta
     ),
     breaks = c(
-      "Ancla implícita",
+      "Ancla inflacionaria implícita",
       "Expectativa a 24 meses",
       "Meta central"
     )
   ) +
+  
   ggplot2::scale_linetype_manual(
     values = c(
-      "Ancla implícita" = "solid",
+      "Ancla inflacionaria implícita" = "solid",
       "Expectativa a 24 meses" = "longdash",
       "Meta central" = "dotted"
     ),
     breaks = c(
-      "Ancla implícita",
+      "Ancla inflacionaria implícita",
       "Expectativa a 24 meses",
       "Meta central"
     )
   ) +
+  
   escala_x_wp +
+  
   ggplot2::scale_y_continuous(
-    breaks = seq(
-      floor(
-        min(
-          trayectoria_M3$banda_inferior,
-          trayectoria_M3$pi_estrella_li_95,
-          na.rm = TRUE
-        )
-      ),
-      ceiling(
-        max(
-          trayectoria_M3$banda_superior,
-          trayectoria_M3$pi_estrella_ls_95,
-          na.rm = TRUE
-        )
-      ),
-      by = 1
-    ),
-    expand = ggplot2::expansion(
-      mult = c(0.03, 0.05)
-    )
+    limits = c(2, 7),
+    breaks = seq(2, 7, by = 1),
+    expand = ggplot2::expansion(mult = c(0, 0))
   ) +
+  
   ggplot2::labs(
     x = NULL,
     y = "Porcentaje",
     colour = NULL,
     linetype = NULL
   ) +
+  
   tema_wp +
+  
   ggplot2::theme(
     legend.position = "bottom",
-    legend.box = "horizontal"
+    legend.box = "horizontal",
+    legend.direction = "horizontal",
+    legend.spacing.x = grid::unit(0.18, "cm"),
+    legend.key.width = grid::unit(1.2, "cm"),
+    legend.text = ggplot2::element_text(size = 8.5)
   )
+
 
 ggplot2::ggsave(
   file.path(
@@ -1863,7 +1918,6 @@ ggplot2::ggsave(
 )
 
 print(p_ancla)
-
 
 # 14.5 Brecha del ancla implícita respecto de la meta -------------------------
 

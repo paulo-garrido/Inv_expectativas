@@ -32,6 +32,7 @@ csl: "apa-7th-edition.csl"
 header-includes:
   - \usepackage{graphicx}
   - \raggedbottom
+  - \usepackage{cuted}
 include-in-header:
   text: |
     \usepackage{indentfirst}
@@ -183,8 +184,6 @@ Se discuten a continuación algunos aspectos históricos y a la luz de la inform
 En ese sentido, se describe la dinámica inflacionaria en Guatemala desde 1997 hasta junio 2026, lo cual permite ilustrar la trayectoria de la inflación en diferentes regímenes monetarios; en este sentido, en la Figura 1 se observa la dinámica de la inflación en Guatemala a lo largo del período analizado. Una lectura cuidadosa de la figura revela que existen cambios en la trayectoria, en particular, durante los años previos al establecimiento del Esquema de Metas Explícitas de Inflación (EMEI), la serie exhibe niveles relativamente más elevados y una volatilidad considerable, con episodios en los que la inflación alcanza tasas de dos dígitos; en contraste, a partir de la adopción del esquema, se observa una moderación tanto en el nivel como en la variabilidad del ritmo inflacionario, de manera que la inflación tiende a ubicarse con mayor frecuencia dentro o en las cercanías del rango meta.
 
 No obstante, esta evolución ha tenido una suerte de no uniformidad, es decir, aun dentro del período de vigencia del EMEI se distinguen episodios de desviación importantes, tanto por encima como por debajo de la banda, lo que sugiere que la convergencia hacia un entorno de mayor estabilidad nominal ha coexistido con choques de magnitud no menor, en consecuencia, aunque la evidencia gráfica parece consistente con una reducción de la inflación y de su volatilidad en el marco del EMEI, también pone de manifiesto que dicha estabilidad no debe interpretarse como un proceso lineal ni exento de tensiones, lo cual justifica examinar posteriormente si este comportamiento ha estado acompañado por un mayor anclaje de las expectativas de inflación.
-
-\newpage
 
 **Figura 1**
 
@@ -441,7 +440,7 @@ La estimación utiliza ventanas móviles de 60 observaciones mensuales, esta lon
 
 Dado el carácter mensual y dinámico de la especificación, la inferencia se realiza mediante errores estándar heterocedásticos y autocorrelacionados consistentes de @newey_west1987, empleando tres rezagos mensuales, en donde cada estimación se asigna al último mes de la ventana correspondiente, por ello, las trayectorias obtenidas deben interpretarse como una representación suavizada de la sensibilidad.
 
-### Modelo TVP--VAR restringido y proxy de credibilidad
+### Modelo TVP--VAR y proxy de credibilidad
 
 Si bien las regresiones móviles permiten observar si la sensibilidad de las expectativas cambia entre ventanas sucesivas, mantienen los coeficientes constantes dentro de cada ventana y su trayectoria puede alterarse cuando una observación entra o sale de la muestra móvil. En este sentido, para complementar ese ejercicio, la segunda aproximación ---y eje central del estudio--- toma como base la metodología propuesta por @demertzis_marcellino_viegi2012. La idea básica es que la credibilidad monetaria se manifiesta en una separación progresiva entre la inflación observada y las expectativas de horizonte relativamente largo: cuando los agentes confían en que la autoridad monetaria reconducirá la inflación hacia un valor estable, las perturbaciones recientes en la inflación deberían ejercer una reducida influencia sobre las expectativas.
 
@@ -684,27 +683,202 @@ En este sentido, el apartado inicia realizando un test empirico para validar la 
 
 ### Evidencia de una relación cambiante entre inflación y expectativas
 
-El incorporar una dinámica cambiante en el tiempo en la relación entre expectativas e inflación, constituye, de forma empírica una transformación metodológica natural, a la luz de los resultados observados en las regresiones móviles; sin embargo, es indispensable, tener evidencia sólida que justifique la reespecificación econométrica del modelo, en virtud del costo en términos de parsimonia y complejidad modélica; en este orden de ideas, esta sección presenta las pruebas formales sobre este aspecto.
+El incorporar una dinámica cambiante en el tiempo en la relación entre expectativas e inflación, constituye una extensión metodológica natural, a la luz de los resultados observados en las regresiones móviles; sin embargo, es indispensable, tener evidencia sólida que justifique la reespecificación econométrica del modelo, en virtud del costo en términos de parsimonia y complejidad modélica; en este sentido, esta sección presenta la evidencia estadística utilizada para justificar la adopción de una especificación con parámetros variantes en el tiempo.
 
-Para poder confirmar que tiene sentido introducir un modelo con parámetros variantes en el tiempo, se contrasta la misma especificación modélica con parámetros constantes, con respecto a parámetros constantes, evaluando los criterios de información de cada uno, así como el test de Razón de Verosimilitud.
+Para evaluar este aspecto, se contrasta la misma especificación modélica bajo dos alternativas: una especificación con parámetros constantes y otra en la que determinados coeficientes (los relacionados con el proceso de formación de expectativas) evolucionen a largo del tiempo. La comparación se realiza a partir de los criterios de información y de la prueba de razón de verosimilitudes, complementada con el análisis de las varianzas de transición asociadas a los parámetros variantes.
 
-En la tabla xxx ilustra la comparativa entre los dos modelos, como se observa, en la prueba de log verosimilitud el modelo TVP-VAR muestra evidencia más favorable con una $\Delta$ de -38.12; por otro lado, los criterios de AIC y BIC, también favorecieron al modelo variante en el tiempo, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$; en consecuencia, la evidencia de los criterios de información favorece una representación en la que el vínculo entre inflación y expectativas puede modificarse gradualmente.
+En primer lugar, se evalua el desempeño de las dos especificaciones como se observa en el cuadro 2. Los resultados revelan que, el modelo TVP-VAR presenta una log verosimilitud superior al VAR con parámetros constantes, con una diferencia de 38.12; por otro lado, los criterios de información AIC y BIC, también favorecieron al modelo variante en el tiempo, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$; en conjunto, estos resultados sugieren que la mayor flexibilidad del TVP–VAR se encuentra respaldada por los datos y favorecen una representación en la que el vínculo entre inflación y expectativas puede modificarse a lo largo del tiempo.
 
-Por otro lado, también se plante la prueba de hipótesis sobre la signficancia de $Q_{C0}$ y de $Qc_t$, siendo estas la varianzas de transición para el intercepto y para la sensibilidad de las expectativas frente a la inflación; lo que se testea es que estas sean positivas y estadisticamente distintas de 0; en este sentido, las pruebas confirma que existe suficiente evidencia de que ambas son estadisticamente \>0, por lo que confirma que ambas dimensiones contienen variación temporal.
+**Cuadro 2**
 
-Asimismo, el sistema permanece localmente estable durante toda la muestra, pues el radio espectral se mantiene por debajo de la unidad; por lo que estos resultados permiten interpretar las trayectorias suavizadas sin evidencia de dinámica explosiva, lo que permite confirmar la hipótesis de una trayectoria gradual en la dinámica de las expectativas. Por último, los diagnósticos residuales son satisfactorios para la ecuación de expectativas y para la correlación contemporánea entre innovaciones; no obstante, la ecuación de inflación interanual conserva autocorrelación residual, aspecto que se examina posteriormente mediante ejercicios de robustez con medidas alternativas de inflación.
+*Comparación entre el modelo constante y el TVP--VAR*
 
-## Evolución de los parámetros variantes de las expectativas
+```{r}
+#| label: setup-resultados-tvp
+library(dplyr)
+library(readr)
+#Revisar rutas
+ruta_tvp <- file.path(
+  "..",
+  "Data y resultados",
+  "resultados_objetivo2_TVP_VAR"
+)
 
-**Figura 6**
+ruta_robustez <- file.path(
+  "..",
+  "Data y resultados",
+  "resultados_robustez_medidas_inflacion_demertzis"
+)
 
-*Estimación de la respuesta de las expectativas a mediano plazo frente a la* persistencia de sus desviaciones respecto de la meta*, 2010--2026*
+# Resultados principales
+comparacion_modelos <- readr::read_csv(
+  file.path(ruta_tvp, "05_comparacion_M0_M3.csv"),
+  show_col_types = FALSE
+)
 
-![](images/figura_02_c_t.png)
+hiperparametros <- readr::read_csv(
+  file.path(ruta_tvp, "04_hiperparametros_M0_M3.csv"),
+  show_col_types = FALSE
+)
+
+resumen_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "07_resumen_M3.csv"),
+  show_col_types = FALSE
+)
+
+subperiodos_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "08_resumen_subperiodos_M3.csv"),
+  show_col_types = FALSE
+)
+
+diagnosticos_m3 <- readr::read_csv(
+  file.path(ruta_tvp, "09_diagnosticos_residuales_M3.csv"),
+  show_col_types = FALSE
+)
+
+# Robustez con medidas alternativas de inflación
+robustez_medidas <- if (
+  file.exists(
+    file.path(
+      ruta_robustez,
+      "02_tabla_comparativa_medidas_inflacion.csv"
+    )
+  )
+) {
+  readr::read_csv(
+    file.path(
+      ruta_robustez,
+      "02_tabla_comparativa_medidas_inflacion.csv"
+    ),
+    show_col_types = FALSE
+  )
+} else {
+  NULL
+}
+
+robustez_trayectorias <- if (
+  file.exists(
+    file.path(
+      ruta_robustez,
+      "03_robustez_trayectorias_vs_baseline.csv"
+    )
+  )
+) {
+  readr::read_csv(
+    file.path(
+      ruta_robustez,
+      "03_robustez_trayectorias_vs_baseline.csv"
+    ),
+    show_col_types = FALSE
+  )
+} else {
+  NULL
+}
+
+# Funciones pequeñas para insertar resultados en el texto
+fmt <- function(x, d = 2) {
+  formatC(
+    as.numeric(x),
+    format = "f",
+    digits = d
+  )
+}
+
+fmt3 <- function(x) fmt(x, 3)
+
+#| label: tbl-comparacion-m0-m3
+#| tbl-cap: "Comparación entre el VAR con parámetros constantes y el TVP–VAR"
+
+tabla_modelos_wp <- comparacion_modelos |>
+  dplyr::transmute(
+    Modelo = modelo,
+    `Log-verosimilitud` = round(log_verosimilitud, 2),
+    AIC = round(AIC, 2),
+    BIC = round(BIC, 2)
+  )
+
+knitr::kable(
+  tabla_modelos_wp,
+  format = "latex",
+  align = c("l", "r", "r", "r"),
+  booktabs = TRUE,
+  longtable = FALSE,
+  escape = FALSE
+)
+```
 
 \footnotesize
 
-*Nota. Estimaciones suavizadas mediante filtro de Kalman. Las bandas corresponden a intervalos de confianza aproximados del 95 %. Elaboración propia.*\normalsize
+*Nota.* el VAR(1) se estima con la misma estructura funciona con parámetros constantes, mientras el TVP--VAR los parámetros $c_{0t}$ y $c_t$ evolucionan en el tiempo. AIC y BIC corresponden a los criterios de información de Akaike y Schwarz, respectivamente. Elaboración propia. \normalsize
+
+Por otro lado, se evaluaron si los parámetros que se especificaron como variantes en el tiempo, presentan efectivamente movilidad a lo largo de la muestra; esta caracteristica de movilidad es recogida por $Q_{C0}$ y de $Qc_t$, siendo estas la varianzas de transición para el intercepto y para la sensibilidad de las expectativas frente a la inflación; Intuitivamente, una varianza de transición igual a cero implicaría que el parámetro correspondiente permanece constante, mientras que una varianza positiva permite que este evolucione a través del tiempo. En este sentido, al analizar la prueba, ambas varianzas resultan positivas, lo que es consistente con la existencia de variación temporal en las dos dimensiones.
+
+Adicionalmente, se evaluó la estabilidad dinámica del sistema a lo largo de la muestra, en un modelo VAR, esta condición permite determinar si el efecto de una perturbación tiende a disiparse con el tiempo o si, por el contrario, genera una trayectoria que se amplifica de manera persistente; en este aspecto, los resultados revelan que el sistema cumple la condición de estabilidad en todos los períodos analizados, dado que el radio espectral —una medida que resume la magnitud de las raíces dinámicas del modelo— permanece por debajo de la unidad.
+
+En términos económicos se puede argüir que la dinámica estimada de inflación y expectativas no presenta un comportamiento explosivo, lo que permite interpretar de manera coherente las trayectorias de los parámetros variantes en el tiempo y, a partir de ellas, las medidas derivadas de credibilidad y del ancla inflacionaria implícita.
+
+Finalmente, los diagnósticos residuales son satisfactorios para la ecuación de expectativas y no muestran evidencia de una correlación contemporánea significativa entre las innovaciones de ambas ecuaciones; Sin embargo, la ecuación de inflación conserva autocorrelación residual, aspecto que se analiza posteriormente mediante ejercicios de robustez con medidas alternativas de inflación.
+
+### Evolución de los parámetros variantes de las expectativas
+
+En el apartado anterior, la evolución de la sensibilidad de las expectativas frente a la inflación se aproximó mediante regresiones móviles estimadas sobre ventanas sucesivas de 60 meses; si bien este procedimiento permite advertir cambios en dicha relación a lo largo de la muestra, cada coeficiente sintetiza la información contenida en una ventana determinada. La idea de este apartado es abandonar esta estructura por ventanas y permitir que los parámetros asociados al proceso de formación de expectativas evolucionen directamente período a período, dentro de un modelo estimado sobre la totalidad de la muestra. En este sentido, siguiendo el planteamiento de @demertzis_marcellino_viegi2012, aunque bajo una parametrización más restringida, se especifica el siguiente TVP--VAR:
+
+\
+$$\pi_t=a_0+a\pi_{t-1}+b e_{t-1}^{24}+\varepsilon_{\pi,t},$$$$e_t^{24}=c_{0t}+c_t\pi_{t-1}+d e_{t-1}^{24}+\varepsilon_{e,t}.$$
+
+A diferencia de la especificación original de Demertzis, Marcellino y Viegi, en el presente estudio se preservan constantes los parámetros de la ecuación de inflación y el coeficiente de persistencia $d$, mientras que se permite variar únicamente al intercepto $c_{0t}$ y a la sensibilidad de las expectativas frente a la inflación, $c_t$. Ambos parámetros siguen procesos de paseo aleatorio,
+
+$$
+c_{0t}=c_{0,t-1}+\eta_{c0,t},
+\qquad
+c_t=c_{t-1}+\eta_{c,t},
+$$
+
+cuyas innovaciones se suponen mutuamente no correlacionadas y ortogonales a las perturbaciones del VAR. Asimismo, las innovaciones de las dos ecuaciones del sistema se especifican como contemporáneamente no correlacionadas y con varianzas constantes, esta restricción resulta particularmente conveniente en el presente ejercicio, pues concentra la variación temporal precisamente en los parámetros que intervienen en la construcción de la proxy de credibilidad, sin extender innecesariamente la flexibilidad del modelo al resto de sus componentes.
+
+El sistema se estima mediante el filtro de Kalman, en virtud de que el propósito del ejercicio es reconstruir la evolución histórica del anclaje a lo largo de toda la muestra, se utilizan las estimaciones suavizadas de los estados. Las correspondientes estimaciones de $c_{0t}$ y $c_t$, junto con sus intervalos de confianza, se presentan en la Figura 6.
+
+\begin{strip}
+\textbf{Figura 6}
+
+\textit{Estimaciones suavizadas de los parámetros variantes de la ecuación de expectativas, 2010--2026}
+
+\vspace{0.1cm}
+
+\includegraphics[width=0.87\textwidth]{
+\detokenize{../Data y resultados/resultados_objetivo2_TVP_VAR/figura_02_panel_parametros_tvp.png}
+}
+
+\vspace{0.1cm}
+
+\begin{minipage}{0.90\textwidth}
+\footnotesize
+\textit{Nota.} El panel (a) presenta la trayectoria estimada del intercepto variante $c_{0t}$, mientras que el panel (b) muestra la sensibilidad cambiante de las expectativas a 24 meses frente a la inflación observada, $c_t$. Las líneas representan las estimaciones suavizadas obtenidas mediante el filtro de Kalman y las áreas sombreadas corresponden a intervalos de confianza aproximados al 95 \%. Elaboración propia.
+\end{minipage}
+
+\end{strip}
+
+Una lectura cuidadosa de la Figura 6 revela que la evolución temporal de los parámetros de la ecuación de expectativas no es homogénea, aunque sí exhibe un patrón suficientemente definido; por una parte, el intercepto variante $c_{0t}$ muestra una reducción pronunciada durante la primera mitad de la muestra, seguida por una recuperación parcial y, posteriormente, por una trayectoria relativamente estable. Por otra, el coeficiente $c_t$, que recoge la sensibilidad de las expectativas de mediano plazo frente a la inflación observada, presenta un descenso más persistente: parte de valores cercanos a 0.18 y converge gradualmente hacia niveles próximos a 0.09 al final del período. Este último comportamiento resulta especialmente revelador, en virtud de que sugiere que, con el transcurso del tiempo, las expectativas de mediano plazo han reaccionado cada vez menos a las fluctuaciones de la inflación corriente.
+
+Al respecto, es importante acotar que, si bien los intervalos de confianza aconsejan cautela al interpretar movimientos puntuales, la trayectoria suavizada de $c_t$ permite argüir que el vínculo entre inflación observada y expectativas se ha debilitado de manera paulatina, un resultado compatible con un mayor grado de anclaje de las expectativas de mediano plazo; esta interpretación, no obstante, adquiere mayor contenido económico cuando se examina conjuntamente con la proxy de credibilidad y con la evolución del ancla inflacionaria implícita, aspectos que se desarrollan en los apartados siguientes.
+
+### Una medida del anclaje de las expectativas
+
+Si bien la trayectoria que exhibe $c_t$ ilustra la dinámica de formación de expectativas, no constituye por sí misma una medida directamente interpretable del grado de anclaje; en este marco y, siguiendo la lógica propuesta por @demertzis_marcellino_viegi2012, resulta posible estimar con los parámetros estimados en el TVP--VAR, una medida mas clara del anclaje. En este sentido, se estima $\lambda_t$ (proveniente de la @eq-equilibrio-expectativas) y siguiendo el procedimiento planteado en la sección 5, así como el nivel de inflación de largo plazo implícito en dicha dinámica, $\pi_t^*$. De esta forma, el análisis deja de concentrarse exclusivamente en la sensibilidad de las expectativas frente a la inflación y se desplaza hacia una pregunta más sustantiva: *en qué medida las expectativas se han desacoplado de fluctuaciones transitorias de la inflación y han gravitado alrededor de una referencia nominal relativamente estable.*
+
+Uno de los conceptos más importantes en el contexto de esta investigación es el de "ancla implícita" $\pi_t^*$, la cual representa el nivel de inflación alrededor del cual tenderían a estabilizarse las expectativas una vez disipados los efectos de las perturbaciones transitorias. Este estimador no debe confundirse con la meta oficial de inflación del Banco de Guatemala: mientras esta última constituye una referencia explícitamente anunciada por la autoridad monetaria, el ancla implícita es una referencia inferida a partir del comportamiento observado de la inflación y de las expectativas. Sin embargo, la comparación entre ambas resulta, por tanto, de sumo interés, en virtud de que un elevado grado de anclaje no implica necesariamente que las expectativas se encuentren ancladas en torno al objetivo del banco central; estas podrían mostrar escasa sensibilidad a la inflación y, sin embargo, gravitar alrededor de un nivel distinto de la meta. En virtud de lo anterior, la evolución conjunta de $\lambda_t$ y $\pi_t^*$ permite distinguir entre la *intensidad* *del anclaje* y la *localización del ancla*, una distinción de carácter fundamental para interpretar el grado de credibilidad asociado al régimen de metas de inflación.
+
+La lectura conjunta de ambas magnitudes resulta útil para aproximar el proceso de anclaje; por ejemplo, un aumento de $\lambda_t$ indica que una menor proporción de la formación de expectativas puede atribuirse a la inflación observada y, por consiguiente, que adquiere mayor importancia el componente asociado al ancla; en el límite, valores próximos a uno son consistentes con expectativas fuertemente ancladas. Esta información se complementa con $\pi_t^*$, cuya evolución permite identificar el nivel de inflación hacia el cual tienden implícitamente las expectativas dentro del sistema. Por consiguiente, no basta con observar que $\lambda_t$ aumente: desde la perspectiva de la credibilidad de un régimen de metas de inflación, resulta igualmente relevante establecer si el ancla implícita converge hacia la meta anunciada por la autoridad monetaria. La Figura 7 presenta la trayectoria estimada de ambas magnitudes y permite examinar, en conjunto, tanto la intensidad del anclaje como la referencia nominal alrededor de la cual este parece haberse configurado durante el período analizado.
+
+falta corregir ——
+
+Si bien la trayectoria que exhibe \$c_t\$ ilustra la dinámica de formación de expectativas, no constituye por sí misma una medida directamente interpretable del grado de anclaje. En este marco y siguiendo la lógica propuesta por \@demertzis_marcellino_viegi2012, los parámetros estimados del TVP--VAR permiten construir una medida de interpretación económica más directa. En particular, se obtiene \$\\lambda_t\$, a partir de la \@eq-equilibrio-expectativas y siguiendo el procedimiento descrito en la sección 5, así como el nivel de inflación de largo plazo implícito en dicha dinámica, \$\\pi_t\^\*\$. De esta forma, el análisis deja de concentrarse exclusivamente en la sensibilidad de las expectativas frente a la inflación y se desplaza hacia una cuestión más sustantiva: en qué medida las expectativas se han desacoplado de las fluctuaciones transitorias de la inflación y han comenzado a gravitar alrededor de una referencia nominal relativamente estable.
+
+Uno de los conceptos medulares para esta interpretación es el de ancla implícita, \$\\pi_t\^*\$, entendida como el nivel de inflación alrededor del cual tenderían a estabilizarse las expectativas una vez disipados los efectos de las perturbaciones transitorias. Esta magnitud no debe confundirse con la meta oficial de inflación del Banco de Guatemala. Mientras esta última constituye una referencia explícitamente anunciada por la autoridad monetaria, el ancla implícita se infiere del comportamiento conjunto de la inflación y de las expectativas. Precisamente por ello, la comparación entre ambas adquiere especial interés: un elevado grado de anclaje no implica necesariamente que las expectativas se encuentren ancladas en torno al objetivo del banco central, pues podrían mostrar escasa sensibilidad a la inflación corriente y, aun así, gravitar alrededor de un nivel distinto de la meta. En virtud de lo anterior, la evolución conjunta de \$\\lambda_t\$ y \$\\pi_t\^*\$ permite distinguir entre la intensidad del anclaje y la localización del ancla, una distinción fundamental para interpretar el grado de credibilidad asociado al régimen de metas de inflación.
+
+Bajo esta lectura, un aumento de \$\\lambda_t\$ denota una menor dependencia de las expectativas respecto de la inflación observada y, por consiguiente, un mayor peso del componente asociado al ancla; en el límite, valores próximos a uno son consistentes con expectativas fuertemente ancladas. La Figura 7 presenta conjuntamente la trayectoria de \$\\lambda_t\$ y de \$\\pi_t\^\*\$, lo que permite examinar no solo si el anclaje se ha fortalecido a lo largo del tiempo, sino también si la referencia nominal alrededor de la cual se articulan las expectativas ha tendido a aproximarse a la meta anunciada por la autoridad monetaria.
+
+\newpage
 
 # Referencias {.unnumbered}
 
