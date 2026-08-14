@@ -1919,6 +1919,235 @@ ggplot2::ggsave(
 
 print(p_ancla)
 
+# 14.5 Dinámica conjunta: inflación, expectativas, ancla implícita y credibilidad ----
+
+# Figura sintética inspirada en la lógica de Demertzis:
+# eje izquierdo  -> inflación observada, expectativa a 24 meses, ancla implícita y meta
+# eje derecho    -> proxy de credibilidad lambda_t
+#
+# La intención de esta figura no es reemplazar las dos anteriores,
+# sino condensar en una sola lectura la relación entre:
+#   (i) la inflación efectiva,
+#   (ii) el nivel hacia el cual parecen converger las expectativas, y
+#   (iii) el grado de desacoplamiento de las expectativas respecto de la inflación.
+
+# -------------------------------------------------------------------
+# 1. Parámetros de escala para el doble eje
+# -------------------------------------------------------------------
+
+lambda_min <- 0.70
+lambda_max <- 1.00
+
+y_min <- 0
+y_max <- 8
+
+# Transformación lineal para dibujar lambda_t sobre el eje izquierdo
+trayectoria_M3 <- trayectoria_M3 |>
+  dplyr::mutate(
+    lambda_plot = y_min +
+      (lambda_t - lambda_min) / (lambda_max - lambda_min) * (y_max - y_min)
+  )
+
+# -------------------------------------------------------------------
+# 2. Colores auxiliares
+# -------------------------------------------------------------------
+
+col_inflacion <- "black"
+col_lambda <- "#2C6BE0"   # puedes ajustarlo si ya tienes un azul institucional
+
+# -------------------------------------------------------------------
+# 3. Gráfica
+# -------------------------------------------------------------------
+
+p_sintesis_ancla <- ggplot2::ggplot(
+  trayectoria_M3,
+  ggplot2::aes(x = fecha)
+) +
+  
+  # Rango meta oficial
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = banda_inferior,
+      ymax = banda_superior
+    ),
+    fill = col_banda,
+    alpha = 0.10,
+    linewidth = 0
+  ) +
+  
+  # Ancla implícita: banda de confianza tenue
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = pi_estrella_li_95,
+      ymax = pi_estrella_ls_95
+    ),
+    fill = col_serie,
+    alpha = 0.06,
+    linewidth = 0
+  ) +
+  
+  # Inflación observada
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = inflacion,
+      colour = "Inflación observada",
+      linetype = "Inflación observada"
+    ),
+    linewidth = 0.70,
+    alpha = 0.85,
+    lineend = "round"
+  ) +
+  
+  # Expectativa a 24 meses
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = expectativa,
+      colour = "Expectativa a 24 meses",
+      linetype = "Expectativa a 24 meses"
+    ),
+    linewidth = 0.60,
+    alpha = 0.65,
+    lineend = "round"
+  ) +
+  
+  # Meta central
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = meta_inflacion,
+      colour = "Meta central",
+      linetype = "Meta central"
+    ),
+    linewidth = 0.55,
+    alpha = 0.95
+  ) +
+  
+  # Ancla implícita
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = pi_estrella_t,
+      colour = "Ancla inflacionaria implícita",
+      linetype = "Ancla inflacionaria implícita"
+    ),
+    linewidth = 0.95,
+    lineend = "round"
+  ) +
+  
+  # Lambda_t reescalado para el eje derecho
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = lambda_plot,
+      colour = "Proxy de credibilidad",
+      linetype = "Proxy de credibilidad"
+    ),
+    linewidth = 0.75,
+    alpha = 0.95,
+    lineend = "round"
+  ) +
+  
+  ggplot2::scale_colour_manual(
+    values = c(
+      "Inflación observada" = col_inflacion,
+      "Expectativa a 24 meses" = col_expectativa,
+      "Meta central" = col_meta,
+      "Ancla inflacionaria implícita" = col_serie,
+      "Proxy de credibilidad" = col_lambda
+    ),
+    breaks = c(
+      "Ancla inflacionaria implícita",
+      "Expectativa a 24 meses",
+      "Inflación observada",
+      "Meta central",
+      "Proxy de credibilidad"
+    )
+  ) +
+  
+  ggplot2::scale_linetype_manual(
+    values = c(
+      "Inflación observada" = "solid",
+      "Expectativa a 24 meses" = "longdash",
+      "Meta central" = "dotted",
+      "Ancla inflacionaria implícita" = "solid",
+      "Proxy de credibilidad" = "solid"
+    ),
+    breaks = c(
+      "Ancla inflacionaria implícita",
+      "Expectativa a 24 meses",
+      "Inflación observada",
+      "Meta central",
+      "Proxy de credibilidad"
+    )
+  ) +
+  ggplot2::guides(
+    colour = ggplot2::guide_legend(
+      nrow = 2,
+      byrow = TRUE
+    ),
+    linetype = ggplot2::guide_legend(
+      nrow = 2,
+      byrow = TRUE
+    )
+  ) +
+  escala_x_wp +
+  
+  ggplot2::scale_y_continuous(
+    breaks = seq(0, 10, by = 1),
+    expand = ggplot2::expansion(mult = c(0, 0)),
+    name = "Porcentaje",
+    sec.axis = ggplot2::sec_axis(
+      trans = ~ lambda_min + (. - y_min) *
+        (lambda_max - lambda_min) / (y_max - y_min),
+      name = expression(hat(lambda)[t]),
+      breaks = seq(0.70, 1.00, by = 0.05)
+    )
+  ) +
+  ggplot2::coord_cartesian(
+    ylim = c(0, 10)
+  ) +
+  
+  ggplot2::labs(
+    x = NULL,
+    colour = NULL,
+    linetype = NULL
+  ) +
+  
+  tema_wp +
+  
+  ggplot2::theme(
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.direction = "horizontal",
+    legend.spacing.x = grid::unit(0.18, "cm"),
+    legend.key.width = grid::unit(1.25, "cm"),
+    legend.text = ggplot2::element_text(size = 8.3),
+    axis.title.y.right = ggplot2::element_text(
+      colour = col_lambda,
+      size = 13,
+      margin = ggplot2::margin(l = 8)
+    ),
+    axis.text.y.right = ggplot2::element_text(
+      colour = col_lambda
+    ),
+    axis.line.y.right = ggplot2::element_line(
+      colour = col_lambda
+    ),
+    axis.ticks.y.right = ggplot2::element_line(
+      colour = col_lambda
+    )
+  )
+
+ggplot2::ggsave(
+  file.path(
+    carpeta_salida,
+    "figura_05_dinamica_conjunta_ancla_credibilidad.png"
+  ),
+  plot = p_sintesis_ancla,
+  width = 8.8,
+  height = 4.8,
+  dpi = 300,
+  bg = "white"
+)
+
+print(p_sintesis_ancla)
 # 14.5 Brecha del ancla implícita respecto de la meta -------------------------
 
 p_brecha <- ggplot2::ggplot(
@@ -2141,6 +2370,140 @@ ggplot2::ggsave(
 )
 
 print(p_acf_expectativa)
+
+
+# 14.4 Ancla implícita, expectativas, lambda y meta -----------------------------------
+
+p_ancla_lambda <- ggplot2::ggplot(
+  trayectoria_M3,
+  ggplot2::aes(x = fecha)
+) +
+  
+  # Rango meta oficial: referencia institucional de fondo
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = banda_inferior,
+      ymax = banda_superior
+    ),
+    fill = col_banda,
+    alpha = 0.10,
+    linewidth = 0
+  ) +
+  
+  # IC 95% del ancla implícita:
+  # visible, pero deliberadamente tenue
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = pi_estrella_li_95,
+      ymax = pi_estrella_ls_95
+    ),
+    fill = col_serie,
+    alpha = 0.07,
+    linewidth = 0
+  ) +
+  
+  # Expectativa a 24 meses:
+  # serie secundaria frente al ancla implícita
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = expectativa,
+      colour = "Expectativa a 24 meses",
+      linetype = "Expectativa a 24 meses"
+    ),
+    linewidth = 0.55,
+    alpha = 0.65,
+    lineend = "round"
+  ) +
+  
+  # Meta central
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = meta_inflacion,
+      colour = "Meta central",
+      linetype = "Meta central"
+    ),
+    linewidth = 0.55,
+    alpha = 0.90
+  ) +
+  
+  # Ancla implícita: objeto principal de la figura
+  ggplot2::geom_line(
+    ggplot2::aes(
+      y = pi_estrella_t,
+      colour = "Ancla inflacionaria implícita",
+      linetype = "Ancla inflacionaria implícita"
+    ),
+    linewidth = 0.95,
+    lineend = "round"
+  ) +
+  
+  ggplot2::scale_colour_manual(
+    values = c(
+      "Ancla inflacionaria implícita" = col_serie,
+      "Expectativa a 24 meses" = col_expectativa,
+      "Meta central" = col_meta
+    ),
+    breaks = c(
+      "Ancla inflacionaria implícita",
+      "Expectativa a 24 meses",
+      "Meta central"
+    )
+  ) +
+  
+  ggplot2::scale_linetype_manual(
+    values = c(
+      "Ancla inflacionaria implícita" = "solid",
+      "Expectativa a 24 meses" = "longdash",
+      "Meta central" = "dotted"
+    ),
+    breaks = c(
+      "Ancla inflacionaria implícita",
+      "Expectativa a 24 meses",
+      "Meta central"
+    )
+  ) +
+  
+  escala_x_wp +
+  
+  ggplot2::scale_y_continuous(
+    limits = c(2, 7),
+    breaks = seq(2, 7, by = 1),
+    expand = ggplot2::expansion(mult = c(0, 0))
+  ) +
+  
+  ggplot2::labs(
+    x = NULL,
+    y = "Porcentaje",
+    colour = NULL,
+    linetype = NULL
+  ) +
+  
+  tema_wp +
+  
+  ggplot2::theme(
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.direction = "horizontal",
+    legend.spacing.x = grid::unit(0.18, "cm"),
+    legend.key.width = grid::unit(1.2, "cm"),
+    legend.text = ggplot2::element_text(size = 8.5)
+  )
+
+
+ggplot2::ggsave(
+  file.path(
+    carpeta_salida,
+    "figura_04_ancla_implicita.png"
+  ),
+  plot = p_ancla,
+  width = 8.5,
+  height = 4.3,
+  dpi = 300,
+  bg = "white"
+)
+
+print(p_ancla)
+
 
 
 # 15. GUARDAR OBJETOS ----------------------------------------------------------
@@ -2381,7 +2744,7 @@ lineas_resumen <- c(
   paste0(
     "Radio espectral máximo: ",
     fmt(
-      resumen_M3$radio_espectral_maximo
+      resumen_M3$radio_espectral _maximo
     )
   ),
   "",
