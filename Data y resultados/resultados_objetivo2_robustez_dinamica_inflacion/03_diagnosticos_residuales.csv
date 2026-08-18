@@ -1,0 +1,25 @@
+codigo_modelo,descripcion,ecuacion,diagnostico,rezago,estadistico,p_valor
+B0,Modelo base TVP-VAR,inflacion,Ljung-Box,6,37.021009981362084,1.7443605399014572e-6
+B0,Modelo base TVP-VAR,inflacion,Ljung-Box,12,106.39030106349827,0
+B0,Modelo base TVP-VAR,inflacion,Ljung-Box,24,134.094070466809,0
+B0,Modelo base TVP-VAR,expectativa,Ljung-Box,6,3.9406333372027738,0.6847102260038224
+B0,Modelo base TVP-VAR,expectativa,Ljung-Box,12,15.811042223353125,0.2000447765605774
+B0,Modelo base TVP-VAR,expectativa,Ljung-Box,24,21.795542398402848,0.5914686976939341
+R1,Inflación AR(2),inflacion,Ljung-Box,6,18.261110601133105,0.005611745520723077
+R1,Inflación AR(2),inflacion,Ljung-Box,12,65.9887742211979,1.7887539227601224e-9
+R1,Inflación AR(2),inflacion,Ljung-Box,24,82.06221832992144,2.8457465273135085e-8
+R1,Inflación AR(2),expectativa,Ljung-Box,6,12.072122717521056,0.06037904077589362
+R1,Inflación AR(2),expectativa,Ljung-Box,12,26.077973014014376,0.010464476659998612
+R1,Inflación AR(2),expectativa,Ljung-Box,24,44.631445430737486,0.006437772144995413
+R2,Inflación AR(4),inflacion,Ljung-Box,6,7.542839143659827,0.27354420262352086
+R2,Inflación AR(4),inflacion,Ljung-Box,12,56.779408585989565,8.662971118233997e-8
+R2,Inflación AR(4),inflacion,Ljung-Box,24,84.72029672478637,1.0585430310072752e-8
+R2,Inflación AR(4),expectativa,Ljung-Box,6,5.85144516779293,0.44003554281376267
+R2,Inflación AR(4),expectativa,Ljung-Box,12,18.67482653351877,0.09668386575559684
+R2,Inflación AR(4),expectativa,Ljung-Box,24,40.8252481696589,0.0174073731192107
+R3,Inflación AR(1) + rezago 12,inflacion,Ljung-Box,6,30.49474205747814,3.1646755295988704e-5
+R3,Inflación AR(1) + rezago 12,inflacion,Ljung-Box,12,107.55173249183215,0
+R3,Inflación AR(1) + rezago 12,inflacion,Ljung-Box,24,156.55309107898873,0
+R3,Inflación AR(1) + rezago 12,expectativa,Ljung-Box,6,6.543493831366015,0.3651320537448435
+R3,Inflación AR(1) + rezago 12,expectativa,Ljung-Box,12,12.971139442530218,0.3711418848106056
+R3,Inflación AR(1) + rezago 12,expectativa,Ljung-Box,24,27.51657937052905,0.2809559088488316

@@ -1,0 +1,2 @@
+especificacion,c_inicial,c_final,lambda_inicial,lambda_final,pi_estrella_inicial,pi_estrella_final,MAE_ancla_meta,porcentaje_ancla_dentro_banda,radio_espectral_maximo,p_Ljung_Box_inflacion_12,p_Ljung_Box_expectativa_12
+Modelo base TVP-VAR,0.184,0.089,0.753,0.881,6.392,3.851,0.455,85.279,0.944,0,0.2

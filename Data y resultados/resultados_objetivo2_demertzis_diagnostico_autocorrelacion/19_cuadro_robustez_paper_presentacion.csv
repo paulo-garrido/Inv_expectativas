@@ -1,0 +1,7 @@
+codigo_modelo,descripcion,c_inicial,c_final,lambda_inicial,lambda_final,pi_estrella_inicial,pi_estrella_final,correlacion_lambda_con_S0,correlacion_pi_estrella_con_S0,p_LB_inflacion_12,p_LB_expectativas_12,AIC,BIC
+S0,M3 base AR(1),0.03,0.03,0.708,0.708,4.366,4.366,1,1,0,0.064,262.434,294.637
+S1,M3 AR(1) + inflación rezagada 12 meses,0.03,0.03,0.708,0.708,4.366,4.366,-0.015,0.668,0,0.046,265.243,300.667
+S2,M3 con cuatro rezagos de inflación y expectativas,0.03,0.03,0.708,0.708,4.366,4.366,0.244,0.786,0,0.016,259.031,310.557
+S3,M3 AR(1) + controles externos,0.03,0.03,0.708,0.708,4.366,4.366,-0.867,-0.647,0,0.093,276.524,318.389
+S5,M3 rezago 12 + controles externos,0.03,0.03,0.708,0.708,4.366,4.366,-0.442,0.547,0,0.089,275.283,320.368
+S6,M3 cuatro rezagos + controles externos,0.03,0.03,0.708,0.708,4.366,4.366,-0.351,0.665,0,0.02,271.123,332.31

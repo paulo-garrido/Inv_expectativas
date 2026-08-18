@@ -1,0 +1,8 @@
+concepto,columna,disponible
+Inflación interanual,infl_gt,TRUE
+Expectativa a 24 meses,exp_inf_24m,TRUE
+Tipo de cambio,tcdep_var,TRUE
+Petróleo,oil_var,TRUE
+Inflación externa,infl_us,TRUE
+Brecha de actividad,NA,FALSE
+Índice de precios opcional,NA,FALSE

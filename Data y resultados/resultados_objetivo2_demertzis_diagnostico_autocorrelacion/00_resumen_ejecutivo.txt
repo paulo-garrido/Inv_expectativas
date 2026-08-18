@@ -1,0 +1,16 @@
+
+======================================================================
+DEMERTZIS / M3 - ROBUSTEZ DE LA ECUACION DE INFLACION
+======================================================================
+Archivo: bd_sample_modelo.csv
+Muestra común: 2011-02 a 2026-06
+Observaciones: 185
+
+RESULTADOS PRINCIPALES
+Mejor BIC: S0 | M3 base AR(1)
+Mejor Ljung-Box inflación lag 12: S6 | p = 9.9740e-07
+Correlación lambda del mejor BIC con S0: 1.00000
+Correlación pi estrella del mejor BIC con S0: 1.00000
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas/Data y resultados/resultados_objetivo2_demertzis_diagnostico_autocorrelacion
+======================================================================

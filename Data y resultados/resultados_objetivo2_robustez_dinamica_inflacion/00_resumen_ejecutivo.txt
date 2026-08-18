@@ -1,0 +1,32 @@
+
+======================================================================
+ROBUSTEZ DEL TVP-VAR: DINÁMICA ALTERNATIVA DE INFLACIÓN
+======================================================================
+Archivo de datos: bd_sample_modelo.csv
+Fecha final: 2026-06
+
+MODELO BASE B0
+lambda inicial / final: 0.7535 / 0.8814
+pi estrella inicial / final: 6.3916 / 3.8514
+
+VALIDACIÓN FRENTE AL SCRIPT PRINCIPAL
+Archivo principal disponible: TRUE
+Corr(lambda B0, principal): 1.000000
+Corr(pi estrella B0, principal): 1.000000
+
+LECTURA DEL EJERCICIO
+Las especificaciones R1-R3 alteran únicamente la dinámica de la ecuación
+auxiliar de inflación. La ecuación de expectativas y la definición de
+lambda_t y pi_estrella_t permanecen sin cambios.
+
+Para evaluar robustez, priorice:
+1. correlaciones de c_t, lambda_t y pi_estrella_t con B0;
+2. valores iniciales y finales de lambda_t y pi_estrella_t;
+3. cambios en el Ljung-Box de la ecuación de inflación;
+4. Q_c0 y Q_c positivas y económicamente plausibles.
+
+AIC y BIC se reportan como auxiliares, pero no deben compararse mecánicamente
+entre modelos con distinta fecha inicial.
+
+Resultados guardados en: /Users/paulogarridogrijalva/Documents/PES/seminario/Inv_expectativas/Data y resultados/resultados_objetivo2_robustez_dinamica_inflacion
+======================================================================
