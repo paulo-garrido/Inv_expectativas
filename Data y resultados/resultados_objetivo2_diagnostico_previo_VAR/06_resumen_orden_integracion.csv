@@ -1,0 +1,3 @@
+variable,ADF_nivel_rechaza_raiz,KPSS_nivel_rechaza_estacionariedad,ADF_diff_rechaza_raiz,KPSS_diff_rechaza_estacionariedad,orden_integracion
+Inflación,FALSE,FALSE,TRUE,FALSE,Compatible con I(1)
+Expectativa 24 meses,FALSE,TRUE,TRUE,FALSE,Compatible con I(1)

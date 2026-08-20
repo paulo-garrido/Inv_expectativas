@@ -1,0 +1,4 @@
+hipotesis,numero_restricciones,estadistico_Wald,p_valor,conclusion_5pct
+H1: inflación rezagada no afecta expectativas,4,56.73267669404941,1.407685322353261e-11,Se rechaza la hipótesis
+H2: expectativas ancladas a una constante,8,2458.124771321855,0,Se rechaza la hipótesis
+H3: expectativas rezagadas no afectan inflación,4,7.10895612378527,0.1302412051460174,No se rechaza la hipótesis

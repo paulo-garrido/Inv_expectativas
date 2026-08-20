@@ -1,0 +1,2 @@
+hipotesis_nula,estadistico_LR,grados_libertad_referenciales,p_valor_chi2_6_referencial,advertencia
+Q_a0=Q_a=Q_b=Q_c0=Q_c=Q_d=0,103.3345103337254,6,5.05131090769094e-20,"Las seis varianzas están en la frontera bajo H0. El p-valor chi-cuadrado es solamente referencial; AIC, BIC y el comportamiento de Q deben tener mayor peso."

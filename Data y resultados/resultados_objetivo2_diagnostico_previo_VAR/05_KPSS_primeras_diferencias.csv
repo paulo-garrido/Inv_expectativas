@@ -1,0 +1,3 @@
+variable,transformacion,prueba,estadistico,critico_5pct,rechaza_H0_5pct,interpretacion_5pct
+Inflación,Primera diferencia,KPSS,0.09354896569226309,0.463,FALSE,No se rechaza estacionariedad
+Expectativa 24 meses,Primera diferencia,KPSS,0.11581296259752855,0.463,FALSE,No se rechaza estacionariedad

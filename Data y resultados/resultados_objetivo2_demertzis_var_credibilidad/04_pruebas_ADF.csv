@@ -1,0 +1,3 @@
+variable,estadistico_ADF,critico_1pct,critico_5pct,critico_10pct,rechaza_raiz_unitaria_5pct
+inflacion,-1.4664393035620764,-3.46,-2.88,-2.57,FALSE
+expectativa,-2.3620420690184725,-3.46,-2.88,-2.57,FALSE

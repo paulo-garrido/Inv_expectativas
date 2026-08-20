@@ -1,0 +1,3 @@
+variable,transformacion,prueba,estadistico,critico_1pct,critico_5pct,critico_10pct,rechaza_H0_5pct,interpretacion_5pct
+Inflación,Nivel,ADF,-1.4664393035620764,-3.46,-2.88,-2.57,FALSE,No se rechaza raíz unitaria
+Expectativa 24 meses,Nivel,ADF,-2.3620420690184725,-3.46,-2.88,-2.57,FALSE,No se rechaza raíz unitaria

@@ -133,7 +133,7 @@ El estudio analiza la evolución del anclaje de las expectativas de inflación a
 
 La inestabilidad macroeconómica que caracterizó la economía mundial durante la segunda mitad del siglo XX ---particularmente en materia de inflación--- reforzó el papel de la política monetaria como una herramienta transversal en la política económica en materia de estabilidad, debido a que, en última instancia, los bancos centrales son las instituciones encargadas de contribuir a un entorno predecible para las decisiones de consumo, ahorro, inversión y fijación de precios.
 
-Conforme se consolidó esta visión, se evidenció que la capacidad de la política monetaria para cumplir ese cometido no se circunscribe al uso de instrumentos de política, sino ---fundamentalmente--- a la credibilidad con que la autoridad monetaria logra influir sobre las expectativas de los agentes; en este sentido, @mishkin2007 arguye que las expectativas son críticas para los resultados de la política monetaria y que un ancla nominal sólida constituye un elemento clave para obtener buenos resultados macroeconómicos, de esa cuenta, que la credibilidad del banco central constituya un rasgo esencial de la eficacia de la política monetaria; bajo esta premisa, uno de los resultados más relevantes de una política monetaria creíble es aquello que la literatura denomina expectativas de inflación bien ancladas.
+Conforme se consolidó esta visión, se evidenció que la capacidad de la política monetaria para cumplir ese cometido no se circunscribe al uso de instrumentos de política, sino ---fundamentalmente--- a la credibilidad con que la autoridad monetaria logra influir sobre las expectativas de los agentes; en este sentido, @mishkin2007 arguye que las expectativas son críticas para los resultados de la política monetaria y que un ancla nominal sólida constituye un elemento clave para obtener buenos resultados macroeconómicos, de esa cuenta, que la credibilidad del banco central constituya un rasgo esencial de la eficacia de la política monetaria; bajo esta premisa, uno de los resultados más relevantes de una política monetaria creíble es lo que la literatura denomina expectativas de inflación bien ancladas.
 
 Esta premisa conduce, sin embargo, a una cuestión menos evidente: ¿qué significa, en términos empíricos, que las expectativas estén ancladas? Su proximidad respecto de la meta constituye una primera señal, pero no una condición suficiente. Es decir, unas expectativas pueden mantenerse cerca del objetivo y, aun así, reaccionar de manera importante a cada movimiento de la inflación observada; del mismo modo, pueden mostrar una sensibilidad reducida frente a las perturbaciones recientes y gravitar ---sin embargo--- alrededor de un nivel distinto a la meta de inflación anunciada por el banco central; en este sentido, el problema del anclaje tiene, por tanto, al menos dos dimensiones: la intensidad con que la inflación observada influye sobre las expectativas y el nivel alrededor del cual estas terminan organizándose.
 
@@ -1088,3 +1088,1637 @@ En este marco, el aporte de la investigación radica en complementar la evidenci
 
 ::: {#refs}
 :::
+
+```{=latex}
+\clearpage
+\onecolumn
+```
+```{r}
+#| label: setup-apendices
+#| include: false
+
+library(dplyr)
+library(tidyr)
+library(readr)
+library(ggplot2)
+library(knitr)
+
+# ============================================================================
+# LOCALIZACIÓN DE LA CARPETA DE DATOS
+# ============================================================================
+
+candidatos_raiz <- c(
+  "Data y resultados",
+  ".",
+  "../Data y resultados",
+  "../../Data y resultados",
+  "../../../Data y resultados"
+)
+
+es_raiz_datos <- vapply(
+  candidatos_raiz,
+  function(x) {
+
+    dir.exists(
+      file.path(
+        x,
+        "resultados_objetivo2_TVP_VAR"
+      )
+    ) ||
+      file.exists(
+        file.path(
+          x,
+          "bd_sample_modelo.csv"
+        )
+      )
+  },
+  logical(1)
+)
+
+if (!any(es_raiz_datos)) {
+
+  stop(
+    "No fue posible localizar la carpeta 'Data y resultados'. ",
+    "Revise la ubicación del archivo .qmd."
+  )
+}
+
+raiz_datos <- normalizePath(
+  candidatos_raiz[
+    which(es_raiz_datos)[1]
+  ],
+  mustWork = TRUE
+)
+
+
+# ============================================================================
+# CARPETAS DE RESULTADOS
+# ============================================================================
+
+dir_tvp <- file.path(
+  raiz_datos,
+  "resultados_objetivo2_TVP_VAR"
+)
+
+dir_diag_previo <- file.path(
+  raiz_datos,
+  "resultados_objetivo2_diagnostico_previo_VAR"
+)
+
+dir_robustez_dinamica <- file.path(
+  raiz_datos,
+  "resultados_objetivo2_robustez_dinamica_inflacion"
+)
+
+dir_medidas_inflacion <- file.path(
+  raiz_datos,
+  "resultados_objetivo2_medidas_alternativas_inflacion"
+)
+
+dir_diferencias <- file.path(
+  raiz_datos,
+  "resultados_objetivo2_robustez_primeras_diferencias"
+)
+
+
+# ============================================================================
+# FUNCIONES AUXILIARES
+# ============================================================================
+
+leer_csv_obligatorio <- function(ruta) {
+
+  if (!file.exists(ruta)) {
+
+    stop(
+      "No se encontró el archivo requerido:\n",
+      ruta
+    )
+  }
+
+  readr::read_csv(
+    ruta,
+    show_col_types = FALSE
+  )
+}
+
+
+buscar_rolling <- function(ventana) {
+
+  patron <- paste0(
+    "^rolling_brecha_infl_tc_",
+    ventana,
+    "m(\\([0-9]+\\))?\\.csv$"
+  )
+
+  archivos <- list.files(
+    raiz_datos,
+    pattern = patron,
+    recursive = TRUE,
+    full.names = TRUE
+  )
+
+  if (length(archivos) == 0) {
+
+    stop(
+      "No se encontró el archivo rolling para ventana de ",
+      ventana,
+      " meses."
+    )
+  }
+
+  archivos[
+    which.max(
+      file.info(
+        archivos
+      )$mtime
+    )
+  ]
+}
+
+
+imprimir_tabla <- function(
+    tabla,
+    align = NULL
+) {
+
+  if (knitr::is_latex_output()) {
+
+    knitr::kable(
+      tabla,
+      format = "latex",
+      booktabs = TRUE,
+      longtable = FALSE,
+      align = align
+    )
+
+  } else {
+
+    knitr::kable(
+      tabla,
+      format = "pipe",
+      align = align
+    )
+  }
+}
+
+
+fmt <- function(
+    x,
+    digitos = 3
+) {
+
+  ifelse(
+    is.finite(x),
+    formatC(
+      x,
+      format = "f",
+      digits = digitos
+    ),
+    "NA"
+  )
+}
+
+
+# Formato uniforme de p-valores.
+# Evita valores como 0.00e+00.
+
+fmt_p <- function(x) {
+
+  ifelse(
+    is.finite(x),
+    format.pval(
+      x,
+      digits = 3,
+      eps = 0.001
+    ),
+    "NA"
+  )
+}
+
+
+# ============================================================================
+# DATOS DEL APÉNDICE B
+# ============================================================================
+
+adf_niveles <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "02_ADF_niveles.csv"
+  )
+)
+
+kpss_niveles <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "03_KPSS_niveles.csv"
+  )
+)
+
+adf_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "04_ADF_primeras_diferencias.csv"
+  )
+)
+
+kpss_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "05_KPSS_primeras_diferencias.csv"
+  )
+)
+
+seleccion_rezagos <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "08_seleccion_rezagos_VAR.csv"
+  )
+)
+
+johansen <- leer_csv_obligatorio(
+  file.path(
+    dir_diag_previo,
+    "09_cointegracion_Johansen.csv"
+  )
+)
+
+
+# ============================================================================
+# TABLA B.1
+# PRUEBAS DE ESTACIONARIEDAD
+# ============================================================================
+
+tabla_b1 <- adf_niveles |>
+
+  dplyr::select(
+    variable,
+    ADF_nivel = estadistico,
+    ADF_nivel_rechaza = rechaza_H0_5pct
+  ) |>
+
+  dplyr::left_join(
+
+    kpss_niveles |>
+      dplyr::select(
+        variable,
+        KPSS_nivel = estadistico,
+        KPSS_nivel_rechaza = rechaza_H0_5pct
+      ),
+
+    by = "variable"
+  ) |>
+
+  dplyr::left_join(
+
+    adf_diff |>
+      dplyr::select(
+        variable,
+        ADF_diff = estadistico,
+        ADF_diff_rechaza = rechaza_H0_5pct
+      ),
+
+    by = "variable"
+  ) |>
+
+  dplyr::left_join(
+
+    kpss_diff |>
+      dplyr::select(
+        variable,
+        KPSS_diff = estadistico,
+        KPSS_diff_rechaza = rechaza_H0_5pct
+      ),
+
+    by = "variable"
+  ) |>
+
+  dplyr::mutate(
+
+    Lectura = dplyr::case_when(
+
+      ADF_nivel_rechaza &
+        !KPSS_nivel_rechaza ~
+        "Estacionaria en niveles",
+
+      !ADF_nivel_rechaza &
+        KPSS_nivel_rechaza ~
+        "Compatible con I(1)",
+
+      !ADF_nivel_rechaza &
+        !KPSS_nivel_rechaza ~
+        "Evidencia mixta en niveles",
+
+      TRUE ~
+        "Evidencia mixta"
+    )
+  ) |>
+
+  dplyr::transmute(
+
+    Variable = variable,
+
+    `ADF nivel` = round(
+      ADF_nivel,
+      3
+    ),
+
+    `KPSS nivel` = round(
+      KPSS_nivel,
+      3
+    ),
+
+    `ADF Δ` = round(
+      ADF_diff,
+      3
+    ),
+
+    `KPSS Δ` = round(
+      KPSS_diff,
+      3
+    ),
+
+    Lectura
+  )
+
+
+# ============================================================================
+# JOHANSEN
+# ============================================================================
+
+joh_trace <- johansen |>
+  dplyr::filter(
+    prueba == "Traza",
+    grepl(
+      "r = 0",
+      hipotesis,
+      fixed = TRUE
+    )
+  )
+
+joh_eigen <- johansen |>
+  dplyr::filter(
+    prueba == "Máximo eigenvalor",
+    grepl(
+      "r = 0",
+      hipotesis,
+      fixed = TRUE
+    )
+  )
+
+
+# ============================================================================
+# TABLA B.2
+# SELECCIÓN DE REZAGOS
+# ============================================================================
+
+tabla_b2 <- seleccion_rezagos |>
+  dplyr::transmute(
+    Criterio = criterio,
+    `Rezagos seleccionados` = rezagos
+  )
+
+
+# ============================================================================
+# DIAGNÓSTICOS DEL MODELO CENTRAL M3
+# ============================================================================
+
+diag_m3 <- leer_csv_obligatorio(
+  file.path(
+    dir_tvp,
+    "09_diagnosticos_residuales_M3.csv"
+  )
+)
+
+estabilidad_m3 <- leer_csv_obligatorio(
+  file.path(
+    dir_tvp,
+    "10_estabilidad_local_M3.csv"
+  )
+)
+
+
+pct_estable <- 100 * mean(
+  estabilidad_m3$estable,
+  na.rm = TRUE
+)
+
+radio_max <- max(
+  estabilidad_m3$radio_espectral,
+  na.rm = TRUE
+)
+
+
+p_lb_inf_12 <- diag_m3 |>
+
+  dplyr::filter(
+    grepl(
+      "Infl",
+      ecuacion,
+      ignore.case = TRUE
+    ),
+    diagnostico == "Ljung-Box",
+    rezago == 12
+  ) |>
+
+  dplyr::pull(
+    p_valor
+  )
+
+
+p_lb_exp_12 <- diag_m3 |>
+
+  dplyr::filter(
+    grepl(
+      "Expect",
+      ecuacion,
+      ignore.case = TRUE
+    ),
+    diagnostico == "Ljung-Box",
+    rezago == 12
+  ) |>
+
+  dplyr::pull(
+    p_valor
+  )
+
+
+tabla_b3 <- tibble::tibble(
+
+  Indicador = c(
+    "Períodos localmente estables",
+    "Radio espectral máximo",
+    "Ljung–Box, inflación, 12 rezagos",
+    "Ljung–Box, expectativas, 12 rezagos"
+  ),
+
+  Resultado = c(
+
+    paste0(
+      fmt(
+        pct_estable,
+        1
+      ),
+      "%"
+    ),
+
+    fmt(
+      radio_max,
+      3
+    ),
+
+    fmt_p(
+      p_lb_inf_12
+    ),
+
+    fmt_p(
+      p_lb_exp_12
+    )
+  ),
+
+  Lectura = c(
+    "Radio espectral inferior a uno",
+    "Debe permanecer por debajo de uno",
+    "Persistencia de autocorrelación residual",
+    "Sin evidencia relevante de autocorrelación"
+  )
+)
+
+
+# ============================================================================
+# TABLA B.4
+# ROBUSTEZ DINÁMICA
+# ============================================================================
+
+robustez_dinamica <- leer_csv_obligatorio(
+  file.path(
+    dir_robustez_dinamica,
+    "07_cuadro_robustez_paper.csv"
+  )
+)
+
+
+tabla_b4 <- robustez_dinamica |>
+
+  dplyr::transmute(
+
+    Especificación =
+      especificacion,
+
+    `λ final` =
+      round(
+        lambda_final,
+        3
+      ),
+
+    `π* final` =
+      round(
+        pi_estrella_final,
+        3
+      ),
+
+    `Corr. λ` =
+      round(
+        correlacion_lambda_con_base,
+        3
+      ),
+
+    `Corr. π*` =
+      round(
+        correlacion_pi_estrella_con_base,
+        3
+      ),
+
+    `p LB inflación` =
+      fmt_p(
+        p_LB_inflacion_12
+      )
+  )
+
+
+# ============================================================================
+# ROBUSTEZ EN PRIMERAS DIFERENCIAS
+# ============================================================================
+
+tray_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "04_trayectorias_TVP_diferencias.csv"
+  )
+) |>
+
+  dplyr::mutate(
+    fecha = as.Date(
+      fecha
+    )
+  )
+
+
+hiper_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "05_hiperparametros_TVP_diferencias.csv"
+  )
+)
+
+
+periodos_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "07_beta_por_subperiodos.csv"
+  )
+)
+
+
+diag_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "08_diagnosticos_residuales.csv"
+  )
+)
+
+
+beta_inicio <- dplyr::first(
+  tray_diff$beta_t
+)
+
+beta_final <- dplyr::last(
+  tray_diff$beta_t
+)
+
+
+beta_media_inicio <- periodos_diff |>
+
+  dplyr::filter(
+    periodo == "2010-2014"
+  ) |>
+
+  dplyr::pull(
+    beta_media
+  )
+
+
+beta_media_final <- periodos_diff |>
+
+  dplyr::filter(
+    periodo == "2023-2026"
+  ) |>
+
+  dplyr::pull(
+    beta_media
+  )
+
+
+Q_beta_diff <- hiper_diff |>
+
+  dplyr::filter(
+    parametro == "Q_beta"
+  ) |>
+
+  dplyr::pull(
+    valor
+  )
+
+
+p_lb_diff_12 <- diag_diff |>
+
+  dplyr::filter(
+    diagnostico == "Ljung-Box",
+    rezago == 12
+  ) |>
+
+  dplyr::pull(
+    p_valor
+  )
+
+
+# ============================================================================
+# DATOS DEL APÉNDICE C
+# ============================================================================
+
+medidas_inflacion <- leer_csv_obligatorio(
+  file.path(
+    dir_medidas_inflacion,
+    "06_trayectorias_TVP_condicional.csv"
+  )
+) |>
+
+  dplyr::mutate(
+    fecha = as.Date(
+      fecha
+    )
+  )
+
+
+base_medida <- medidas_inflacion |>
+
+  dplyr::filter(
+    variable ==
+      "infl_interanual_base"
+  ) |>
+
+  dplyr::select(
+    fecha,
+    lambda_base =
+      lambda_t,
+    pi_base =
+      pi_estrella_t
+  )
+
+
+resumen_medidas <- medidas_inflacion |>
+
+  dplyr::group_by(
+    variable,
+    medida
+  ) |>
+
+  dplyr::summarise(
+
+    lambda_inicial =
+      dplyr::first(
+        lambda_t
+      ),
+
+    lambda_final =
+      dplyr::last(
+        lambda_t
+      ),
+
+    pi_inicial =
+      dplyr::first(
+        pi_estrella_t
+      ),
+
+    pi_final =
+      dplyr::last(
+        pi_estrella_t
+      ),
+
+    .groups = "drop"
+  )
+
+
+correlaciones_medidas <- medidas_inflacion |>
+
+  dplyr::inner_join(
+    base_medida,
+    by = "fecha"
+  ) |>
+
+  dplyr::group_by(
+    variable,
+    medida
+  ) |>
+
+  dplyr::summarise(
+
+    corr_lambda =
+      cor(
+        lambda_t,
+        lambda_base,
+        use = "complete.obs"
+      ),
+
+    corr_pi =
+      cor(
+        pi_estrella_t,
+        pi_base,
+        use = "complete.obs"
+      ),
+
+    .groups = "drop"
+  )
+
+
+# ============================================================================
+# TABLA C.1
+#
+# Se ordena primero la especificación base y posteriormente
+# las medidas alternativas.
+# ============================================================================
+
+tabla_c1 <- resumen_medidas |>
+
+  dplyr::left_join(
+    correlaciones_medidas,
+    by = c(
+      "variable",
+      "medida"
+    )
+  ) |>
+
+  dplyr::mutate(
+
+    Medida = dplyr::case_when(
+
+      variable ==
+        "infl_interanual_base" ~
+        "Interanual base",
+
+      variable ==
+        "infl_interanual_ipc" ~
+        "Interanual desde IPC",
+
+      variable ==
+        "infl_mensual_sa_anualizada" ~
+        "Mensual desest. anualizada",
+
+      variable ==
+        "infl_3m_sa_anualizada" ~
+        "3 meses desest. anualizada",
+
+      variable ==
+        "infl_subyacente" ~
+        "Inflación subyacente",
+
+      TRUE ~
+        medida
+    ),
+
+    orden_medida = dplyr::case_when(
+
+      variable ==
+        "infl_interanual_base" ~
+        1,
+
+      variable ==
+        "infl_interanual_ipc" ~
+        2,
+
+      variable ==
+        "infl_subyacente" ~
+        3,
+
+      variable ==
+        "infl_3m_sa_anualizada" ~
+        4,
+
+      variable ==
+        "infl_mensual_sa_anualizada" ~
+        5,
+
+      TRUE ~
+        99
+    )
+  ) |>
+
+  dplyr::arrange(
+    orden_medida
+  ) |>
+
+  dplyr::transmute(
+
+    Medida,
+
+    `λ final` =
+      round(
+        lambda_final,
+        3
+      ),
+
+    `π* final` =
+      round(
+        pi_final,
+        3
+      ),
+
+    `Corr. λ` =
+      round(
+        corr_lambda,
+        3
+      ),
+
+    `Corr. π*` =
+      round(
+        corr_pi,
+        3
+      )
+  )
+
+
+# ============================================================================
+# DATOS FIGURA C.1
+#
+# Los títulos de los paneles se dejan en texto plano para evitar
+# problemas de renderizado de lambda y pi* en facet_wrap().
+# ============================================================================
+
+datos_fig_c <- medidas_inflacion |>
+
+  dplyr::mutate(
+
+    Medida = dplyr::case_when(
+
+      variable ==
+        "infl_interanual_base" ~
+        "Interanual base",
+
+      variable ==
+        "infl_interanual_ipc" ~
+        "Interanual IPC",
+
+      variable ==
+        "infl_subyacente" ~
+        "Subyacente",
+
+      variable ==
+        "infl_3m_sa_anualizada" ~
+        "3m SA",
+
+      variable ==
+        "infl_mensual_sa_anualizada" ~
+        "Mensual SA",
+
+      TRUE ~
+        medida
+    ),
+
+    Medida = factor(
+      Medida,
+      levels = c(
+        "Interanual base",
+        "Interanual IPC",
+        "Subyacente",
+        "3m SA",
+        "Mensual SA"
+      )
+    )
+  ) |>
+
+  dplyr::select(
+    fecha,
+    Medida,
+    lambda_t,
+    pi_estrella_t
+  ) |>
+
+  tidyr::pivot_longer(
+
+    cols = c(
+      lambda_t,
+      pi_estrella_t
+    ),
+
+    names_to =
+      "Indicador",
+
+    values_to =
+      "Valor"
+  ) |>
+
+  dplyr::mutate(
+
+    Indicador = dplyr::recode(
+
+      Indicador,
+
+      lambda_t =
+        "Proxy de credibilidad",
+
+      pi_estrella_t =
+        "Ancla inflacionaria implícita"
+    ),
+
+    Indicador = factor(
+      Indicador,
+      levels = c(
+        "Ancla inflacionaria implícita",
+        "Proxy de credibilidad"
+      )
+    )
+  )
+
+
+# ============================================================================
+# DATOS DEL APÉNDICE D
+# ============================================================================
+
+leer_rolling <- function(
+    ventana
+) {
+
+  leer_csv_obligatorio(
+    buscar_rolling(
+      ventana
+    )
+  ) |>
+
+    dplyr::mutate(
+
+      fecha_fin = as.Date(
+        fecha_fin
+      ),
+
+      ventana =
+        paste0(
+          ventana,
+          " meses"
+        )
+    )
+}
+
+
+rolling_todos <- dplyr::bind_rows(
+
+  leer_rolling(
+    36
+  ),
+
+  leer_rolling(
+    48
+  ),
+
+  leer_rolling(
+    50
+  ),
+
+  leer_rolling(
+    60
+  )
+) |>
+
+  dplyr::filter(
+    fecha_fin <=
+      as.Date(
+        "2026-06-01"
+      )
+  )
+
+
+rangos_rolling <- rolling_todos |>
+
+  dplyr::group_by(
+    ventana
+  ) |>
+
+  dplyr::summarise(
+
+    inicio =
+      min(
+        fecha_fin
+      ),
+
+    fin =
+      max(
+        fecha_fin
+      ),
+
+    .groups =
+      "drop"
+  )
+
+
+inicio_comun <- max(
+  rangos_rolling$inicio
+)
+
+fin_comun <- min(
+  rangos_rolling$fin
+)
+
+
+rolling_comun <- rolling_todos |>
+
+  dplyr::filter(
+
+    fecha_fin >=
+      inicio_comun,
+
+    fecha_fin <=
+      fin_comun
+  )
+
+
+rolling_base60 <- rolling_comun |>
+
+  dplyr::filter(
+    ventana ==
+      "60 meses"
+  ) |>
+
+  dplyr::select(
+    fecha_fin,
+    beta_60 =
+      beta
+  )
+
+
+tabla_d1 <- rolling_comun |>
+
+  dplyr::left_join(
+    rolling_base60,
+    by =
+      "fecha_fin"
+  ) |>
+
+  dplyr::group_by(
+    ventana
+  ) |>
+
+  dplyr::summarise(
+
+    correlacion =
+      cor(
+        beta,
+        beta_60,
+        use =
+          "complete.obs"
+      ),
+
+    MAD =
+      mean(
+        abs(
+          beta -
+            beta_60
+        ),
+        na.rm =
+          TRUE
+      ),
+
+    .groups =
+      "drop"
+  ) |>
+
+  dplyr::mutate(
+
+    orden = as.numeric(
+      gsub(
+        " meses",
+        "",
+        ventana
+      )
+    )
+  ) |>
+
+  dplyr::arrange(
+    orden
+  ) |>
+
+  dplyr::transmute(
+
+    Ventana =
+      ventana,
+
+    `Corr. con 60 meses` =
+      round(
+        correlacion,
+        3
+      ),
+
+    `Diferencia absoluta media` =
+      round(
+        MAD,
+        3
+      )
+  )
+
+
+# ============================================================================
+# TEMA GRÁFICO COMÚN
+# ============================================================================
+
+tema_apendice <-
+  ggplot2::theme_minimal(
+    base_size = 9.5
+  ) +
+
+  ggplot2::theme(
+
+    panel.grid.minor =
+      ggplot2::element_blank(),
+
+    legend.position =
+      "bottom",
+
+    legend.title =
+      ggplot2::element_blank(),
+
+    axis.title.x =
+      ggplot2::element_blank(),
+
+    plot.title =
+      ggplot2::element_blank()
+  )
+```
+
+# Apéndice A. Representación estado-espacio y estimación mediante filtro de Kalman {.unnumbered}
+
+Este apéndice complementa la descripción metodológica del modelo TVP--VAR presentada en el cuerpo del documento. Su propósito es formalizar la representación estado-espacio y precisar el procedimiento mediante el cual se recuperan las trayectorias de los parámetros variantes. La derivación de la proxy de credibilidad, $\lambda_t$, y del ancla inflacionaria implícita, $\pi_t^*$, no se reproduce aquí, dado que ambas expresiones se desarrollan directamente en la sección metodológica principal.
+
+## A.1. Representación estado-espacio {.unnumbered}
+
+La especificación empírica central puede escribirse como:
+
+$$
+\pi_t
+=
+a_0
++
+a\pi_{t-1}
++
+b e_{t-1}^{24}
++
+\varepsilon_{\pi,t},
+$$
+
+$$
+e_t^{24}
+=
+c_{0t}
++
+c_t\pi_{t-1}
++
+d e_{t-1}^{24}
++
+\varepsilon_{e,t}.
+$$
+
+El vector de variables observables se define como:
+
+$$
+\mathbf{y}_t
+=
+\begin{bmatrix}
+\pi_t\\
+e_t^{24}
+\end{bmatrix},
+$$
+
+mientras que el vector de estados contiene los seis coeficientes del sistema:
+
+$$
+\boldsymbol{\alpha}_t
+=
+\begin{bmatrix}
+a_0\\
+a\\
+b\\
+c_{0t}\\
+c_t\\
+d
+\end{bmatrix}.
+$$
+
+La ecuación de medición puede expresarse como:
+
+$$
+\mathbf{y}_t
+=
+Z_t\boldsymbol{\alpha}_t
++
+\boldsymbol{\varepsilon}_t,
+$$
+
+donde:
+
+$$
+Z_t
+=
+\begin{bmatrix}
+1 & \pi_{t-1} & e_{t-1}^{24} & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & \pi_{t-1} & e_{t-1}^{24}
+\end{bmatrix},
+$$
+
+y:
+
+$$
+\boldsymbol{\varepsilon}_t
+\sim
+N(\mathbf{0},H).
+$$
+
+En la especificación restringida utilizada como modelo central, la variación temporal se concentra exclusivamente en $c_{0t}$ y $c_t$. En consecuencia, la ecuación de transición se representa como:
+
+$$
+\boldsymbol{\alpha}_t
+=
+T\boldsymbol{\alpha}_{t-1}
++
+\boldsymbol{\eta}_t,
+\qquad
+T=I_6,
+$$
+
+con:
+
+$$
+\boldsymbol{\eta}_t
+\sim
+N(\mathbf{0},Q),
+$$
+
+y:
+
+$$
+Q=
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & Q_{c_0} & 0 & 0\\
+0 & 0 & 0 & 0 & Q_c & 0\\
+0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}.
+$$
+
+Por construcción, $Q_{c_0}>0$ y $Q_c>0$ permiten que el intercepto y la sensibilidad de la ecuación de expectativas evolucionen gradualmente, mientras que los restantes coeficientes permanecen constantes. La matriz $H$ recoge las varianzas de las innovaciones de las ecuaciones de inflación y expectativas; en la especificación central se restringe a una estructura diagonal.
+
+## A.2. Estimación y suavizamiento de los estados {.unnumbered}
+
+Los hiperparámetros contenidos en $H$ y en las posiciones activas de $Q$ se estiman por máxima verosimilitud. Para reducir la sensibilidad de la optimización a los valores iniciales, la estimación se realiza a partir de diferentes órdenes de magnitud para las varianzas de transición y se conserva la solución convergente con mayor log-verosimilitud.
+
+Condicional a estos hiperparámetros, el filtro de Kalman combina en cada período la predicción del estado con la información contenida en la observación corriente. De manera esquemática:
+
+$$
+\widehat{\boldsymbol{\alpha}}_{t|t}
+=
+\widehat{\boldsymbol{\alpha}}_{t|t-1}
++
+K_t v_t,
+$$
+
+donde $v_t$ representa el error de predicción y $K_t$ la ganancia de Kalman. Esta última determina la ponderación relativa entre la trayectoria predicha del estado y la nueva información proporcionada por los datos.
+
+Debe distinguirse entre las estimaciones **filtradas** y **suavizadas**. La primera,
+
+$$
+\widehat{\boldsymbol{\alpha}}_{t|t},
+$$
+
+utiliza únicamente la información disponible hasta el período $t$. La segunda,
+
+$$
+\widehat{\boldsymbol{\alpha}}_{t|T},
+$$
+
+emplea la información de toda la muestra para reconstruir retrospectivamente la trayectoria de los estados.
+
+Dado que el objetivo del estudio consiste en caracterizar históricamente la evolución del anclaje y no en producir una medida en tiempo real, las estimaciones utilizadas en el análisis corresponden a los estados suavizados. A partir de las trayectorias estimadas de $c_{0t}$ y $c_t$, junto con el parámetro constante $d$, se recuperan período a período las medidas $\lambda_t$ y $\pi_t^*$ mediante las expresiones desarrolladas en el cuerpo del documento.
+
+# Apéndice B. Propiedades estadísticas, diagnóstico y robustez del TVP--VAR {.unnumbered}
+
+Este apéndice reúne las comprobaciones estadísticas que complementan la especificación central. Se examinan las propiedades temporales de las series, la selección de rezagos de un VAR de parámetros constantes, la estabilidad y los residuos del TVP--VAR(1), así como la sensibilidad de las principales conclusiones ante especificaciones dinámicas alternativas y una representación en primeras diferencias.
+
+## B.1. Propiedades temporales de las series {.unnumbered}
+
+Las propiedades de integración se evaluaron mediante las pruebas ADF y KPSS, cuyas hipótesis nulas son complementarias. La ADF contrasta la presencia de una raíz unitaria, mientras que la KPSS contrasta estacionariedad.
+
+**Tabla B.1.** *Pruebas de estacionariedad en niveles y primeras diferencias*
+
+```{r}
+#| label: tabla-b1
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_b1,
+  align = c(
+    "l",
+    "r",
+    "r",
+    "r",
+    "r",
+    "l"
+  )
+)
+```
+
+Los resultados no ofrecen una caracterización uniforme en niveles. Para la inflación, la ADF no rechaza la presencia de raíz unitaria, mientras que la KPSS no rechaza estacionariedad, por lo que la evidencia es mixta. En el caso de las expectativas a 24 meses, ambas pruebas son más consistentes con una elevada persistencia compatible con integración de primer orden. En primeras diferencias, en cambio, ambas series muestran evidencia clara de estacionariedad.
+
+Dada esta evidencia, se examinó adicionalmente la posible existencia de una relación de cointegración. La prueba de traza de Johansen para la hipótesis de rango cero arroja un estadístico de `r fmt(joh_trace$estadistico[1], 2)` frente a un valor crítico al 5 % de `r fmt(joh_trace$critico_5pct[1], 2)`, mientras que la prueba de máximo eigenvalor obtiene `r fmt(joh_eigen$estadistico[1], 2)` frente a `r fmt(joh_eigen$critico_5pct[1], 2)`. **En ambos casos no se rechaza la hipótesis nula de rango de cointegración igual a cero; por tanto, no se encuentra evidencia de cointegración al 5 %.**
+
+Estos resultados aconsejan cautela en la interpretación de las relaciones dinámicas estimadas en niveles y motivan el ejercicio complementario en primeras diferencias presentado en la sección B.4.
+
+## B.2. Selección de rezagos y especificación parsimoniosa {.unnumbered}
+
+Como referencia, se estimó un VAR de parámetros constantes y se permitió un máximo de doce rezagos, consistente con la frecuencia mensual de los datos.
+
+**Tabla B.2.** *Selección del orden del VAR mediante criterios de información*
+
+```{r}
+#| label: tabla-b2
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_b2,
+  align = c(
+    "l",
+    "c"
+  )
+)
+```
+
+Los criterios de información favorecen entre dos y tres rezagos: Schwarz/BIC selecciona dos, mientras que AIC y Hannan--Quinn seleccionan tres. Por tanto, la adopción de un TVP--VAR(1) como especificación central **no se interpreta como el resultado mecánico de los criterios de información**. Responde a una decisión de parsimonia y a la necesidad de mantener una representación directamente comparable con la formulación de primer orden utilizada por Demertzis et al. (2012) para construir las medidas dinámicas de credibilidad, evitando al mismo tiempo una proliferación considerable de estados variantes.
+
+Esta decisión se somete posteriormente a ejercicios de robustez con dinámicas más ricas. Por ello, el TVP--VAR(1) debe entenderse como la especificación central parsimoniosa, mientras que las alternativas con rezagos adicionales permiten evaluar si las trayectorias de $\lambda_t$ y $\pi_t^*$ dependen de esa restricción.
+
+## B.3. Estabilidad, diagnóstico residual y dinámica alternativa {.unnumbered}
+
+La estabilidad del TVP--VAR se verifica localmente en cada período mediante los valores propios de la matriz dinámica:
+
+$$
+A_t=
+\begin{bmatrix}
+a & b\\
+c_t & d
+\end{bmatrix}.
+$$
+
+El sistema es localmente estable cuando el radio espectral satisface:
+
+$$
+\rho(A_t)<1.
+$$
+
+**Tabla B.3.** *Diagnósticos principales de la especificación TVP--VAR(1)*
+
+```{r}
+#| label: tabla-b3
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_b3,
+  align = c(
+    "l",
+    "c",
+    "l"
+  )
+)
+```
+
+La condición de estabilidad se cumple a lo largo de la muestra. Los diagnósticos residuales muestran, sin embargo, una diferencia entre ecuaciones: la ecuación de expectativas presenta un comportamiento residual más satisfactorio, mientras que en la ecuación de inflación persiste autocorrelación. Dado que esta última no constituye directamente la ecuación de la que se recupera la proxy de credibilidad, se evaluó si una dinámica más rica de inflación modificaba las magnitudes centrales.
+
+**Tabla B.4.** *Robustez ante especificaciones alternativas de la dinámica de inflación*
+
+```{r}
+#| label: tabla-b4
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_b4,
+  align = c(
+    "l",
+    "r",
+    "r",
+    "r",
+    "r",
+    "r"
+  )
+)
+```
+
+La autocorrelación residual de la ecuación de inflación no desaparece completamente bajo las alternativas consideradas. No obstante, las trayectorias de la proxy de credibilidad y del ancla implícita permanecen estrechamente relacionadas con las obtenidas bajo la especificación central. En particular, las especificaciones con cuatro rezagos y con un componente estacional reproducen prácticamente la misma evolución de $\lambda_t$ y $\pi_t^*$.
+
+En consecuencia, el problema residual se reconoce como una limitación de la ecuación auxiliar de inflación, pero la evidencia indica que no constituye el principal determinante de la trayectoria estimada del anclaje.
+
+## B.4. Robustez frente a las propiedades de integración {.unnumbered}
+
+Como comprobación adicional, se estimó una representación auxiliar en primeras diferencias:
+
+$$
+\Delta e_t^{24}
+=
+\alpha_t
++
+\beta_t\Delta\pi_{t-1}
++
+\rho\Delta e_{t-1}^{24}
++
+\varepsilon_t,
+$$
+
+donde $\alpha_t$ y $\beta_t$ evolucionan como paseos aleatorios y $\rho$ permanece constante. Esta especificación no permite reconstruir directamente $\lambda_t$ ni $\pi_t^*$, puesto que ambas magnitudes se derivan de relaciones de equilibrio en niveles. Su propósito es más acotado: determinar si la disminución de la sensibilidad de las expectativas frente a la inflación también aparece después de remover la posible tendencia estocástica de las series.
+
+**Figura B.1.** *Sensibilidad variante de los cambios en las expectativas frente a cambios rezagados en la inflación*
+
+```{r}
+#| label: figura-b1
+#| echo: false
+#| fig-width: 8.5
+#| fig-height: 4.3
+#| out-width: "100%"
+
+ggplot2::ggplot(
+  tray_diff,
+  ggplot2::aes(
+    x = fecha,
+    y = beta_t
+  )
+) +
+
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = beta_li_95,
+      ymax = beta_ls_95
+    ),
+    alpha = 0.16,
+    linewidth = 0
+  ) +
+
+  ggplot2::geom_hline(
+    yintercept = 0,
+    linetype = "dashed",
+    linewidth = 0.4
+  ) +
+
+  ggplot2::geom_line(
+    linewidth = 0.75
+  ) +
+
+  ggplot2::scale_x_date(
+    date_breaks = "2 years",
+    date_labels = "%Y"
+  ) +
+
+  ggplot2::labs(
+    y = expression(
+      hat(beta)[t]
+    )
+  ) +
+
+  tema_apendice
+```
+
+El coeficiente $\beta_t$ disminuye desde aproximadamente `r fmt(beta_inicio, 3)` al inicio de la muestra hasta `r fmt(beta_final, 3)` en junio de 2026. En términos de subperíodos, su promedio pasa de `r fmt(beta_media_inicio, 3)` en 2010--2014 a `r fmt(beta_media_final, 3)` en 2023--2026. La varianza de transición estimada para esta sensibilidad es $Q_{\beta}=`r formatC(Q_beta_diff, format = "e", digits = 2)`$, lo que permite una evolución temporal efectiva del coeficiente.
+
+Por tanto, aun bajo una representación en primeras diferencias, se observa una reducción pronunciada de la respuesta de las expectativas de mediano plazo frente a innovaciones de inflación. Este resultado es cualitativamente consistente con el fortalecimiento del anclaje identificado por la especificación central, aunque $\beta_t$ no debe interpretarse como equivalente a $\lambda_t$.
+
+Los diagnósticos de esta especificación continúan mostrando autocorrelación residual ---el valor $p$ del Ljung--Box a doce rezagos es `r fmt_p(p_lb_diff_12)`---, por lo que el ejercicio se interpreta exclusivamente como una comprobación de robustez frente a las propiedades de integración y no como un modelo alternativo preferido.
+
+# Apéndice C. Robustez ante medidas alternativas de inflación {.unnumbered}
+
+La construcción de la proxy dinámica depende de la manera en que se representa la inflación observada. Para evaluar esta sensibilidad se reestimó el ejercicio empleando medidas alternativas que difieren en frecuencia de transformación y contenido informativo.
+
+**Tabla C.1.** *Sensibilidad de las medidas de anclaje ante definiciones alternativas de inflación*
+
+```{r}
+#| label: tabla-c1
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_c1,
+  align = c(
+    "l",
+    "r",
+    "r",
+    "r",
+    "r"
+  )
+)
+```
+
+**Figura C.1.** *Trayectorias de la proxy de credibilidad y del ancla implícita bajo medidas alternativas de inflación*
+
+```{r}
+#| label: figura-c1
+#| echo: false
+#| fig-width: 8.5
+#| fig-height: 7
+#| out-width: "100%"
+
+ggplot2::ggplot(
+  datos_fig_c,
+  ggplot2::aes(
+    x = fecha,
+    y = Valor,
+    linetype = Medida
+  )
+) +
+
+  ggplot2::geom_line(
+    linewidth = 0.65
+  ) +
+
+  ggplot2::facet_wrap(
+    ~ Indicador,
+    ncol = 1,
+    scales = "free_y"
+  ) +
+
+  ggplot2::scale_x_date(
+    date_breaks = "2 years",
+    date_labels = "%Y"
+  ) +
+
+  ggplot2::labs(
+    y = NULL
+  ) +
+
+  tema_apendice
+```
+
+Las medidas interanuales reproducen de manera particularmente cercana la trayectoria de la especificación central. Las transformaciones de mayor frecuencia generan diferencias más visibles en el nivel de $\lambda_t$, por lo que la **intensidad exacta del anclaje** es más sensible a la definición de inflación utilizada.
+
+En contraste, la evolución de $\pi_t^*$ presenta una mayor estabilidad entre especificaciones: las distintas medidas conservan el patrón de convergencia gradual del ancla implícita hacia niveles próximos a la meta. En consecuencia, esta robustez sugiere que la evidencia sobre la **localización del ancla** es más estable que la magnitud puntual de la proxy de credibilidad frente a determinadas transformaciones de inflación.
+
+# Apéndice D. Robustez de las regresiones móviles ante ventanas alternativas {.unnumbered}
+
+La especificación central de las regresiones móviles utiliza una ventana de 60 meses. Para evaluar si la trayectoria estimada depende de esta elección, se compararon ventanas de 36, 48, 50 y 60 meses sobre un soporte temporal común.
+
+**Tabla D.1.** *Correspondencia de las estimaciones rolling respecto de la ventana de 60 meses*
+
+```{r}
+#| label: tabla-d1
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_d1,
+  align = c(
+    "l",
+    "r",
+    "r"
+  )
+)
+```
+
+**Figura D.1.** *Sensibilidad de la respuesta de las expectativas ante ventanas móviles alternativas*
+
+```{r}
+#| label: figura-d1
+#| echo: false
+#| fig-width: 8.5
+#| fig-height: 4.8
+#| out-width: "100%"
+
+ggplot2::ggplot(
+  rolling_comun,
+  ggplot2::aes(
+    x = fecha_fin,
+    y = beta,
+    linetype = ventana
+  )
+) +
+
+  ggplot2::geom_hline(
+    yintercept = 0,
+    linewidth = 0.35,
+    linetype = "dotted"
+  ) +
+
+  ggplot2::geom_line(
+    linewidth = 0.70
+  ) +
+
+  ggplot2::scale_x_date(
+    date_breaks = "2 years",
+    date_labels = "%Y"
+  ) +
+
+  ggplot2::labs(
+    y = expression(
+      hat(beta)[t]
+    )
+  ) +
+
+  tema_apendice
+```
+
+Las cuatro ventanas reproducen el patrón general de reducción de la sensibilidad de las expectativas frente a la inflación. Como es esperable, la ventana de 36 meses presenta una mayor volatilidad, mientras que las ventanas de 48 y 50 meses muestran una correspondencia especialmente alta con la especificación central de 60 meses.
+
+La elección de 60 meses se conserva, por tanto, como un compromiso entre suavidad, disponibilidad de observaciones y capacidad para identificar cambios graduales. La trayectoria sustantiva del coeficiente no depende, sin embargo, de una única longitud de ventana.

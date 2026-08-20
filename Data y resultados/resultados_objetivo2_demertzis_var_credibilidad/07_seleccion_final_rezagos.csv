@@ -1,0 +1,2 @@
+p_AIC,p_BIC,p_HQ,p_seleccionado,criterio
+3,2,3,4,Mayor p-valor residual; ningún orden eliminó autocorrelación al 5%

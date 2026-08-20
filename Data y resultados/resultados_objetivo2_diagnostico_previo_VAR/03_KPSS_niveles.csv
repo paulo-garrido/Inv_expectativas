@@ -1,0 +1,3 @@
+variable,transformacion,prueba,estadistico,critico_5pct,rechaza_H0_5pct,interpretacion_5pct
+Inflación,Nivel,KPSS,0.08779392192792418,0.463,FALSE,No se rechaza estacionariedad
+Expectativa 24 meses,Nivel,KPSS,0.7925815892762577,0.463,TRUE,Se rechaza estacionariedad

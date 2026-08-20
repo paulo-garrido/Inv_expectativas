@@ -1,0 +1,4 @@
+parametro,estimacion
+(Intercept),-0.003804770044356604
+d_inflacion_lag1,0.13989854548512468
+d_expectativa_lag1,-0.1893336216718363

@@ -1,0 +1,5 @@
+prueba,hipotesis,estadistico,critico_10pct,critico_5pct,critico_1pct,rechaza_H0_5pct
+Traza,r <= 1 |,4.402391909890857,7.52,9.24,12.97,FALSE
+Traza,r = 0  |,15.546525135798763,17.85,19.96,24.6,FALSE
+Máximo eigenvalor,r <= 1 |,4.402391909890857,7.52,9.24,12.97,FALSE
+Máximo eigenvalor,r = 0  |,11.144133225907908,13.75,15.67,20.2,FALSE

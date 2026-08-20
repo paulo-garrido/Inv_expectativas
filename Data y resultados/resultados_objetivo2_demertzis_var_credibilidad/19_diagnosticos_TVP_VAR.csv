@@ -1,0 +1,8 @@
+modelo,ecuacion,diagnostico,rezago,estadistico,p_valor,conclusion_5pct
+TVP-VAR(1),inflacion,Ljung-Box,12,81.07614429445937,2.5717206142417126e-12,Se rechaza la hipótesis nula
+TVP-VAR(1),inflacion,Ljung-Box,24,103.38174747713879,7.916556299392141e-12,Se rechaza la hipótesis nula
+TVP-VAR(1),expectativa,Ljung-Box,12,15.812542858500782,0.19997360076869963,No se rechaza la hipótesis nula
+TVP-VAR(1),expectativa,Ljung-Box,24,21.795987314835973,0.5914421537268363,No se rechaza la hipótesis nula
+TVP-VAR(1),inflacion,Jarque-Bera,NA,5.1432388159308235,0.07641170345441525,No se rechaza la hipótesis nula
+TVP-VAR(1),expectativa,Jarque-Bera,NA,1251.5346253558046,1.7088704838050013e-272,Se rechaza la hipótesis nula
+TVP-VAR(1),Sistema,Fisher correlación contemporánea,NA,1.91254601879547,0.05580619595662038,No se rechaza la hipótesis nula
