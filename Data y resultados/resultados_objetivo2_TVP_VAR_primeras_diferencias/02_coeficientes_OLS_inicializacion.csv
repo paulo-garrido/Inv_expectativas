@@ -1,0 +1,7 @@
+ecuacion,parametro,estimacion
+Δ Inflación,(Intercept),-0.003406136032682944
+Δ Inflación,d_inflacion_lag1,0.3180348981952361
+Δ Inflación,d_expectativa_lag1,-0.09375859955604064
+Δ Expectativa 24m,(Intercept),-0.003804770044356604
+Δ Expectativa 24m,d_inflacion_lag1,0.13989854548512468
+Δ Expectativa 24m,d_expectativa_lag1,-0.1893336216718363

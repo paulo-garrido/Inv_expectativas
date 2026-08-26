@@ -165,7 +165,7 @@ Posteriormente, esta visión empezó a resquebrajarse, @blinder1998 señalaba qu
 
 Pero el cambio en el pensamiento económico fue profundo: no fue únicamente comunicacional, fue también analítico. En el marco neokeynesiano, las decisiones de precios, salarios, consumo e inversión tienen un carácter prospectivo y dependen, por tanto, no solo de las condiciones económicas presentes, sino de la trayectoria que los agentes anticipan para la inflación y la política monetaria. En este sentido, @clarida_gali_gertler1999 muestran que una política sistemática debe responder de manera consistente a las presiones inflacionarias esperadas, mientras que @woodford2003 formaliza una visión en la que buena parte de la transmisión monetaria ocurre precisamente a través de las expectativas sobre el futuro; bajo esta premisa, la credibilidad es un aspecto central que debe caracterizar la autoridad monetaria: condiciona la capacidad de sus decisiones y anuncios para modificar el comportamiento presente de los agentes.
 
-Pero colocar las expectativas en el centro de la política monetaria hizo visible también una fragilidad: si cada perturbación inflacionaria altera la percepción de los agentes acerca de la inflación futura, la autoridad puede conservar el control sobre su instrumento pero ---al mismo tiempo--- perder capacidad para preservar la referencia nominal que orienta las decisiones de más largo plazo; esta preocupación, rcuerrente en la macroeconomía moderna, aparece tempranamente en el trabajo seminal de @goodfriend1993 a través de lo que denomina *inflation scares*, definidos como episodios en los que un aumento significativo de las tasas de largo plazo, en ausencia de un endurecimiento agresivo de la tasa de política, "reflects rising expected long-run inflation" (p. 8). En otras palabras, la señal relevante no era únicamente que la inflación  aumentara, sino que los agentes comenzaran a incorporar ese deterioro en su visión de la inflación futura; preservar la credibilidad exigía, por tanto, evitar que perturbaciones presentes terminaran desplazando persistentemente esa referencia de largo plazo, poniendo de manifiesto que la adquisición y preservación de credibilidad constituían por sí mismas un problema de política monetaria.
+Pero colocar las expectativas en el centro de la política monetaria hizo visible también una fragilidad: si cada perturbación inflacionaria altera la percepción de los agentes acerca de la inflación futura, la autoridad puede conservar el control sobre su instrumento pero ---al mismo tiempo--- perder capacidad para preservar la referencia nominal que orienta las decisiones de más largo plazo; esta preocupación, rcuerrente en la macroeconomía moderna, aparece tempranamente en el trabajo seminal de @goodfriend1993 a través de lo que denomina *inflation scares*, definidos como episodios en los que un aumento significativo de las tasas de largo plazo, en ausencia de un endurecimiento agresivo de la tasa de política, "reflects rising expected long-run inflation" (p. 8). En otras palabras, la señal relevante no era únicamente que la inflación aumentara, sino que los agentes comenzaran a incorporar ese deterioro en su visión de la inflación futura; preservar la credibilidad exigía, por tanto, evitar que perturbaciones presentes terminaran desplazando persistentemente esa referencia de largo plazo, poniendo de manifiesto que la adquisición y preservación de credibilidad constituían por sí mismas un problema de política monetaria.
 
 La expansión de los regímenes de metas de inflación a lo largo del mundo, le dio una expresión institucional más concreta a esta preocupación, en virtud de que bajo este esquema, el anuncio de un objetivo cuantitativo pretende proporcionar una referencia nominal alrededor de la cual puedan organizarse las expectativas, al tiempo que la transparencia, la comunicación y la rendición de cuentas buscan hacer creíble el compromiso de la autoridad con dicha referencia [@bernanke_mishkin1997; @mishkin2007]. En esta literatura fue cobrando centralidad una expresión particularmente importante para la política monetaria moderna: expectativas de inflación bien ancladas, ---entendidas--- en términos generales, como aquellas para las cuales las perturbaciones de corto plazo tienen una capacidad limitada para alterar la referencia inflacionaria de mayor horizonte.
 
@@ -261,7 +261,7 @@ De acuerdo con @castaneda_et_al2019, el período de transición hacia el EMEI pu
 
 En paralelo, el Banco de Guatemala fue incorporando nuevas herramientas de análisis consistentes con la lógica del nuevo régimen; en este orden de ideas, a partir de diciembre de 2003 se implementó la Encuesta de Expectativas Económicas al Panel de Analistas Privados, y desde 2004 las expectativas pasaron a formar parte de las variables indicativas utilizadas en la toma de decisiones de política monetaria; este elemento es importante porque muestra que la transición al EMEI no solo implicó reformas legales e instrumentales, sino también un cambio en la forma de concebir la política monetaria: las expectativas de inflación comenzaron a ser tratadas como una variable relevante para evaluar la credibilidad y la orientación futura de la política.
 
-La Encuesta de Expectativas Económicas al Panel de Analistas Privados constituye un levantamiento mensual realizado por el Banco de Guatemala a un grupo de especialistas nacionales, con el propósito de conocer su percepción acerca de la trayectoria futura de variables macroeconómicas relevantes. La consulta se realiza entre la segunda y cuarta semana de cada mes e incorpora, entre otros elementos, pronósticos de inflación y actividad económica, así como información utilizada para construir el Índice de Confianza de la Actividad Económica. De esta manera, la encuesta proporciona una medida sistemática de las expectativas de agentes especializados y constituye una de las principales fuentes de información prospectiva disponibles para el análisis monetario en Guatemala.
+Al respecto, la Encuesta de Expectativas Económicas al Panel de Analistas Privados constituye un levantamiento mensual realizado por el Banco de Guatemala a un grupo de especialistas nacionales, con el propósito de conocer su percepción acerca de la trayectoria futura de variables macroeconómicas relevantes. La consulta se realiza entre la segunda y cuarta semana de cada mes e incorpora, entre otros elementos, pronósticos de inflación y actividad económica, así como información utilizada para construir el Índice de Confianza de la Actividad Económica. De esta manera, la encuesta proporciona una medida sistemática de las expectativas de agentes especializados y constituye una de las principales fuentes de información prospectiva disponibles para el análisis monetario en Guatemala.
 
 La adopción formal del EMEI ocurrió a finales de 2004, cuando la Junta Monetaria aprobó la Política Monetaria, Cambiaria y Crediticia para 2005; de esta manera, 2005 marca el inicio oficial del régimen de metas explícitas de inflación en Guatemala. @castaneda_et_al2019 subrayan que, desde entonces, el EMEI pasó a constituir el marco de política monetaria del banco central; en una perspectiva histórica más amplia, @alvarezgarcia2014 señala que ya desde 1991 Guatemala había operado con un esquema de metas de inflación flexible o inflation targeting lite; sin embargo, fue la reforma institucional de inicios de los años 2000 y la decisión adoptada para 2005 la que permitió enmarcar la política monetaria dentro de un esquema plenamente desarrollado de metas explícitas de inflación.
 
@@ -269,9 +269,9 @@ En paralelo con la consolidación del EMEI, la información disponible sobre exp
 
 ### Evolución de la inflación y la meta de inflación
 
-Se discuten a continuación algunos aspectos históricos y a la luz de la información estadística disponible de variables que se constituyen como relevantes para una mejor comprensión del fenómeno; como se mencionó en el tercer apartado, el EMEI se adopta formalmente en el año 2005; sin embargo, como lo señaló @alvarezgarcia2014, el Banco de Guatemala anteriormente en el marco del Esquema de Agregados Monetarios ya había establecido una Meta de inflación, cuyo hecho no es menor, en virtud de que permite estudiar la dinámica inflacionaria en relación con la cercanía de la meta.
+Se discuten a continuación algunos aspectos históricos y a la luz de la información estadística disponible de variables que se constituyen como relevantes para una mejor comprensión del fenómeno; como se mencionó en el tercer apartado, el EMEI se adopta formalmente en el año 2005; sin embargo, como lo señaló @alvarezgarcia2014, el Banco de Guatemala anteriormente en el marco del Esquema de Agregados Monetarios ya había establecido una meta de inflación, cuyo hecho no es menor, en virtud de que permite estudiar la dinámica inflacionaria en relación con la cercanía de la meta.
 
-En ese sentido, se describe la dinámica inflacionaria en Guatemala desde 1997 hasta junio de 2026, lo cual permite ilustrar la trayectoria de la inflación en diferentes regímenes monetarios; en este sentido, en la Figura 1 se observa la dinámica de la inflación en Guatemala a lo largo del período analizado. Una lectura cuidadosa de la figura revela que existen cambios en la trayectoria, en particular, durante los años previos al establecimiento del Esquema de Metas Explícitas de Inflación (EMEI), la serie exhibe niveles relativamente más elevados y una volatilidad considerable, con episodios en los que la inflación alcanza tasas de dos dígitos; en contraste, a partir de la adopción del esquema, se observa una moderación tanto en el nivel como en la variabilidad del ritmo inflacionario, de manera que la inflación tiende a ubicarse con mayor frecuencia dentro o en las cercanías del rango meta.
+En ese sentido, se describe la dinámica inflacionaria en Guatemala desde 1997 hasta junio de 2026, lo cual permite ilustrar la trayectoria de la inflación en diferentes regímenes monetarios; en este sentido, en la Figura 1 se observa la dinámica de la inflación en Guatemala a lo largo del período analizado. Una lectura cuidadosa de la figura revela que existen cambios en la trayectoria, en particular, durante los años previos al establecimiento del EMEI, la serie exhibe niveles relativamente más elevados y una volatilidad considerable, con episodios en los que la inflación alcanza tasas de dos dígitos; en contraste, a partir de la adopción del esquema, se observa una moderación tanto en el nivel como en la variabilidad del ritmo inflacionario, de manera que la inflación tiende a ubicarse con mayor frecuencia dentro o en las cercanías del rango meta.
 
 No obstante, esta evolución ha tenido una suerte de no uniformidad, es decir, aun dentro del período de vigencia del EMEI se distinguen episodios de desviación importante, tanto por encima como por debajo de la banda, lo que sugiere que la convergencia hacia un entorno de mayor estabilidad nominal ha coexistido con choques de magnitud no menor, en consecuencia, aunque la evidencia gráfica parece consistente con una reducción de la inflación y de su volatilidad en el marco del EMEI, también pone de manifiesto que dicha estabilidad no debe interpretarse como un proceso lineal ni exento de tensiones, lo cual justifica examinar posteriormente si este comportamiento ha estado acompañado por un mayor anclaje de las expectativas de inflación.
 
@@ -299,7 +299,7 @@ No obstante, esta evolución ha tenido una suerte de no uniformidad, es decir, a
 ```
 # Planteamiento del problema
 
-El Esquema de Metas Explícitas de Inflación (EMEI) descansa, en buena medida, en la capacidad del banco central para orientar las expectativas de inflación de los agentes de manera consistente con la meta anunciada; en ese sentido, la credibilidad de la autoridad monetaria no se refleja únicamente en el comportamiento de la inflación observada, sino también en el grado en que las expectativas de mayor horizonte permanecen vinculadas con dicha referencia y muestran una respuesta acotada frente a perturbaciones transitorias. Por ello, el anclaje de las expectativas constituye una dimensión relevante para evaluar la consolidación y efectividad del régimen monetario.
+El EMEI descansa, en buena medida, en la capacidad del banco central para orientar las expectativas de inflación de los agentes de manera consistente con la meta anunciada; en ese sentido, la credibilidad de la autoridad monetaria no se refleja únicamente en el comportamiento de la inflación observada, sino también en el grado en que las expectativas de mayor horizonte permanecen vinculadas con dicha referencia y muestran una respuesta acotada frente a perturbaciones transitorias. Por ello, el anclaje de las expectativas constituye una dimensión relevante para evaluar la consolidación y efectividad del régimen monetario.
 
 En Guatemala, la adopción del EMEI en 2005 fue seguida por un proceso gradual de consolidación institucional y por una moderación apreciable de la inflación, aunque ---como muestran los hechos estilizados--- esta trayectoria no estuvo exenta de episodios de desviación respecto de la meta. La evidencia previa ha examinado la credibilidad y las expectativas desde distintas aproximaciones y ha documentado elementos importantes de este proceso; permanece, sin embargo, una cuestión que no puede resolverse observando únicamente la cercanía de las expectativas respecto del objetivo, y es que unas expectativas pueden permanecer próximas a la meta y seguir reaccionando de manera importante a la inflación observada; del mismo modo, pueden reducir esa sensibilidad y estabilizarse alrededor de una referencia distinta de la anunciada por la autoridad monetaria; el problema del anclaje posee, por tanto, una dimensión de intensidad y otra de localización.
 
@@ -341,7 +341,7 @@ El aporte del estudio no se limita, sin embargo, a identificar una menor sensibi
 
 ## Alcances y límites
 
-El estudio se circunscribe al análisis del anclaje de las expectativas de inflación en Guatemala durante 2010--2026, con especial atención a las expectativas a 24 meses reportadas en la Encuesta de Expectativas Económicas al Panel de Analistas Privados. Su alcance es de naturaleza cuantitativa y dinámica: se examina la proximidad de las expectativas respecto de la meta, la evolución de su sensibilidad frente a la inflación observada y, a partir de un modelo con parámetros variantes en el tiempo, se estiman una proxy de credibilidad y la referencia inflacionaria implícita hacia la cual convergen las expectativas. En consecuencia, los resultados permiten caracterizar cómo ha evolucionado el anclaje durante la consolidación del EMEI, pero no identificar causalmente qué decisiones o factores institucionales específicos explican dicha trayectoria.
+El estudio se circunscribe al análisis del anclaje de las expectativas de inflación en Guatemala durante 2010--2026, con especial atención a las expectativas a 24 meses reportadas en la Encuesta de Expectativas Económicas al Panel de Analistas Privados. Su alcance es de naturaleza cuantitativa y dinámica, los resultados permiten caracterizar cómo ha evolucionado el anclaje durante la consolidación del EMEI, pero no identificar causalmente qué decisiones o factores institucionales específicos explican dicha trayectoria.
 
 El análisis presenta, asimismo, algunas delimitaciones, las expectativas utilizadas corresponden al panel de analistas económicos y, por tanto, no necesariamente representan las percepciones de hogares, empresas u otros agentes; además, las medidas de credibilidad y del ancla implícita constituyen magnitudes estimadas que dependen de la especificación econométrica adoptada y de la información contenida en las series disponibles. Por ello, sus resultados deben interpretarse como evidencia acerca de la evolución del anclaje y la credibilidad implícita en la formación de expectativas, y no como una medición directa o exhaustiva de la credibilidad del Banco de Guatemala.
 
@@ -361,7 +361,7 @@ Finalmente, en una tercera etapa, esa sensibilidad se estima permitiendo que det
 
 La investigación utiliza información mensual correspondiente al período comprendido entre enero de 2010 y junio de 2026, la fuente de información para las expectativas de inflación es la Encuesta de Expectativas Económicas al Panel de Analistas Privados (EEE) del Banco de Guatemala, la cual se publica mensualmente y contiene previsiones de inflación a distintos horizontes.
 
-La variable central del análisis es la expectativa de inflación a 24 meses, utilizada como aproximación al anclaje de mediano plazo, la selección de este horizonte responde a que debería reflejar, en mayor medida que las expectativas de corto plazo, la confianza de los agentes en la capacidad de la autoridad monetaria para conducir la inflación hacia su objetivo. Asimismo, se incorporan la inflación observada, la cual se obtiene del índice de precios al consumidor publicado por el Instituto Nacional de Estadística y se expresa como variación interanual.
+La variable central del análisis es la expectativa de inflación a 24 meses, utilizada como aproximación al anclaje de mediano plazo, la selección de este horizonte responde a que debería reflejar, en mayor medida que las expectativas de corto plazo, la confianza de los agentes en la capacidad de la autoridad monetaria para conducir la inflación hacia su objetivo. Asimismo, se incorporan la inflación observada, la cual se obtiene del índice de precios al consumidor publicado por el INE y se expresa como variación interanual.
 
 ### Transformaciones y uso de las variables en las distintas especificaciones
 
@@ -399,7 +399,7 @@ tabla_variables_resumen <- tribble(
 
   "Inflación observada en Guatemala",
   "Porcentaje",
-  "Instituto Nacional de Estadística / Banco de Guatemala",
+  "INE / Banco de Guatemala",
 
   "Rezago de la expectativa de inflación a 24 meses",
   "Porcentaje",
@@ -407,7 +407,7 @@ tabla_variables_resumen <- tribble(
 
   "Brecha respecto a la meta de inflación",
   "Puntos porcentuales",
-  "Elaboración propia con datos del Banco de Guatemala e Instituto Nacional de Estadística",
+  "Elaboración propia con datos del Banco de Guatemala e INE",
 
   "Meta central de inflación",
   "Puntos porcentuales",
@@ -508,7 +508,7 @@ Los parámetros se consideran constantes dentro de cada ventana, pero pueden mod
 
 El parámetro central de esta primera estrategia es $\beta_t$, un valor positivo implica que una inflación situada por encima de la meta tiende a trasladarse hacia una expectativa a mediano plazo también superior al objetivo; por el contrario, cuanto menor sea este coeficiente, menor será la transmisión de las fluctuaciones inflacionarias de corto plazo hacia el horizonte de política; en este sentido, el anclaje no se identifica con un valor puntual determinado de $\beta_t$, sino con su evolución: una reducción persistente de la sensibilidad constituye evidencia compatible con un fortalecimiento del anclaje, mientras que aumentos sostenidos indicarían una mayor incorporación de las condiciones inflacionarias recientes en la formación de las expectativas de mayor horizonte, por otro lado, $\rho_t$ informa sobre la velocidad con la que se disipan las desviaciones de las propias expectativas una vez que estas se han producido.
 
-La estimación utiliza ventanas móviles de 60 observaciones mensuales, esta longitud busca conciliar dos objetivos que resultan contrapuestos en este tipo de ejercicios: disponer de un número suficiente de observaciones para obtener estimaciones razonablemente precisas y, al mismo tiempo, conservar la capacidad de identificar cambios graduales en la relación entre inflación y expectativas.
+La estimación utiliza ventanas móviles de 60 observaciones mensuales, esta longitud busca conciliar dos objetivos que resultan contrapuestos en este tipo de ejercicios: disponer de un número suficiente de observaciones para obtener estimaciones razonablemente precisas y, al mismo tiempo, conservar la capacidad de identificar cambios graduales en la relación entre inflación y expectativas; sin embargo, también se hicieron ejercicios de robustez con ventanas de diferentes horizontes, los cuales se ilustran en el Apéndice A, para garantizar que las conclusiones derivadas del ejercicio, no dependen de la longitud elegida.
 
 Dado el carácter mensual y dinámico de la especificación, la inferencia se realiza mediante errores estándar heterocedásticos y autocorrelacionados consistentes de @newey_west1987, empleando tres rezagos mensuales, en donde cada estimación se asigna al último mes de la ventana correspondiente, por ello, las trayectorias obtenidas deben interpretarse como una representación suavizada de la sensibilidad.
 
@@ -516,7 +516,7 @@ Dado el carácter mensual y dinámico de la especificación, la inferencia se re
 
 Si bien las regresiones móviles permiten observar si la sensibilidad de las expectativas cambia entre ventanas sucesivas, mantienen los coeficientes constantes dentro de cada ventana y su trayectoria puede alterarse cuando una observación entra o sale de la muestra móvil; en este sentido, para complementar ese ejercicio, la segunda aproximación ---y eje central del estudio--- toma como base la metodología propuesta por @demertzis_marcellino_viegi2012. La idea básica es que la credibilidad monetaria se manifiesta en una separación progresiva entre la inflación observada y las expectativas de horizonte relativamente largo: cuando los agentes confían en que la autoridad monetaria reconducirá la inflación hacia un valor estable, las perturbaciones recientes en la inflación deberían ejercer una reducida influencia sobre las expectativas.
 
-La formulación original de @demertzis_marcellino_viegi2012 permite que todos los coeficientes del sistema evolucionen en el tiempo; sin embargo, en este estudio se adopta una versión restringida, seleccionada después de comparar especificaciones alternativas con distintos conjuntos de parámetros variantes. Los resultados de ese proceso favorecieron mantener constantes los coeficientes de la ecuación de inflación y la persistencia de las expectativas, $d$, concentrando la variación temporal en $c_{0t}$ y $c_t$, cuya estructura preserva la parsimonia del modelo y mantiene el foco en los parámetros que determinan directamente las variables que se estimarán como eje del estudio.
+La formulación original de @demertzis_marcellino_viegi2012 permite que todos los coeficientes del sistema evolucionen en el tiempo; sin embargo, en este estudio se adopta una versión restringida, en virtud de que para propósitos de este estudio solamente interesa la dinámica de las expectativas, se decidió mantener constantes los coeficientes de la ecuación de inflación y la persistencia de las expectativas, $d$, concentrando la variación temporal en $c_{0t}$ y $c_t$, cuya estructura preserva la parsimonia del modelo y mantiene el foco en los parámetros que determinan directamente las variables que se estimarán como eje del estudio.
 
 En este marco, la estrategia econométrica planteada busca modelar conjuntamente la inflación y las expectativas mediante un modelo de Vectores autorregresivos (VAR) con parámetros variantes en el tiempo; esta representación permite responder dos preguntas fundamentales: primero, en qué medida las expectativas de mediano plazo son influidas por la inflación pasada; segundo, alrededor de qué valor de largo plazo parecen formarse. En este sentido, la primera dimensión se resume mediante una proxy de credibilidad, denotada por $\lambda_t$; la segunda se representa mediante un ancla inflacionaria implícita $\pi_t^{*}$.
 
@@ -525,7 +525,7 @@ En este marco, la estrategia econométrica planteada busca modelar conjuntamente
 De acuerdo a lo analizado previamente y siguiendo a @demertzis_marcellino_viegi2012, la tesis fundamental es que un régimen creíble está caracterizado por un proceso de formación de expectativas que no depende en gran medida de la inflación observada; en este sentido, el modelo planteado busca manifestar empíricamente este corolario, para lo cual se utiliza un sistema bivariado compuesto por la inflación observada, $\pi_t$, y la expectativa de inflación a 24 meses, $e_t^{24}$. La especificación estimada es:\
 $$\pi_t=a_0+a\pi_{t-1}+b e_{t-1}^{24}+\varepsilon_{\pi,t},$$ $$e_t^{24}=c_{0t}+c_t\pi_{t-1}+d e_{t-1}^{24}+\varepsilon_{e,t}.$$ {#eq-expectativas}
 
-La primera ecuación describe la dinámica auxiliar de la inflación en donde $a$ recoge su persistencia y $b$ mide la asociación entre las expectativas rezagadas y la inflación observada. Por otro lado, la segunda ecuación constituye el núcleo de la medición del anclaje; en ella, $c_t$ mide la sensibilidad cambiante de las expectativas a 24 meses frente a la inflación del período anterior, mientras que $d$ recoge la persistencia propia de las expectativas; finalmente, $c_{0t}$ representa el componente de largo plazo que no se explica por esas dos fuentes de información.
+La primera ecuación describe la dinámica auxiliar de la inflación, en donde $a_0$ captura los factores no contenidos en la ecuación que explican la inflación, $a$ recoge su persistencia y $b$ mide la asociación entre las expectativas rezagadas y la inflación observada. Por otro lado, la segunda ecuación constituye el núcleo de la medición del anclaje; en ella, $c_t$ mide la sensibilidad cambiante de las expectativas a 24 meses frente a la inflación del período anterior, mientras que $d$ recoge la persistencia propia de las expectativas; finalmente, $c_{0t}$ representa el componente de largo plazo que no se explica por esas dos fuentes de información.
 
 En términos de la dinámica de los coeficientes, la especificación principal restringe los parámetros de la ecuación de inflación y el coeficiente $d$ a permanecer constante; en cambio, $c_{0t}$ y $c_t$ pueden modificarse gradualmente, es aquí en donde se introduce el modelo variante en el tiempo, bajo la premisa de que el proceso de anclaje de expectativas y el fortalecimiento de la credibilidad en un régimen monetario es un proceso gradual, que se va modificando en el tiempo; en esta línea, la restricción concentra la variación temporal en los parámetros que determinan directamente las magnitudes que se utilizarán más adelante como una aproximación de la credibilidad de la política monetaria guatemalteca.
 
@@ -627,7 +627,7 @@ $$
 (1-\lambda_t)\bar\pi_t.
 $$ {#eq-formacion-anclada-eq}
 
-al comparar los coeficientes de las ecuaciones @eq-equilibrio-expectativas y @eq-formacion-anclada-eq, se tiene:$$1 - \lambda_t=\frac{c_t}{1 - d},$$
+al comparar los coeficientes de la @eq-equilibrio-expectativas y @eq-formacion-anclada-eq, se tiene:$$1 - \lambda_t=\frac{c_t}{1 - d},$$
 
 $$\lambda_t\pi_t^{*}=\frac{c_{0t}}{(1-d)}$$
 
@@ -637,7 +637,7 @@ $$\lambda_t=1-\frac{c_t}{1-d},$$ {#eq-lambda}
 
 $$\pi_t^{*}=\frac{c_{0t}}{1-d-c_t}.$$ {#eq-ancla-implicita}
 
-La interpretación de ambas medidas es complementaria en este análisis, en donde un valor de $\lambda_t$ cercano a uno indica que las expectativas se encuentran débilmente vinculadas a la inflación pasada y, en consecuencia, más ancladas; por el contrario, un valor próximo a cero señala que la experiencia inflacionaria reciente tiene un peso elevado en su formación; en este sentido, un aumento persistente de $\lambda_t$ se interpreta como evidencia compatible con un fortalecimiento de la credibilidad y del anclaje de mediano plazo. Por otro lado, la segunda medida, $\pi_t^{*}$, indica el nivel alrededor del cual parecen converger las expectativas en el largo plazo; en este sentido, es importante acotar que esta variable no se impone como equivalente a la meta establecida: se estima a partir del comportamiento conjunto de los datos y posteriormente se compara con el objetivo anunciado por el Banco de Guatemala.
+La interpretación de ambas medidas es complementaria, en donde un valor de $\lambda_t$ cercano a uno indica que las expectativas se encuentran débilmente vinculadas a la inflación pasada y, en consecuencia, más ancladas; por el contrario, un valor próximo a cero señala que la experiencia inflacionaria reciente tiene un peso elevado en su formación; en este sentido, un aumento persistente de $\lambda_t$ se interpreta como evidencia compatible con un fortalecimiento de la credibilidad y del anclaje de mediano plazo. Por otro lado, la segunda medida, $\pi_t^{*}$, indica el nivel alrededor del cual parecen converger las expectativas en el largo plazo; en este sentido, es importante acotar que esta variable no se impone como equivalente a la meta establecida: se estima a partir del comportamiento conjunto de los datos y posteriormente se compara con el objetivo anunciado por el Banco de Guatemala.
 
 Esta distinción es importante, porque unas expectativas pueden mostrar una baja sensibilidad frente a la inflación ---un valor elevado de $\lambda_t$--- y, aun así, converger hacia un nivel diferente de la meta, es por ello que la evaluación combina el grado de anclaje con la ubicación del ancla implícita.
 
@@ -784,7 +784,7 @@ Es decir, las estimaciones sugieren que las expectativas a 24 meses se han vuelt
 
 \end{strip}
 ```
-En conjunto, la evidencia mostrada de este primer análisis de la dinámica de la formación de expectativas, ilustra una menor dependencia en el tiempo de las expectativas a mediano plazo ante desviaciones de la inflación, lo cual es consistente con un mayor anclaje; aunque las regresiones móviles presentan una limitación importante: los parámetros se suponen constantes dentro de cada ventana y su trayectoria depende, en cierta medida, de la longitud utilizada para definirla, y es por esta razón que el siguiente ejercicio abandona la segmentación discreta de la muestra y permite que la sensibilidad evolucione de manera continua mediante un modelo de parámetros variantes en el tiempo, con el propósito de examinar con mayor precisión cuándo y en qué magnitud se producen los cambios en el proceso de formación de expectativas.
+En conjunto, la evidencia mostrada en este primer análisis de la dinámica de formación de expectativas ilustra una menor dependencia de las expectativas a mediano plazo frente a las desviaciones de la inflación, resultado que se mantiene al considerar longitudes alternativas de ventana (véase Apéndice A). No obstante, las regresiones móviles presentan una limitación importante: los parámetros se suponen constantes dentro de cada ventana y su trayectoria depende, en cierta medida, de la longitud utilizada para definirla; por esta razón, el siguiente ejercicio abandona la segmentación discreta de la muestra y permite que la sensibilidad evolucione de manera continua mediante un modelo de parámetros variantes en el tiempo.
 
 ## Anclaje de Expectativas de inflación a mediano plazo: evidencia de un modelo variante en el tiempo
 
@@ -796,11 +796,9 @@ En este sentido, el apartado comienza comparando empíricamente la especificaci�
 
 La adopción de una especificación cambiante en el tiempo en la relación entre expectativas e inflación constituye una extensión metodológica natural, a la luz de los resultados observados en las regresiones móviles; sin embargo, resulta conveniente evaluar si la mayor flexibilidad de la especificación variante en el tiempo encuentra respaldo en los datos que justifique la reespecificación econométrica del modelo, en virtud del costo en términos de parsimonia y complejidad modélica; en este sentido, este apartado presenta la evidencia estadística utilizada para justificar la adopción de una especificación con parámetros variantes en el tiempo.
 
-Para evaluar este aspecto, se contrasta la misma especificación modélica bajo dos alternativas: una especificación con parámetros constantes y otra en la que determinados coeficientes (los relacionados con el proceso de formación de expectativas) evolucionen a lo largo del tiempo. La comparación entre ambas especificaciones se realizó mediante log-verosimilitud y los criterios de información AIC y BIC, como se observa en el cuadro 2.
+Para evaluar este aspecto, se contrasta la misma especificación modélica bajo dos alternativas: una especificación con parámetros constantes y otra en la que determinados coeficientes (los relacionados con el proceso de formación de expectativas) evolucionen a lo largo del tiempo. La comparación entre ambas especificaciones se realizó mediante log-verosimilitud y los criterios de información AIC y BIC, como se observa en la tabla 2.
 
-En primer lugar, se evalúa el desempeño de las dos especificaciones como se observa en el cuadro 2. Los resultados revelan que, el modelo TVP-VAR presenta una log verosimilitud superior al VAR con parámetros constantes, con una diferencia de 38.12; por otro lado, los criterios de información AIC y BIC, también favorecieron al modelo variante en el tiempo, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$; en conjunto, estos resultados sugieren que la mayor flexibilidad del TVP--VAR se encuentra respaldada por los datos y favorecen una representación en la que el vínculo entre inflación y expectativas puede modificarse a lo largo del tiempo.
-
-Cuadro 2
+Tabla 2
 
 *Comparación entre el modelo constante y el TVP--VAR*
 
@@ -926,19 +924,21 @@ knitr::kable(
 
 *Nota.* el VAR(1) se estima con la misma estructura funcional y parámetros constantes, mientras que, en el TVP--VAR, los parámetros $c_{0t}$ y $c_t$ evolucionan en el tiempo. AIC y BIC corresponden a los criterios de información de Akaike y Schwarz, respectivamente. Elaboración propia. \normalsize
 
+En primer lugar, se evalúa el desempeño de las dos especificaciones como se observa en el cuadro 2. Los resultados revelan que, el modelo TVP-VAR presenta una log verosimilitud superior al VAR con parámetros constantes, con una diferencia de 38.12; por otro lado, los criterios de información AIC y BIC, también favorecieron al modelo variante en el tiempo, aun cuando este último incorpora las varianzas de transición asociadas a $c_{0t}$ y $c_t$; en conjunto, estos resultados sugieren que la mayor flexibilidad del TVP--VAR se encuentra respaldada por los datos y favorecen una representación en la que el vínculo entre inflación y expectativas puede modificarse a lo largo del tiempo.
+
 Por otro lado, se evaluó si los parámetros que se especificaron como variantes en el tiempo, presentan efectivamente movilidad a lo largo de la muestra; esta característica de movilidad es recogida por $Q_{C0}$ y de $Qc_t$, siendo estas las varianzas de transición para el intercepto y para la sensibilidad de las expectativas frente a la inflación; intuitivamente, una varianza de transición igual a cero implicaría que el parámetro correspondiente permanece constante, mientras que una varianza positiva permite que este evolucione a través del tiempo. En este sentido, al analizar la prueba, ambas varianzas resultan positivas, lo que es consistente con la existencia de variación temporal en las dos dimensiones.
 
 Adicionalmente, se evaluó la estabilidad dinámica del sistema a lo largo de la muestra, en un modelo VAR, esta condición permite determinar si el efecto de una perturbación tiende a disiparse con el tiempo o si, por el contrario, genera una trayectoria que se amplifica de manera persistente; en este aspecto, los resultados revelan que el sistema cumple la condición de estabilidad en todos los períodos analizados, dado que el radio espectral ---una medida que resume la magnitud de las raíces dinámicas del modelo--- permanece por debajo de la unidad.
 
 En términos económicos se puede argüir que la dinámica estimada de inflación y expectativas no presenta un comportamiento explosivo, lo que permite interpretar de manera coherente las trayectorias de los parámetros variantes en el tiempo y, a partir de ellas, las medidas derivadas de credibilidad y del ancla inflacionaria implícita.
 
-Finalmente, los diagnósticos residuales son satisfactorios para la ecuación de expectativas y no muestran evidencia de una correlación contemporánea significativa entre las innovaciones de ambas ecuaciones; Sin embargo, la ecuación de inflación conserva autocorrelación residual, aspecto que se analiza posteriormente mediante ejercicios de robustez con medidas alternativas de inflación.
+Finalmente, los diagnósticos residuales son satisfactorios para la ecuación de expectativas y no muestran evidencia de una correlación contemporánea significativa entre las innovaciones de ambas ecuaciones; sin embargo, la ecuación de inflación conserva autocorrelación residual. Dado que ambas ecuaciones forman parte del sistema, se evalúa si una representación más flexible de la dinámica inflacionaria modifica las trayectorias de las magnitudes centrales; los resultados de esta comprobación se presentan en el Apéndice B.2.
 
 ### Evolución de la sensibilidad de las expectativas
 
 Una vez establecida la pertinencia de la especificación variante en el tiempo, interesa examinar qué trayectoria revelan los parámetros asociados con la formación de expectativas, establecidas en la @eq-expectativas. El sistema se estima mediante el filtro de Kalman, en virtud de que el propósito del ejercicio es reconstruir la evolución histórica del anclaje a lo largo de toda la muestra, se utilizan las estimaciones suavizadas de los estados. Las correspondientes estimaciones de $c_{0t}$ y $c_t$, junto con sus intervalos de confianza, se presentan en la Figura 6.
 
-Una lectura cuidadosa de la Figura 6 revela que la evolución temporal de los parámetros de la ecuación de expectativas no es homogénea, aunque sí exhibe un patrón suficientemente definido; por una parte, el intercepto variante $c_{0t}$ muestra una reducción pronunciada durante la primera mitad de la muestra, seguida por una recuperación parcial y, posteriormente, por una trayectoria relativamente estable.
+La lectura de la Figura 6 revela que la evolución temporal de los parámetros de la ecuación de expectativas no es homogénea, aunque sí exhibe un patrón suficientemente definido; por una parte, el intercepto variante $c_{0t}$ muestra una reducción pronunciada durante la primera mitad de la muestra, seguida por una recuperación parcial y, posteriormente, por una trayectoria relativamente estable.
 
 Por otra parte, el coeficiente $c_t$, que recoge la sensibilidad de las expectativas de mediano plazo frente a la inflación observada, presenta un descenso más persistente: parte de valores cercanos a 0.18 y converge gradualmente hacia niveles próximos a 0.09 al final del período. Este último comportamiento resulta especialmente revelador, en virtud de que sugiere que, con el transcurso del tiempo, las expectativas de mediano plazo han reaccionado cada vez menos a las fluctuaciones de la inflación corriente.
 
@@ -1010,9 +1010,6 @@ El análisis anterior es el resultado más importante del estudio, la evidencia 
 
 El episodio inflacionario de 2021--2023 es un caso claro sobre este asunto, debido a que, aunque la inflación observada se alejó considerablemente de la meta como lo revela la figura 9, el ancla implícita permaneció comparativamente estable y próxima al objetivo central; esta divergencia sugiere que la perturbación inflacionaria no se trasladó con una magnitud equivalente ni de manera persistente hacia las expectativas de mediano plazo; por lo que, interpretado conjuntamente con la elevada trayectoria de $\lambda_t$, el resultado es compatible con expectativas que permanecieron relativamente ancladas en escenarios inflacionarios relevantes.
 
-La lectura conjunta de las series permite advertir que el fortalecimiento del anclaje fue ---ante todo--- un proceso gradual; como lo revela la figura 9, al inicio de la muestra, la inflación observada y las expectativas a mediano plazo se desenvolvían en niveles relativamente elevados, mientras que el ancla inflacionaria implícita se situaba claramente por encima de la referencia oficial; en ese contexto, la proxy de credibilidad $\hat{\lambda}_t$ registraba sus valores más bajos (cercanos a 0.75).
-
-Durante los años siguientes, sin embargo, comenzó a configurarse un patrón distinto: el ancla implícita desciende progresivamente hacia el rango meta y ---de manera paralela--- $\hat{\lambda}_t$ aumenta de forma sostenida; en este sentido, más que un mecanismo de ajuste abrupto, la figura revela una recomposición gradual del mecanismo de formación de expectativas, en la cual la inflación observada pierde relevancia en el proceso, mientras la referencia nominal asociada al ancla adquiere un papel más fuerte.
 
 ```{=tex}
 \begin{strip}
@@ -1036,7 +1033,12 @@ Durante los años siguientes, sin embargo, comenzó a configurarse un patrón di
 
 \end{strip}
 ```
-A partir de la segunda mitad de la década de 2010, esa transformación resulta todavía más evidente a la luz de la dinámica de las variables estimadas, en virtud de que, aunque la inflación observada sigue un patrón oscilante, el ancla implícita permanece considerablemente más estable y empieza a gravitar en torno a niveles próximos a la meta central; esta diferencia entre la volatilidad de la inflación y la relativa estabilidad de $\pi_t^*$ constituye el resultado principal del estudio: las perturbaciones inflacionarias dejan de trasladarse con demasiada intensidad hacia la referencia nominal alrededor de la cual se articulan las expectativas, y, al mismo tiempo, la proxy de credibilidad continúa aumentando y alcanza valores cercanos a 0.9, de manera que la menor sensibilidad frente a la inflación coincide con una localización del ancla cada vez más próxima al objetivo anunciado por la autoridad monetaria. En este sentido, es en donde se muestra el resultado más importante del estudio: las expectativas parecen organizarse alrededor de una referencia nominal progresivamente más consistente con el régimen de metas.
+
+La lectura conjunta de las series permite advertir que el fortalecimiento del anclaje fue ---ante todo--- un proceso gradual; como lo revela la figura 9, al inicio de la muestra, la inflación observada y las expectativas a mediano plazo se desenvolvían en niveles relativamente elevados, mientras que el ancla inflacionaria implícita se situaba claramente por encima de la referencia oficial; en ese contexto, la proxy de credibilidad $\hat{\lambda}_t$ registraba sus valores más bajos (cercanos a 0.75).
+
+Durante los años siguientes, sin embargo, comenzó a configurarse un patrón distinto: el ancla implícita desciende progresivamente hacia el rango meta y ---de manera paralela--- $\hat{\lambda}_t$ aumenta de forma sostenida; en este sentido, más que un mecanismo de ajuste abrupto, la figura revela una recomposición gradual del mecanismo de formación de expectativas, en la cual la inflación observada pierde relevancia en el proceso, mientras la referencia nominal asociada al ancla adquiere un papel más fuerte.
+
+A partir de la segunda mitad de la década de 2010, esa transformación resulta todavía más evidente a la luz de la dinámica de las variables estimadas, en virtud de que, aunque la inflación observada sigue un patrón oscilante, el ancla implícita permanece considerablemente más estable y empieza a gravitar en torno a niveles próximos a la meta central; esta diferencia entre la volatilidad de la inflación y la relativa estabilidad de $\pi_t^*$ constituye el resultado principal del estudio: las perturbaciones inflacionarias dejan de trasladarse con demasiada intensidad hacia la referencia nominal alrededor de la cual se articulan las expectativas, y, al mismo tiempo, la proxy de credibilidad continúa aumentando y alcanza valores cercanos a 0.9, de manera que la menor sensibilidad frente a la inflación coincide con una localización del ancla cada vez más próxima al objetivo anunciado por la autoridad monetaria. En este sentido, es en donde emerge la conclusión central del estudio, la cual nos permite argüir que las expectativas parecen organizarse alrededor de una referencia nominal progresivamente más consistente con el régimen de metas.
 
 Quizá el episodio más ilustrativo de esta dinámica se encuentra entre 2021 y 2023. La inflación experimenta entonces el mayor incremento de toda la muestra y se aleja ostensiblemente del rango meta; no obstante, ni las expectativas a 24 meses ni el ancla implícita reproducen ese movimiento con una magnitud semejante. Más aún, $\hat{\lambda}_t$ no muestra un deterioro persistente y permanece en niveles elevados. En este sentido, una lectura cuidadosa de este episodio permite argüir que el choque inflacionario, aun siendo considerable, no se tradujo en un desanclaje equivalente de las expectativas de mediano plazo, esta distinción es fundamental: un régimen creíble no proscribe la ocurrencia de desviaciones transitorias de la inflación respecto de la meta, sino que limita su capacidad para alterar de manera persistente la referencia nominal incorporada por los agentes. Bajo esta óptica, la combinación de un $\hat{\lambda}_t$ creciente y de un $\pi_t^*$ relativamente estable alrededor de la meta ofrece evidencia compatible con un fortalecimiento gradual del anclaje durante el período analizado, sin que ello implique atribuir causalmente dicha evolución a un único factor o episodio de política monetaria.
 
@@ -1066,9 +1068,11 @@ En conjunto, ambas dimensiones apuntan en una misma dirección, por un lado, el 
 
 ### Pruebas de robustez
 
-Como ejercicio de robustez, el modelo se reestimó permitiendo una dinámica más flexible en la ecuación auxiliar de inflación (considerando que presenta autocorrelación), mediante la incorporación de dos y cuatro rezagos, así como de un rezago estacional a doce meses; en este contexto, los resultados centrales muestran una elevada estabilidad frente a estas modificaciones. En particular, las especificaciones AR(4) y con rezago estacional reproducen prácticamente la trayectoria estimada de la proxy de credibilidad y del ancla inflacionaria implícita: las correlaciones con el modelo base se sitúan entre 0.997 y 1.000 para $\lambda_t$, y alrededor de 0.999 para $\pi_t^*$. En esta dirección, en ambas especificaciones se conserva, además, el patrón central del análisis: un aumento de la proxy de credibilidad y una aproximación progresiva del ancla implícita hacia la meta oficial.
+Con el propósito de evaluar si los principales resultados dependen de características particulares de la especificación adoptada, se realizaron distintos ejercicios de robustez. En el caso de las regresiones móviles, se utilizaron ventanas alternativas de 36, 48 y 50 meses, además de la especificación central de 60 meses; las distintas estimaciones reproducen el patrón general de reducción de la sensibilidad de las expectativas frente a la inflación, por lo que esta conclusión no parece depender de una longitud específica de ventana (véase Apéndice A).
 
-La ampliación de la dinámica inflacionaria, sin embargo, no elimina la autocorrelación residual de la ecuación de inflación a doce rezagos, lo que indica que este bloque no captura por completo la dependencia temporal de la inflación observada. Esta limitación aconseja evitar una interpretación estructural de los coeficientes e innovaciones de dicha ecuación; no obstante, su incidencia sobre las magnitudes centrales de esta investigación parece limitada. Aun bajo especificaciones considerablemente más flexibles, las trayectorias de $\lambda_t$ y $\pi_t^*$ permanecen prácticamente invariantes. La excepción parcial corresponde al modelo AR(2), en el cual la varianza de transición de $c_t$ se aproxima a cero.
+En relación con el TVP--VAR, una primera comprobación responde a la elevada persistencia de las series. Para ello, se reestimó la misma estructura bivariada utilizando la inflación y las expectativas a 24 meses en primeras diferencias, transformación bajo la cual ambas series presentan evidencia de estacionariedad. El coeficiente $c_t$ conserva una trayectoria descendente, al pasar de aproximadamente 0.37 al inicio de la muestra a 0.12 en junio de 2026; asimismo, su promedio disminuye de 0.256 durante 2010--2014 a 0.111 durante 2023--2026. En consecuencia, la reducción de la sensibilidad identificada mediante el modelo central permanece aun cuando se trabaja con variables estacionarias, lo que reduce la posibilidad de que dicho resultado responda exclusivamente a relaciones inducidas por la elevada persistencia de las series en niveles (véase Apéndice B.1).
+
+Una segunda comprobación se deriva de la autocorrelación residual identificada en la ecuación auxiliar de inflación, en virtud de que esta característica podría reflejar una representación incompleta de su dinámica, el modelo se reestimó incorporando dos y cuatro rezagos, así como un rezago estacional a doce meses. Si bien la autocorrelación no desaparece completamente, las trayectorias de $\lambda_t$ y $\pi_t^*$ permanecen prácticamente invariantes; por tanto, aunque la autocorrelación constituye una limitación de la ecuación de inflación, la evidencia indica que no determina las trayectorias estimadas de la proxy de credibilidad ni del ancla inflacionaria implícita (véase Apéndice B.2).
 
 # Conclusiones
 
@@ -1088,11 +1092,11 @@ En este marco, el aporte de la investigación radica en complementar la evidenci
 
 ::: {#refs}
 :::
-
 ```{=latex}
 \clearpage
 \onecolumn
 ```
+
 ```{r}
 #| label: setup-apendices
 #| include: false
@@ -1102,6 +1106,7 @@ library(tidyr)
 library(readr)
 library(ggplot2)
 library(knitr)
+
 
 # ============================================================================
 # LOCALIZACIÓN DE LA CARPETA DE DATOS
@@ -1160,11 +1165,6 @@ dir_tvp <- file.path(
   "resultados_objetivo2_TVP_VAR"
 )
 
-dir_diag_previo <- file.path(
-  raiz_datos,
-  "resultados_objetivo2_diagnostico_previo_VAR"
-)
-
 dir_robustez_dinamica <- file.path(
   raiz_datos,
   "resultados_objetivo2_robustez_dinamica_inflacion"
@@ -1177,7 +1177,7 @@ dir_medidas_inflacion <- file.path(
 
 dir_diferencias <- file.path(
   raiz_datos,
-  "resultados_objetivo2_robustez_primeras_diferencias"
+  "resultados_objetivo2_TVP_VAR_primeras_diferencias"
 )
 
 
@@ -1279,9 +1279,6 @@ fmt <- function(
 }
 
 
-# Formato uniforme de p-valores.
-# Evita valores como 0.00e+00.
-
 fmt_p <- function(x) {
 
   ifelse(
@@ -1297,740 +1294,8 @@ fmt_p <- function(x) {
 
 
 # ============================================================================
-# DATOS DEL APÉNDICE B
-# ============================================================================
-
-adf_niveles <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "02_ADF_niveles.csv"
-  )
-)
-
-kpss_niveles <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "03_KPSS_niveles.csv"
-  )
-)
-
-adf_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "04_ADF_primeras_diferencias.csv"
-  )
-)
-
-kpss_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "05_KPSS_primeras_diferencias.csv"
-  )
-)
-
-seleccion_rezagos <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "08_seleccion_rezagos_VAR.csv"
-  )
-)
-
-johansen <- leer_csv_obligatorio(
-  file.path(
-    dir_diag_previo,
-    "09_cointegracion_Johansen.csv"
-  )
-)
-
-
-# ============================================================================
-# TABLA B.1
-# PRUEBAS DE ESTACIONARIEDAD
-# ============================================================================
-
-tabla_b1 <- adf_niveles |>
-
-  dplyr::select(
-    variable,
-    ADF_nivel = estadistico,
-    ADF_nivel_rechaza = rechaza_H0_5pct
-  ) |>
-
-  dplyr::left_join(
-
-    kpss_niveles |>
-      dplyr::select(
-        variable,
-        KPSS_nivel = estadistico,
-        KPSS_nivel_rechaza = rechaza_H0_5pct
-      ),
-
-    by = "variable"
-  ) |>
-
-  dplyr::left_join(
-
-    adf_diff |>
-      dplyr::select(
-        variable,
-        ADF_diff = estadistico,
-        ADF_diff_rechaza = rechaza_H0_5pct
-      ),
-
-    by = "variable"
-  ) |>
-
-  dplyr::left_join(
-
-    kpss_diff |>
-      dplyr::select(
-        variable,
-        KPSS_diff = estadistico,
-        KPSS_diff_rechaza = rechaza_H0_5pct
-      ),
-
-    by = "variable"
-  ) |>
-
-  dplyr::mutate(
-
-    Lectura = dplyr::case_when(
-
-      ADF_nivel_rechaza &
-        !KPSS_nivel_rechaza ~
-        "Estacionaria en niveles",
-
-      !ADF_nivel_rechaza &
-        KPSS_nivel_rechaza ~
-        "Compatible con I(1)",
-
-      !ADF_nivel_rechaza &
-        !KPSS_nivel_rechaza ~
-        "Evidencia mixta en niveles",
-
-      TRUE ~
-        "Evidencia mixta"
-    )
-  ) |>
-
-  dplyr::transmute(
-
-    Variable = variable,
-
-    `ADF nivel` = round(
-      ADF_nivel,
-      3
-    ),
-
-    `KPSS nivel` = round(
-      KPSS_nivel,
-      3
-    ),
-
-    `ADF Δ` = round(
-      ADF_diff,
-      3
-    ),
-
-    `KPSS Δ` = round(
-      KPSS_diff,
-      3
-    ),
-
-    Lectura
-  )
-
-
-# ============================================================================
-# JOHANSEN
-# ============================================================================
-
-joh_trace <- johansen |>
-  dplyr::filter(
-    prueba == "Traza",
-    grepl(
-      "r = 0",
-      hipotesis,
-      fixed = TRUE
-    )
-  )
-
-joh_eigen <- johansen |>
-  dplyr::filter(
-    prueba == "Máximo eigenvalor",
-    grepl(
-      "r = 0",
-      hipotesis,
-      fixed = TRUE
-    )
-  )
-
-
-# ============================================================================
-# TABLA B.2
-# SELECCIÓN DE REZAGOS
-# ============================================================================
-
-tabla_b2 <- seleccion_rezagos |>
-  dplyr::transmute(
-    Criterio = criterio,
-    `Rezagos seleccionados` = rezagos
-  )
-
-
-# ============================================================================
-# DIAGNÓSTICOS DEL MODELO CENTRAL M3
-# ============================================================================
-
-diag_m3 <- leer_csv_obligatorio(
-  file.path(
-    dir_tvp,
-    "09_diagnosticos_residuales_M3.csv"
-  )
-)
-
-estabilidad_m3 <- leer_csv_obligatorio(
-  file.path(
-    dir_tvp,
-    "10_estabilidad_local_M3.csv"
-  )
-)
-
-
-pct_estable <- 100 * mean(
-  estabilidad_m3$estable,
-  na.rm = TRUE
-)
-
-radio_max <- max(
-  estabilidad_m3$radio_espectral,
-  na.rm = TRUE
-)
-
-
-p_lb_inf_12 <- diag_m3 |>
-
-  dplyr::filter(
-    grepl(
-      "Infl",
-      ecuacion,
-      ignore.case = TRUE
-    ),
-    diagnostico == "Ljung-Box",
-    rezago == 12
-  ) |>
-
-  dplyr::pull(
-    p_valor
-  )
-
-
-p_lb_exp_12 <- diag_m3 |>
-
-  dplyr::filter(
-    grepl(
-      "Expect",
-      ecuacion,
-      ignore.case = TRUE
-    ),
-    diagnostico == "Ljung-Box",
-    rezago == 12
-  ) |>
-
-  dplyr::pull(
-    p_valor
-  )
-
-
-tabla_b3 <- tibble::tibble(
-
-  Indicador = c(
-    "Períodos localmente estables",
-    "Radio espectral máximo",
-    "Ljung–Box, inflación, 12 rezagos",
-    "Ljung–Box, expectativas, 12 rezagos"
-  ),
-
-  Resultado = c(
-
-    paste0(
-      fmt(
-        pct_estable,
-        1
-      ),
-      "%"
-    ),
-
-    fmt(
-      radio_max,
-      3
-    ),
-
-    fmt_p(
-      p_lb_inf_12
-    ),
-
-    fmt_p(
-      p_lb_exp_12
-    )
-  ),
-
-  Lectura = c(
-    "Radio espectral inferior a uno",
-    "Debe permanecer por debajo de uno",
-    "Persistencia de autocorrelación residual",
-    "Sin evidencia relevante de autocorrelación"
-  )
-)
-
-
-# ============================================================================
-# TABLA B.4
-# ROBUSTEZ DINÁMICA
-# ============================================================================
-
-robustez_dinamica <- leer_csv_obligatorio(
-  file.path(
-    dir_robustez_dinamica,
-    "07_cuadro_robustez_paper.csv"
-  )
-)
-
-
-tabla_b4 <- robustez_dinamica |>
-
-  dplyr::transmute(
-
-    Especificación =
-      especificacion,
-
-    `λ final` =
-      round(
-        lambda_final,
-        3
-      ),
-
-    `π* final` =
-      round(
-        pi_estrella_final,
-        3
-      ),
-
-    `Corr. λ` =
-      round(
-        correlacion_lambda_con_base,
-        3
-      ),
-
-    `Corr. π*` =
-      round(
-        correlacion_pi_estrella_con_base,
-        3
-      ),
-
-    `p LB inflación` =
-      fmt_p(
-        p_LB_inflacion_12
-      )
-  )
-
-
-# ============================================================================
-# ROBUSTEZ EN PRIMERAS DIFERENCIAS
-# ============================================================================
-
-tray_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diferencias,
-    "04_trayectorias_TVP_diferencias.csv"
-  )
-) |>
-
-  dplyr::mutate(
-    fecha = as.Date(
-      fecha
-    )
-  )
-
-
-hiper_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diferencias,
-    "05_hiperparametros_TVP_diferencias.csv"
-  )
-)
-
-
-periodos_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diferencias,
-    "07_beta_por_subperiodos.csv"
-  )
-)
-
-
-diag_diff <- leer_csv_obligatorio(
-  file.path(
-    dir_diferencias,
-    "08_diagnosticos_residuales.csv"
-  )
-)
-
-
-beta_inicio <- dplyr::first(
-  tray_diff$beta_t
-)
-
-beta_final <- dplyr::last(
-  tray_diff$beta_t
-)
-
-
-beta_media_inicio <- periodos_diff |>
-
-  dplyr::filter(
-    periodo == "2010-2014"
-  ) |>
-
-  dplyr::pull(
-    beta_media
-  )
-
-
-beta_media_final <- periodos_diff |>
-
-  dplyr::filter(
-    periodo == "2023-2026"
-  ) |>
-
-  dplyr::pull(
-    beta_media
-  )
-
-
-Q_beta_diff <- hiper_diff |>
-
-  dplyr::filter(
-    parametro == "Q_beta"
-  ) |>
-
-  dplyr::pull(
-    valor
-  )
-
-
-p_lb_diff_12 <- diag_diff |>
-
-  dplyr::filter(
-    diagnostico == "Ljung-Box",
-    rezago == 12
-  ) |>
-
-  dplyr::pull(
-    p_valor
-  )
-
-
-# ============================================================================
-# DATOS DEL APÉNDICE C
-# ============================================================================
-
-medidas_inflacion <- leer_csv_obligatorio(
-  file.path(
-    dir_medidas_inflacion,
-    "06_trayectorias_TVP_condicional.csv"
-  )
-) |>
-
-  dplyr::mutate(
-    fecha = as.Date(
-      fecha
-    )
-  )
-
-
-base_medida <- medidas_inflacion |>
-
-  dplyr::filter(
-    variable ==
-      "infl_interanual_base"
-  ) |>
-
-  dplyr::select(
-    fecha,
-    lambda_base =
-      lambda_t,
-    pi_base =
-      pi_estrella_t
-  )
-
-
-resumen_medidas <- medidas_inflacion |>
-
-  dplyr::group_by(
-    variable,
-    medida
-  ) |>
-
-  dplyr::summarise(
-
-    lambda_inicial =
-      dplyr::first(
-        lambda_t
-      ),
-
-    lambda_final =
-      dplyr::last(
-        lambda_t
-      ),
-
-    pi_inicial =
-      dplyr::first(
-        pi_estrella_t
-      ),
-
-    pi_final =
-      dplyr::last(
-        pi_estrella_t
-      ),
-
-    .groups = "drop"
-  )
-
-
-correlaciones_medidas <- medidas_inflacion |>
-
-  dplyr::inner_join(
-    base_medida,
-    by = "fecha"
-  ) |>
-
-  dplyr::group_by(
-    variable,
-    medida
-  ) |>
-
-  dplyr::summarise(
-
-    corr_lambda =
-      cor(
-        lambda_t,
-        lambda_base,
-        use = "complete.obs"
-      ),
-
-    corr_pi =
-      cor(
-        pi_estrella_t,
-        pi_base,
-        use = "complete.obs"
-      ),
-
-    .groups = "drop"
-  )
-
-
-# ============================================================================
-# TABLA C.1
-#
-# Se ordena primero la especificación base y posteriormente
-# las medidas alternativas.
-# ============================================================================
-
-tabla_c1 <- resumen_medidas |>
-
-  dplyr::left_join(
-    correlaciones_medidas,
-    by = c(
-      "variable",
-      "medida"
-    )
-  ) |>
-
-  dplyr::mutate(
-
-    Medida = dplyr::case_when(
-
-      variable ==
-        "infl_interanual_base" ~
-        "Interanual base",
-
-      variable ==
-        "infl_interanual_ipc" ~
-        "Interanual desde IPC",
-
-      variable ==
-        "infl_mensual_sa_anualizada" ~
-        "Mensual desest. anualizada",
-
-      variable ==
-        "infl_3m_sa_anualizada" ~
-        "3 meses desest. anualizada",
-
-      variable ==
-        "infl_subyacente" ~
-        "Inflación subyacente",
-
-      TRUE ~
-        medida
-    ),
-
-    orden_medida = dplyr::case_when(
-
-      variable ==
-        "infl_interanual_base" ~
-        1,
-
-      variable ==
-        "infl_interanual_ipc" ~
-        2,
-
-      variable ==
-        "infl_subyacente" ~
-        3,
-
-      variable ==
-        "infl_3m_sa_anualizada" ~
-        4,
-
-      variable ==
-        "infl_mensual_sa_anualizada" ~
-        5,
-
-      TRUE ~
-        99
-    )
-  ) |>
-
-  dplyr::arrange(
-    orden_medida
-  ) |>
-
-  dplyr::transmute(
-
-    Medida,
-
-    `λ final` =
-      round(
-        lambda_final,
-        3
-      ),
-
-    `π* final` =
-      round(
-        pi_final,
-        3
-      ),
-
-    `Corr. λ` =
-      round(
-        corr_lambda,
-        3
-      ),
-
-    `Corr. π*` =
-      round(
-        corr_pi,
-        3
-      )
-  )
-
-
-# ============================================================================
-# DATOS FIGURA C.1
-#
-# Los títulos de los paneles se dejan en texto plano para evitar
-# problemas de renderizado de lambda y pi* en facet_wrap().
-# ============================================================================
-
-datos_fig_c <- medidas_inflacion |>
-
-  dplyr::mutate(
-
-    Medida = dplyr::case_when(
-
-      variable ==
-        "infl_interanual_base" ~
-        "Interanual base",
-
-      variable ==
-        "infl_interanual_ipc" ~
-        "Interanual IPC",
-
-      variable ==
-        "infl_subyacente" ~
-        "Subyacente",
-
-      variable ==
-        "infl_3m_sa_anualizada" ~
-        "3m SA",
-
-      variable ==
-        "infl_mensual_sa_anualizada" ~
-        "Mensual SA",
-
-      TRUE ~
-        medida
-    ),
-
-    Medida = factor(
-      Medida,
-      levels = c(
-        "Interanual base",
-        "Interanual IPC",
-        "Subyacente",
-        "3m SA",
-        "Mensual SA"
-      )
-    )
-  ) |>
-
-  dplyr::select(
-    fecha,
-    Medida,
-    lambda_t,
-    pi_estrella_t
-  ) |>
-
-  tidyr::pivot_longer(
-
-    cols = c(
-      lambda_t,
-      pi_estrella_t
-    ),
-
-    names_to =
-      "Indicador",
-
-    values_to =
-      "Valor"
-  ) |>
-
-  dplyr::mutate(
-
-    Indicador = dplyr::recode(
-
-      Indicador,
-
-      lambda_t =
-        "Proxy de credibilidad",
-
-      pi_estrella_t =
-        "Ancla inflacionaria implícita"
-    ),
-
-    Indicador = factor(
-      Indicador,
-      levels = c(
-        "Ancla inflacionaria implícita",
-        "Proxy de credibilidad"
-      )
-    )
-  )
-
-
-# ============================================================================
-# DATOS DEL APÉNDICE D
+# APÉNDICE A
+# ROBUSTEZ DE LAS REGRESIONES MÓVILES
 # ============================================================================
 
 leer_rolling <- function(
@@ -2143,7 +1408,7 @@ rolling_base60 <- rolling_comun |>
   )
 
 
-tabla_d1 <- rolling_comun |>
+tabla_a1 <- rolling_comun |>
 
   dplyr::left_join(
     rolling_base60,
@@ -2214,12 +1479,484 @@ tabla_d1 <- rolling_comun |>
 
 
 # ============================================================================
+# APÉNDICE B.1
+# TVP-VAR EN PRIMERAS DIFERENCIAS
+# ============================================================================
+
+tray_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "06_trayectoria_TVP_VAR_diferencias.csv"
+  )
+) |>
+
+  dplyr::mutate(
+    fecha =
+      as.Date(
+        fecha
+      )
+  )
+
+
+resumen_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "07_resumen_c_t.csv"
+  )
+)
+
+
+periodos_diff <- leer_csv_obligatorio(
+  file.path(
+    dir_diferencias,
+    "08_resumen_subperiodos_c_t.csv"
+  )
+)
+
+
+c_inicio <- resumen_diff$c_inicial[1]
+
+c_final <- resumen_diff$c_final[1]
+
+
+c_media_inicio <- periodos_diff |>
+
+  dplyr::filter(
+    subperiodo ==
+      "2010-2014"
+  ) |>
+
+  dplyr::pull(
+    c_promedio
+  )
+
+
+c_media_final <- periodos_diff |>
+
+  dplyr::filter(
+    subperiodo ==
+      "2023-2026"
+  ) |>
+
+  dplyr::pull(
+    c_promedio
+  )
+
+
+# ============================================================================
+# APÉNDICE B.2
+# AUTOCORRELACIÓN Y DINÁMICA ALTERNATIVA DE INFLACIÓN
+# ============================================================================
+
+diag_m3 <- leer_csv_obligatorio(
+  file.path(
+    dir_tvp,
+    "09_diagnosticos_residuales_M3.csv"
+  )
+)
+
+
+p_lb_inf_12 <- diag_m3 |>
+
+  dplyr::filter(
+    grepl(
+      "Infl",
+      ecuacion,
+      ignore.case = TRUE
+    ),
+    diagnostico ==
+      "Ljung-Box",
+    rezago ==
+      12
+  ) |>
+
+  dplyr::pull(
+    p_valor
+  )
+
+
+p_lb_exp_12 <- diag_m3 |>
+
+  dplyr::filter(
+    grepl(
+      "Expect",
+      ecuacion,
+      ignore.case = TRUE
+    ),
+    diagnostico ==
+      "Ljung-Box",
+    rezago ==
+      12
+  ) |>
+
+  dplyr::pull(
+    p_valor
+  )
+
+
+tabla_b1 <- tibble::tibble(
+
+  Ecuación = c(
+    "Inflación",
+    "Expectativas a 24 meses"
+  ),
+
+  `Ljung–Box (12 rezagos)` = c(
+    fmt_p(
+      p_lb_inf_12
+    ),
+    fmt_p(
+      p_lb_exp_12
+    )
+  ),
+
+  Lectura = c(
+    "Persiste autocorrelación residual",
+    "No se detecta autocorrelación residual"
+  )
+)
+
+
+robustez_dinamica <- leer_csv_obligatorio(
+  file.path(
+    dir_robustez_dinamica,
+    "07_cuadro_robustez_paper.csv"
+  )
+)
+
+
+tabla_b2 <- robustez_dinamica |>
+
+  dplyr::transmute(
+
+    Especificación =
+      especificacion,
+
+    `λ final` =
+      round(
+        lambda_final,
+        3
+      ),
+
+    `π* final` =
+      round(
+        pi_estrella_final,
+        3
+      ),
+
+    `Corr. λ` =
+      round(
+        correlacion_lambda_con_base,
+        3
+      ),
+
+    `Corr. π*` =
+      round(
+        correlacion_pi_estrella_con_base,
+        3
+      ),
+
+    `p LB inflación` =
+      fmt_p(
+        p_LB_inflacion_12
+      )
+  )
+
+
+# ============================================================================
+# APÉNDICE B.3
+# MEDIDAS ALTERNATIVAS DE INFLACIÓN
+# ============================================================================
+
+medidas_inflacion <- leer_csv_obligatorio(
+  file.path(
+    dir_medidas_inflacion,
+    "06_trayectorias_TVP_condicional.csv"
+  )
+) |>
+
+  dplyr::mutate(
+    fecha =
+      as.Date(
+        fecha
+      )
+  )
+
+
+base_medida <- medidas_inflacion |>
+
+  dplyr::filter(
+    variable ==
+      "infl_interanual_base"
+  ) |>
+
+  dplyr::select(
+    fecha,
+    lambda_base =
+      lambda_t,
+    pi_base =
+      pi_estrella_t
+  )
+
+
+resumen_medidas <- medidas_inflacion |>
+
+  dplyr::group_by(
+    variable,
+    medida
+  ) |>
+
+  dplyr::summarise(
+
+    lambda_final =
+      dplyr::last(
+        lambda_t
+      ),
+
+    pi_final =
+      dplyr::last(
+        pi_estrella_t
+      ),
+
+    .groups =
+      "drop"
+  )
+
+
+correlaciones_medidas <- medidas_inflacion |>
+
+  dplyr::inner_join(
+    base_medida,
+    by =
+      "fecha"
+  ) |>
+
+  dplyr::group_by(
+    variable,
+    medida
+  ) |>
+
+  dplyr::summarise(
+
+    corr_lambda =
+      cor(
+        lambda_t,
+        lambda_base,
+        use =
+          "complete.obs"
+      ),
+
+    corr_pi =
+      cor(
+        pi_estrella_t,
+        pi_base,
+        use =
+          "complete.obs"
+      ),
+
+    .groups =
+      "drop"
+  )
+
+
+tabla_b3 <- resumen_medidas |>
+
+  dplyr::left_join(
+    correlaciones_medidas,
+    by = c(
+      "variable",
+      "medida"
+    )
+  ) |>
+
+  dplyr::mutate(
+
+    Medida = dplyr::case_when(
+
+      variable ==
+        "infl_interanual_base" ~
+        "Interanual base",
+
+      variable ==
+        "infl_interanual_ipc" ~
+        "Interanual desde IPC",
+
+      variable ==
+        "infl_subyacente" ~
+        "Inflación subyacente",
+
+      variable ==
+        "infl_3m_sa_anualizada" ~
+        "3 meses desest. anualizada",
+
+      variable ==
+        "infl_mensual_sa_anualizada" ~
+        "Mensual desest. anualizada",
+
+      TRUE ~
+        medida
+    ),
+
+    orden_medida =
+      dplyr::case_when(
+
+        variable ==
+          "infl_interanual_base" ~
+          1,
+
+        variable ==
+          "infl_interanual_ipc" ~
+          2,
+
+        variable ==
+          "infl_subyacente" ~
+          3,
+
+        variable ==
+          "infl_3m_sa_anualizada" ~
+          4,
+
+        variable ==
+          "infl_mensual_sa_anualizada" ~
+          5,
+
+        TRUE ~
+          99
+      )
+  ) |>
+
+  dplyr::arrange(
+    orden_medida
+  ) |>
+
+  dplyr::transmute(
+
+    Medida,
+
+    `λ final` =
+      round(
+        lambda_final,
+        3
+      ),
+
+    `π* final` =
+      round(
+        pi_final,
+        3
+      ),
+
+    `Corr. λ` =
+      round(
+        corr_lambda,
+        3
+      ),
+
+    `Corr. π*` =
+      round(
+        corr_pi,
+        3
+      )
+  )
+
+
+datos_fig_b <- medidas_inflacion |>
+
+  dplyr::mutate(
+
+    Medida =
+      dplyr::case_when(
+
+        variable ==
+          "infl_interanual_base" ~
+          "Interanual base",
+
+        variable ==
+          "infl_interanual_ipc" ~
+          "Interanual IPC",
+
+        variable ==
+          "infl_subyacente" ~
+          "Subyacente",
+
+        variable ==
+          "infl_3m_sa_anualizada" ~
+          "3m SA",
+
+        variable ==
+          "infl_mensual_sa_anualizada" ~
+          "Mensual SA",
+
+        TRUE ~
+          medida
+      ),
+
+    Medida =
+      factor(
+        Medida,
+        levels = c(
+          "Interanual base",
+          "Interanual IPC",
+          "Subyacente",
+          "3m SA",
+          "Mensual SA"
+        )
+      )
+  ) |>
+
+  dplyr::select(
+    fecha,
+    Medida,
+    lambda_t,
+    pi_estrella_t
+  ) |>
+
+  tidyr::pivot_longer(
+
+    cols = c(
+      lambda_t,
+      pi_estrella_t
+    ),
+
+    names_to =
+      "Indicador",
+
+    values_to =
+      "Valor"
+  ) |>
+
+  dplyr::mutate(
+
+    Indicador =
+      dplyr::recode(
+
+        Indicador,
+
+        lambda_t =
+          "Proxy de credibilidad",
+
+        pi_estrella_t =
+          "Ancla inflacionaria implícita"
+      ),
+
+    Indicador =
+      factor(
+        Indicador,
+        levels = c(
+          "Ancla inflacionaria implícita",
+          "Proxy de credibilidad"
+        )
+      )
+  )
+
+
+# ============================================================================
 # TEMA GRÁFICO COMÚN
 # ============================================================================
 
 tema_apendice <-
   ggplot2::theme_minimal(
-    base_size = 9.5
+    base_size =
+      9.5
   ) +
 
   ggplot2::theme(
@@ -2241,299 +1978,100 @@ tema_apendice <-
   )
 ```
 
-# Apéndice A. Representación estado-espacio y estimación mediante filtro de Kalman {.unnumbered}
 
-Este apéndice complementa la descripción metodológica del modelo TVP--VAR presentada en el cuerpo del documento. Su propósito es formalizar la representación estado-espacio y precisar el procedimiento mediante el cual se recuperan las trayectorias de los parámetros variantes. La derivación de la proxy de credibilidad, $\lambda_t$, y del ancla inflacionaria implícita, $\pi_t^*$, no se reproduce aquí, dado que ambas expresiones se desarrollan directamente en la sección metodológica principal.
+# Apéndices
 
-## A.1. Representación estado-espacio {.unnumbered}
+## Apéndice A. Robustez de las regresiones móviles ante ventanas alternativas {.unnumbered}
 
-La especificación empírica central puede escribirse como:
+La primera aproximación econométrica del estudio utiliza regresiones móviles con una ventana central de 60 meses. Su longitud implica un compromiso entre sensibilidad y estabilidad: una ventana más corta permite que la estimación responda con mayor rapidez a cambios recientes, pero incrementa su variabilidad; una ventana más extensa proporciona estimaciones más estables, aunque puede suavizar modificaciones de corto plazo en la relación entre inflación y expectativas.
 
-$$
-\pi_t
-=
-a_0
-+
-a\pi_{t-1}
-+
-b e_{t-1}^{24}
-+
-\varepsilon_{\pi,t},
-$$
+Con el propósito de comprobar que la reducción de la sensibilidad identificada en la sección 6.2 no dependa exclusivamente de la ventana seleccionada, se reestimó el ejercicio empleando ventanas de 36, 48 y 50 meses, además de la especificación central de 60 meses. La comparación se realiza sobre un período común, de manera que las diferencias observadas respondan a la longitud de la ventana y no a cambios en la muestra disponible.
 
-$$
-e_t^{24}
-=
-c_{0t}
-+
-c_t\pi_{t-1}
-+
-d e_{t-1}^{24}
-+
-\varepsilon_{e,t}.
-$$
-
-El vector de variables observables se define como:
-
-$$
-\mathbf{y}_t
-=
-\begin{bmatrix}
-\pi_t\\
-e_t^{24}
-\end{bmatrix},
-$$
-
-mientras que el vector de estados contiene los seis coeficientes del sistema:
-
-$$
-\boldsymbol{\alpha}_t
-=
-\begin{bmatrix}
-a_0\\
-a\\
-b\\
-c_{0t}\\
-c_t\\
-d
-\end{bmatrix}.
-$$
-
-La ecuación de medición puede expresarse como:
-
-$$
-\mathbf{y}_t
-=
-Z_t\boldsymbol{\alpha}_t
-+
-\boldsymbol{\varepsilon}_t,
-$$
-
-donde:
-
-$$
-Z_t
-=
-\begin{bmatrix}
-1 & \pi_{t-1} & e_{t-1}^{24} & 0 & 0 & 0\\
-0 & 0 & 0 & 1 & \pi_{t-1} & e_{t-1}^{24}
-\end{bmatrix},
-$$
-
-y:
-
-$$
-\boldsymbol{\varepsilon}_t
-\sim
-N(\mathbf{0},H).
-$$
-
-En la especificación restringida utilizada como modelo central, la variación temporal se concentra exclusivamente en $c_{0t}$ y $c_t$. En consecuencia, la ecuación de transición se representa como:
-
-$$
-\boldsymbol{\alpha}_t
-=
-T\boldsymbol{\alpha}_{t-1}
-+
-\boldsymbol{\eta}_t,
-\qquad
-T=I_6,
-$$
-
-con:
-
-$$
-\boldsymbol{\eta}_t
-\sim
-N(\mathbf{0},Q),
-$$
-
-y:
-
-$$
-Q=
-\begin{bmatrix}
-0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & Q_{c_0} & 0 & 0\\
-0 & 0 & 0 & 0 & Q_c & 0\\
-0 & 0 & 0 & 0 & 0 & 0
-\end{bmatrix}.
-$$
-
-Por construcción, $Q_{c_0}>0$ y $Q_c>0$ permiten que el intercepto y la sensibilidad de la ecuación de expectativas evolucionen gradualmente, mientras que los restantes coeficientes permanecen constantes. La matriz $H$ recoge las varianzas de las innovaciones de las ecuaciones de inflación y expectativas; en la especificación central se restringe a una estructura diagonal.
-
-## A.2. Estimación y suavizamiento de los estados {.unnumbered}
-
-Los hiperparámetros contenidos en $H$ y en las posiciones activas de $Q$ se estiman por máxima verosimilitud. Para reducir la sensibilidad de la optimización a los valores iniciales, la estimación se realiza a partir de diferentes órdenes de magnitud para las varianzas de transición y se conserva la solución convergente con mayor log-verosimilitud.
-
-Condicional a estos hiperparámetros, el filtro de Kalman combina en cada período la predicción del estado con la información contenida en la observación corriente. De manera esquemática:
-
-$$
-\widehat{\boldsymbol{\alpha}}_{t|t}
-=
-\widehat{\boldsymbol{\alpha}}_{t|t-1}
-+
-K_t v_t,
-$$
-
-donde $v_t$ representa el error de predicción y $K_t$ la ganancia de Kalman. Esta última determina la ponderación relativa entre la trayectoria predicha del estado y la nueva información proporcionada por los datos.
-
-Debe distinguirse entre las estimaciones **filtradas** y **suavizadas**. La primera,
-
-$$
-\widehat{\boldsymbol{\alpha}}_{t|t},
-$$
-
-utiliza únicamente la información disponible hasta el período $t$. La segunda,
-
-$$
-\widehat{\boldsymbol{\alpha}}_{t|T},
-$$
-
-emplea la información de toda la muestra para reconstruir retrospectivamente la trayectoria de los estados.
-
-Dado que el objetivo del estudio consiste en caracterizar históricamente la evolución del anclaje y no en producir una medida en tiempo real, las estimaciones utilizadas en el análisis corresponden a los estados suavizados. A partir de las trayectorias estimadas de $c_{0t}$ y $c_t$, junto con el parámetro constante $d$, se recuperan período a período las medidas $\lambda_t$ y $\pi_t^*$ mediante las expresiones desarrolladas en el cuerpo del documento.
-
-# Apéndice B. Propiedades estadísticas, diagnóstico y robustez del TVP--VAR {.unnumbered}
-
-Este apéndice reúne las comprobaciones estadísticas que complementan la especificación central. Se examinan las propiedades temporales de las series, la selección de rezagos de un VAR de parámetros constantes, la estabilidad y los residuos del TVP--VAR(1), así como la sensibilidad de las principales conclusiones ante especificaciones dinámicas alternativas y una representación en primeras diferencias.
-
-## B.1. Propiedades temporales de las series {.unnumbered}
-
-Las propiedades de integración se evaluaron mediante las pruebas ADF y KPSS, cuyas hipótesis nulas son complementarias. La ADF contrasta la presencia de una raíz unitaria, mientras que la KPSS contrasta estacionariedad.
-
-**Tabla B.1.** *Pruebas de estacionariedad en niveles y primeras diferencias*
+**Tabla A.1.** *Correspondencia de las estimaciones rolling respecto de la ventana de 60 meses*
 
 ```{r}
-#| label: tabla-b1
+#| label: tabla-a1
 #| echo: false
 #| results: asis
 
 imprimir_tabla(
-  tabla_b1,
+  tabla_a1,
   align = c(
     "l",
-    "r",
-    "r",
-    "r",
-    "r",
-    "l"
-  )
-)
-```
-
-Los resultados no ofrecen una caracterización uniforme en niveles. Para la inflación, la ADF no rechaza la presencia de raíz unitaria, mientras que la KPSS no rechaza estacionariedad, por lo que la evidencia es mixta. En el caso de las expectativas a 24 meses, ambas pruebas son más consistentes con una elevada persistencia compatible con integración de primer orden. En primeras diferencias, en cambio, ambas series muestran evidencia clara de estacionariedad.
-
-Dada esta evidencia, se examinó adicionalmente la posible existencia de una relación de cointegración. La prueba de traza de Johansen para la hipótesis de rango cero arroja un estadístico de `r fmt(joh_trace$estadistico[1], 2)` frente a un valor crítico al 5 % de `r fmt(joh_trace$critico_5pct[1], 2)`, mientras que la prueba de máximo eigenvalor obtiene `r fmt(joh_eigen$estadistico[1], 2)` frente a `r fmt(joh_eigen$critico_5pct[1], 2)`. **En ambos casos no se rechaza la hipótesis nula de rango de cointegración igual a cero; por tanto, no se encuentra evidencia de cointegración al 5 %.**
-
-Estos resultados aconsejan cautela en la interpretación de las relaciones dinámicas estimadas en niveles y motivan el ejercicio complementario en primeras diferencias presentado en la sección B.4.
-
-## B.2. Selección de rezagos y especificación parsimoniosa {.unnumbered}
-
-Como referencia, se estimó un VAR de parámetros constantes y se permitió un máximo de doce rezagos, consistente con la frecuencia mensual de los datos.
-
-**Tabla B.2.** *Selección del orden del VAR mediante criterios de información*
-
-```{r}
-#| label: tabla-b2
-#| echo: false
-#| results: asis
-
-imprimir_tabla(
-  tabla_b2,
-  align = c(
-    "l",
-    "c"
-  )
-)
-```
-
-Los criterios de información favorecen entre dos y tres rezagos: Schwarz/BIC selecciona dos, mientras que AIC y Hannan--Quinn seleccionan tres. Por tanto, la adopción de un TVP--VAR(1) como especificación central **no se interpreta como el resultado mecánico de los criterios de información**. Responde a una decisión de parsimonia y a la necesidad de mantener una representación directamente comparable con la formulación de primer orden utilizada por Demertzis et al. (2012) para construir las medidas dinámicas de credibilidad, evitando al mismo tiempo una proliferación considerable de estados variantes.
-
-Esta decisión se somete posteriormente a ejercicios de robustez con dinámicas más ricas. Por ello, el TVP--VAR(1) debe entenderse como la especificación central parsimoniosa, mientras que las alternativas con rezagos adicionales permiten evaluar si las trayectorias de $\lambda_t$ y $\pi_t^*$ dependen de esa restricción.
-
-## B.3. Estabilidad, diagnóstico residual y dinámica alternativa {.unnumbered}
-
-La estabilidad del TVP--VAR se verifica localmente en cada período mediante los valores propios de la matriz dinámica:
-
-$$
-A_t=
-\begin{bmatrix}
-a & b\\
-c_t & d
-\end{bmatrix}.
-$$
-
-El sistema es localmente estable cuando el radio espectral satisface:
-
-$$
-\rho(A_t)<1.
-$$
-
-**Tabla B.3.** *Diagnósticos principales de la especificación TVP--VAR(1)*
-
-```{r}
-#| label: tabla-b3
-#| echo: false
-#| results: asis
-
-imprimir_tabla(
-  tabla_b3,
-  align = c(
-    "l",
-    "c",
-    "l"
-  )
-)
-```
-
-La condición de estabilidad se cumple a lo largo de la muestra. Los diagnósticos residuales muestran, sin embargo, una diferencia entre ecuaciones: la ecuación de expectativas presenta un comportamiento residual más satisfactorio, mientras que en la ecuación de inflación persiste autocorrelación. Dado que esta última no constituye directamente la ecuación de la que se recupera la proxy de credibilidad, se evaluó si una dinámica más rica de inflación modificaba las magnitudes centrales.
-
-**Tabla B.4.** *Robustez ante especificaciones alternativas de la dinámica de inflación*
-
-```{r}
-#| label: tabla-b4
-#| echo: false
-#| results: asis
-
-imprimir_tabla(
-  tabla_b4,
-  align = c(
-    "l",
-    "r",
-    "r",
-    "r",
     "r",
     "r"
   )
 )
 ```
 
-La autocorrelación residual de la ecuación de inflación no desaparece completamente bajo las alternativas consideradas. No obstante, las trayectorias de la proxy de credibilidad y del ancla implícita permanecen estrechamente relacionadas con las obtenidas bajo la especificación central. En particular, las especificaciones con cuatro rezagos y con un componente estacional reproducen prácticamente la misma evolución de $\lambda_t$ y $\pi_t^*$.
+**Figura A.1.** *Sensibilidad de las expectativas ante ventanas móviles alternativas*
 
-En consecuencia, el problema residual se reconoce como una limitación de la ecuación auxiliar de inflación, pero la evidencia indica que no constituye el principal determinante de la trayectoria estimada del anclaje.
+```{r}
+#| label: figura-a1
+#| echo: false
+#| fig-width: 8.5
+#| fig-height: 4.8
+#| out-width: "100%"
 
-## B.4. Robustez frente a las propiedades de integración {.unnumbered}
+ggplot2::ggplot(
+  rolling_comun,
+  ggplot2::aes(
+    x =
+      fecha_fin,
+    y =
+      beta,
+    linetype =
+      ventana
+  )
+) +
 
-Como comprobación adicional, se estimó una representación auxiliar en primeras diferencias:
+  ggplot2::geom_hline(
+    yintercept =
+      0,
+    linewidth =
+      0.35,
+    linetype =
+      "dotted"
+  ) +
 
-$$
-\Delta e_t^{24}
-=
-\alpha_t
-+
-\beta_t\Delta\pi_{t-1}
-+
-\rho\Delta e_{t-1}^{24}
-+
-\varepsilon_t,
-$$
+  ggplot2::geom_line(
+    linewidth =
+      0.70
+  ) +
 
-donde $\alpha_t$ y $\beta_t$ evolucionan como paseos aleatorios y $\rho$ permanece constante. Esta especificación no permite reconstruir directamente $\lambda_t$ ni $\pi_t^*$, puesto que ambas magnitudes se derivan de relaciones de equilibrio en niveles. Su propósito es más acotado: determinar si la disminución de la sensibilidad de las expectativas frente a la inflación también aparece después de remover la posible tendencia estocástica de las series.
+  ggplot2::scale_x_date(
+    date_breaks =
+      "2 years",
+    date_labels =
+      "%Y"
+  ) +
 
-**Figura B.1.** *Sensibilidad variante de los cambios en las expectativas frente a cambios rezagados en la inflación*
+  ggplot2::labs(
+    y =
+      expression(
+        hat(beta)[t]
+      )
+  ) +
+
+  tema_apendice
+```
+
+Las distintas ventanas reproducen el patrón general identificado mediante la especificación central: la sensibilidad de las expectativas a 24 meses frente a la inflación disminuye a medida que avanza la muestra. Como es esperable, la ventana de 36 meses presenta una mayor variabilidad, mientras que las estimaciones correspondientes a 48 y 50 meses guardan una elevada correspondencia con la trayectoria obtenida mediante 60 meses.
+
+En consecuencia, la elección de una ventana de 60 meses afecta principalmente el grado de suavidad de la trayectoria estimada, pero no modifica la conclusión sustantiva del ejercicio: la reducción gradual de la sensibilidad de las expectativas frente a la inflación se mantiene bajo longitudes alternativas de ventana.
+
+
+## Apéndice B. Comprobaciones de robustez del modelo TVP--VAR {.unnumbered}
+
+El TVP--VAR constituye la aproximación central utilizada para reconstruir la evolución de la proxy de credibilidad y del ancla inflacionaria implícita. Las comprobaciones presentadas en este apéndice no buscan sustituir esa representación, sino evaluar si sus principales conclusiones permanecen ante modificaciones razonables de algunos elementos de la especificación.
+
+En particular, se examinan dos aspectos: si la reducción de la sensibilidad se mantiene cuando las variables se expresan en primeras diferencias; si la autocorrelación residual identificada en la ecuación auxiliar de inflación afecta las trayectorias de $\lambda_t$ y $\pi_t^*$.
+
+## B.1. Robustez mediante una especificación en primeras diferencias {.unnumbered}
+
+Dada la elevada persistencia de la inflación y de las expectativas a 24 meses, se estimó como ejercicio de robustez la misma estructura bivariada del TVP--VAR utilizando ambas variables en primeras diferencias, transformación bajo la cual las series presentan evidencia de estacionariedad. Esta especificación no busca sustituir el modelo central, cuya formulación en niveles es necesaria para recuperar $\lambda_t$ y $\pi_t^*$, sino evaluar si la reducción de la sensibilidad de las expectativas frente a la inflación podría estar siendo inducida por las propiedades temporales de las series.
+
+**Figura B.1.** *Sensibilidad de las expectativas frente a la inflación bajo una especificación TVP--VAR en primeras diferencias*
 
 ```{r}
 #| label: figura-b1
@@ -2545,65 +2083,97 @@ donde $\alpha_t$ y $\beta_t$ evolucionan como paseos aleatorios y $\rho$ permane
 ggplot2::ggplot(
   tray_diff,
   ggplot2::aes(
-    x = fecha,
-    y = beta_t
+    x =
+      fecha,
+    y =
+      c_t
   )
 ) +
 
   ggplot2::geom_ribbon(
     ggplot2::aes(
-      ymin = beta_li_95,
-      ymax = beta_ls_95
+      ymin =
+        c_li_95,
+      ymax =
+        c_ls_95
     ),
-    alpha = 0.16,
-    linewidth = 0
+    alpha =
+      0.16,
+    linewidth =
+      0
   ) +
 
   ggplot2::geom_hline(
-    yintercept = 0,
-    linetype = "dashed",
-    linewidth = 0.4
+    yintercept =
+      0,
+    linetype =
+      "dashed",
+    linewidth =
+      0.4
   ) +
 
   ggplot2::geom_line(
-    linewidth = 0.75
+    linewidth =
+      0.75
   ) +
 
   ggplot2::scale_x_date(
-    date_breaks = "2 years",
-    date_labels = "%Y"
+    date_breaks =
+      "2 years",
+    date_labels =
+      "%Y"
   ) +
 
   ggplot2::labs(
-    y = expression(
-      hat(beta)[t]
-    )
+    y =
+      expression(
+        hat(c)[t]
+      )
   ) +
 
   tema_apendice
 ```
 
-El coeficiente $\beta_t$ disminuye desde aproximadamente `r fmt(beta_inicio, 3)` al inicio de la muestra hasta `r fmt(beta_final, 3)` en junio de 2026. En términos de subperíodos, su promedio pasa de `r fmt(beta_media_inicio, 3)` en 2010--2014 a `r fmt(beta_media_final, 3)` en 2023--2026. La varianza de transición estimada para esta sensibilidad es $Q_{\beta}=`r formatC(Q_beta_diff, format = "e", digits = 2)`$, lo que permite una evolución temporal efectiva del coeficiente.
+Los resultados reproducen la dirección obtenida mediante la especificación central. El coeficiente $c_t$, que en esta representación mide la sensibilidad de las variaciones de las expectativas frente a las variaciones rezagadas de la inflación, disminuye desde aproximadamente `r fmt(c_inicio, 3)` al inicio de la muestra hasta `r fmt(c_final, 3)` en junio de 2026; en términos de subperíodos, su promedio pasa de `r fmt(c_media_inicio, 3)` durante 2010--2014 a `r fmt(c_media_final, 3)` durante 2023--2026. Por tanto, aun después de transformar las series para trabajar con variables estacionarias, se mantiene el patrón de reducción de la sensibilidad identificado en el modelo central, lo que reduce la posibilidad de que dicho resultado responda exclusivamente a relaciones inducidas por la elevada persistencia de las variables en niveles.
 
-Por tanto, aun bajo una representación en primeras diferencias, se observa una reducción pronunciada de la respuesta de las expectativas de mediano plazo frente a innovaciones de inflación. Este resultado es cualitativamente consistente con el fortalecimiento del anclaje identificado por la especificación central, aunque $\beta_t$ no debe interpretarse como equivalente a $\lambda_t$.
 
-Los diagnósticos de esta especificación continúan mostrando autocorrelación residual ---el valor $p$ del Ljung--Box a doce rezagos es `r fmt_p(p_lb_diff_12)`---, por lo que el ejercicio se interpreta exclusivamente como una comprobación de robustez frente a las propiedades de integración y no como un modelo alternativo preferido.
+## B.2. Autocorrelación residual y dinámica de la inflación {.unnumbered}
 
-# Apéndice C. Robustez ante medidas alternativas de inflación {.unnumbered}
+Una segunda comprobación surge de los diagnósticos residuales del modelo central. La prueba de Ljung--Box permite evaluar si los errores conservan una relación sistemática con sus valores pasados; bajo una especificación que recoge adecuadamente la dinámica temporal, idealmente no debería encontrarse evidencia relevante de autocorrelación residual.
 
-La construcción de la proxy dinámica depende de la manera en que se representa la inflación observada. Para evaluar esta sensibilidad se reestimó el ejercicio empleando medidas alternativas que difieren en frecuencia de transformación y contenido informativo.
-
-**Tabla C.1.** *Sensibilidad de las medidas de anclaje ante definiciones alternativas de inflación*
+**Tabla B.1.** *Autocorrelación residual en la especificación central*
 
 ```{r}
-#| label: tabla-c1
+#| label: tabla-b1
 #| echo: false
 #| results: asis
 
 imprimir_tabla(
-  tabla_c1,
+  tabla_b1,
   align = c(
     "l",
+    "c",
+    "l"
+  )
+)
+```
+
+Los resultados muestran una diferencia entre las dos ecuaciones del sistema. En la ecuación de expectativas, que constituye el núcleo de la medición del anclaje, no se identifica autocorrelación residual estadísticamente significativa a doce rezagos; en cambio, la ecuación auxiliar de inflación conserva dependencia temporal que la especificación central no logra recoger completamente.
+
+Dado que ambas ecuaciones forman parte del mismo sistema, se evaluó si una representación más flexible de la dinámica inflacionaria modificaba las magnitudes que constituyen el interés central de la investigación. Para ello, el modelo se reestimó incorporando dos y cuatro rezagos en la dinámica de inflación y, adicionalmente, un rezago estacional a doce meses.
+
+**Tabla B.2.** *Robustez ante especificaciones alternativas de la dinámica de inflación*
+
+```{r}
+#| label: tabla-b2
+#| echo: false
+#| results: asis
+
+imprimir_tabla(
+  tabla_b2,
+  align = c(
+    "l",
+    "r",
     "r",
     "r",
     "r",
@@ -2612,113 +2182,7 @@ imprimir_tabla(
 )
 ```
 
-**Figura C.1.** *Trayectorias de la proxy de credibilidad y del ancla implícita bajo medidas alternativas de inflación*
+La incorporación de una dinámica más flexible no elimina completamente la autocorrelación residual de la inflación; sin embargo, las magnitudes que constituyen el objetivo central del modelo permanecen prácticamente invariantes. Las especificaciones AR(4) y con rezago estacional reproducen casi exactamente las trayectorias del modelo central: las correlaciones de $\lambda_t$ con la especificación base se sitúan alrededor de 0.997 o superiores y las correspondientes a $\pi_t^*$ alrededor de 0.999.
 
-```{r}
-#| label: figura-c1
-#| echo: false
-#| fig-width: 8.5
-#| fig-height: 7
-#| out-width: "100%"
+En consecuencia, la autocorrelación residual se reconoce como una limitación de la ecuación auxiliar de inflación. No obstante, las comprobaciones realizadas muestran que el aumento gradual de $\lambda_t$ y la aproximación de $\pi_t^*$ hacia la meta permanecen aun cuando se modifica sustancialmente la dinámica utilizada para representar la inflación, lo que sugiere que este problema residual no constituye el principal determinante de las trayectorias estimadas.
 
-ggplot2::ggplot(
-  datos_fig_c,
-  ggplot2::aes(
-    x = fecha,
-    y = Valor,
-    linetype = Medida
-  )
-) +
-
-  ggplot2::geom_line(
-    linewidth = 0.65
-  ) +
-
-  ggplot2::facet_wrap(
-    ~ Indicador,
-    ncol = 1,
-    scales = "free_y"
-  ) +
-
-  ggplot2::scale_x_date(
-    date_breaks = "2 years",
-    date_labels = "%Y"
-  ) +
-
-  ggplot2::labs(
-    y = NULL
-  ) +
-
-  tema_apendice
-```
-
-Las medidas interanuales reproducen de manera particularmente cercana la trayectoria de la especificación central. Las transformaciones de mayor frecuencia generan diferencias más visibles en el nivel de $\lambda_t$, por lo que la **intensidad exacta del anclaje** es más sensible a la definición de inflación utilizada.
-
-En contraste, la evolución de $\pi_t^*$ presenta una mayor estabilidad entre especificaciones: las distintas medidas conservan el patrón de convergencia gradual del ancla implícita hacia niveles próximos a la meta. En consecuencia, esta robustez sugiere que la evidencia sobre la **localización del ancla** es más estable que la magnitud puntual de la proxy de credibilidad frente a determinadas transformaciones de inflación.
-
-# Apéndice D. Robustez de las regresiones móviles ante ventanas alternativas {.unnumbered}
-
-La especificación central de las regresiones móviles utiliza una ventana de 60 meses. Para evaluar si la trayectoria estimada depende de esta elección, se compararon ventanas de 36, 48, 50 y 60 meses sobre un soporte temporal común.
-
-**Tabla D.1.** *Correspondencia de las estimaciones rolling respecto de la ventana de 60 meses*
-
-```{r}
-#| label: tabla-d1
-#| echo: false
-#| results: asis
-
-imprimir_tabla(
-  tabla_d1,
-  align = c(
-    "l",
-    "r",
-    "r"
-  )
-)
-```
-
-**Figura D.1.** *Sensibilidad de la respuesta de las expectativas ante ventanas móviles alternativas*
-
-```{r}
-#| label: figura-d1
-#| echo: false
-#| fig-width: 8.5
-#| fig-height: 4.8
-#| out-width: "100%"
-
-ggplot2::ggplot(
-  rolling_comun,
-  ggplot2::aes(
-    x = fecha_fin,
-    y = beta,
-    linetype = ventana
-  )
-) +
-
-  ggplot2::geom_hline(
-    yintercept = 0,
-    linewidth = 0.35,
-    linetype = "dotted"
-  ) +
-
-  ggplot2::geom_line(
-    linewidth = 0.70
-  ) +
-
-  ggplot2::scale_x_date(
-    date_breaks = "2 years",
-    date_labels = "%Y"
-  ) +
-
-  ggplot2::labs(
-    y = expression(
-      hat(beta)[t]
-    )
-  ) +
-
-  tema_apendice
-```
-
-Las cuatro ventanas reproducen el patrón general de reducción de la sensibilidad de las expectativas frente a la inflación. Como es esperable, la ventana de 36 meses presenta una mayor volatilidad, mientras que las ventanas de 48 y 50 meses muestran una correspondencia especialmente alta con la especificación central de 60 meses.
-
-La elección de 60 meses se conserva, por tanto, como un compromiso entre suavidad, disponibilidad de observaciones y capacidad para identificar cambios graduales. La trayectoria sustantiva del coeficiente no depende, sin embargo, de una única longitud de ventana.

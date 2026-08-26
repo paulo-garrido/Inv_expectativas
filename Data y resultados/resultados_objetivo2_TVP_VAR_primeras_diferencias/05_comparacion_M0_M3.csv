@@ -1,0 +1,3 @@
+modelo,descripcion,log_verosimilitud,parametros_contados,AIC,BIC
+VAR diferencias,VAR(1) constante en primeras diferencias,-162.07245017177746,8,340.1449003435549,366.36981761739906
+TVP-VAR diferencias,TVP-VAR(1) restringido en primeras diferencias,-160.0300722419076,10,340.0601444838152,372.84129107612034

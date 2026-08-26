@@ -1,0 +1,627 @@
+---
+format:
+  revealjs:
+    theme: [default, custom_v5_1.scss]
+    width: 1600
+    height: 900
+    margin: 0.035
+    slide-number: true
+    controls: false
+    progress: true
+    transition: fade
+    background-transition: fade
+    center: false
+    hash: true
+    history: true
+    overview: true
+    touch: true
+    embed-resources: true
+    html-math-method: mathjax
+lang: es
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## {.institutional-cover}
+
+<div class="cover-plain">
+<div class="cover-identity">
+<img src="assets/logos_programa.png" class="cover-logos cover-logos-small">
+</div>
+<div class="cover-label">Seminario de investigación · Working paper</div>
+<div class="cover-main-title">Evolución del anclaje de las expectativas de inflación en Guatemala</div>
+<div class="cover-subtitle">Una aproximación a la credibilidad de la política monetaria · 2010–2026</div>
+<div class="cover-meta">
+<div><strong>Paulo Garrido</strong></div>
+<div>Maestría en Economía y Finanzas Aplicadas</div>
+<div>Programa de Estudios Superiores en Banca Central</div>
+</div>
+</div>
+<div class="cover-band">Seminario de investigación · Economía y Finanzas Aplicadas</div>
+
+::: {.notes}
+**Tiempo: 0:30.** Abrir con tono de seminario. El objetivo no es presentar una tesis completa, sino el argumento central del working paper.
+:::
+
+## La credibilidad se observa cuando la inflación se desvía
+
+<div class="kicker">Motivación</div>
+
+<div class="two-col motivation-layout">
+<div class="text-stack">
+<div class="statement fragment fade-up">La pregunta no es solo si la inflación vuelve a la meta.</div>
+<div class="body-large fragment fade-up">La cuestión económica relevante es si un choque inflacionario contamina la referencia de mediano plazo que usan los agentes para formar expectativas.</div>
+<div class="highlight-line fragment fade-up">El episodio 2021–2023 funciona como una prueba de esfuerzo del anclaje en Guatemala.</div>
+</div>
+<div class="figure-box fragment fade-up">
+<img src="assets/fig1_inflacion_hist.png" class="figure-fit">
+</div>
+</div>
+
+<div class="source">Fuente: elaboración propia con datos del Banco de Guatemala.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:00.** Presentar la intuición: el régimen es creíble si los choques de corto plazo no modifican persistentemente la referencia nominal de mediano plazo.
+:::
+
+## Un mismo fenómeno, dos preguntas distintas
+
+<div class="kicker">Problema económico</div>
+
+<div class="dual-question">
+<div class="question-minimal fragment fade-up">
+<div class="qnum">01</div>
+<div class="qtitle">Intensidad del anclaje</div>
+<div class="qtext">¿Cuánto reacciona la expectativa a 24 meses frente a la inflación observada?</div>
+</div>
+<div class="question-minimal fragment fade-up">
+<div class="qnum">02</div>
+<div class="qtitle">Localización del ancla</div>
+<div class="qtext">¿Alrededor de qué nivel de inflación terminan organizándose esas expectativas?</div>
+</div>
+</div>
+
+<div class="thesis-line fragment fade-up">El trabajo separa la <strong>fuerza del anclaje</strong> de la <strong>ubicación de la referencia nominal</strong>.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:55.** Esta distinción debe quedar muy clara: una expectativa puede reaccionar poco ante la inflación y, aun así, organizarse alrededor de un nivel distinto de la meta.
+:::
+
+## Pregunta central y respuesta breve
+
+<div class="kicker">Working paper logic</div>
+
+<div class="research-question fragment fade-up">¿Cómo evolucionó el anclaje de las expectativas de inflación a 24 meses en Guatemala durante 2010–2026?</div>
+
+<div class="question-sub fragment fade-up">El análisis distingue dos dimensiones: sensibilidad frente a la inflación observada y referencia nominal hacia la cual parecen converger las expectativas.</div>
+
+<div class="one-line-answer fragment fade-up">Respuesta breve: las expectativas a 24 meses parecen haberse vuelto <strong>menos sensibles</strong> a la inflación observada y más consistentes con una referencia nominal próxima a la meta.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:50.** Formular pregunta y dar la respuesta corta antes de entrar a metodología. Esto ayuda a la audiencia a seguir los resultados.
+:::
+
+## Aporte del trabajo
+
+<div class="kicker">Contribución</div>
+
+<div class="contribution-layout">
+<div class="contribution-item fragment fade-up">
+<div class="contribution-letter">A</div>
+<div>
+<div class="contribution-title">Dinámica del anclaje</div>
+<div class="contribution-text">No se limita a observar proximidad respecto de la meta; estima cómo cambia la sensibilidad de las expectativas frente a la inflación.</div>
+</div>
+</div>
+<div class="contribution-item fragment fade-up">
+<div class="contribution-letter">B</div>
+<div>
+<div class="contribution-title">Referencia implícita</div>
+<div class="contribution-text">Recupera el nivel de inflación alrededor del cual parecen converger las expectativas y lo contrasta con la meta oficial.</div>
+</div>
+</div>
+</div>
+
+<div class="thesis-line fragment fade-up">El aporte es distinguir si las expectativas están menos expuestas a choques inflacionarios y si esa menor sensibilidad ocurre alrededor de una referencia compatible con el objetivo anunciado.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:55.** Presentar el aporte de manera sobria: complementa la evidencia local con una aproximación dinámica de credibilidad.
+:::
+
+## Tres resultados en una mirada
+
+<div class="kicker">Preview of results</div>
+
+<div class="result-grid">
+<div class="result-card fragment fade-up">
+<div class="result-label">Sensibilidad rolling</div>
+<div class="result-value">0.16 → 0.05</div>
+<div class="result-text">Menor transmisión de la brecha inflacionaria hacia expectativas a 24 meses.</div>
+</div>
+<div class="result-card fragment fade-up">
+<div class="result-label">Proxy de credibilidad</div>
+<div class="result-value">0.75 → 0.88</div>
+<div class="result-text">Mayor peso estimado de la referencia nominal implícita.</div>
+</div>
+<div class="result-card fragment fade-up">
+<div class="result-label">Ancla implícita</div>
+<div class="result-value">&gt;6% → ≈4%</div>
+<div class="result-text">Convergencia hacia niveles compatibles con la meta.</div>
+</div>
+</div>
+
+<div class="source">Magnitudes reportadas en la discusión de resultados del working paper.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:00.** Esta diapositiva es el mapa de resultados. No demostrar todavía; solo adelantar el hilo de la evidencia.
+:::
+
+## De la política monetaria discreta a la gestión de expectativas
+
+<div class="kicker">Marco teórico · expectativas</div>
+
+<div class="theory-path">
+<div class="theory-step fragment fade-up">
+<div class="theory-year">Antes</div>
+<div class="theory-title">La banca central como arte reservado</div>
+<div class="theory-text">Menor comunicación pública y mayor discreción operativa.</div>
+</div>
+<div class="theory-step fragment fade-up">
+<div class="theory-year">Giro moderno</div>
+<div class="theory-title">Expectativas como canal de transmisión</div>
+<div class="theory-text">La política monetaria actúa no solo por el instrumento corriente, sino por la trayectoria esperada de inflación y tasas.</div>
+</div>
+<div class="theory-step fragment fade-up">
+<div class="theory-year">EMEI</div>
+<div class="theory-title">Meta, transparencia y rendición de cuentas</div>
+<div class="theory-text">El régimen de metas explícitas busca ofrecer una referencia nominal creíble para coordinar expectativas.</div>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">En esta literatura, la credibilidad se manifiesta cuando la meta anunciada conserva poder informativo aun en presencia de choques inflacionarios.</div>
+<div class="source">Referencias conceptuales: Woodford (2001, 2003), Bernanke & Mishkin (1997), Mishkin (2007).</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:05.** No presentar una revisión exhaustiva; explicar la evolución conceptual que justifica estudiar expectativas.
+:::
+
+## El anclaje no es una variable observable
+
+<div class="kicker">Marco teórico · medición</div>
+
+<div class="dimension-grid">
+<div class="dimension fragment fade-up">
+<h3>Proximidad</h3>
+<p>¿Qué tan cerca están las expectativas de la meta central?</p>
+</div>
+<div class="dimension fragment fade-up">
+<h3>Estabilidad</h3>
+<p>¿Se mantienen relativamente contenidas ante perturbaciones?</p>
+</div>
+<div class="dimension core fragment fade-up">
+<h3>Sensibilidad</h3>
+<p>¿Cuánto se trasladan los movimientos de inflación reciente hacia el horizonte de 24 meses?</p>
+</div>
+<div class="dimension hot fragment fade-up">
+<h3>Convergencia</h3>
+<p>¿Hacia qué referencia nominal parecen organizarse las expectativas?</p>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">El estudio usa proximidad y estabilidad como señales descriptivas, pero centra la identificación econométrica en sensibilidad y convergencia.</div>
+<div class="source">Literatura relacionada: Levin et al. (2004), Ehrmann (2015), Łyziak & Paloviita (2017), Bems et al. (2021), Mehrotra & Yetman (2018).</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:05.** Explicar por qué no basta con decir que las expectativas están dentro de la banda. La medición requiere inferir huellas observables del anclaje.
+:::
+
+## Qué significa ganar credibilidad en el modelo
+
+<div class="kicker">Marco conceptual operativo</div>
+
+<div class="equation-hero fragment fade-up">
+$$
+\bar e^{24}_t = \underbrace{\lambda_t\pi_t^*}_{\text{referencia nominal}} + \underbrace{(1-\lambda_t)\bar\pi_t}_{\text{inflación observada}}
+$$
+</div>
+
+<div class="concept-grid">
+<div class="concept-item fragment fade-up">
+<div class="concept-symbol">$\lambda_t \uparrow$</div>
+<div class="concept-text">La inflación reciente pierde peso en la formación de expectativas.</div>
+</div>
+<div class="concept-item fragment fade-up">
+<div class="concept-symbol">$\pi_t^* \rightarrow \pi_t^m$</div>
+<div class="concept-text">La referencia implícita se aproxima al objetivo anunciado por la autoridad monetaria.</div>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">Mayor credibilidad requiere ambas dimensiones: <strong>menor sensibilidad</strong> y <strong>ancla compatible con la meta</strong>.</div>
+<div class="source">Marco conceptual: Bomfim & Rudebusch (2000); Demertzis, Marcellino & Viegi (2012).</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:15.** Lambda cercano a uno implica mayor peso de la referencia nominal. Pi estrella no se impone igual a la meta; se estima y luego se compara.
+:::
+
+## Datos: expectativas de analistas privados a horizonte constante
+
+<div class="kicker">Datos y período muestral</div>
+
+<div class="chart-stage wide fragment fade-up">
+<img src="assets/fig2_expectativas.png" class="chart-main">
+</div>
+
+<div class="chart-caption fragment fade-up">En 2022–2023, el horizonte de 12 meses reaccionó con más fuerza que el horizonte de 24 meses.</div>
+
+<div class="data-strip fragment fade-up">
+<div><span>Frecuencia</span><strong>mensual</strong></div>
+<div><span>Muestra</span><strong>2010m1–2026m6</strong></div>
+<div><span>Expectativas</span><strong>EEE · Banguat</strong></div>
+<div><span>Inflación</span><strong>IPC · INE/Banguat</strong></div>
+</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:10.** Subrayar que la evidencia corresponde al Panel de Analistas Privados y al horizonte constante de 24 meses.
+:::
+
+## La estrategia empírica avanza en tres pasos
+
+<div class="kicker">Diseño empírico</div>
+
+<div class="timeline">
+<div class="time-step fragment fade-up">
+<div class="time-num">1</div>
+<div class="time-title">Hechos estilizados</div>
+<div class="time-desc">Proximidad a la meta, estabilidad y diferencias entre horizontes.</div>
+</div>
+<div class="time-step fragment fade-up">
+<div class="time-num">2</div>
+<div class="time-title">Regresiones móviles</div>
+<div class="time-desc">Primera señal transparente de sensibilidad cambiante.</div>
+</div>
+<div class="time-step fragment fade-up">
+<div class="time-num">3</div>
+<div class="time-title">TVP–VAR + Kalman</div>
+<div class="time-desc">Estimación continua de sensibilidad, $\lambda_t$ y $\pi_t^*$.</div>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">La presentación empírica pasa de una señal visual a una medida dinámica de credibilidad.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:55.** Esta diapositiva es el mapa de navegación empírico.
+:::
+
+## La sensibilidad de las expectativas cayó de 0.16 a 0.05
+
+<div class="kicker">Resultado 1 · Regresiones móviles</div>
+
+<div class="chart-with-metric">
+<div class="metric-column fragment fade-up">
+<div class="big-number">0.16</div>
+<div class="metric-caption">promedio inicial</div>
+<div class="arrow-down">↓</div>
+<div class="big-number accent">0.05</div>
+<div class="metric-caption">hacia 2026</div>
+</div>
+<div class="chart-stage fragment fade-up">
+<img src="assets/fig4_rolling_beta_clean.png" class="chart-main">
+</div>
+</div>
+
+<div class="source">Estimación rolling con ventana de 60 meses y errores Newey–West HAC.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:30.** Primer resultado fuerte. La misma desviación de inflación respecto de la meta genera hoy un movimiento menor en las expectativas a 24 meses que al inicio de la muestra.
+:::
+
+## El TVP–VAR traduce la sensibilidad en una proxy dinámica
+
+<div class="kicker">Especificación central</div>
+
+<div class="equation-panel fragment fade-up">
+$$
+\begin{aligned}
+\pi_t &= a_0 + a\pi_{t-1}+be^{24}_{t-1}+\varepsilon_{\pi,t} \\
+e^{24}_t &= c_{0t}+c_t\pi_{t-1}+de^{24}_{t-1}+\varepsilon_{e,t}
+\end{aligned}
+$$
+</div>
+
+<div class="measure-strip fragment fade-up">
+<div>
+<span>Intensidad del anclaje</span>
+<strong>$\lambda_t=1-\dfrac{c_t}{1-d}$</strong>
+</div>
+<div>
+<span>Localización del ancla</span>
+<strong>$\pi_t^*=\dfrac{c_{0t}}{1-d-c_t}$</strong>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">El filtro de Kalman permite que $c_{0t}$ y $c_t$ evolucionen gradualmente a lo largo del tiempo.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:15.** Mostrar la arquitectura, no derivar todo. La derivación completa queda en backup.
+:::
+
+## La proxy de credibilidad aumentó de 0.75 a 0.88
+
+<div class="kicker">Resultado 2 · Intensidad del anclaje</div>
+
+<div class="chart-with-metric">
+<div class="metric-column fragment fade-up">
+<div class="big-number">0.75</div>
+<div class="metric-caption">inicio</div>
+<div class="arrow-up">↑</div>
+<div class="big-number accent">0.88</div>
+<div class="metric-caption">hacia 2026</div>
+</div>
+<div class="chart-stage fragment fade-up">
+<img src="assets/fig7_lambda.png" class="chart-main">
+</div>
+</div>
+
+<div class="source">Proxy construida a partir de los parámetros del TVP–VAR. Valores más altos indican menor dependencia de la inflación observada.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:25.** Lambda no es credibilidad observada directamente, sino una proxy dinámica. La dirección creciente es el resultado económico principal.
+:::
+
+## El ancla implícita convergió hacia niveles próximos a la meta
+
+<div class="kicker">Resultado 3 · Localización del ancla</div>
+
+<div class="chart-stage wide fragment fade-up">
+<img src="assets/fig8_ancla.png" class="chart-main">
+</div>
+
+<div class="chart-caption fragment fade-up">El ancla parte por encima de 6% y se aproxima progresivamente al entorno de 4%.</div>
+
+<div class="takeaway fragment fade-up">El fortalecimiento de la intensidad del anclaje coincide con una referencia implícita cada vez más consistente con la meta oficial.</div>
+<div class="source">Ancla implícita estimada a partir del TVP–VAR y comparada con la meta vigente.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:30.** Esta es la segunda mitad del resultado central: no solo sube lambda, sino que el ancla estimada converge hacia la meta.
+:::
+
+## 2021–2023 fue la prueba más exigente para la interpretación
+
+<div class="kicker">Resultado 4 · Lectura conjunta</div>
+
+<div class="stress-layout">
+<div class="stress-chart fragment fade-up">
+<img src="assets/fig9_conjunta_clean.png" class="chart-main">
+</div>
+<div class="stress-panel">
+<div class="stress-item fragment fade-up"><span>Inflación observada</span><strong>≈10%</strong></div>
+<div class="stress-item fragment fade-up"><span>Expectativa 24m</span><strong>reacción contenida</strong></div>
+<div class="stress-item fragment fade-up"><span>$\lambda_t$</span><strong>permanece elevada</strong></div>
+</div>
+</div>
+
+<div class="takeaway fragment fade-up">El shock llegó a la inflación, pero no se trasladó con magnitud equivalente a la referencia de mediano plazo.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:40.** Este debe ser el clímax. Primero describir el salto inflacionario; luego enfatizar que la expectativa a 24 meses y lambda no se mueven con la misma magnitud.
+:::
+
+## Las conclusiones sobreviven a cambios razonables de especificación
+
+<div class="kicker">Robustez y diagnósticos</div>
+
+<div class="robust-grid">
+<div class="robust-item fragment fade-up"><div class="check">✓</div><strong>Ventanas alternativas</strong><span>36, 48, 50 y 60 meses reproducen la caída de sensibilidad.</span></div>
+<div class="robust-item fragment fade-up"><div class="check">✓</div><strong>Primeras diferencias</strong><span>La reducción del coeficiente de sensibilidad se mantiene con variables estacionarias.</span></div>
+<div class="robust-item fragment fade-up"><div class="check">✓</div><strong>Dinámica alternativa de inflación</strong><span>AR(2), AR(4) y rezago 12 mantienen prácticamente invariantes las trayectorias centrales.</span></div>
+</div>
+
+<div class="takeaway fragment fade-up">La robustez no elimina todas las limitaciones, pero reduce la probabilidad de que el resultado central provenga de una especificación puntual.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:00.** Mantener esta diapositiva a nivel agregado. Los detalles están en backup.
+:::
+
+## Qué no afirma el trabajo
+
+<div class="kicker">Limitaciones</div>
+
+<div class="limits-layout">
+<div class="limit-card fragment fade-up"><div class="limit-title">No mide expectativas de todos los agentes</div><div class="limit-text">La evidencia corresponde al Panel de Analistas Privados.</div></div>
+<div class="limit-card fragment fade-up"><div class="limit-title">No identifica causalidad institucional</div><div class="limit-text">Documenta una trayectoria compatible con mayor credibilidad; no atribuye el cambio a un único evento de política.</div></div>
+<div class="limit-card fragment fade-up"><div class="limit-title">La ecuación auxiliar de inflación conserva autocorrelación</div><div class="limit-text">Se evalúa en robustez y no altera las trayectorias de interés.</div></div>
+</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:55.** Ser honesto y preciso. Esto fortalece la defensa porque separa evidencia de interpretación causal.
+:::
+
+## Conclusión central
+
+<div class="kicker">Cierre</div>
+
+<div class="closing-statement fragment fade-up">La evidencia es consistente con un fortalecimiento gradual del anclaje de las expectativas de inflación a 24 meses en Guatemala.</div>
+
+<div class="closing-grid">
+<div class="closing-point fragment fade-up">Menor sensibilidad frente a la inflación observada.</div>
+<div class="closing-point fragment fade-up">Mayor proxy de credibilidad.</div>
+<div class="closing-point fragment fade-up">Ancla implícita progresivamente más próxima a la meta.</div>
+</div>
+
+<div class="final-question fragment fade-up">Discusión: ¿cómo debería complementarse esta evidencia con expectativas de otros agentes y horizontes más largos?</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 1:05.** Cerrar sin sobreafirmar. Repetir que el resultado es evidencia consistente con fortalecimiento del anclaje, no una medición directa de credibilidad total.
+:::
+
+## Gracias
+
+<div class="kicker">Preguntas y discusión de la terna</div>
+
+<div class="thanks-layout">
+<div class="thanks-main fragment fade-up">Quedo atento a sus comentarios y preguntas.</div>
+<div class="thanks-question fragment fade-up">¿Cómo complementar esta evidencia con expectativas de otros agentes y horizontes más largos?</div>
+</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Anclaje de expectativas en Guatemala · Working paper</div>
+
+::: {.notes}
+**Tiempo: 0:25.** Dejar abierta una pregunta de investigación futura para ordenar la discusión.
+:::
+
+## {.backup-cover}
+
+<div class="backup-row">
+<div class="backup-word">Backup</div>
+<div class="backup-divider"></div>
+<div class="backup-title">Material para preguntas</div>
+</div>
+<div class="backup-subtitle">Derivación, diagnósticos y robustez</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+::: {.notes}
+Material de respaldo; no presentar salvo que lo pidan.
+:::
+
+## Los criterios de información favorecen la especificación variante en el tiempo
+
+<div class="kicker">Backup · selección del modelo</div>
+
+<table class="model-table fragment fade-up">
+<thead><tr><th></th><th>VAR</th><th>TVP–VAR</th></tr></thead>
+<tbody>
+<tr><td>Log-verosimilitud</td><td>−184.45</td><td class="highlight">−146.33</td></tr>
+<tr><td>AIC</td><td>384.89</td><td class="highlight">312.67</td></tr>
+<tr><td>BIC</td><td>411.16</td><td class="highlight">345.50</td></tr>
+</tbody>
+</table>
+
+<div class="takeaway fragment fade-up">Los tres criterios favorecen permitir variación temporal en la ecuación de expectativas.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## El parámetro $c_t$ confirma una reducción gradual de la sensibilidad
+
+<div class="kicker">Backup · sensibilidad variante en el tiempo</div>
+
+<div class="chart-with-metric reverse">
+<div class="chart-stage fragment fade-up">
+<img src="assets/fig6_tvp_panel.png" class="chart-main">
+</div>
+<div class="metric-column fragment fade-up">
+<div class="big-number">0.18</div>
+<div class="metric-caption">inicio de muestra</div>
+<div class="arrow-down">↓</div>
+<div class="big-number accent">0.09</div>
+<div class="metric-caption">final del período</div>
+</div>
+</div>
+
+<div class="source">Estimaciones suavizadas del TVP–VAR mediante filtro de Kalman.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Derivación de $\lambda_t$ y $\pi_t^*$
+
+<div class="kicker">Backup metodológico</div>
+
+<div class="equation-panel tall fragment fade-up">
+$$
+\bar e^{24}_t = \frac{c_{0t}}{1-d}+\frac{c_t}{1-d}\bar\pi_t
+$$
+
+$$
+\bar e^{24}_t = \lambda_t\pi_t^*+(1-\lambda_t)\bar\pi_t
+$$
+
+$$
+\lambda_t=1-\frac{c_t}{1-d},\qquad \pi_t^*=\frac{c_{0t}}{1-d-c_t}
+$$
+</div>
+
+<div class="takeaway fragment fade-up">La identificación empírica separa la intensidad del anclaje de la localización de la referencia nominal.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Persistencia de las expectativas en regresiones móviles
+
+<div class="kicker">Backup · rolling regressions</div>
+
+<div class="chart-stage wide fragment fade-up">
+<img src="assets/fig5_rolling_rho.png" class="chart-main">
+</div>
+
+<div class="takeaway fragment fade-up">Las expectativas conservan persistencia, pero la sensibilidad frente a nueva información inflacionaria se reduce.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Robustez de ventanas móviles
+
+<div class="kicker">Backup · ventanas alternativas</div>
+
+<div class="chart-stage wide fragment fade-up">
+<img src="assets/figA1_rolling_rob_clean.png" class="chart-main">
+</div>
+
+<div class="takeaway fragment fade-up">Las ventanas de 36, 48, 50 y 60 meses reproducen la reducción general de $\beta_t$.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Robustez en primeras diferencias
+
+<div class="kicker">Backup · estacionariedad</div>
+
+<div class="chart-stage wide fragment fade-up">
+<img src="assets/figB1_diff_clean.png" class="chart-main">
+</div>
+
+<div class="takeaway fragment fade-up">La sensibilidad cae de aproximadamente 0.37 a 0.12, reduciendo la posibilidad de una relación inducida por persistencia en niveles.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Robustez ante dinámica alternativa de inflación
+
+<div class="kicker">Backup · diagnóstico del TVP–VAR</div>
+
+<table class="model-table compact fragment fade-up">
+<thead><tr><th>Especificación</th><th>$\lambda$ final</th><th>$\pi^*$ final</th><th>Corr. $\lambda$</th><th>Corr. $\pi^*$</th></tr></thead>
+<tbody>
+<tr><td>Modelo base</td><td>0.881</td><td>3.851</td><td>1.000</td><td>1.000</td></tr>
+<tr><td>Inflación AR(2)</td><td>0.901</td><td>3.806</td><td>0.987</td><td>0.979</td></tr>
+<tr><td>Inflación AR(4)</td><td>0.882</td><td>3.850</td><td>1.000</td><td>0.999</td></tr>
+<tr><td>Inflación AR(1)+rezago 12</td><td>0.888</td><td>3.836</td><td>0.997</td><td>0.999</td></tr>
+</tbody>
+</table>
+
+<div class="takeaway fragment fade-up">Aunque la autocorrelación residual de inflación persiste, las trayectorias centrales permanecen prácticamente invariantes.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>
+
+## Definición operativa de variables
+
+<div class="kicker">Backup · datos</div>
+
+<table class="model-table compact fragment fade-up">
+<thead><tr><th>Variable</th><th>Unidad</th><th>Fuente</th></tr></thead>
+<tbody>
+<tr><td>Expectativa de inflación a 24 meses</td><td>Porcentaje</td><td>Banco de Guatemala</td></tr>
+<tr><td>Expectativa de inflación a 12 meses</td><td>Porcentaje</td><td>Banco de Guatemala</td></tr>
+<tr><td>Inflación observada</td><td>Variación interanual</td><td>INE / Banco de Guatemala</td></tr>
+<tr><td>Meta central de inflación</td><td>Porcentaje</td><td>Banco de Guatemala</td></tr>
+</tbody>
+</table>
+
+<div class="takeaway fragment fade-up">El análisis se expresa en términos de desviaciones respecto de la meta vigente cuando corresponde.</div>
+<div class="footer-mini"><img src="assets/logo_banguat.png"> Backup · Working paper</div>

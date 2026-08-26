@@ -1,0 +1,38 @@
+ROBUSTEZ: TVP-VAR RESTRINGIDO EN PRIMERAS DIFERENCIAS
+=======================================================
+
+Muestra efectiva: 2010-03 a 2026-06
+Observaciones: 196
+
+MODELO
+------
+LogLik M0_D: -162.0725
+LogLik M3_D: -160.0301
+AIC M0_D: 340.1449
+AIC M3_D: 340.0601
+BIC M0_D: 366.3698
+BIC M3_D: 372.8413
+
+VARIANZAS DE TRANSICIÓN
+-----------------------
+Q_c0 = 1e-12
+Q_c  = 2.882777e-04
+
+TRAYECTORIA DE LA SENSIBILIDAD c_t
+-----------------------------------
+c_t inicial = 0.3699
+c_t final   = 0.1156
+c_t promedio = 0.163
+La sensibilidad c_t disminuye entre el inicio y el final de la muestra.
+
+DIAGNÓSTICOS
+------------
+Ljung-Box 12 rezagos, Δ inflación: p = < 1e-04
+Ljung-Box 12 rezagos, Δ expectativa: p = 0.001075
+Porcentaje de meses localmente estables: 100%
+Radio espectral máximo: 0.3013
+
+INTERPRETACIÓN
+--------------
+Este ejercicio debe interpretarse exclusivamente como una comprobación de robustez del patrón de sensibilidad.
+No deben construirse lambda_t ni pi_estrella_t a partir de esta especificación en primeras diferencias.

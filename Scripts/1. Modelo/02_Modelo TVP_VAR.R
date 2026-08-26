@@ -1471,7 +1471,7 @@ readr::write_csv(
 
 # 14.0 Estilo común ------------------------------------------------------------
 
-col_serie <- "#2F4A67"
+col_serie <- "#406487"
 col_banda <- "#AFC4D6"
 col_ref   <- "#4D4D4D"
 
@@ -1921,7 +1921,7 @@ print(p_ancla)
 
 # 14.5 Dinámica conjunta: inflación, expectativas, ancla implícita y credibilidad ----
 
-# Figura sintética inspirada en la lógica de Demertzis:
+# Figura sintética:
 # eje izquierdo  -> inflación observada, expectativa a 24 meses, ancla implícita y meta
 # eje derecho    -> proxy de credibilidad lambda_t
 #
@@ -1952,8 +1952,8 @@ trayectoria_M3 <- trayectoria_M3 |>
 # 2. Colores auxiliares
 # -------------------------------------------------------------------
 
-col_inflacion <- "black"
-col_lambda <- "#2C6BE0"   # puedes ajustarlo si ya tienes un azul institucional
+col_inflacion <- "#000000"
+col_lambda <- "#2C6BE0"   # puedes ajustarlo si ya se tiene un azul institucional
 
 # -------------------------------------------------------------------
 # 3. Gráfica
@@ -2134,7 +2134,7 @@ p_sintesis_ancla <- ggplot2::ggplot(
       colour = col_lambda
     )
   )
-
+p_sintesis_ancla
 ggplot2::ggsave(
   file.path(
     carpeta_salida,
